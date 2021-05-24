@@ -1,0 +1,89 @@
+	
+Oi Gladino,
+
+Aqui estão as instruções que você solicitou
+
+Oracle Work in Process - Versão 12 e posterior
+As informações contidas nesse documento se aplicam a qualquer plataforma.
+Conteúdo Principal
+
+I. Log separados:
+
+A. Log do Cliente do Java:
+
+(isto é semelhante ao 11i)
+
+1. Defina as seguintes opções de perfil:
+
+
+a. WPS:Debug Message Level = 2
+b. FND: Log Enabled = Yes
+c. FND: Log Module = WIP% (or WPS% for Manufacturing Scheduling)
+d. FND: Log Level = Statement
+e. FND: Log Filename for Middle-Tier = <Qualquer diretório gravável e um nome de arquivo >
+
+
+2. Inicie o WorkBench
+
+3. Abra a Console do Java (Para IE: Menu: Tools->Sun Java Console).
+
+3. Reproduza o problema
+
+4. O arquivo de Log do Cliente do Java está disponível na Console do Java (consulte Note 270539.1 ). Copie e faça upload do conteúdo da console do Java em um arquivo txt.
+
+5. Por favor, obtenha também o arquivo de log sql da etapa A.1.e.
+
+
+
+B. Java Server Side Log::
+(isso está funcionando somente no R12)
+
+1. Ativar o Oracle Application Framework Logging (AFLogging):
+
+
+a. Abra o arquivo $ORA_CONFIG_HOME/10.1.3/j2ee/oacore/config/oc4j.properties em um editor de texto
+b. Aditar: os seguintes valores:
+AFLOG_ENABLED=true
+AFLOG_LEVEL=statement
+AFLOG_MODULE=% (ou WIP%, ou WPS%)
+AFLOG_FILENAME=<Qualquer diretório gravável e um nome de arquivo >
+c. Pare e reinicie o oacore:
+$ADMIN_SCRIPTS_HOME/adoacorectl.sh stop
+
+
+2. Reproduzir o problema
+
+3. forneça o arquivo de log mencionado por AFLOG_FILENAME
+
+
+II. Se você precisar obter logs java do cliente e do servidor para a mesma execução, poderá integrá-los da seguinte maneira:
+
+
+1. Defina os perfis:
+FND: Log Enabled = Yes
+FND: Log Module = WIP%
+FND: Log Level = Statement
+FND: Log Filename for Middle-Tier = <Qualquer diretório gravável e um nome de arquivo >
+
+2. Abra o arquivo $ORA_CONFIG_HOME/10.1.3/j2ee/oacore/config/oc4j.properties em um editor de texto
+b. Aditar: os seguintes valores:
+AFLOG_ENABLED=true
+AFLOG_LEVEL=statement
+AFLOG_MODULE=% (ou WIP%, ou WPS% conforme necessário)
+AFLOG_FILENAME=<Qualquer diretório gravável e um nome de arquivo >
+c. Pare e reinicie o oacore:
+$ADMIN_SCRIPTS_HOME/adoacorectl.sh stop
+
+$ADMIN_SCRIPTS_HOME/adoacorectl.sh start
+
+3. O arquivo de Log do Cliente do Java está disponível na Console do Java (consulte o Note 270539.1 ). Abra a Aplicação e Abra a janela da console do Java. (Para IE: Menu Tools->Sun Java Console).
+
+4. Execute o caso de teste.
+
+
+5. Copie o conteúdo da janela da console java para um arquivo de bloco de notas, salve-o e faça upload dele.
+
+6. Faça upload dos arquivos de log dos caminhos mencionados nos passos II - 1 e 2.
+
+
+Dan

@@ -1,0 +1,1 @@
+update apps.xx_tcg_cartas_porte_all set destinatario_contrato_id = 7964,last_update_Date = sysdate, last_updated_by = 2070 where carta_porte_id = 436954;

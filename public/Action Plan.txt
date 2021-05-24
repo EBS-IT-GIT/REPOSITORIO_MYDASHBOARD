@@ -1,0 +1,30 @@
+Com relação ao problema, revisaremos os dados de rastreamento; no entanto, após a avaliação inicial do erro, vemos que o mesmo ocorre devido a objetos de banco de dados e bibliotecas de formulários fora de sincronia, que não conseguem capturar determinadas exceções de dados.
+
+Portanto, na instância em que o problema ocorre, precisamos validar os objetos de banco de dados e regenerar os formulários e bibliotecas de formulários para o módulo PO. As etapas para fazer isso são as seguintes:
+
+1. Compile o esquema de aplicativos usando o utilitário adadmin no servidor de camada APPS:
+
+    uma. Efetue logon como applmgr na camada de aplicativos e execute o comando adadmin
+    b. No menu adadmin
+          Escolha a opção Compilar / recarregar aplicativos no menu Entidades do banco de dados
+          Escolha a opção Compilar esquema de APPS
+    c. Isso levará algum tempo para concluir
+
+2. Quando a compilação do esquema dos aplicativos terminar, continue a regenerar todos os formulários de pedido e bibliotecas de formulários:
+
+    a. Executar comando adadmin
+    b. No menu principal, escolha Manter arquivos do aplicativo
+    c. Em seguida, escolha Gerar arquivos de formulário
+    d. Responda às solicitações da seguinte maneira:
+           Deseja gerar novamente os arquivos da biblioteca Oracle Forms PL / SQL [Sim]? sim
+           Deseja gerar novamente os arquivos de menu do Oracle Forms [Sim]? sim
+           Deseja gerar novamente os arquivos executáveis ​​do Oracle Forms [Sim]? sim
+           Insira a lista de produtos ('todos' para todos os produtos) [todos]: po
+           Gerar objetos de formulários específicos para cada produto selecionado [Não]? Não
+     e isso levará alguns minutos para ser executado
+
+3. Uma vez que o procedimento acima foi feito, faça o upload do arquivo de log adadmin que terá detalhes das tarefas acima.
+
+4. Certifique-se de rejeitar sua camada intermediária antes de testar novamente a funcionalidade (com as personalizações desativadas)
+
+5. Depois de revisar o log do adadmin e o arquivo de rastreamento carregado, publicaremos o plano de ação de acompanhamento.

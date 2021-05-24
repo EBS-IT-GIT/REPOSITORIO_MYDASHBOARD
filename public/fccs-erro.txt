@@ -1,0 +1,44 @@
++---------------------------------------------------------------------------+
+General Ledger: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+XXISV_GERA_ARQ_CARGA_FCCS: XXISV - Gera Arq. para Carga do FCCS
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 01-ABR-2020 08:35:01
+
++---------------------------------------------------------------------------+
+
+**Starts**01-ABR-2020 08:35:01
+**SQL error and free**01-ABR-2020 08:37:06
+Erro ORACLE 20001 em FDPSTP
+
+Causa: Ocorreu um erro em FDPSTP, porque ORA-20001: ERRO: ORA-20001: ERRO: ORA-29283: operação de arquivo inválida
+ORA-06512: em "SYS.UTL_FILE", line 536
+ORA-29283: operação de arquivo inválida
+ORA-06512: em "XXISV.XXISV01-ABR-2020 08:37:06
++---------------------------------------------------------------------------+
+Início das mensagens de log do FND_FILE
++---------------------------------------------------------------------------+
+Hora inicial : 01/04/2020 08:35:01
+Period Name : FEV-20
+Nome Arquivo : FCCS_FEV-20.txt
+Arquivo gerado com sucesso.
+Hora final : 01/04/2020 08:37:06
++---------------------------------------------------------------------------+
+Fim das mensagens de log do FND_FILE
++---------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+Nenhuma opção de término foi solicitada.
+
+Output file size: 
+148
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada
+A hora atual do sistema é 01-ABR-2020 08:37:07
+
++---------------------------------------------------------------------------+

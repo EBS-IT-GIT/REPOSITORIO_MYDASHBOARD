@@ -1,0 +1,195 @@
+ESBRHML:run> cp /tmp/120_ESBRPONEXCEL_02.zip .
+ESBRHML:run> unzip 120_ESBRPONEXCEL_02.zip
+Archive:  120_ESBRPONEXCEL_02.zip
+   creating: 120_ESBRPONEXCEL_02/
+   creating: 120_ESBRPONEXCEL_02/esbr/
+   creating: 120_ESBRPONEXCEL_02/esbr/misc/
+   creating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/
+   creating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/
+   creating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/
+   creating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/pon/
+   creating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/pon/negotiation/
+   creating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/
+   creating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/server/
+  inflating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVO.xml
+  inflating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/server/server.xml
+  inflating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVORowImpl.class
+  inflating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVOImpl.class
+   creating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/webui/
+  inflating: 120_ESBRPONEXCEL_02/esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/webui/esbrConsolePageLayoutCO.class
+   creating: 120_ESBRPONEXCEL_02/esbr/patch/
+   creating: 120_ESBRPONEXCEL_02/esbr/patch/115/
+   creating: 120_ESBRPONEXCEL_02/esbr/patch/115/publisher/
+   creating: 120_ESBRPONEXCEL_02/esbr/patch/115/publisher/templates/
+  inflating: 120_ESBRPONEXCEL_02/esbr/patch/115/publisher/templates/esbrMapaCotacao.rtf
+   creating: 120_ESBRPONEXCEL_02/doc/
+  inflating: 120_ESBRPONEXCEL_02/doc/ESBR_MD070_-_ESBRPONEXCEL_-_iSourcing_Analisar_por_Planilha_v1.0.docx
+  inflating: 120_ESBRPONEXCEL_02/Readme.txt
+ESBRHML:run> mv $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVO.xml          $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVO.xml_bkp11042019
+ESBRHML:run>  mv $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVOImpl.class    $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVOImpl.class_bkp11042019
+ESBRHML:run>  mv $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVOImpl.class    $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVOImpl.class_bkp11042019
+mv: cannot stat `/app/hml/app/fs1/EBSapps/comn/java/classes/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVOImpl.class': No such file or directory
+ESBRHML:run>
+ESBRHML:run> mv $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVORowImpl.class $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVORowImpl.class_bkp11042019
+ESBRHML:run> cp -f esbr/patch/115/publisher/templates/esbrMapaCotacao.rtf $ESBR_TOP/patch/115/publisher/templates/esbrMapaCotacao.rtf
+cp: cannot stat `esbr/patch/115/publisher/templates/esbrMapaCotacao.rtf': No such file or directory
+ESBRHML:run>                    ll
+total 18924
+drwxr-xr-x 4 apphml oinstall     4096 Aug 23  2016 120_ESBRPONEXCEL_02
+-rw-r--r-- 1 apphml oinstall   436577 Apr 15 22:11 120_ESBRPONEXCEL_02.zip
+drwxr-xr-x 5 apphml oinstall     4096 Apr  9 17:17 18345006
+drwxr-xr-x 5 apphml oinstall     4096 Apr 10 08:39 20132328
+-rw-r--r-- 1 apphml oinstall 18558595 Apr  9 17:13 p18345006_R12.FWK.C_R12_GENERIC.zip
+-rw-r--r-- 1 apphml oinstall   335478 Apr 10 08:04 p20132328_R12.FWK.C_R12_GENERIC.zip
+ESBRHML:run> cd 120_ESBRPONEXCEL_02
+ESBRHML:run> ll
+total 16
+drwxr-xr-x 2 apphml oinstall 4096 Apr 11 23:38 doc
+drwxr-xr-x 4 apphml oinstall 4096 Mar 16 01:36 esbr
+-rwxr-xr-x 1 apphml oinstall 4736 Apr 11 23:36 Readme.txt
+ESBRHML:run> cp -f esbr/patch/115/publisher/templates/esbrMapaCotacao.rtf $ESBR_TOP/patch/115/publisher/templates/esbrMapaCotacao.rtf
+ESBRHML:run>                    cp -f esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVO.xml          $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVO.xml
+ESBRHML:run>
+ESBRHML:run>
+ESBRHML:run> cp -f esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVOImpl.class    $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVOImpl.class
+ESBRHML:run>
+ESBRHML:run> cp -f esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVORowImpl.class $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/server/esbrMapaCotacaoVORowImpl.class
+ESBRHML:run>
+ESBRHML:run> cp -f esbr/misc/esbr/oracle/apps/pon/negotiation/inquiry/webui/esbrConsolePageLayoutCO.class   $JAVA_TOP/esbr/oracle/apps/pon/negotiation/inquiry/webui/esbrConsolePageLayoutCO.class
+ESBRHML:run>
+ESBRHML:run> export NLS_LANG="BRAZILIAN PORTUGUESE_BRAZIL.WE8ISO8859P1"
+ESBRHML:run> java oracle.apps.xdo.oa.util.XDOLoader UPLOAD -DB_USERNAME apps -DB_PASSWORD hml123 -JDBC_CONNECTION $jdbc_connection -LOB_TYPE TEMPLATE -LOB_CODE ESBR_PON_MAPA_COTACAO -XDO_FILE_TYPE RTF -FILE_NAME $ESBR_TOP/patch/115/publisher/templates/esbrMapaCotacao.rtf -APPS_SHORT_NAME ESBR -NLS_LANG pt -LANGUAGE pt -TERRITORY 00 -CUSTOM_MODE FORCE
+XDOLoader started: Mon Apr 15 22:13:56 BRT 2019
+
+
+Parameters passed to XDOLoader...
+[TERRITORY] [00]
+[DB_USERNAME] [apps]
+[FILE_NAME] [/app/hml/app/fs1/EBSapps/appl/esbr/12.0.0/patch/115/publisher/templates/esbrMapaCotacao.rtf]
+[LOB_CODE] [ESBR_PON_MAPA_COTACAO]
+[XDO_FILE_TYPE] [RTF]
+[NLS_LANG] [pt]
+[LANGUAGE] [pt]
+[JDBC_CONNECTION] [-LOB_TYPE]
+[DB_PASSWORD] [******]
+[CUSTOM_MODE] [FORCE]
+[UPLOAD] [UPLOAD]
+[APPS_SHORT_NAME] [ESBR]
+
+oracle.apps.xdo.XDOException: LOB_TYPE was not passed as a parameter.
+
+        at oracle.apps.xdo.oa.util.XDOLoader.validateProperties(XDOLoader.java:774)
+        at oracle.apps.xdo.oa.util.XDOLoader.init(XDOLoader.java:473)
+        at oracle.apps.xdo.oa.util.XDOLoader.<init>(XDOLoader.java:432)
+        at oracle.apps.xdo.oa.util.XDOLoader.main(XDOLoader.java:2385)
+ESBRHML:run> adcgnjar
+
+                     Copyright (c) 2002, 2012 Oracle Corporation
+                        Redwood Shores, California, USA
+
+                            AD Custom Jar Generation
+
+                                 Version 12.2.0
+
+NOTE: You may not use this utility for custom development
+      unless you have written permission from Oracle Corporation.
+
+Enter the APPS username:
+Enter the APPS username: apps
+
+Enter the APPS password:
+
+Generating customall.jar ...
+
+                     Copyright (c) 2002, 2012 Oracle Corporation
+                        Redwood Shores, California, USA
+
+                                    AD Java
+
+                                 Version 12.2.0
+
+NOTE: You may not use this utility for custom development
+      unless you have written permission from Oracle Corporation.
+
+Reading product information from file...
+
+Reading language and territory information from file...
+
+Reading language information from applUS.txt ...
+  Temporarily resetting CLASSPATH to:
+  "/app/hml/app/fs1/EBSapps/appl/ad/12.0.0/java/adjava.zip:/app/hml/app/fs1/EBSapps/comn/util/jdk32/lib/dt.jar:/app/hml/app/fs1/EBSapps/comn/util/jdk32/lib/tools.jar:/app/hml/app/fs1/EBSapps/comn/util/jdk32/jre/lib/rt.jar:/app/hml/app/fs1/EBSapps/comn/shared-libs/ebs-3rdparty/WEB-INF/lib/ebs3rdpartyManifest.jar:/app/hml/app/fs1/FMW_Home/Oracle_EBS-app1/shared-libs/ebs-fmw/WEB-INF/lib/ebsFMWManifest.jar:/app/hml/app/fs1/FMW_Home/Oracle_EBS-app1/shared-libs/ebs-appsborg/WEB-INF/lib/ebsAppsborgManifest.jar:/app/hml/app/fs1/FMW_Home/oracle_common/modules/oracle.uix_11.1.1/uix2.jar:/app/hml/app/fs1/EBSapps/comn/java/classes:/app/hml/app/fs1/EBSapps/10.1.2/forms/java:/app/hml/app/fs1/EBSapps/10.1.2/forms/java/frmall.jar:/app/hml/app/fs1/EBSapps/10.1.2/jlib/ewt3.jar:/app/hml/app/fs1/EBSapps/10.1.2/j2ee/OC4J_BI_Forms/applications/formsapp/formsweb/WEB-INF/lib/frmsrv.jar"
+
+  Calling /app/hml/app/fs1/EBSapps/comn/util/jdk32/jre/bin/java ...
+The JDK version is 1.7.0_25
+
+Validating the files/directories specified for -areas option
+
+
+About to Analyze the input areas : Mon Apr 15 2019 22:15:29
+
+WARNING: Unable to load metadata entry from zip file /app/hml/app/fs1/EBSapps/comn/java/classes/customall.zip
+Cause: Error while trying to read metadata from file /app/hml/app/fs1/EBSapps/comn/java/classes/customall.zip: No metadata entry META-INF/JRIMETA.DAT found
+Action needed: None. This message is for information only and can safely be ignored.
+
+
+
+Done Analyzing the input areas : Mon Apr 15 2019 22:15:29
+
+
+About to Generate outputFile : Mon Apr 15 2019 22:15:29
+
+
+    About to Generate customall.jar : Mon Apr 15 2019 22:15:29
+
+
+    Done Generating customall.jar : Mon Apr 15 2019 22:15:29
+
+
+    About to Sign customall.jar : Mon Apr 15 2019 22:15:29
+
+
+    Done Signing customall.jar : Mon Apr 15 2019 22:15:30
+
+
+Done Generating outputFile : Mon Apr 15 2019 22:15:30
+
+
+customall.jar generated successfully.
+ESBRHML:run>
+ESBRHML:run> admanagedsrvctl.sh stop oacore_server1
+
+You are running admanagedsrvctl.sh version 120.14.12020000.8
+
+Enter the WebLogic Admin password:
+Stopping oacore_server1...
+....................................................................................................Refer /app/hml/app/fs1/inst/apps/ESBRHML_esbr-aph01/logs/appl/admin/log/adoacorectl.txt for details
+
+admanagedsrvctl.sh: exiting with status 0
+
+admanagedsrvctl.sh: check the logfile /app/hml/app/fs1/inst/apps/ESBRHML_esbr-aph01/logs/appl/admin/log/adoacorectl.txt for more information ...
+
+ESBRHML:run> admanagedsrvctl.sh start oacore_server1
+
+You are running admanagedsrvctl.sh version 120.14.12020000.8
+
+Enter the WebLogic Admin password:
+
+ESBRHML:run> admanagedsrvctl.sh start oacore_server1
+
+You are running admanagedsrvctl.sh version 120.14.12020000.8
+
+Enter the WebLogic Admin password:
+
+Calling txkChkEBSDependecies.pl to perform dependency checks for oacore_server1
+*** ALL THE FOLLOWING FILES ARE REQUIRED FOR RESOLVING RUNTIME ERRORS
+*** Log File = /app/hml/app/fs1/inst/apps/ESBRHML_esbr-aph01/logs/appl/rgf/TXK/txkChkEBSDependecies_Mon_Apr_15_22_19_53_2019/txkChkEBSDependecies_Mon_Apr_15_22_19_53_2019.log
+Perl script txkChkEBSDependecies.pl got executed successfully
+
+
+Starting oacore_server1...
+
+admanagedsrvctl.sh: exiting with status 0
+
+admanagedsrvctl.sh: check the logfile /app/hml/app/fs1/inst/apps/ESBRHML_esbr-aph01/logs/appl/admin/log/adoacorectl.txt for more information ...
+
+ESBRHML:run>

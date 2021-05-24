@@ -1,0 +1,44 @@
+
+************* Start of AutoPatch session *************
+AutoPatch version: 12.0.0
+AutoPatch started at: Tue Apr 23 2019 14:28:04
+
+APPL_TOP is set to /u01/hebs/apps/apps_st/appl
+
+This file contains informational messages from your AutoPatch session.
+
+If there are no messages in this file after this sentence,
+AutoPatch did not write any informational messages.
+
+
+
+Log and Info File sync point:
+  Tue Apr 23 2019 14:30:30
+  
+Turning off actions that reference unrecognized products.
+
+
+Log and Info File sync point:
+  Tue Apr 23 2019 14:30:30
+  
+End of unrecognized products checking.
+
+
+Log and Info File sync point:
+  Tue Apr 23 2019 14:30:49
+  
+Information about files copied to the APPL_TOP would be written to the
+informational message file.
+
+Creating backup directory
+  /u01/hebs/apps/apps_st/appl/patches/CUS_ICX_044_HQS_002/backup/HEBS/AT_vm01lhebs/xbol/admin/sql.
+
+
+Backing up /u01/hebs/apps/apps_st/appl/xbol/12.0.0/admin/sql/PORCUSTB.pls
+
+Copying file /u01/hebs/apps/apps_st/appl/patches/CUS_ICX_044_HQS_002/xbol/admin/sql/PORCUSTB.pls
+
+Log and Info File sync point:
+  Tue Apr 23 2019 14:31:16
+  AutoPatch is exiting successfully.
+

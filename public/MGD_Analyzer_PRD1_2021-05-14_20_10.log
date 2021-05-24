@@ -1,0 +1,2851 @@
+EBS Master GDF Diagnostic Analyzer Log File
+***************************************************************
+14-MAY-21 20:10:55-begin populate parameters hash table
+14-MAY-21 20:10:55-end populate parameters hash table
+
+Parameter Values before validation:
+---------------------------
+1. Analysis Mode: SINGLE
+2. Invoice ID: 12527427
+3. Check ID: 10647469
+4. Vendor ID: 9537208
+5. Validations to Perform: ALL
+6. Skip General Section: Y
+7. Maximum Rows to Display: 20
+8. Debug Mode: Y
+---------------------------
+14-MAY-21 20:10:55-begin parameter validation: p_invoice_id
+14-MAY-21 20:10:55-end parameter validation: p_invoice_id
+14-MAY-21 20:10:55-begin parameter validation: p_check_id
+14-MAY-21 20:10:55-end parameter validation: p_check_id
+14-MAY-21 20:10:55-begin parameter validation: p_vendor_id
+14-MAY-21 20:10:55-end parameter validation: p_vendor_id
+14-MAY-21 20:10:55-begin parameter validation: p_trx_type
+14-MAY-21 20:10:55-end parameter validation: p_trx_type
+14-MAY-21 20:10:55-begin parameter validation: p_validations
+14-MAY-21 20:10:55-end parameter validation: p_validations
+14-MAY-21 20:10:55-begin parameter validation: p_skip_general
+14-MAY-21 20:10:55-end parameter validation: p_skip_general
+14-MAY-21 20:10:55-begin parameter validation: p_debug_mode
+14-MAY-21 20:10:55-end parameter validation: p_debug_mode
+
+Instance Information:
+---------------------------
+Host: p260-EBS1
+FullHost: p260-EBS1.braspress.com.br
+Instance: PRD1
+Database version: 11.2.0.4.0
+Applications version: 12.1.3
+Analyzer version: 200.433
+Calling method: SQL Script
+Calling module: SQL*Plus
+---------------------------
+14-MAY-21 20:10:55-begin Additional Code: Additional Validation
+14-MAY-21 20:10:55-Entered validate parameters
+14-MAY-21 20:10:56-g_mode:            SINGLE
+14-MAY-21 20:10:56-g_invoice_id:      12527427
+14-MAY-21 20:10:56-g_check_id:        10647469
+14-MAY-21 20:10:56-g_vendor_id:       9537208
+14-MAY-21 20:10:56-g_start_date:      
+14-MAY-21 20:10:56-g_end_date:        
+14-MAY-21 20:10:56-g_org_ids:         121
+14-MAY-21 20:10:56-g_trx_type:        
+14-MAY-21 20:10:56-g_validations:     ALL
+14-MAY-21 20:10:56-g_max_output_rows: 20
+14-MAY-21 20:10:56-g_debug_mode:      Y
+14-MAY-21 20:10:56-g_skip_general:    Y
+14-MAY-21 20:10:56-Leaving validate parameters
+14-MAY-21 20:10:56-end Additional Code: Additional Validation
+14-MAY-21 20:10:56-begin populate parameters hash table
+14-MAY-21 20:10:56-end populate parameters hash table
+
+Parameter Values after validation:
+---------------------------
+1. Analysis Mode: SINGLE
+2. Invoice ID: 12527427
+3. Check ID: 10647469
+4. Vendor ID: 9537208
+5. Validations to Perform: ALL
+6. Skip General Section: Y
+7. Maximum Rows to Display: 20
+8. Debug Mode: Y
+---------------------------
+14-MAY-21 20:10:56-begin populate sql tokens hash table
+14-MAY-21 20:10:56-end populate sql tokens hash table
+SQL Token Values
+##$$CVIEW$$##: SELECT /*+ qb_name(cview) */ 10647469 check_id FROM dual
+##$$EDT$$##: 
+##$$INV$$##: 12527427
+##$$IVIEW$$##: SELECT /*+ qb_name(iview) */ 12527427 invoice_id FROM dual
+##$$MCVIEW$$##: SELECT /*+ materialize */ 10647469 check_id FROM dual
+##$$MIVIEW$$##: SELECT /*+ materialize */ 12527427 invoice_id FROM dual
+##$$ORGS$$##: 121
+##$$PMT$$##: 10647469
+##$$SDT$$##: 
+##$$VND$$##: 9537208
+Snapshot days:204
+14-MAY-21 20:11:57-begin add_signature: 1
+14-MAY-21 20:11:57-end add_signature: 1
+14-MAY-21 20:11:57-begin add_signature: 2
+14-MAY-21 20:11:57-end add_signature: 2
+14-MAY-21 20:11:57-begin add_signature: 3
+14-MAY-21 20:11:57-end add_signature: 3
+14-MAY-21 20:11:57-begin add_signature: 4
+14-MAY-21 20:11:57-end add_signature: 4
+14-MAY-21 20:11:57-begin add_signature: 5
+14-MAY-21 20:11:57-end add_signature: 5
+14-MAY-21 20:11:57-begin add_signature: 6
+14-MAY-21 20:11:57-end add_signature: 6
+14-MAY-21 20:11:57-begin add_signature: 7
+14-MAY-21 20:11:57-end add_signature: 7
+14-MAY-21 20:11:57-begin add_signature: 8
+14-MAY-21 20:11:57-end add_signature: 8
+14-MAY-21 20:11:57-begin add_signature: 9
+14-MAY-21 20:11:57-end add_signature: 9
+14-MAY-21 20:11:57-begin add_signature: MGD_KEY_FILES_ACCOUNTING
+14-MAY-21 20:11:57-end add_signature: MGD_KEY_FILES_ACCOUNTING
+14-MAY-21 20:11:57-begin add_signature: 10
+14-MAY-21 20:11:57-end add_signature: 10
+14-MAY-21 20:11:57-begin add_signature: 11
+14-MAY-21 20:11:57-end add_signature: 11
+14-MAY-21 20:11:57-begin add_signature: 12
+14-MAY-21 20:11:57-end add_signature: 12
+14-MAY-21 20:11:57-begin add_signature: 13
+14-MAY-21 20:11:57-end add_signature: 13
+14-MAY-21 20:11:57-begin add_signature: 14
+14-MAY-21 20:11:57-end add_signature: 14
+14-MAY-21 20:11:57-begin add_signature: 15
+14-MAY-21 20:11:57-end add_signature: 15
+14-MAY-21 20:11:57-begin add_signature: 16
+14-MAY-21 20:11:57-end add_signature: 16
+14-MAY-21 20:11:57-begin add_signature: 17
+14-MAY-21 20:11:57-end add_signature: 17
+14-MAY-21 20:11:57-begin add_signature: 18
+14-MAY-21 20:11:57-end add_signature: 18
+14-MAY-21 20:11:57-begin add_signature: 19
+14-MAY-21 20:11:57-end add_signature: 19
+14-MAY-21 20:11:57-begin add_signature: MGD_KEY_FILES_INVOICE
+14-MAY-21 20:11:57-end add_signature: MGD_KEY_FILES_INVOICE
+14-MAY-21 20:11:57-begin add_signature: 21
+14-MAY-21 20:11:57-end add_signature: 21
+14-MAY-21 20:11:57-begin add_signature: 23
+14-MAY-21 20:11:57-end add_signature: 23
+14-MAY-21 20:11:57-begin add_signature: 24
+14-MAY-21 20:11:57-end add_signature: 24
+14-MAY-21 20:11:57-begin add_signature: 25
+14-MAY-21 20:11:57-end add_signature: 25
+14-MAY-21 20:11:57-begin add_signature: 26
+14-MAY-21 20:11:57-end add_signature: 26
+14-MAY-21 20:11:57-begin add_signature: 27
+14-MAY-21 20:11:57-end add_signature: 27
+14-MAY-21 20:11:57-begin add_signature: 28
+14-MAY-21 20:11:57-end add_signature: 28
+14-MAY-21 20:11:57-begin add_signature: 29
+14-MAY-21 20:11:57-end add_signature: 29
+14-MAY-21 20:11:57-begin add_signature: MGD_STALE_STATISTICS
+14-MAY-21 20:11:57-end add_signature: MGD_STALE_STATISTICS
+14-MAY-21 20:11:57-begin add_signature: 30
+14-MAY-21 20:11:57-end add_signature: 30
+14-MAY-21 20:11:57-begin add_signature: MGD_KEY_FILES_PAYMENT
+14-MAY-21 20:11:57-end add_signature: MGD_KEY_FILES_PAYMENT
+14-MAY-21 20:11:57-begin add_signature: 31
+14-MAY-21 20:11:57-end add_signature: 31
+14-MAY-21 20:11:57-begin add_signature: 32
+14-MAY-21 20:11:57-end add_signature: 32
+14-MAY-21 20:11:57-begin add_signature: 33
+14-MAY-21 20:11:57-end add_signature: 33
+14-MAY-21 20:11:57-begin add_signature: 34
+14-MAY-21 20:11:57-end add_signature: 34
+14-MAY-21 20:11:57-begin add_signature: 37
+14-MAY-21 20:11:57-end add_signature: 37
+14-MAY-21 20:11:57-begin add_signature: 38
+14-MAY-21 20:11:57-end add_signature: 38
+14-MAY-21 20:11:57-begin add_signature: 39
+14-MAY-21 20:11:57-end add_signature: 39
+14-MAY-21 20:11:57-begin add_signature: 40
+14-MAY-21 20:11:57-end add_signature: 40
+14-MAY-21 20:11:57-begin add_signature: MGD_KEY_FILES_SUPPLIER
+14-MAY-21 20:11:57-end add_signature: MGD_KEY_FILES_SUPPLIER
+14-MAY-21 20:11:57-begin add_signature: 41
+14-MAY-21 20:11:57-end add_signature: 41
+14-MAY-21 20:11:57-begin add_signature: 43
+14-MAY-21 20:11:57-end add_signature: 43
+14-MAY-21 20:11:57-begin add_signature: 44
+14-MAY-21 20:11:57-end add_signature: 44
+14-MAY-21 20:11:57-begin add_signature: 45
+14-MAY-21 20:11:57-end add_signature: 45
+14-MAY-21 20:11:57-begin add_signature: 46
+14-MAY-21 20:11:57-end add_signature: 46
+14-MAY-21 20:11:57-begin add_signature: 47
+14-MAY-21 20:11:57-end add_signature: 47
+14-MAY-21 20:11:57-begin add_signature: 48
+14-MAY-21 20:11:57-end add_signature: 48
+14-MAY-21 20:11:57-begin add_signature: 49
+14-MAY-21 20:11:57-end add_signature: 49
+14-MAY-21 20:11:57-begin add_signature: 50
+14-MAY-21 20:11:57-end add_signature: 50
+14-MAY-21 20:11:57-begin add_signature: 51
+14-MAY-21 20:11:57-end add_signature: 51
+14-MAY-21 20:11:57-begin add_signature: 52
+14-MAY-21 20:11:57-end add_signature: 52
+14-MAY-21 20:11:57-begin add_signature: 53
+14-MAY-21 20:11:57-end add_signature: 53
+14-MAY-21 20:11:57-begin add_signature: 54
+14-MAY-21 20:11:57-end add_signature: 54
+14-MAY-21 20:11:57-begin add_signature: 55
+14-MAY-21 20:11:57-end add_signature: 55
+14-MAY-21 20:11:57-begin add_signature: 56
+14-MAY-21 20:11:57-end add_signature: 56
+14-MAY-21 20:11:57-begin add_signature: 57
+14-MAY-21 20:11:57-end add_signature: 57
+14-MAY-21 20:11:57-begin add_signature: 58
+14-MAY-21 20:11:57-end add_signature: 58
+14-MAY-21 20:11:57-begin add_signature: 59
+14-MAY-21 20:11:57-end add_signature: 59
+14-MAY-21 20:11:57-begin add_signature: 60
+14-MAY-21 20:11:57-end add_signature: 60
+14-MAY-21 20:11:57-begin add_signature: 61
+14-MAY-21 20:11:57-end add_signature: 61
+14-MAY-21 20:11:57-begin add_signature: 63
+14-MAY-21 20:11:57-end add_signature: 63
+14-MAY-21 20:11:57-begin add_signature: 64
+14-MAY-21 20:11:57-end add_signature: 64
+14-MAY-21 20:11:57-begin add_signature: 65
+14-MAY-21 20:11:57-end add_signature: 65
+14-MAY-21 20:11:57-begin add_signature: 66
+14-MAY-21 20:11:57-end add_signature: 66
+14-MAY-21 20:11:57-begin add_signature: 67
+14-MAY-21 20:11:57-end add_signature: 67
+14-MAY-21 20:11:57-begin add_signature: 68
+14-MAY-21 20:11:57-end add_signature: 68
+14-MAY-21 20:11:57-begin add_signature: 69
+14-MAY-21 20:11:57-end add_signature: 69
+14-MAY-21 20:11:57-begin add_signature: 70
+14-MAY-21 20:11:57-end add_signature: 70
+14-MAY-21 20:11:57-begin add_signature: 71
+14-MAY-21 20:11:57-end add_signature: 71
+14-MAY-21 20:11:57-begin add_signature: 72
+14-MAY-21 20:11:57-end add_signature: 72
+14-MAY-21 20:11:57-begin add_signature: 73
+14-MAY-21 20:11:57-end add_signature: 73
+14-MAY-21 20:11:57-begin add_signature: 74
+14-MAY-21 20:11:57-end add_signature: 74
+14-MAY-21 20:11:57-begin add_signature: 75
+14-MAY-21 20:11:57-end add_signature: 75
+14-MAY-21 20:11:57-begin add_signature: 76
+14-MAY-21 20:11:57-end add_signature: 76
+14-MAY-21 20:11:57-begin add_signature: 77
+14-MAY-21 20:11:57-end add_signature: 77
+14-MAY-21 20:11:57-begin add_signature: 78
+14-MAY-21 20:11:57-end add_signature: 78
+14-MAY-21 20:11:57-begin add_signature: 79
+14-MAY-21 20:11:57-end add_signature: 79
+14-MAY-21 20:11:57-begin add_signature: 80
+14-MAY-21 20:11:57-end add_signature: 80
+14-MAY-21 20:11:57-begin add_signature: 81
+14-MAY-21 20:11:57-end add_signature: 81
+14-MAY-21 20:11:57-begin add_signature: 82
+14-MAY-21 20:11:57-end add_signature: 82
+14-MAY-21 20:11:57-begin add_signature: 83
+14-MAY-21 20:11:57-end add_signature: 83
+14-MAY-21 20:11:57-begin add_signature: 84
+14-MAY-21 20:11:57-end add_signature: 84
+14-MAY-21 20:11:57-begin add_signature: 85
+14-MAY-21 20:11:57-end add_signature: 85
+14-MAY-21 20:11:57-begin add_signature: 86
+14-MAY-21 20:11:57-end add_signature: 86
+14-MAY-21 20:11:57-begin add_signature: 87
+14-MAY-21 20:11:57-end add_signature: 87
+14-MAY-21 20:11:57-begin add_signature: 88
+14-MAY-21 20:11:57-end add_signature: 88
+14-MAY-21 20:11:57-begin add_signature: 89
+14-MAY-21 20:11:57-end add_signature: 89
+14-MAY-21 20:11:57-begin add_signature: 90
+14-MAY-21 20:11:57-end add_signature: 90
+14-MAY-21 20:11:57-begin add_signature: 91
+14-MAY-21 20:11:57-end add_signature: 91
+14-MAY-21 20:11:57-begin add_signature: 92
+14-MAY-21 20:11:57-end add_signature: 92
+14-MAY-21 20:11:57-begin add_signature: 93
+14-MAY-21 20:11:57-end add_signature: 93
+14-MAY-21 20:11:57-begin add_signature: 94
+14-MAY-21 20:11:57-end add_signature: 94
+14-MAY-21 20:11:57-begin add_signature: 95
+14-MAY-21 20:11:57-end add_signature: 95
+14-MAY-21 20:11:57-begin add_signature: 96
+14-MAY-21 20:11:57-end add_signature: 96
+14-MAY-21 20:11:57-begin add_signature: 97
+14-MAY-21 20:11:57-end add_signature: 97
+14-MAY-21 20:11:57-begin add_signature: 98
+14-MAY-21 20:11:57-end add_signature: 98
+14-MAY-21 20:11:57-begin add_signature: 99
+14-MAY-21 20:11:57-end add_signature: 99
+14-MAY-21 20:11:57-begin add_signature: 100
+14-MAY-21 20:11:57-end add_signature: 100
+14-MAY-21 20:11:57-begin add_signature: 101
+14-MAY-21 20:11:57-end add_signature: 101
+14-MAY-21 20:11:57-begin add_signature: 102
+14-MAY-21 20:11:57-end add_signature: 102
+14-MAY-21 20:11:57-begin add_signature: 103
+14-MAY-21 20:11:57-end add_signature: 103
+14-MAY-21 20:11:57-begin add_signature: 104
+14-MAY-21 20:11:57-end add_signature: 104
+14-MAY-21 20:11:57-begin add_signature: 105
+14-MAY-21 20:11:57-end add_signature: 105
+14-MAY-21 20:11:57-begin add_signature: 106
+14-MAY-21 20:11:57-end add_signature: 106
+14-MAY-21 20:11:57-begin add_signature: 107
+14-MAY-21 20:11:57-end add_signature: 107
+14-MAY-21 20:11:57-begin add_signature: 108
+14-MAY-21 20:11:57-end add_signature: 108
+14-MAY-21 20:11:57-begin add_signature: 109
+14-MAY-21 20:11:57-end add_signature: 109
+14-MAY-21 20:11:57-begin add_signature: 110
+14-MAY-21 20:11:57-end add_signature: 110
+14-MAY-21 20:11:57-begin add_signature: 111
+14-MAY-21 20:11:57-end add_signature: 111
+14-MAY-21 20:11:57-begin add_signature: 112
+14-MAY-21 20:11:57-end add_signature: 112
+14-MAY-21 20:11:57-begin add_signature: 113
+14-MAY-21 20:11:57-end add_signature: 113
+14-MAY-21 20:11:57-begin add_signature: 114
+14-MAY-21 20:11:57-end add_signature: 114
+14-MAY-21 20:11:57-begin add_signature: 115
+14-MAY-21 20:11:57-end add_signature: 115
+14-MAY-21 20:11:57-begin add_signature: 116
+14-MAY-21 20:11:57-end add_signature: 116
+14-MAY-21 20:11:57-begin add_signature: 117
+14-MAY-21 20:11:57-end add_signature: 117
+14-MAY-21 20:11:57-begin add_signature: 119
+14-MAY-21 20:11:57-end add_signature: 119
+14-MAY-21 20:11:57-begin add_signature: 120
+14-MAY-21 20:11:57-end add_signature: 120
+14-MAY-21 20:11:57-begin add_signature: 121
+14-MAY-21 20:11:57-end add_signature: 121
+14-MAY-21 20:11:57-begin add_signature: 122
+14-MAY-21 20:11:57-end add_signature: 122
+14-MAY-21 20:11:57-begin add_signature: 123
+14-MAY-21 20:11:57-end add_signature: 123
+14-MAY-21 20:11:57-begin add_signature: 124
+14-MAY-21 20:11:57-end add_signature: 124
+14-MAY-21 20:11:57-begin add_signature: 125
+14-MAY-21 20:11:57-end add_signature: 125
+14-MAY-21 20:11:57-begin add_signature: 126
+14-MAY-21 20:11:57-end add_signature: 126
+14-MAY-21 20:11:57-begin add_signature: 128
+14-MAY-21 20:11:57-end add_signature: 128
+14-MAY-21 20:11:57-begin add_signature: 129
+14-MAY-21 20:11:57-end add_signature: 129
+14-MAY-21 20:11:57-begin add_signature: 130
+14-MAY-21 20:11:57-end add_signature: 130
+14-MAY-21 20:11:57-begin add_signature: 131
+14-MAY-21 20:11:57-end add_signature: 131
+14-MAY-21 20:11:57-begin add_signature: 132
+14-MAY-21 20:11:57-end add_signature: 132
+14-MAY-21 20:11:57-begin add_signature: 133
+14-MAY-21 20:11:57-end add_signature: 133
+14-MAY-21 20:11:57-begin add_signature: 134
+14-MAY-21 20:11:57-end add_signature: 134
+14-MAY-21 20:11:57-begin add_signature: 135
+14-MAY-21 20:11:57-end add_signature: 135
+14-MAY-21 20:11:57-begin add_signature: 136
+14-MAY-21 20:11:57-end add_signature: 136
+14-MAY-21 20:11:57-begin add_signature: 137
+14-MAY-21 20:11:57-end add_signature: 137
+14-MAY-21 20:11:57-begin add_signature: 138
+14-MAY-21 20:11:57-end add_signature: 138
+14-MAY-21 20:11:57-begin add_signature: 139
+14-MAY-21 20:11:57-end add_signature: 139
+14-MAY-21 20:11:57-begin add_signature: 140
+14-MAY-21 20:11:57-end add_signature: 140
+14-MAY-21 20:11:57-begin add_signature: 141
+14-MAY-21 20:11:57-end add_signature: 141
+14-MAY-21 20:11:57-begin add_signature: 142
+14-MAY-21 20:11:57-end add_signature: 142
+14-MAY-21 20:11:57-begin add_signature: 143
+14-MAY-21 20:11:57-end add_signature: 143
+14-MAY-21 20:11:57-begin add_signature: 144
+14-MAY-21 20:11:57-end add_signature: 144
+14-MAY-21 20:11:57-begin add_signature: 145
+14-MAY-21 20:11:57-end add_signature: 145
+14-MAY-21 20:11:57-begin add_signature: 149
+14-MAY-21 20:11:57-end add_signature: 149
+14-MAY-21 20:11:57-begin add_signature: 150
+14-MAY-21 20:11:57-end add_signature: 150
+14-MAY-21 20:11:57-begin add_signature: 153
+14-MAY-21 20:11:57-end add_signature: 153
+14-MAY-21 20:11:57-begin add_signature: 154
+14-MAY-21 20:11:57-end add_signature: 154
+14-MAY-21 20:11:57-begin add_signature: 155
+14-MAY-21 20:11:57-end add_signature: 155
+14-MAY-21 20:11:57-begin add_signature: 157
+14-MAY-21 20:11:57-end add_signature: 157
+14-MAY-21 20:11:57-begin add_signature: 158
+14-MAY-21 20:11:57-end add_signature: 158
+14-MAY-21 20:11:57-begin add_signature: 160
+14-MAY-21 20:11:57-end add_signature: 160
+14-MAY-21 20:11:57-begin add_signature: 163
+14-MAY-21 20:11:57-end add_signature: 163
+14-MAY-21 20:11:57-begin add_signature: 166
+14-MAY-21 20:11:57-end add_signature: 166
+14-MAY-21 20:11:57-begin add_signature: 168
+14-MAY-21 20:11:57-end add_signature: 168
+14-MAY-21 20:11:57-begin add_signature: 169
+14-MAY-21 20:11:57-end add_signature: 169
+14-MAY-21 20:11:57-begin add_signature: 170
+14-MAY-21 20:11:57-end add_signature: 170
+14-MAY-21 20:11:57-begin add_signature: 171
+14-MAY-21 20:11:57-end add_signature: 171
+14-MAY-21 20:11:57-begin add_signature: 174
+14-MAY-21 20:11:57-end add_signature: 174
+14-MAY-21 20:11:57-begin add_signature: 179
+14-MAY-21 20:11:57-end add_signature: 179
+14-MAY-21 20:11:57-begin add_signature: 182
+14-MAY-21 20:11:57-end add_signature: 182
+14-MAY-21 20:11:57-begin add_signature: 183
+14-MAY-21 20:11:57-end add_signature: 183
+14-MAY-21 20:11:57-begin add_signature: 184
+14-MAY-21 20:11:57-end add_signature: 184
+14-MAY-21 20:11:57-begin add_signature: 185
+14-MAY-21 20:11:57-end add_signature: 185
+14-MAY-21 20:11:57-begin add_signature: 186
+14-MAY-21 20:11:57-end add_signature: 186
+14-MAY-21 20:11:57-begin add_signature: 187
+14-MAY-21 20:11:57-end add_signature: 187
+14-MAY-21 20:11:57-begin add_signature: 188
+14-MAY-21 20:11:57-end add_signature: 188
+14-MAY-21 20:11:57-begin add_signature: 190
+14-MAY-21 20:11:57-end add_signature: 190
+14-MAY-21 20:11:57-begin add_signature: 191
+14-MAY-21 20:11:57-end add_signature: 191
+14-MAY-21 20:11:57-begin add_signature: 192
+14-MAY-21 20:11:57-end add_signature: 192
+14-MAY-21 20:11:57-begin add_signature: 193
+14-MAY-21 20:11:57-end add_signature: 193
+14-MAY-21 20:11:57-begin add_signature: 194
+14-MAY-21 20:11:57-end add_signature: 194
+14-MAY-21 20:11:57-begin add_signature: 195
+14-MAY-21 20:11:57-end add_signature: 195
+14-MAY-21 20:11:57-begin add_signature: 196
+14-MAY-21 20:11:57-end add_signature: 196
+14-MAY-21 20:11:57-begin add_signature: 197
+14-MAY-21 20:11:57-end add_signature: 197
+14-MAY-21 20:11:57-begin add_signature: 199
+14-MAY-21 20:11:57-end add_signature: 199
+14-MAY-21 20:11:57-begin add_signature: 200
+14-MAY-21 20:11:57-end add_signature: 200
+14-MAY-21 20:11:57-begin add_signature: 202
+14-MAY-21 20:11:57-end add_signature: 202
+14-MAY-21 20:11:57-begin add_signature: 204
+14-MAY-21 20:11:57-end add_signature: 204
+14-MAY-21 20:11:57-begin add_signature: 205
+14-MAY-21 20:11:57-end add_signature: 205
+14-MAY-21 20:11:57-begin add_signature: 206
+14-MAY-21 20:11:57-end add_signature: 206
+14-MAY-21 20:11:57-begin add_signature: 207
+14-MAY-21 20:11:57-end add_signature: 207
+14-MAY-21 20:11:57-begin add_signature: 208
+14-MAY-21 20:11:57-end add_signature: 208
+14-MAY-21 20:11:57-begin add_signature: 209
+14-MAY-21 20:11:57-end add_signature: 209
+14-MAY-21 20:11:57-begin add_signature: 210
+14-MAY-21 20:11:57-end add_signature: 210
+14-MAY-21 20:11:57-begin add_signature: 211
+14-MAY-21 20:11:57-end add_signature: 211
+14-MAY-21 20:11:57-begin add_signature: 214
+14-MAY-21 20:11:57-end add_signature: 214
+14-MAY-21 20:11:57-begin add_signature: 216
+14-MAY-21 20:11:57-end add_signature: 216
+14-MAY-21 20:11:57-begin add_signature: 217
+14-MAY-21 20:11:57-end add_signature: 217
+14-MAY-21 20:11:57-begin add_signature: 218
+14-MAY-21 20:11:57-end add_signature: 218
+14-MAY-21 20:11:57-begin add_signature: 219
+14-MAY-21 20:11:57-end add_signature: 219
+14-MAY-21 20:11:57-begin add_signature: 220
+14-MAY-21 20:11:57-end add_signature: 220
+14-MAY-21 20:11:57-begin add_signature: 221
+14-MAY-21 20:11:57-end add_signature: 221
+14-MAY-21 20:11:57-begin add_signature: 222
+14-MAY-21 20:11:57-end add_signature: 222
+14-MAY-21 20:11:57-begin add_signature: 223
+14-MAY-21 20:11:57-end add_signature: 223
+14-MAY-21 20:11:57-begin add_signature: 224
+14-MAY-21 20:11:57-end add_signature: 224
+14-MAY-21 20:11:57-begin add_signature: 225
+14-MAY-21 20:11:57-end add_signature: 225
+14-MAY-21 20:11:57-begin add_signature: 226
+14-MAY-21 20:11:57-end add_signature: 226
+14-MAY-21 20:11:57-begin add_signature: 227
+14-MAY-21 20:11:57-end add_signature: 227
+14-MAY-21 20:11:57-begin add_signature: 228
+14-MAY-21 20:11:57-end add_signature: 228
+14-MAY-21 20:11:57-begin add_signature: 229
+14-MAY-21 20:11:57-end add_signature: 229
+14-MAY-21 20:11:57-begin add_signature: 230
+14-MAY-21 20:11:57-end add_signature: 230
+14-MAY-21 20:11:57-begin add_signature: 231
+14-MAY-21 20:11:57-end add_signature: 231
+14-MAY-21 20:11:57-begin add_signature: 232
+14-MAY-21 20:11:57-end add_signature: 232
+14-MAY-21 20:11:57-begin add_signature: 233
+14-MAY-21 20:11:57-end add_signature: 233
+14-MAY-21 20:11:57-begin add_signature: 234
+14-MAY-21 20:11:57-end add_signature: 234
+14-MAY-21 20:11:57-begin add_signature: 235
+14-MAY-21 20:11:57-end add_signature: 235
+14-MAY-21 20:11:57-begin add_signature: 236
+14-MAY-21 20:11:57-end add_signature: 236
+14-MAY-21 20:11:57-begin add_signature: 237
+14-MAY-21 20:11:57-end add_signature: 237
+14-MAY-21 20:11:57-begin add_signature: 238
+14-MAY-21 20:11:57-end add_signature: 238
+14-MAY-21 20:11:57-begin add_signature: 239
+14-MAY-21 20:11:57-end add_signature: 239
+14-MAY-21 20:11:57-begin add_signature: 240
+14-MAY-21 20:11:57-end add_signature: 240
+14-MAY-21 20:11:57-begin add_signature: 243
+14-MAY-21 20:11:57-end add_signature: 243
+14-MAY-21 20:11:57-begin add_signature: 244
+14-MAY-21 20:11:57-end add_signature: 244
+14-MAY-21 20:11:57-begin add_signature: 245
+14-MAY-21 20:11:57-end add_signature: 245
+14-MAY-21 20:11:57-begin add_signature: 246
+14-MAY-21 20:11:57-end add_signature: 246
+14-MAY-21 20:11:57-begin add_signature: 247
+14-MAY-21 20:11:57-end add_signature: 247
+14-MAY-21 20:11:57-begin add_signature: 248
+14-MAY-21 20:11:57-end add_signature: 248
+14-MAY-21 20:11:57-begin add_signature: 249
+14-MAY-21 20:11:57-end add_signature: 249
+14-MAY-21 20:11:57-begin add_signature: 250
+14-MAY-21 20:11:57-end add_signature: 250
+14-MAY-21 20:11:57-begin add_signature: 251
+14-MAY-21 20:11:57-end add_signature: 251
+14-MAY-21 20:11:57-begin add_signature: 252
+14-MAY-21 20:11:57-end add_signature: 252
+14-MAY-21 20:11:57-begin add_signature: 253
+14-MAY-21 20:11:57-end add_signature: 253
+14-MAY-21 20:11:57-begin add_signature: 254
+14-MAY-21 20:11:57-end add_signature: 254
+14-MAY-21 20:11:57-begin add_signature: 255
+14-MAY-21 20:11:57-end add_signature: 255
+14-MAY-21 20:11:57-begin add_signature: 256
+14-MAY-21 20:11:57-end add_signature: 256
+14-MAY-21 20:11:57-begin add_signature: 257
+14-MAY-21 20:11:57-end add_signature: 257
+14-MAY-21 20:11:57-begin add_signature: 258
+14-MAY-21 20:11:57-end add_signature: 258
+14-MAY-21 20:11:57-begin add_signature: 259
+14-MAY-21 20:11:57-end add_signature: 259
+14-MAY-21 20:11:57-begin add_signature: 260
+14-MAY-21 20:11:57-end add_signature: 260
+14-MAY-21 20:11:57-begin add_signature: 261
+14-MAY-21 20:11:57-end add_signature: 261
+14-MAY-21 20:11:57-begin add_signature: 262
+14-MAY-21 20:11:57-end add_signature: 262
+14-MAY-21 20:11:57-begin add_signature: 264
+14-MAY-21 20:11:57-end add_signature: 264
+14-MAY-21 20:11:57-begin add_signature: 265
+14-MAY-21 20:11:57-end add_signature: 265
+14-MAY-21 20:11:57-begin add_signature: 266
+14-MAY-21 20:11:57-end add_signature: 266
+14-MAY-21 20:11:57-begin add_signature: 267
+14-MAY-21 20:11:57-end add_signature: 267
+14-MAY-21 20:11:57-begin add_signature: 269
+14-MAY-21 20:11:57-end add_signature: 269
+14-MAY-21 20:11:57-begin add_signature: 270
+14-MAY-21 20:11:57-end add_signature: 270
+14-MAY-21 20:11:57-begin add_signature: 271
+14-MAY-21 20:11:57-end add_signature: 271
+14-MAY-21 20:11:57-begin add_signature: 272
+14-MAY-21 20:11:57-end add_signature: 272
+14-MAY-21 20:11:57-begin add_signature: 273
+14-MAY-21 20:11:57-end add_signature: 273
+14-MAY-21 20:11:57-begin add_signature: 274
+14-MAY-21 20:11:57-end add_signature: 274
+14-MAY-21 20:11:57-begin add_signature: 275
+14-MAY-21 20:11:57-end add_signature: 275
+14-MAY-21 20:11:57-begin add_signature: 276
+14-MAY-21 20:11:57-end add_signature: 276
+14-MAY-21 20:11:57-begin add_signature: 277
+14-MAY-21 20:11:57-end add_signature: 277
+14-MAY-21 20:11:57-begin add_signature: 278
+14-MAY-21 20:11:57-end add_signature: 278
+14-MAY-21 20:11:57-begin add_signature: 279
+14-MAY-21 20:11:57-end add_signature: 279
+14-MAY-21 20:11:57-begin add_signature: 280
+14-MAY-21 20:11:57-end add_signature: 280
+14-MAY-21 20:11:57-begin add_signature: 281
+14-MAY-21 20:11:57-end add_signature: 281
+14-MAY-21 20:11:57-begin add_signature: 282
+14-MAY-21 20:11:57-end add_signature: 282
+14-MAY-21 20:11:57-begin add_signature: 283
+14-MAY-21 20:11:57-end add_signature: 283
+14-MAY-21 20:11:57-begin add_signature: 284
+14-MAY-21 20:11:57-end add_signature: 284
+14-MAY-21 20:11:57-begin add_signature: 285
+14-MAY-21 20:11:57-end add_signature: 285
+14-MAY-21 20:11:57-begin add_signature: 286
+14-MAY-21 20:11:57-end add_signature: 286
+14-MAY-21 20:11:57-begin add_signature: 287
+14-MAY-21 20:11:57-end add_signature: 287
+14-MAY-21 20:11:57-begin add_signature: 288
+14-MAY-21 20:11:57-end add_signature: 288
+14-MAY-21 20:11:57-begin add_signature: 290
+14-MAY-21 20:11:57-end add_signature: 290
+14-MAY-21 20:11:57-begin add_signature: 291
+14-MAY-21 20:11:57-end add_signature: 291
+14-MAY-21 20:11:57-begin add_signature: 292
+14-MAY-21 20:11:57-end add_signature: 292
+14-MAY-21 20:11:57-begin add_signature: 293
+14-MAY-21 20:11:57-end add_signature: 293
+14-MAY-21 20:11:57-begin add_signature: 294
+14-MAY-21 20:11:57-end add_signature: 294
+14-MAY-21 20:11:57-begin add_signature: 295
+14-MAY-21 20:11:57-end add_signature: 295
+14-MAY-21 20:11:57-begin add_signature: 296
+14-MAY-21 20:11:57-end add_signature: 296
+14-MAY-21 20:11:57-begin add_signature: 297
+14-MAY-21 20:11:57-end add_signature: 297
+14-MAY-21 20:11:57-begin add_signature: 298
+14-MAY-21 20:11:57-end add_signature: 298
+14-MAY-21 20:11:57-begin add_signature: 299
+14-MAY-21 20:11:57-end add_signature: 299
+14-MAY-21 20:11:57-begin add_signature: 300
+14-MAY-21 20:11:57-end add_signature: 300
+14-MAY-21 20:11:57-begin add_signature: 301
+14-MAY-21 20:11:57-end add_signature: 301
+14-MAY-21 20:11:57-begin add_signature: 302
+14-MAY-21 20:11:57-end add_signature: 302
+14-MAY-21 20:11:57-begin add_signature: 303
+14-MAY-21 20:11:57-end add_signature: 303
+14-MAY-21 20:11:57-begin add_signature: 304
+14-MAY-21 20:11:57-end add_signature: 304
+14-MAY-21 20:11:57-begin add_signature: 305
+14-MAY-21 20:11:57-end add_signature: 305
+14-MAY-21 20:11:57-begin add_signature: 306
+14-MAY-21 20:11:57-end add_signature: 306
+14-MAY-21 20:11:57-begin add_signature: 307
+14-MAY-21 20:11:57-end add_signature: 307
+14-MAY-21 20:11:57-begin add_signature: 308
+14-MAY-21 20:11:57-end add_signature: 308
+14-MAY-21 20:11:57-begin add_signature: 309
+14-MAY-21 20:11:57-end add_signature: 309
+14-MAY-21 20:11:57-begin add_signature: 310
+14-MAY-21 20:11:57-end add_signature: 310
+14-MAY-21 20:11:57-begin add_signature: 312
+14-MAY-21 20:11:57-end add_signature: 312
+14-MAY-21 20:11:57-begin add_signature: 313
+14-MAY-21 20:11:57-end add_signature: 313
+14-MAY-21 20:11:57-begin add_signature: 314
+14-MAY-21 20:11:57-end add_signature: 314
+14-MAY-21 20:11:57-begin add_signature: 315
+14-MAY-21 20:11:57-end add_signature: 315
+14-MAY-21 20:11:57-begin add_signature: 316
+14-MAY-21 20:11:57-end add_signature: 316
+14-MAY-21 20:11:57-begin add_signature: 317
+14-MAY-21 20:11:57-end add_signature: 317
+14-MAY-21 20:11:57-begin add_signature: 323
+14-MAY-21 20:11:57-end add_signature: 323
+14-MAY-21 20:11:57-begin add_signature: 326
+14-MAY-21 20:11:57-end add_signature: 326
+14-MAY-21 20:11:57-begin add_signature: 328
+14-MAY-21 20:11:57-end add_signature: 328
+14-MAY-21 20:11:57-begin add_signature: 329
+14-MAY-21 20:11:57-end add_signature: 329
+14-MAY-21 20:11:57-begin add_signature: 330
+14-MAY-21 20:11:57-end add_signature: 330
+14-MAY-21 20:11:57-begin add_signature: 331
+14-MAY-21 20:11:57-end add_signature: 331
+14-MAY-21 20:11:57-begin add_signature: 332
+14-MAY-21 20:11:57-end add_signature: 332
+14-MAY-21 20:11:57-begin add_signature: 333
+14-MAY-21 20:11:57-end add_signature: 333
+14-MAY-21 20:11:57-begin add_signature: 334
+14-MAY-21 20:11:57-end add_signature: 334
+14-MAY-21 20:11:57-begin add_signature: 335
+14-MAY-21 20:11:57-end add_signature: 335
+14-MAY-21 20:11:57-begin add_signature: 336
+14-MAY-21 20:11:57-end add_signature: 336
+14-MAY-21 20:11:57-begin add_signature: 337
+14-MAY-21 20:11:57-end add_signature: 337
+14-MAY-21 20:11:57-begin add_signature: 338
+14-MAY-21 20:11:57-end add_signature: 338
+14-MAY-21 20:11:57-begin add_signature: 339
+14-MAY-21 20:11:57-end add_signature: 339
+14-MAY-21 20:11:57-begin add_signature: 340
+14-MAY-21 20:11:57-end add_signature: 340
+14-MAY-21 20:11:57-begin add_signature: 341
+14-MAY-21 20:11:57-end add_signature: 341
+14-MAY-21 20:11:57-begin add_signature: 342
+14-MAY-21 20:11:57-end add_signature: 342
+14-MAY-21 20:11:57-begin add_signature: 343
+14-MAY-21 20:11:57-end add_signature: 343
+14-MAY-21 20:11:57-begin add_signature: 344
+14-MAY-21 20:11:57-end add_signature: 344
+14-MAY-21 20:11:57-begin add_signature: 345
+14-MAY-21 20:11:57-end add_signature: 345
+14-MAY-21 20:11:57-begin add_signature: 346
+14-MAY-21 20:11:57-end add_signature: 346
+14-MAY-21 20:11:57-begin add_signature: 347
+14-MAY-21 20:11:57-end add_signature: 347
+14-MAY-21 20:11:57-begin add_signature: 348
+14-MAY-21 20:11:57-end add_signature: 348
+14-MAY-21 20:11:57-begin add_signature: 349
+14-MAY-21 20:11:57-end add_signature: 349
+14-MAY-21 20:11:57-begin add_signature: 350
+14-MAY-21 20:11:57-end add_signature: 350
+14-MAY-21 20:11:57-begin add_signature: 351
+14-MAY-21 20:11:57-end add_signature: 351
+14-MAY-21 20:11:57-begin add_signature: 352
+14-MAY-21 20:11:57-end add_signature: 352
+14-MAY-21 20:11:57-begin add_signature: 353
+14-MAY-21 20:11:57-end add_signature: 353
+14-MAY-21 20:11:57-begin add_signature: 355
+14-MAY-21 20:11:57-end add_signature: 355
+14-MAY-21 20:11:57-begin add_signature: 356
+14-MAY-21 20:11:57-end add_signature: 356
+14-MAY-21 20:11:57-begin add_signature: 357
+14-MAY-21 20:11:57-end add_signature: 357
+14-MAY-21 20:11:57-begin add_signature: 358
+14-MAY-21 20:11:57-end add_signature: 358
+14-MAY-21 20:11:57-begin add_signature: 359
+14-MAY-21 20:11:57-end add_signature: 359
+14-MAY-21 20:11:57-begin add_signature: 360
+14-MAY-21 20:11:57-end add_signature: 360
+14-MAY-21 20:11:57-begin add_signature: 361
+14-MAY-21 20:11:57-end add_signature: 361
+14-MAY-21 20:11:57-begin add_signature: 362
+14-MAY-21 20:11:57-end add_signature: 362
+14-MAY-21 20:11:57-begin add_signature: 363
+14-MAY-21 20:11:57-end add_signature: 363
+14-MAY-21 20:11:57-begin add_signature: 364
+14-MAY-21 20:11:57-end add_signature: 364
+14-MAY-21 20:11:57-begin add_signature: 365
+14-MAY-21 20:11:57-end add_signature: 365
+14-MAY-21 20:11:57-begin add_signature: 366
+14-MAY-21 20:11:57-end add_signature: 366
+14-MAY-21 20:11:57-begin add_signature: 367
+14-MAY-21 20:11:57-end add_signature: 367
+14-MAY-21 20:11:57-begin add_signature: 368
+14-MAY-21 20:11:57-end add_signature: 368
+14-MAY-21 20:11:57-begin add_signature: 369
+14-MAY-21 20:11:57-end add_signature: 369
+14-MAY-21 20:11:57-begin add_signature: 371
+14-MAY-21 20:11:57-end add_signature: 371
+14-MAY-21 20:11:57-begin add_signature: 372
+14-MAY-21 20:11:57-end add_signature: 372
+14-MAY-21 20:11:57-begin add_signature: 373
+14-MAY-21 20:11:57-end add_signature: 373
+14-MAY-21 20:11:57-begin add_signature: 374
+14-MAY-21 20:11:57-end add_signature: 374
+14-MAY-21 20:11:57-begin add_signature: 376
+14-MAY-21 20:11:57-end add_signature: 376
+14-MAY-21 20:11:57-begin add_signature: 377
+14-MAY-21 20:11:57-end add_signature: 377
+14-MAY-21 20:11:57-begin add_signature: 378
+14-MAY-21 20:11:57-end add_signature: 378
+14-MAY-21 20:11:57-begin add_signature: 379
+14-MAY-21 20:11:57-end add_signature: 379
+14-MAY-21 20:11:57-begin add_signature: 380
+14-MAY-21 20:11:57-end add_signature: 380
+14-MAY-21 20:11:57-begin add_signature: 381
+14-MAY-21 20:11:57-end add_signature: 381
+14-MAY-21 20:11:57-begin add_signature: 382
+14-MAY-21 20:11:57-end add_signature: 382
+14-MAY-21 20:11:57-begin add_signature: 383
+14-MAY-21 20:11:57-end add_signature: 383
+14-MAY-21 20:11:57-begin add_signature: 384
+14-MAY-21 20:11:57-end add_signature: 384
+14-MAY-21 20:11:57-begin add_signature: 385
+14-MAY-21 20:11:57-end add_signature: 385
+14-MAY-21 20:11:57-begin add_signature: 386
+14-MAY-21 20:11:57-end add_signature: 386
+14-MAY-21 20:11:57-begin add_signature: 387
+14-MAY-21 20:11:57-end add_signature: 387
+14-MAY-21 20:11:57-begin add_signature: 388
+14-MAY-21 20:11:57-end add_signature: 388
+14-MAY-21 20:11:57-begin add_signature: 389
+14-MAY-21 20:11:57-end add_signature: 389
+14-MAY-21 20:11:57-begin add_signature: 390
+14-MAY-21 20:11:57-end add_signature: 390
+14-MAY-21 20:11:57-begin add_signature: 391
+14-MAY-21 20:11:57-end add_signature: 391
+14-MAY-21 20:11:57-begin add_signature: 392
+14-MAY-21 20:11:57-end add_signature: 392
+14-MAY-21 20:11:57-begin add_signature: 393
+14-MAY-21 20:11:57-end add_signature: 393
+14-MAY-21 20:11:57-begin add_signature: 394
+14-MAY-21 20:11:57-end add_signature: 394
+14-MAY-21 20:11:57-begin add_signature: 395
+14-MAY-21 20:11:57-end add_signature: 395
+14-MAY-21 20:11:57-begin add_signature: 397
+14-MAY-21 20:11:57-end add_signature: 397
+14-MAY-21 20:11:57-begin add_signature: 398
+14-MAY-21 20:11:57-end add_signature: 398
+14-MAY-21 20:11:57-begin add_signature: 399
+14-MAY-21 20:11:57-end add_signature: 399
+14-MAY-21 20:11:57-begin add_signature: 400
+14-MAY-21 20:11:57-end add_signature: 400
+14-MAY-21 20:11:57-begin add_signature: 401
+14-MAY-21 20:11:57-end add_signature: 401
+14-MAY-21 20:11:57-begin add_signature: 402
+14-MAY-21 20:11:57-end add_signature: 402
+14-MAY-21 20:11:57-begin add_signature: 403
+14-MAY-21 20:11:57-end add_signature: 403
+14-MAY-21 20:11:57-begin add_signature: 404
+14-MAY-21 20:11:57-end add_signature: 404
+14-MAY-21 20:11:57-begin add_signature: 405
+14-MAY-21 20:11:57-end add_signature: 405
+14-MAY-21 20:11:57-begin add_signature: 406
+14-MAY-21 20:11:57-end add_signature: 406
+14-MAY-21 20:11:57-begin add_signature: 407
+14-MAY-21 20:11:57-end add_signature: 407
+14-MAY-21 20:11:57-begin add_signature: 408
+14-MAY-21 20:11:57-end add_signature: 408
+14-MAY-21 20:11:57-begin add_signature: 409
+14-MAY-21 20:11:57-end add_signature: 409
+14-MAY-21 20:11:57-begin add_signature: 410
+14-MAY-21 20:11:57-end add_signature: 410
+14-MAY-21 20:11:57-begin add_signature: 411
+14-MAY-21 20:11:57-end add_signature: 411
+14-MAY-21 20:11:57-begin add_signature: 412
+14-MAY-21 20:11:57-end add_signature: 412
+14-MAY-21 20:11:57-begin add_signature: 413
+14-MAY-21 20:11:57-end add_signature: 413
+14-MAY-21 20:11:57-begin add_signature: 414
+14-MAY-21 20:11:57-end add_signature: 414
+14-MAY-21 20:11:57-begin add_signature: 415
+14-MAY-21 20:11:57-end add_signature: 415
+14-MAY-21 20:11:57-begin add_signature: 416
+14-MAY-21 20:11:57-end add_signature: 416
+14-MAY-21 20:11:57-begin add_signature: 417
+14-MAY-21 20:11:57-end add_signature: 417
+14-MAY-21 20:11:57-begin add_signature: 418
+14-MAY-21 20:11:57-end add_signature: 418
+14-MAY-21 20:11:57-begin add_signature: 420
+14-MAY-21 20:11:57-end add_signature: 420
+14-MAY-21 20:11:57-begin add_signature: 421
+14-MAY-21 20:11:57-end add_signature: 421
+14-MAY-21 20:11:57-begin add_signature: 422
+14-MAY-21 20:11:57-end add_signature: 422
+14-MAY-21 20:11:57-begin add_signature: 424
+14-MAY-21 20:11:57-end add_signature: 424
+14-MAY-21 20:11:57-begin add_signature: 425
+14-MAY-21 20:11:57-end add_signature: 425
+14-MAY-21 20:11:57-begin add_signature: 426
+14-MAY-21 20:11:57-end add_signature: 426
+14-MAY-21 20:11:57-begin add_signature: 427
+14-MAY-21 20:11:57-end add_signature: 427
+14-MAY-21 20:11:57-begin add_signature: 428
+14-MAY-21 20:11:57-end add_signature: 428
+14-MAY-21 20:11:57-begin add_signature: 429
+14-MAY-21 20:11:57-end add_signature: 429
+14-MAY-21 20:11:57-begin add_signature: 430
+14-MAY-21 20:11:57-end add_signature: 430
+14-MAY-21 20:11:57-begin add_signature: 431
+14-MAY-21 20:11:57-end add_signature: 431
+14-MAY-21 20:11:57-begin add_signature: 432
+14-MAY-21 20:11:57-end add_signature: 432
+14-MAY-21 20:11:57-begin add_signature: 433
+14-MAY-21 20:11:57-end add_signature: 433
+14-MAY-21 20:11:57-begin add_signature: 434
+14-MAY-21 20:11:57-end add_signature: 434
+14-MAY-21 20:11:57-begin add_signature: 435
+14-MAY-21 20:11:57-end add_signature: 435
+14-MAY-21 20:11:57-begin add_signature: 436
+14-MAY-21 20:11:57-end add_signature: 436
+14-MAY-21 20:11:57-begin add_signature: 437
+14-MAY-21 20:11:57-end add_signature: 437
+14-MAY-21 20:11:57-begin add_signature: 438
+14-MAY-21 20:11:57-end add_signature: 438
+14-MAY-21 20:11:57-begin add_signature: 439
+14-MAY-21 20:11:57-end add_signature: 439
+14-MAY-21 20:11:57-begin add_signature: 440
+14-MAY-21 20:11:57-end add_signature: 440
+14-MAY-21 20:11:57-begin add_signature: 442
+14-MAY-21 20:11:57-end add_signature: 442
+14-MAY-21 20:11:57-begin add_signature: 443
+14-MAY-21 20:11:57-end add_signature: 443
+14-MAY-21 20:11:57-begin add_signature: 445
+14-MAY-21 20:11:57-end add_signature: 445
+14-MAY-21 20:11:58-begin add_signature: 446
+14-MAY-21 20:11:58-end add_signature: 446
+14-MAY-21 20:11:58-begin add_signature: 447
+14-MAY-21 20:11:58-end add_signature: 447
+14-MAY-21 20:11:58-begin add_signature: 448
+14-MAY-21 20:11:58-end add_signature: 448
+14-MAY-21 20:11:58-begin add_signature: 449
+14-MAY-21 20:11:58-end add_signature: 449
+14-MAY-21 20:11:58-begin add_signature: 450
+14-MAY-21 20:11:58-end add_signature: 450
+14-MAY-21 20:11:58-begin add_signature: 451
+14-MAY-21 20:11:58-end add_signature: 451
+14-MAY-21 20:11:58-begin add_signature: 452
+14-MAY-21 20:11:58-end add_signature: 452
+14-MAY-21 20:11:58-begin add_signature: 453
+14-MAY-21 20:11:58-end add_signature: 453
+14-MAY-21 20:11:58-begin add_signature: 454
+14-MAY-21 20:11:58-end add_signature: 454
+14-MAY-21 20:11:58-begin add_signature: 455
+14-MAY-21 20:11:58-end add_signature: 455
+14-MAY-21 20:11:58-begin add_signature: 457
+14-MAY-21 20:11:58-end add_signature: 457
+14-MAY-21 20:11:58-begin add_signature: 458
+14-MAY-21 20:11:58-end add_signature: 458
+14-MAY-21 20:11:58-begin add_signature: 459
+14-MAY-21 20:11:58-end add_signature: 459
+14-MAY-21 20:11:58-begin add_signature: 460
+14-MAY-21 20:11:58-end add_signature: 460
+14-MAY-21 20:11:58-begin add_signature: 461
+14-MAY-21 20:11:58-end add_signature: 461
+14-MAY-21 20:11:58-begin add_signature: 462
+14-MAY-21 20:11:58-end add_signature: 462
+14-MAY-21 20:11:58-begin add_signature: 470
+14-MAY-21 20:11:58-end add_signature: 470
+14-MAY-21 20:11:58-begin add_signature: 463
+14-MAY-21 20:11:58-end add_signature: 463
+14-MAY-21 20:11:58-begin add_signature: 464
+14-MAY-21 20:11:58-end add_signature: 464
+14-MAY-21 20:11:58-begin add_signature: 466
+14-MAY-21 20:11:58-end add_signature: 466
+14-MAY-21 20:11:58-begin add_signature: 467
+14-MAY-21 20:11:58-end add_signature: 467
+14-MAY-21 20:11:58-begin add_signature: 468
+14-MAY-21 20:11:58-end add_signature: 468
+14-MAY-21 20:11:58-begin add_signature: 469
+14-MAY-21 20:11:58-end add_signature: 469
+14-MAY-21 20:11:58-begin add_signature: 471
+14-MAY-21 20:11:58-end add_signature: 471
+14-MAY-21 20:11:58-begin section: Main Section
+14-MAY-21 20:11:58-begin section: PROACTIVE_RECOMMENDATIONS
+Processing recommended patches signature: AP_RPC_PATCHES (check_rec_patches_1)
+14-MAY-21 20:11:58- Rows fetched: 6
+Processing recommended patches signature: APTB_CHECK_REC_PATCHES (check_rec_patches_2)
+14-MAY-21 20:11:58- Rows fetched: 9
+Processing recommended patches signature: check_rec_patches (check_rec_patches_3)
+14-MAY-21 20:11:58- Rows fetched: 5
+Processing signature: MGD_STALE_STATISTICS
+14-MAY-21 20:11:59- Rows fetched: 0
+End Section
+14-MAY-21 20:11:59-end section: PROACTIVE_RECOMMENDATIONS
+14-MAY-21 20:11:59-begin section: GENERAL_GDF_SIGNATURES
+14-MAY-21 20:11:59-end section: GENERAL_GDF_SIGNATURES
+14-MAY-21 20:11:59-begin section: GENERAL_NON_GDF_SIGNATURES
+14-MAY-21 20:11:59-end section: GENERAL_NON_GDF_SIGNATURES
+14-MAY-21 20:11:59-begin section: INVOICE_GDF_SIGNATURES
+Processing signature: 1
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 2
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 3
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 4
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 5
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 6
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 7
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 8
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 9
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 10
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 11
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 12
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 13
+14-MAY-21 20:11:59- Rows fetched: 0
+Processing signature: 14
+14-MAY-21 20:12:00- Rows fetched: 0
+Processing signature: 15
+14-MAY-21 20:12:00- Rows fetched: 0
+Processing signature: 16
+14-MAY-21 20:12:00- Rows fetched: 0
+Processing signature: 17
+14-MAY-21 20:12:00- Rows fetched: 0
+Processing signature: 18
+14-MAY-21 20:12:00- Rows fetched: 0
+Processing signature: 19
+14-MAY-21 20:12:00- Rows fetched: 0
+Processing signature: 21
+14-MAY-21 20:12:00- Rows fetched: 0
+Processing signature: 23
+14-MAY-21 20:12:00- Rows fetched: 0
+Processing signature: 24
+14-MAY-21 20:12:00- Rows fetched: 0
+Processing signature: 25
+14-MAY-21 20:12:00- Rows fetched: 0
+Processing signature: 26
+14-MAY-21 20:12:01- Rows fetched: 0
+Processing signature: 27
+14-MAY-21 20:12:01- Rows fetched: 0
+Processing signature: 28
+14-MAY-21 20:12:01- Rows fetched: 0
+Processing signature: 29
+14-MAY-21 20:12:01- Rows fetched: 0
+Processing signature: 30
+14-MAY-21 20:12:02- Rows fetched: 0
+Processing signature: 31
+14-MAY-21 20:12:02- Rows fetched: 0
+Processing signature: 32
+14-MAY-21 20:12:02- Rows fetched: 0
+Processing signature: 33
+14-MAY-21 20:12:02- Rows fetched: 0
+Processing signature: 34
+14-MAY-21 20:12:02- Rows fetched: 0
+Processing signature: 37
+14-MAY-21 20:12:02- Rows fetched: 0
+Processing signature: 38
+14-MAY-21 20:12:02- Rows fetched: 0
+Processing signature: 39
+14-MAY-21 20:12:03- Rows fetched: 0
+Processing signature: 40
+14-MAY-21 20:12:03- Rows fetched: 0
+Processing signature: 41
+14-MAY-21 20:12:04- Rows fetched: 0
+Processing signature: 43
+14-MAY-21 20:12:04- Rows fetched: 0
+Processing signature: 44
+14-MAY-21 20:12:04- Rows fetched: 0
+Processing signature: 45
+14-MAY-21 20:12:04- Rows fetched: 0
+Processing signature: 75
+14-MAY-21 20:12:04- Rows fetched: 0
+Processing signature: 76
+14-MAY-21 20:12:04- Rows fetched: 0
+Processing signature: 77
+14-MAY-21 20:12:04- Rows fetched: 0
+Processing signature: 78
+14-MAY-21 20:12:04- Rows fetched: 0
+Processing signature: 79
+14-MAY-21 20:12:04- Rows fetched: 0
+Processing signature: 80
+14-MAY-21 20:12:05- Rows fetched: 0
+Processing signature: 81
+14-MAY-21 20:12:05- Rows fetched: 0
+Processing signature: 82
+14-MAY-21 20:12:05- Rows fetched: 0
+Processing signature: 83
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 84
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 85
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 86
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 87
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 88
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 89
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 90
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 91
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 92
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 93
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 94
+14-MAY-21 20:12:06- Rows fetched: 0
+Processing signature: 95
+14-MAY-21 20:12:07- Rows fetched: 0
+Processing signature: 96
+14-MAY-21 20:12:07- Rows fetched: 0
+Processing signature: 97
+14-MAY-21 20:12:07- Rows fetched: 0
+Processing signature: 98
+14-MAY-21 20:12:07- Rows fetched: 0
+Processing signature: 99
+14-MAY-21 20:12:07- Rows fetched: 0
+Processing signature: 100
+14-MAY-21 20:12:07- Rows fetched: 0
+Processing signature: 101
+14-MAY-21 20:12:07- Rows fetched: 0
+Processing signature: 102
+14-MAY-21 20:12:07- Rows fetched: 0
+Processing signature: 103
+14-MAY-21 20:12:08- Rows fetched: 0
+Processing signature: 104
+14-MAY-21 20:12:08- Rows fetched: 0
+Processing signature: 105
+14-MAY-21 20:12:08- Rows fetched: 0
+Processing signature: 106
+14-MAY-21 20:12:08- Rows fetched: 0
+Processing signature: 107
+14-MAY-21 20:12:08- Rows fetched: 0
+Processing signature: 108
+14-MAY-21 20:12:08- Rows fetched: 0
+Processing signature: 109
+14-MAY-21 20:12:08- Rows fetched: 0
+Processing signature: 110
+14-MAY-21 20:12:08- Rows fetched: 0
+Processing signature: 111
+14-MAY-21 20:12:09- Rows fetched: 0
+Processing signature: 112
+14-MAY-21 20:12:09- Rows fetched: 0
+Processing signature: 113
+14-MAY-21 20:12:09- Rows fetched: 0
+Processing signature: 114
+14-MAY-21 20:12:09- Rows fetched: 0
+Processing signature: 115
+14-MAY-21 20:12:09- Rows fetched: 0
+Processing signature: 116
+14-MAY-21 20:12:10- Rows fetched: 0
+Processing signature: 117
+14-MAY-21 20:12:10- Rows fetched: 0
+Processing signature: 160
+14-MAY-21 20:12:10- Rows fetched: 0
+Processing signature: 170
+14-MAY-21 20:12:10- Rows fetched: 0
+Processing signature: 191
+14-MAY-21 20:12:10- Rows fetched: 0
+Processing signature: 192
+14-MAY-21 20:12:10- Rows fetched: 0
+Processing signature: 204
+14-MAY-21 20:12:10- Rows fetched: 0
+Processing signature: 205
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 206
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 209
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 216
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 217
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 218
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 219
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 220
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 222
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 223
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 224
+14-MAY-21 20:12:11- Rows fetched: 0
+Processing signature: 227
+14-MAY-21 20:12:14- Rows fetched: 0
+Processing signature: 230
+14-MAY-21 20:12:14- Rows fetched: 0
+Processing signature: 232
+14-MAY-21 20:12:14- Rows fetched: 0
+Processing signature: 233
+14-MAY-21 20:12:14- Rows fetched: 0
+Processing signature: 234
+14-MAY-21 20:12:14- Rows fetched: 0
+Processing signature: 235
+14-MAY-21 20:12:14- Rows fetched: 0
+Processing signature: 236
+14-MAY-21 20:12:14- Rows fetched: 0
+Processing signature: 239
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 243
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 244
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 246
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 247
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 249
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 250
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 251
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 252
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 253
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 254
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 255
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 256
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 257
+14-MAY-21 20:12:15- Rows fetched: 0
+Processing signature: 258
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 259
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 260
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 261
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 262
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 264
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 267
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 271
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 274
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 276
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 277
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 278
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 296
+14-MAY-21 20:12:21- Rows fetched: 0
+Processing signature: 297
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 302
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 303
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 316
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 317
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 330
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 347
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 350
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 359
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 362
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 372
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 376
+14-MAY-21 20:12:22- Rows fetched: 0
+Processing signature: 381
+14-MAY-21 20:12:23- Rows fetched: 0
+Processing signature: 388
+14-MAY-21 20:12:23- Rows fetched: 0
+Processing signature: 394
+14-MAY-21 20:12:30- Rows fetched: 0
+Processing signature: 408
+14-MAY-21 20:12:30- Rows fetched: 0
+Processing signature: 409
+14-MAY-21 20:12:31- Rows fetched: 0
+Processing signature: 410
+14-MAY-21 20:12:31- Rows fetched: 0
+Processing signature: 411
+14-MAY-21 20:12:31- Rows fetched: 0
+Processing signature: 412
+14-MAY-21 20:12:31- Rows fetched: 0
+Processing signature: 433
+14-MAY-21 20:12:31- Rows fetched: 0
+Processing signature: 448
+14-MAY-21 20:12:31- Rows fetched: 0
+Processing signature: 450
+14-MAY-21 20:12:31- Rows fetched: 0
+Processing signature: 452
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 470
+14-MAY-21 20:12:32- Rows fetched: 0
+End Section
+14-MAY-21 20:12:32-end section: INVOICE_GDF_SIGNATURES
+14-MAY-21 20:12:32-begin section: INVOICE_NON_GDF_SIGNATURES
+Processing signature: 149
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 150
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 153
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 154
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 155
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 157
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 158
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 163
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 166
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 168
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 169
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 171
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 174
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 179
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 184
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 185
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 186
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 187
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 188
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 190
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 193
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 279
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 281
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 282
+14-MAY-21 20:12:32- Rows fetched: 0
+Processing signature: 290
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 292
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 293
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 294
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 295
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 298
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 300
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 305
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 307
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 308
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 309
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 310
+14-MAY-21 20:12:33- Rows fetched: 0
+Processing signature: 312
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 313
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 314
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 315
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 323
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 326
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 328
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 331
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 332
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 334
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 339
+14-MAY-21 20:12:34- Rows fetched: 0
+Processing signature: 340
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 341
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 343
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 344
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 346
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 348
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 349
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 352
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 355
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 356
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 357
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 358
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 363
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 364
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 365
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 366
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 369
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 371
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 373
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 374
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 377
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 378
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 379
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 380
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 382
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 383
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 384
+14-MAY-21 20:12:35- Rows fetched: 0
+Processing signature: 390
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 392
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 400
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 403
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 404
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 405
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 406
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 417
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 418
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 420
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 421
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 426
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 428
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 430
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 432
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 435
+14-MAY-21 20:12:36- Rows fetched: 0
+Processing signature: 438
+14-MAY-21 20:12:36- Rows fetched: 3
+Processing signature: 440
+14-MAY-21 20:12:37- Rows fetched: 0
+Processing signature: 442
+14-MAY-21 20:12:37- Rows fetched: 0
+Processing signature: 445
+14-MAY-21 20:12:37- Rows fetched: 0
+Processing signature: 446
+14-MAY-21 20:12:37- Rows fetched: 0
+Processing signature: 447
+14-MAY-21 20:12:37- Rows fetched: 0
+Processing signature: 454
+14-MAY-21 20:12:37- Rows fetched: 0
+Processing signature: 457
+14-MAY-21 20:12:37- Rows fetched: 0
+Processing signature: 459
+14-MAY-21 20:12:37- Rows fetched: 0
+Processing signature: 461
+14-MAY-21 20:12:38- Rows fetched: 0
+Processing signature: 462
+14-MAY-21 20:12:38- Rows fetched: 0
+Processing signature: 463
+14-MAY-21 20:12:38- Rows fetched: 0
+Processing signature: 464
+14-MAY-21 20:12:38- Rows fetched: 0
+Processing signature: 466
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 467
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 468
+14-MAY-21 20:12:39- Rows fetched: 0
+End Section
+14-MAY-21 20:12:39-end section: INVOICE_NON_GDF_SIGNATURES
+14-MAY-21 20:12:39-begin section: SELECT_PREPAY_INVOICES
+14-MAY-21 20:12:39-end section: SELECT_PREPAY_INVOICES
+14-MAY-21 20:12:39-begin section: PREPAY_INVOICE_GDF_SIGNATURES
+Processing signature: 1
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 2
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 3
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 4
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 5
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 6
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 7
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 8
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 9
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 10
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 11
+14-MAY-21 20:12:39- Rows fetched: 0
+Processing signature: 12
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 13
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 14
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 15
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 16
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 17
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 18
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 19
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 21
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 23
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 24
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 25
+14-MAY-21 20:12:40- Rows fetched: 0
+Processing signature: 26
+14-MAY-21 20:12:41- Rows fetched: 0
+Processing signature: 27
+14-MAY-21 20:12:41- Rows fetched: 0
+Processing signature: 28
+14-MAY-21 20:12:41- Rows fetched: 0
+Processing signature: 29
+14-MAY-21 20:12:41- Rows fetched: 0
+Processing signature: 30
+14-MAY-21 20:12:41- Rows fetched: 0
+Processing signature: 31
+14-MAY-21 20:12:41- Rows fetched: 0
+Processing signature: 32
+14-MAY-21 20:12:41- Rows fetched: 0
+Processing signature: 33
+14-MAY-21 20:12:41- Rows fetched: 0
+Processing signature: 34
+14-MAY-21 20:12:41- Rows fetched: 0
+Processing signature: 37
+14-MAY-21 20:12:41- Rows fetched: 0
+Processing signature: 38
+14-MAY-21 20:12:42- Rows fetched: 0
+Processing signature: 39
+14-MAY-21 20:12:42- Rows fetched: 0
+Processing signature: 40
+14-MAY-21 20:12:42- Rows fetched: 0
+Processing signature: 41
+14-MAY-21 20:12:43- Rows fetched: 0
+Processing signature: 43
+14-MAY-21 20:12:43- Rows fetched: 0
+Processing signature: 44
+14-MAY-21 20:12:43- Rows fetched: 0
+Processing signature: 45
+14-MAY-21 20:12:43- Rows fetched: 0
+Processing signature: 75
+14-MAY-21 20:12:43- Rows fetched: 0
+Processing signature: 76
+14-MAY-21 20:12:43- Rows fetched: 0
+Processing signature: 77
+14-MAY-21 20:12:43- Rows fetched: 0
+Processing signature: 78
+14-MAY-21 20:12:43- Rows fetched: 0
+Processing signature: 79
+14-MAY-21 20:12:43- Rows fetched: 0
+Processing signature: 80
+14-MAY-21 20:12:44- Rows fetched: 0
+Processing signature: 81
+14-MAY-21 20:12:44- Rows fetched: 0
+Processing signature: 82
+14-MAY-21 20:12:44- Rows fetched: 0
+Processing signature: 83
+14-MAY-21 20:12:44- Rows fetched: 0
+Processing signature: 84
+14-MAY-21 20:12:44- Rows fetched: 0
+Processing signature: 85
+14-MAY-21 20:12:45- Rows fetched: 0
+Processing signature: 86
+14-MAY-21 20:12:45- Rows fetched: 0
+Processing signature: 87
+14-MAY-21 20:12:45- Rows fetched: 0
+Processing signature: 88
+14-MAY-21 20:12:45- Rows fetched: 0
+Processing signature: 89
+14-MAY-21 20:12:45- Rows fetched: 0
+Processing signature: 90
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 91
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 92
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 93
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 94
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 95
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 96
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 97
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 98
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 99
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 100
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 101
+14-MAY-21 20:12:46- Rows fetched: 0
+Processing signature: 102
+14-MAY-21 20:12:47- Rows fetched: 0
+Processing signature: 103
+14-MAY-21 20:12:47- Rows fetched: 0
+Processing signature: 104
+14-MAY-21 20:12:47- Rows fetched: 0
+Processing signature: 105
+14-MAY-21 20:12:47- Rows fetched: 0
+Processing signature: 106
+14-MAY-21 20:12:47- Rows fetched: 0
+Processing signature: 107
+14-MAY-21 20:12:47- Rows fetched: 0
+Processing signature: 108
+14-MAY-21 20:12:47- Rows fetched: 0
+Processing signature: 109
+14-MAY-21 20:12:47- Rows fetched: 0
+Processing signature: 110
+14-MAY-21 20:12:48- Rows fetched: 0
+Processing signature: 111
+14-MAY-21 20:12:48- Rows fetched: 0
+Processing signature: 112
+14-MAY-21 20:12:48- Rows fetched: 0
+Processing signature: 113
+14-MAY-21 20:12:48- Rows fetched: 0
+Processing signature: 114
+14-MAY-21 20:12:48- Rows fetched: 0
+Processing signature: 115
+14-MAY-21 20:12:48- Rows fetched: 0
+Processing signature: 116
+14-MAY-21 20:12:48- Rows fetched: 0
+Processing signature: 117
+14-MAY-21 20:12:49- Rows fetched: 0
+Processing signature: 160
+14-MAY-21 20:12:49- Rows fetched: 0
+Processing signature: 170
+14-MAY-21 20:12:49- Rows fetched: 0
+Processing signature: 191
+14-MAY-21 20:12:49- Rows fetched: 0
+Processing signature: 192
+14-MAY-21 20:12:49- Rows fetched: 0
+Processing signature: 204
+14-MAY-21 20:12:49- Rows fetched: 0
+Processing signature: 205
+14-MAY-21 20:12:49- Rows fetched: 0
+Processing signature: 206
+14-MAY-21 20:12:49- Rows fetched: 0
+Processing signature: 209
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 216
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 217
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 218
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 219
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 220
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 222
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 223
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 224
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 227
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 230
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 232
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 233
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 234
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 235
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 236
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 239
+14-MAY-21 20:12:50- Rows fetched: 0
+Processing signature: 243
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 244
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 246
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 247
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 249
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 250
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 251
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 252
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 253
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 254
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 255
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 256
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 257
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 258
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 259
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 260
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 261
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 262
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 264
+14-MAY-21 20:12:51- Rows fetched: 0
+Processing signature: 267
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 271
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 274
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 276
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 277
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 278
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 296
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 297
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 302
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 303
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 316
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 317
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 330
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 347
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 350
+14-MAY-21 20:12:52- Rows fetched: 0
+Processing signature: 359
+14-MAY-21 20:12:53- Rows fetched: 0
+Processing signature: 362
+14-MAY-21 20:12:53- Rows fetched: 0
+Processing signature: 372
+14-MAY-21 20:12:53- Rows fetched: 0
+Processing signature: 376
+14-MAY-21 20:12:53- Rows fetched: 0
+Processing signature: 381
+14-MAY-21 20:12:53- Rows fetched: 0
+Processing signature: 388
+14-MAY-21 20:12:53- Rows fetched: 0
+Processing signature: 394
+14-MAY-21 20:12:53- Rows fetched: 0
+Processing signature: 408
+14-MAY-21 20:12:53- Rows fetched: 0
+Processing signature: 409
+14-MAY-21 20:12:53- Rows fetched: 0
+Processing signature: 410
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 411
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 412
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 433
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 448
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 450
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 452
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 470
+14-MAY-21 20:12:54- Rows fetched: 0
+End Section
+14-MAY-21 20:12:54-end section: PREPAY_INVOICE_GDF_SIGNATURES
+14-MAY-21 20:12:54-begin section: PREPAY_INVOICE_NON_GDF_SIGNATURES
+Processing signature: 149
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 150
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 153
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 154
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 155
+14-MAY-21 20:12:54- Rows fetched: 0
+Processing signature: 157
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 158
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 163
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 166
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 168
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 169
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 171
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 174
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 179
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 184
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 185
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 186
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 187
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 188
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 190
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 193
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 279
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 281
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 282
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 290
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 292
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 293
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 294
+14-MAY-21 20:12:55- Rows fetched: 0
+Processing signature: 295
+14-MAY-21 20:12:56- Rows fetched: 0
+Processing signature: 298
+14-MAY-21 20:12:56- Rows fetched: 0
+Processing signature: 300
+14-MAY-21 20:12:56- Rows fetched: 0
+Processing signature: 305
+14-MAY-21 20:12:56- Rows fetched: 0
+Processing signature: 307
+14-MAY-21 20:12:56- Rows fetched: 0
+Processing signature: 308
+14-MAY-21 20:12:56- Rows fetched: 0
+Processing signature: 309
+14-MAY-21 20:12:56- Rows fetched: 0
+Processing signature: 310
+14-MAY-21 20:12:56- Rows fetched: 0
+Processing signature: 312
+14-MAY-21 20:12:56- Rows fetched: 0
+Processing signature: 313
+14-MAY-21 20:12:57- Rows fetched: 0
+Processing signature: 314
+14-MAY-21 20:12:57- Rows fetched: 0
+Processing signature: 315
+14-MAY-21 20:12:57- Rows fetched: 0
+Processing signature: 323
+14-MAY-21 20:12:57- Rows fetched: 0
+Processing signature: 326
+14-MAY-21 20:12:57- Rows fetched: 0
+Processing signature: 328
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 331
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 332
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 334
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 339
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 340
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 341
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 343
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 344
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 346
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 348
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 349
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 352
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 355
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 356
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 357
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 358
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 363
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 364
+14-MAY-21 20:12:58- Rows fetched: 0
+Processing signature: 365
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 366
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 369
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 371
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 373
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 374
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 377
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 378
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 379
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 380
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 382
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 383
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 384
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 390
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 392
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 400
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 403
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 404
+14-MAY-21 20:12:59- Rows fetched: 0
+Processing signature: 405
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 406
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 417
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 418
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 420
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 421
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 426
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 428
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 430
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 432
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 435
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 438
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 440
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 442
+14-MAY-21 20:13:00- Rows fetched: 0
+Processing signature: 445
+14-MAY-21 20:13:01- Rows fetched: 0
+Processing signature: 446
+14-MAY-21 20:13:01- Rows fetched: 0
+Processing signature: 447
+14-MAY-21 20:13:01- Rows fetched: 0
+Processing signature: 454
+14-MAY-21 20:13:01- Rows fetched: 0
+Processing signature: 457
+14-MAY-21 20:13:01- Rows fetched: 0
+Processing signature: 459
+14-MAY-21 20:13:01- Rows fetched: 0
+Processing signature: 461
+14-MAY-21 20:13:02- Rows fetched: 0
+Processing signature: 462
+14-MAY-21 20:13:02- Rows fetched: 0
+Processing signature: 463
+14-MAY-21 20:13:02- Rows fetched: 0
+Processing signature: 464
+14-MAY-21 20:13:02- Rows fetched: 0
+Processing signature: 466
+14-MAY-21 20:13:02- Rows fetched: 0
+Processing signature: 467
+14-MAY-21 20:13:03- Rows fetched: 0
+End Section
+14-MAY-21 20:13:03-end section: PREPAY_INVOICE_NON_GDF_SIGNATURES
+14-MAY-21 20:13:03-begin section: PAYMENT_GDF_SIGNATURES
+Processing signature: 46
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 47
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 48
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 49
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 50
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 51
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 52
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 53
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 54
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 55
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 56
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 119
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 120
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 121
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 122
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 123
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 124
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 125
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 126
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 128
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 129
+14-MAY-21 20:13:03- Rows fetched: 0
+Processing signature: 130
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 131
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 132
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 133
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 134
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 135
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 136
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 137
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 138
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 139
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 140
+14-MAY-21 20:13:04- Rows fetched: 0
+Processing signature: 141
+14-MAY-21 20:13:05- Rows fetched: 0
+Processing signature: 142
+14-MAY-21 20:13:05- Rows fetched: 0
+Processing signature: 143
+14-MAY-21 20:13:05- Rows fetched: 0
+Processing signature: 144
+14-MAY-21 20:13:05- Rows fetched: 0
+Processing signature: 145
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 194
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 207
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 208
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 210
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 214
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 221
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 225
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 226
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 228
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 231
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 237
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 238
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 240
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 265
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 266
+14-MAY-21 20:13:06- Rows fetched: 0
+Processing signature: 269
+14-MAY-21 20:13:07- Rows fetched: 0
+Processing signature: 270
+14-MAY-21 20:13:07- Rows fetched: 0
+Processing signature: 272
+14-MAY-21 20:13:07- Rows fetched: 0
+Processing signature: 273
+14-MAY-21 20:13:07- Rows fetched: 0
+Processing signature: 275
+14-MAY-21 20:13:07- Rows fetched: 0
+Processing signature: 283
+14-MAY-21 20:13:07- Rows fetched: 0
+Processing signature: 284
+14-MAY-21 20:13:07- Rows fetched: 0
+Processing signature: 360
+14-MAY-21 20:13:07- Rows fetched: 0
+Processing signature: 361
+14-MAY-21 20:13:08- Rows fetched: 0
+Processing signature: 368
+14-MAY-21 20:13:08- Rows fetched: 0
+Processing signature: 387
+14-MAY-21 20:13:08- Rows fetched: 0
+Processing signature: 399
+14-MAY-21 20:13:08- Rows fetched: 0
+Processing signature: 451
+14-MAY-21 20:13:08- Rows fetched: 0
+Processing signature: 453
+14-MAY-21 20:13:08- Rows fetched: 0
+End Section
+14-MAY-21 20:13:08-end section: PAYMENT_GDF_SIGNATURES
+14-MAY-21 20:13:08-begin section: PAYMENT_NON_GDF_SIGNATURES
+Processing signature: 182
+14-MAY-21 20:13:08- Rows fetched: 0
+Processing signature: 183
+14-MAY-21 20:13:08- Rows fetched: 0
+Processing signature: 195
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 196
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 197
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 199
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 200
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 202
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 285
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 286
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 287
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 288
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 291
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 299
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 301
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 304
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 306
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 335
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 336
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 337
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 338
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 345
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 367
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 385
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 386
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 389
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 391
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 393
+14-MAY-21 20:13:09- Rows fetched: 0
+Processing signature: 395
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 397
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 398
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 401
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 402
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 407
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 413
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 414
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 415
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 416
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 431
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 436
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 437
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 439
+14-MAY-21 20:13:10- Rows fetched: 2
+Processing signature: 443
+14-MAY-21 20:13:10- Rows fetched: 0
+Processing signature: 449
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 455
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 458
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 460
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 471
+14-MAY-21 20:13:11- Rows fetched: 0
+End Section
+14-MAY-21 20:13:11-end section: PAYMENT_NON_GDF_SIGNATURES
+14-MAY-21 20:13:11-begin section: SELECT_PAID_INVOICES
+14-MAY-21 20:13:11-end section: SELECT_PAID_INVOICES
+14-MAY-21 20:13:11-begin section: PAID_INVOICE_GDF_SIGNATURES
+Processing signature: 1
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 2
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 3
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 4
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 5
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 6
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 7
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 8
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 9
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 10
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 11
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 12
+14-MAY-21 20:13:11- Rows fetched: 0
+Processing signature: 13
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 14
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 15
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 16
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 17
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 18
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 19
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 21
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 23
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 24
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 25
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 26
+14-MAY-21 20:13:12- Rows fetched: 0
+Processing signature: 27
+14-MAY-21 20:13:13- Rows fetched: 0
+Processing signature: 28
+14-MAY-21 20:13:13- Rows fetched: 0
+Processing signature: 29
+14-MAY-21 20:13:13- Rows fetched: 0
+Processing signature: 30
+14-MAY-21 20:13:13- Rows fetched: 0
+Processing signature: 31
+14-MAY-21 20:13:13- Rows fetched: 0
+Processing signature: 32
+14-MAY-21 20:13:13- Rows fetched: 0
+Processing signature: 33
+14-MAY-21 20:13:13- Rows fetched: 0
+Processing signature: 34
+14-MAY-21 20:13:13- Rows fetched: 0
+Processing signature: 37
+14-MAY-21 20:13:13- Rows fetched: 0
+Processing signature: 38
+14-MAY-21 20:13:14- Rows fetched: 0
+Processing signature: 39
+14-MAY-21 20:13:14- Rows fetched: 0
+Processing signature: 40
+14-MAY-21 20:13:14- Rows fetched: 0
+Processing signature: 41
+14-MAY-21 20:13:14- Rows fetched: 0
+Processing signature: 43
+14-MAY-21 20:13:14- Rows fetched: 0
+Processing signature: 44
+14-MAY-21 20:13:14- Rows fetched: 0
+Processing signature: 45
+14-MAY-21 20:13:14- Rows fetched: 0
+Processing signature: 75
+14-MAY-21 20:13:15- Rows fetched: 0
+Processing signature: 76
+14-MAY-21 20:13:15- Rows fetched: 0
+Processing signature: 77
+14-MAY-21 20:13:15- Rows fetched: 0
+Processing signature: 78
+14-MAY-21 20:13:15- Rows fetched: 0
+Processing signature: 79
+14-MAY-21 20:13:15- Rows fetched: 0
+Processing signature: 80
+14-MAY-21 20:13:15- Rows fetched: 0
+Processing signature: 81
+14-MAY-21 20:13:15- Rows fetched: 0
+Processing signature: 82
+14-MAY-21 20:13:15- Rows fetched: 0
+Processing signature: 83
+14-MAY-21 20:13:16- Rows fetched: 0
+Processing signature: 84
+14-MAY-21 20:13:16- Rows fetched: 0
+Processing signature: 85
+14-MAY-21 20:13:16- Rows fetched: 0
+Processing signature: 86
+14-MAY-21 20:13:16- Rows fetched: 0
+Processing signature: 87
+14-MAY-21 20:13:16- Rows fetched: 0
+Processing signature: 88
+14-MAY-21 20:13:16- Rows fetched: 0
+Processing signature: 89
+14-MAY-21 20:13:16- Rows fetched: 0
+Processing signature: 90
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 91
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 92
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 93
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 94
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 95
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 96
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 97
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 98
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 99
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 100
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 101
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 102
+14-MAY-21 20:13:17- Rows fetched: 0
+Processing signature: 103
+14-MAY-21 20:13:18- Rows fetched: 0
+Processing signature: 104
+14-MAY-21 20:13:18- Rows fetched: 0
+Processing signature: 105
+14-MAY-21 20:13:18- Rows fetched: 0
+Processing signature: 106
+14-MAY-21 20:13:18- Rows fetched: 0
+Processing signature: 107
+14-MAY-21 20:13:18- Rows fetched: 0
+Processing signature: 108
+14-MAY-21 20:13:18- Rows fetched: 0
+Processing signature: 109
+14-MAY-21 20:13:18- Rows fetched: 0
+Processing signature: 110
+14-MAY-21 20:13:18- Rows fetched: 0
+Processing signature: 111
+14-MAY-21 20:13:19- Rows fetched: 0
+Processing signature: 112
+14-MAY-21 20:13:19- Rows fetched: 0
+Processing signature: 113
+14-MAY-21 20:13:19- Rows fetched: 0
+Processing signature: 114
+14-MAY-21 20:13:19- Rows fetched: 0
+Processing signature: 115
+14-MAY-21 20:13:19- Rows fetched: 0
+Processing signature: 116
+14-MAY-21 20:13:19- Rows fetched: 0
+Processing signature: 117
+14-MAY-21 20:13:20- Rows fetched: 0
+Processing signature: 160
+14-MAY-21 20:13:20- Rows fetched: 0
+Processing signature: 170
+14-MAY-21 20:13:20- Rows fetched: 0
+Processing signature: 191
+14-MAY-21 20:13:20- Rows fetched: 0
+Processing signature: 192
+14-MAY-21 20:13:20- Rows fetched: 0
+Processing signature: 204
+14-MAY-21 20:13:20- Rows fetched: 0
+Processing signature: 205
+14-MAY-21 20:13:20- Rows fetched: 0
+Processing signature: 206
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 209
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 216
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 217
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 218
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 219
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 220
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 222
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 223
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 224
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 227
+14-MAY-21 20:13:21- Rows fetched: 0
+Processing signature: 230
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 232
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 233
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 234
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 235
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 236
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 239
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 243
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 244
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 246
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 247
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 249
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 250
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 251
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 252
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 253
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 254
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 255
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 256
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 257
+14-MAY-21 20:13:22- Rows fetched: 0
+Processing signature: 258
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 259
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 260
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 261
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 262
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 264
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 267
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 271
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 274
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 276
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 277
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 278
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 296
+14-MAY-21 20:13:24- Rows fetched: 0
+Processing signature: 297
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 302
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 303
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 316
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 317
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 330
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 347
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 350
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 359
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 362
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 372
+14-MAY-21 20:13:25- Rows fetched: 0
+Processing signature: 376
+14-MAY-21 20:13:26- Rows fetched: 0
+Processing signature: 381
+14-MAY-21 20:13:26- Rows fetched: 0
+Processing signature: 388
+14-MAY-21 20:13:26- Rows fetched: 0
+Processing signature: 394
+14-MAY-21 20:13:26- Rows fetched: 0
+Processing signature: 408
+14-MAY-21 20:13:26- Rows fetched: 0
+Processing signature: 409
+14-MAY-21 20:13:26- Rows fetched: 0
+Processing signature: 410
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 411
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 412
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 433
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 448
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 450
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 452
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 470
+14-MAY-21 20:13:27- Rows fetched: 0
+End Section
+14-MAY-21 20:13:27-end section: PAID_INVOICE_GDF_SIGNATURES
+14-MAY-21 20:13:27-begin section: PAID_INVOICE_NON_GDF_SIGNATURES
+Processing signature: 149
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 150
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 153
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 154
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 155
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 157
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 158
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 163
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 166
+14-MAY-21 20:13:27- Rows fetched: 0
+Processing signature: 168
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 169
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 171
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 174
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 179
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 184
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 185
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 186
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 187
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 188
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 190
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 193
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 279
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 281
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 282
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 290
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 292
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 293
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 294
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 295
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 298
+14-MAY-21 20:13:28- Rows fetched: 0
+Processing signature: 300
+14-MAY-21 20:13:29- Rows fetched: 0
+Processing signature: 305
+14-MAY-21 20:13:29- Rows fetched: 0
+Processing signature: 307
+14-MAY-21 20:13:29- Rows fetched: 0
+Processing signature: 308
+14-MAY-21 20:13:29- Rows fetched: 0
+Processing signature: 309
+14-MAY-21 20:13:29- Rows fetched: 0
+Processing signature: 310
+14-MAY-21 20:13:29- Rows fetched: 0
+Processing signature: 312
+14-MAY-21 20:13:29- Rows fetched: 0
+Processing signature: 313
+14-MAY-21 20:13:30- Rows fetched: 0
+Processing signature: 314
+14-MAY-21 20:13:30- Rows fetched: 0
+Processing signature: 315
+14-MAY-21 20:13:30- Rows fetched: 0
+Processing signature: 323
+14-MAY-21 20:13:30- Rows fetched: 0
+Processing signature: 326
+14-MAY-21 20:13:30- Rows fetched: 0
+Processing signature: 328
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 331
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 332
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 334
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 339
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 340
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 341
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 343
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 344
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 346
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 348
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 349
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 352
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 355
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 356
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 357
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 358
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 363
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 364
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 365
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 366
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 369
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 371
+14-MAY-21 20:13:31- Rows fetched: 0
+Processing signature: 373
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 374
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 377
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 378
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 379
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 380
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 382
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 383
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 384
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 390
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 392
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 400
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 403
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 404
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 405
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 406
+14-MAY-21 20:13:32- Rows fetched: 0
+Processing signature: 417
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 418
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 420
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 421
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 426
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 428
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 430
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 432
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 435
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 438
+14-MAY-21 20:13:42- Rows fetched: 11
+Processing signature: 440
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 442
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 445
+14-MAY-21 20:13:42- Rows fetched: 0
+Processing signature: 446
+14-MAY-21 20:13:43- Rows fetched: 0
+Processing signature: 447
+14-MAY-21 20:13:43- Rows fetched: 0
+Processing signature: 454
+14-MAY-21 20:13:43- Rows fetched: 0
+Processing signature: 457
+14-MAY-21 20:13:43- Rows fetched: 0
+Processing signature: 459
+14-MAY-21 20:13:43- Rows fetched: 0
+Processing signature: 461
+14-MAY-21 20:13:44- Rows fetched: 0
+Processing signature: 462
+14-MAY-21 20:13:44- Rows fetched: 0
+Processing signature: 463
+14-MAY-21 20:13:44- Rows fetched: 0
+Processing signature: 464
+14-MAY-21 20:13:44- Rows fetched: 0
+Processing signature: 466
+14-MAY-21 20:13:44- Rows fetched: 0
+Processing signature: 467
+14-MAY-21 20:13:44- Rows fetched: 0
+End Section
+14-MAY-21 20:13:44-end section: PAID_INVOICE_NON_GDF_SIGNATURES
+14-MAY-21 20:13:44-begin section: SUPPLIER_GDF_SIGNATURES
+Processing signature: 57
+14-MAY-21 20:13:44- Rows fetched: 0
+Processing signature: 58
+14-MAY-21 20:13:44- Rows fetched: 0
+Processing signature: 59
+14-MAY-21 20:13:44- Rows fetched: 0
+Processing signature: 60
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 61
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 63
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 64
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 65
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 66
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 67
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 68
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 69
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 70
+14-MAY-21 20:13:45- Rows fetched: 2
+Processing signature: 71
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 72
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 73
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 211
+14-MAY-21 20:13:45- Rows fetched: 0
+Processing signature: 248
+14-MAY-21 20:13:46- Rows fetched: 0
+Processing signature: 434
+14-MAY-21 20:13:46- Rows fetched: 20
+End Section
+14-MAY-21 20:13:46-end section: SUPPLIER_GDF_SIGNATURES
+14-MAY-21 20:13:46-begin section: SUPPLIER_NON_GDF_SIGNATURES
+Processing signature: 329
+14-MAY-21 20:13:46- Rows fetched: 0
+Processing signature: 333
+14-MAY-21 20:13:46- Rows fetched: 0
+Processing signature: 342
+14-MAY-21 20:13:46- Rows fetched: 0
+Processing signature: 351
+14-MAY-21 20:13:47- Rows fetched: 0
+Processing signature: 353
+14-MAY-21 20:13:47- Rows fetched: 0
+Processing signature: 422
+14-MAY-21 20:13:47- Rows fetched: 0
+Processing signature: 424
+14-MAY-21 20:13:47- Rows fetched: 0
+Processing signature: 425
+14-MAY-21 20:13:47- Rows fetched: 0
+Processing signature: 427
+14-MAY-21 20:13:47- Rows fetched: 0
+Processing signature: 429
+14-MAY-21 20:13:47- Rows fetched: 0
+Processing signature: 469
+14-MAY-21 20:13:47- Rows fetched: 0
+End Section
+14-MAY-21 20:13:47-end section: SUPPLIER_NON_GDF_SIGNATURES
+14-MAY-21 20:13:47-begin section: KEY_FILE_VERSIONS
+Processing signature: MGD_KEY_FILES_ACCOUNTING
+14-MAY-21 20:13:48- Rows fetched: 32
+Processing signature: MGD_KEY_FILES_INVOICE
+14-MAY-21 20:13:48- Rows fetched: 47
+Processing signature: MGD_KEY_FILES_PAYMENT
+14-MAY-21 20:13:49- Rows fetched: 15
+Processing signature: MGD_KEY_FILES_SUPPLIER
+14-MAY-21 20:13:49- Rows fetched: 8
+End Section
+14-MAY-21 20:13:49-end section: KEY_FILE_VERSIONS
+14-MAY-21 20:13:49-Entered close_files
+14-MAY-21 20:13:49-Closing files

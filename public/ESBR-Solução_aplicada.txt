@@ -1,0 +1,136 @@
+--- Horário do servidores estão diferentes:
+
+1. PIMPRD:
+
+[root@ESBRUHEDB ~]# date
+Tue Dec  3 16:32:35 -02 2019
+
+
+2. SAUPRD:
+
+[root@esbr-dbp02 ~]# date
+Tue Dec  3 15:33:08 -03 2019
+
+
+---
+
+[oracle@ESBRUHEDB ~]$ . oraGERALPRD.env
+#########  GERALPRD  #########
+[oracle@ESBRUHEDB ~]$ sql
+
+SQL*Plus: Release 11.2.0.4.0 Production on Tue Dec 3 16:56:14 2019
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+
+INSTANCE_NAME    STATUS
+---------------- ------------
+GERALPRD         OPEN
+
+SQL> shutdown immediate;
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+
+SQL> exit
+Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+[oracle@ESBRUHEDB ~]$ . oraPIMPRD.env
+#########  PIMPRD  #########
+[oracle@ESBRUHEDB ~]$ sql
+
+SQL*Plus: Release 11.2.0.4.0 Production on Tue Dec 3 16:57:01 2019
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+
+INSTANCE_NAME    STATUS
+---------------- ------------
+PIMPRD           OPEN
+
+SQL> shut immediate;
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+SQL> exit
+Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+[oracle@ESBRUHEDB ~]$ exit
+logout
+[root@ESBRUHEDB ~]#
+[root@ESBRUHEDB ~]#
+[root@ESBRUHEDB ~]# hostname
+ESBRUHEDB
+[root@ESBRUHEDB ~]# yum update tzdata --nogpgcheck -y
+Loaded plugins: product-id, refresh-packagekit, security, subscription-manager
+This system is registered to Red Hat Subscription Management, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+Setting up Update Process
+Resolving Dependencies
+--> Running transaction check
+---> Package tzdata.noarch 0:2017a-1.el6 will be updated
+---> Package tzdata.noarch 0:2019c-1.el6 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================
+ Package                      Arch                         Version                            Repository                        Size
+=====================================================================================================================================
+Updating:
+ tzdata                       noarch                       2019c-1.el6                        ol6_latest                       507 k
+
+Transaction Summary
+=====================================================================================================================================
+Upgrade       1 Package(s)
+
+Total download size: 507 k
+Downloading Packages:
+tzdata-2019c-1.el6.noarch.rpm                                                                                 | 507 kB     00:00
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+Warning: RPMDB altered outside of yum.
+  Updating   : tzdata-2019c-1.el6.noarch                                                                                         1/2
+  Cleanup    : tzdata-2017a-1.el6.noarch                                                                                         2/2
+  Verifying  : tzdata-2019c-1.el6.noarch                                                                                         1/2
+  Verifying  : tzdata-2017a-1.el6.noarch                                                                                         2/2
+
+Updated:
+  tzdata.noarch 0:2019c-1.el6
+
+Complete!
+
+--
+[oracle@ESBRUHEDB ~]$ date
+Tue Dec  3 15:58:40 -03 2019
+
+
+-- Horário do servidores:
+
+1. Servidor do PIMS:
+
+[oracle@ESBRUHEDB ~]$ date
+Tue Dec  3 16:02:59 -03 2019
+
+
+2. Servidor do SAUPRD:
+
+[root@esbr-dbp02 ~]# date
+Tue Dec  3 16:03:08 -03 2019
+
+
+-- Status do JOB:
+
+SELECT *
+FROM dba_jobs
+WHERE job = 66
+
+
+1	66	SAU	SAU	SAU	03-dez-2019 15:07:01	15:07:01			03-dez-2019 16:07:00	16:07:00	471331,0000000000000000000000000000006413	N	TRUNC(SYSDATE,'HH24')+1/24+7/1440	0	IMPORTA_MEDICAO_ENERGIA;	NLS_LANGUAGE='BRAZILIAN PORTUGUESE' NLS_TERRITORY='BRAZIL' NLS_CURRENCY='R$' NLS_ISO_CURRENCY='BRAZIL' NLS_NUMERIC_CHARACTERS=',.' NLS_DATE_FORMAT='DD/MM/YYYY HH24:MI:SS' NLS_DATE_LANGUAGE='BRAZILIAN PORTUGUESE' NLS_SORT='WEST_EUROPEAN'	0102000200000000	0

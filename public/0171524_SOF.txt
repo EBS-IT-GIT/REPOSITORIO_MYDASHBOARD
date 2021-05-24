@@ -1,0 +1,15 @@
+BEGIN
+
+update trbsodbp. DI 
+  set protocolo_transmissao = 1982973126
+where processo_di = 'DEL30173/15';
+
+  
+update is_sp_cadastro
+   set flex_field2 = 1982973126
+ where num_documento = 'DEL30173/15'  
+   and tipo_sp = 'PG';
+
+COMMIT;
+
+END;

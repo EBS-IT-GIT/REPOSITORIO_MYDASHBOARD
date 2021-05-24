@@ -1,0 +1,597 @@
++---------------------------------------------------------------------------+
+
+                                 - CR2276 -   
+                                 Adecoagro   
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+
+ Se creo el directorio /ua1001/fs_ne/ADECO/patch/CR2276/CR2276_20191129 para la creacion de los scripts
+
++---------------------------------------------------------------------------+
+
+ Se procedera con la creacion de los scripts
+
+
+PL/SQL procedure successfully completed.
+
++---------------------------------------------------------------------------+
+ Se procedera con la ejecucion de la descarga de los objetos
+
+[3;J[H[2JPath: /desa12/svn/XXADECUSTOMS
+Working Copy Root Path: /desa12/svn/XXADECUSTOMS
+URL: https://ad-ar-dat-or-01.adeco.net.ar:8443/svn/XXADECUSTOMS
+Repository Root: https://ad-ar-dat-or-01.adeco.net.ar:8443/svn/XXADECUSTOMS
+Repository UUID: 4a015035-0a93-5c48-9a58-f2e00ef8f5c2
+Revision: 9017
+Node Kind: directory
+Schedule: normal
+Last Changed Author: ADECO_DEV
+Last Changed Rev: 9017
+Last Changed Date: 2019-11-27 18:21:47 -0300 (Wed, 27 Nov 2019)
+
+Updating '/desa12/svn/XXADECUSTOMS':
+At revision 9017.
++---------------------------------------------------------------------------+
+ Comenzando con el proceso de resguardo
+
++---------------------------------------------------------------------------+
+ Resguardando la solucion realizada en CR2276
+
+ Cantidad de objetos tipo XX_ADE_CUSTOM_HEADER => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 29-NOV-2019 09:46:56
+
++---------------------------------------------------------------------------+
+
+Downloading XX_ADE_CUSTOM_HEADER to the data file CR2276_13780.ldt
+Downloaded XX_ADE_CUSTOM_HEADER 13780
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 29-NOV-2019 09:46:56
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto SQL-PKG XXCLK_PO_INTERFACE_PKG 
+
+
+PL/SQL procedure successfully completed.
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_10 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:01
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_10.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4889
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:01
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_15 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:02
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_15.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4888
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:02
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_20 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:02
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_20.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4880
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:02
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_30 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:02
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_30.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4884
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:02
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_35 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:02
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_35.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4881
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:02
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_40 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:03
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_40.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4885
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:03
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_45 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:03
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_45.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4882
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:03
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_50 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:03
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_50.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4886
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:03
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_60 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:03
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_60.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4883
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:03
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_70 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:04
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_70.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4887
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:04
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_80 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:04
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_80.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4879
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:04
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXSCERQ_90 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:04
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXSCERQ_90.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4878
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:04
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXBWVRP_10 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:05
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXBWVRP_10.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4565
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:05
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXBWVRP_15 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:05
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXBWVRP_15.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4569
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:05
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXBWVRP_20 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:05
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXBWVRP_20.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4568
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:05
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXBWVRP_25 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:05
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXBWVRP_25.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4566
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:05
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXBWVRP_30 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:06
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXBWVRP_30.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4567
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:06
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXBWVRP_35 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:06
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXBWVRP_35.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4924
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:06
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXBWVRP_40 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:06
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXBWVRP_40.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4984
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:06
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXBWVRP_50 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:06
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXBWVRP_50.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4964
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:06
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXBWVRP_60 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 29-NOV-2019 09:47:07
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXBWVRP_60.ldt
+Feito download de FND_FORM_CUSTOM_RULES 4985
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 29-NOV-2019 09:47:07
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Fin del proceso de resguardo
+

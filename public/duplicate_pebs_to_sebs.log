@@ -1,0 +1,397 @@
+
+Recovery Manager: Release 11.2.0.4.0 - Production on Tue Jul 7 08:53:24 2020
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: PEBS (DBID=2605245019)
+connected to auxiliary database: SEBS (not mounted)
+
+RMAN> 
+Starting Duplicate Db at 07-JUL-20
+using target database control file instead of recovery catalog
+allocated channel: ORA_AUX_DISK_1
+channel ORA_AUX_DISK_1: SID=2171 device type=DISK
+allocated channel: ORA_AUX_DISK_2
+channel ORA_AUX_DISK_2: SID=2233 device type=DISK
+allocated channel: ORA_AUX_DISK_3
+channel ORA_AUX_DISK_3: SID=2295 device type=DISK
+allocated channel: ORA_AUX_DISK_4
+channel ORA_AUX_DISK_4: SID=2357 device type=DISK
+allocated channel: ORA_AUX_DISK_5
+channel ORA_AUX_DISK_5: SID=2419 device type=DISK
+allocated channel: ORA_AUX_DISK_6
+channel ORA_AUX_DISK_6: SID=2481 device type=DISK
+allocated channel: ORA_AUX_DISK_7
+channel ORA_AUX_DISK_7: SID=2543 device type=DISK
+allocated channel: ORA_AUX_DISK_8
+channel ORA_AUX_DISK_8: SID=2605 device type=DISK
+allocated channel: ORA_AUX_DISK_9
+channel ORA_AUX_DISK_9: SID=2667 device type=DISK
+allocated channel: ORA_AUX_DISK_10
+channel ORA_AUX_DISK_10: SID=2729 device type=DISK
+allocated channel: ORA_AUX_DISK_11
+channel ORA_AUX_DISK_11: SID=2791 device type=DISK
+allocated channel: ORA_AUX_DISK_12
+channel ORA_AUX_DISK_12: SID=2853 device type=DISK
+allocated channel: ORA_AUX_DISK_13
+channel ORA_AUX_DISK_13: SID=2915 device type=DISK
+allocated channel: ORA_AUX_DISK_14
+channel ORA_AUX_DISK_14: SID=1 device type=DISK
+allocated channel: ORA_AUX_DISK_15
+channel ORA_AUX_DISK_15: SID=63 device type=DISK
+allocated channel: ORA_AUX_DISK_16
+channel ORA_AUX_DISK_16: SID=126 device type=DISK
+allocated channel: ORA_AUX_DISK_17
+channel ORA_AUX_DISK_17: SID=188 device type=DISK
+allocated channel: ORA_AUX_DISK_18
+channel ORA_AUX_DISK_18: SID=250 device type=DISK
+allocated channel: ORA_AUX_DISK_19
+channel ORA_AUX_DISK_19: SID=312 device type=DISK
+allocated channel: ORA_AUX_DISK_20
+channel ORA_AUX_DISK_20: SID=374 device type=DISK
+allocated channel: ORA_AUX_DISK_21
+channel ORA_AUX_DISK_21: SID=436 device type=DISK
+allocated channel: ORA_AUX_DISK_22
+channel ORA_AUX_DISK_22: SID=498 device type=DISK
+allocated channel: ORA_AUX_DISK_23
+channel ORA_AUX_DISK_23: SID=560 device type=DISK
+allocated channel: ORA_AUX_DISK_24
+channel ORA_AUX_DISK_24: SID=622 device type=DISK
+allocated channel: ORA_AUX_DISK_25
+channel ORA_AUX_DISK_25: SID=684 device type=DISK
+allocated channel: ORA_AUX_DISK_26
+channel ORA_AUX_DISK_26: SID=746 device type=DISK
+allocated channel: ORA_AUX_DISK_27
+channel ORA_AUX_DISK_27: SID=808 device type=DISK
+allocated channel: ORA_AUX_DISK_28
+channel ORA_AUX_DISK_28: SID=870 device type=DISK
+allocated channel: ORA_AUX_DISK_29
+channel ORA_AUX_DISK_29: SID=932 device type=DISK
+allocated channel: ORA_AUX_DISK_30
+channel ORA_AUX_DISK_30: SID=994 device type=DISK
+allocated channel: ORA_AUX_SBT_TAPE_1
+channel ORA_AUX_SBT_TAPE_1: SID=1056 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_1: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_2
+channel ORA_AUX_SBT_TAPE_2: SID=1118 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_2: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_3
+channel ORA_AUX_SBT_TAPE_3: SID=1180 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_3: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_4
+channel ORA_AUX_SBT_TAPE_4: SID=1242 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_4: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_5
+channel ORA_AUX_SBT_TAPE_5: SID=1304 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_5: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_6
+channel ORA_AUX_SBT_TAPE_6: SID=1366 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_6: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_7
+channel ORA_AUX_SBT_TAPE_7: SID=1428 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_7: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_8
+channel ORA_AUX_SBT_TAPE_8: SID=1490 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_8: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_9
+channel ORA_AUX_SBT_TAPE_9: SID=1552 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_9: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_10
+channel ORA_AUX_SBT_TAPE_10: SID=1614 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_10: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_11
+channel ORA_AUX_SBT_TAPE_11: SID=1676 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_11: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_12
+channel ORA_AUX_SBT_TAPE_12: SID=1738 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_12: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_13
+channel ORA_AUX_SBT_TAPE_13: SID=1801 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_13: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_14
+channel ORA_AUX_SBT_TAPE_14: SID=1862 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_14: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_15
+channel ORA_AUX_SBT_TAPE_15: SID=1925 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_15: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_16
+channel ORA_AUX_SBT_TAPE_16: SID=1986 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_16: Data Protector A.09.00/114
+current log archived
+
+contents of Memory Script:
+{
+   sql clone "create spfile from memory";
+}
+executing Memory Script
+
+sql statement: create spfile from memory
+
+contents of Memory Script:
+{
+   shutdown clone immediate;
+   startup clone nomount;
+}
+executing Memory Script
+
+Oracle instance shut down
+
+connected to auxiliary database (not started)
+Oracle instance started
+
+Total System Global Area    8551575552 bytes
+
+Fixed Size                     2270360 bytes
+Variable Size               1493175144 bytes
+Database Buffers            7029653504 bytes
+Redo Buffers                  26476544 bytes
+
+contents of Memory Script:
+{
+   sql clone "alter system set  db_name = 
+ ''PEBS'' comment=
+ ''Modified by RMAN duplicate'' scope=spfile";
+   sql clone "alter system set  db_unique_name = 
+ ''SEBS'' comment=
+ ''Modified by RMAN duplicate'' scope=spfile";
+   shutdown clone immediate;
+   startup clone force nomount
+   backup as copy current controlfile auxiliary format  '+DATA/sebs/controlfile/control01.ctl';
+   restore clone primary controlfile to  '+RECO/sebs/controlfile/control02.ctl' from 
+ '+DATA/sebs/controlfile/control01.ctl';
+   alter clone database mount;
+}
+executing Memory Script
+
+sql statement: alter system set  db_name =  ''PEBS'' comment= ''Modified by RMAN duplicate'' scope=spfile
+
+sql statement: alter system set  db_unique_name =  ''SEBS'' comment= ''Modified by RMAN duplicate'' scope=spfile
+
+Oracle instance shut down
+
+Oracle instance started
+
+Total System Global Area    8551575552 bytes
+
+Fixed Size                     2270360 bytes
+Variable Size               1493175144 bytes
+Database Buffers            7029653504 bytes
+Redo Buffers                  26476544 bytes
+
+Starting backup at 07-JUL-20
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=387 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_2
+channel ORA_DISK_2: SID=1046 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_3
+channel ORA_DISK_3: SID=2323 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_4
+channel ORA_DISK_4: SID=259 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_5
+channel ORA_DISK_5: SID=218 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_6
+channel ORA_DISK_6: SID=1903 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_7
+channel ORA_DISK_7: SID=2277 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_8
+channel ORA_DISK_8: SID=2104 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_9
+channel ORA_DISK_9: SID=2147 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_10
+channel ORA_DISK_10: SID=2199 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_11
+channel ORA_DISK_11: SID=2284 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_12
+channel ORA_DISK_12: SID=2320 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_13
+channel ORA_DISK_13: SID=2398 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_14
+channel ORA_DISK_14: SID=37 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_15
+channel ORA_DISK_15: SID=86 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_16
+channel ORA_DISK_16: SID=198 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_17
+channel ORA_DISK_17: SID=267 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_18
+channel ORA_DISK_18: SID=314 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_19
+channel ORA_DISK_19: SID=448 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_20
+channel ORA_DISK_20: SID=514 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_21
+channel ORA_DISK_21: SID=586 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_22
+channel ORA_DISK_22: SID=634 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_23
+channel ORA_DISK_23: SID=704 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_24
+channel ORA_DISK_24: SID=746 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_25
+channel ORA_DISK_25: SID=798 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_26
+channel ORA_DISK_26: SID=865 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_27
+channel ORA_DISK_27: SID=927 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_28
+channel ORA_DISK_28: SID=985 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_29
+channel ORA_DISK_29: SID=1110 instance=PEBS1 device type=DISK
+allocated channel: ORA_DISK_30
+channel ORA_DISK_30: SID=1235 instance=PEBS1 device type=DISK
+channel ORA_DISK_1: starting datafile copy
+copying current control file
+output file name=/u01/app/oracle/product/11.2.0.4/ebsprod/dbs/snapcf_PEBS1.f tag=TAG20200707T085501 RECID=11988 STAMP=1045126509
+channel ORA_DISK_1: datafile copy complete, elapsed time: 00:00:07
+Finished backup at 07-JUL-20
+
+Starting restore at 07-JUL-20
+allocated channel: ORA_AUX_DISK_1
+channel ORA_AUX_DISK_1: SID=2233 device type=DISK
+allocated channel: ORA_AUX_DISK_2
+channel ORA_AUX_DISK_2: SID=2295 device type=DISK
+allocated channel: ORA_AUX_DISK_3
+channel ORA_AUX_DISK_3: SID=2419 device type=DISK
+allocated channel: ORA_AUX_DISK_4
+channel ORA_AUX_DISK_4: SID=2481 device type=DISK
+allocated channel: ORA_AUX_DISK_5
+channel ORA_AUX_DISK_5: SID=2543 device type=DISK
+allocated channel: ORA_AUX_DISK_6
+channel ORA_AUX_DISK_6: SID=2605 device type=DISK
+allocated channel: ORA_AUX_DISK_7
+channel ORA_AUX_DISK_7: SID=2667 device type=DISK
+allocated channel: ORA_AUX_DISK_8
+channel ORA_AUX_DISK_8: SID=2729 device type=DISK
+allocated channel: ORA_AUX_DISK_9
+channel ORA_AUX_DISK_9: SID=2791 device type=DISK
+allocated channel: ORA_AUX_DISK_10
+channel ORA_AUX_DISK_10: SID=2853 device type=DISK
+allocated channel: ORA_AUX_DISK_11
+channel ORA_AUX_DISK_11: SID=2915 device type=DISK
+allocated channel: ORA_AUX_DISK_12
+channel ORA_AUX_DISK_12: SID=1 device type=DISK
+allocated channel: ORA_AUX_DISK_13
+channel ORA_AUX_DISK_13: SID=63 device type=DISK
+allocated channel: ORA_AUX_DISK_14
+channel ORA_AUX_DISK_14: SID=126 device type=DISK
+allocated channel: ORA_AUX_DISK_15
+channel ORA_AUX_DISK_15: SID=188 device type=DISK
+allocated channel: ORA_AUX_DISK_16
+channel ORA_AUX_DISK_16: SID=250 device type=DISK
+allocated channel: ORA_AUX_DISK_17
+channel ORA_AUX_DISK_17: SID=312 device type=DISK
+allocated channel: ORA_AUX_DISK_18
+channel ORA_AUX_DISK_18: SID=374 device type=DISK
+allocated channel: ORA_AUX_DISK_19
+channel ORA_AUX_DISK_19: SID=436 device type=DISK
+allocated channel: ORA_AUX_DISK_20
+channel ORA_AUX_DISK_20: SID=498 device type=DISK
+allocated channel: ORA_AUX_DISK_21
+channel ORA_AUX_DISK_21: SID=560 device type=DISK
+allocated channel: ORA_AUX_DISK_22
+channel ORA_AUX_DISK_22: SID=622 device type=DISK
+allocated channel: ORA_AUX_DISK_23
+channel ORA_AUX_DISK_23: SID=684 device type=DISK
+allocated channel: ORA_AUX_DISK_24
+channel ORA_AUX_DISK_24: SID=746 device type=DISK
+allocated channel: ORA_AUX_DISK_25
+channel ORA_AUX_DISK_25: SID=808 device type=DISK
+allocated channel: ORA_AUX_DISK_26
+channel ORA_AUX_DISK_26: SID=870 device type=DISK
+allocated channel: ORA_AUX_DISK_27
+channel ORA_AUX_DISK_27: SID=932 device type=DISK
+allocated channel: ORA_AUX_DISK_28
+channel ORA_AUX_DISK_28: SID=994 device type=DISK
+allocated channel: ORA_AUX_DISK_29
+channel ORA_AUX_DISK_29: SID=1056 device type=DISK
+allocated channel: ORA_AUX_DISK_30
+channel ORA_AUX_DISK_30: SID=1118 device type=DISK
+allocated channel: ORA_AUX_SBT_TAPE_1
+channel ORA_AUX_SBT_TAPE_1: SID=1180 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_1: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_2
+channel ORA_AUX_SBT_TAPE_2: SID=1242 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_2: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_3
+channel ORA_AUX_SBT_TAPE_3: SID=1304 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_3: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_4
+channel ORA_AUX_SBT_TAPE_4: SID=1366 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_4: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_5
+channel ORA_AUX_SBT_TAPE_5: SID=1428 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_5: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_6
+channel ORA_AUX_SBT_TAPE_6: SID=1490 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_6: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_7
+channel ORA_AUX_SBT_TAPE_7: SID=1552 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_7: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_8
+channel ORA_AUX_SBT_TAPE_8: SID=1614 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_8: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_9
+channel ORA_AUX_SBT_TAPE_9: SID=1676 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_9: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_10
+channel ORA_AUX_SBT_TAPE_10: SID=1738 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_10: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_11
+channel ORA_AUX_SBT_TAPE_11: SID=1801 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_11: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_12
+channel ORA_AUX_SBT_TAPE_12: SID=1862 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_12: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_13
+channel ORA_AUX_SBT_TAPE_13: SID=1925 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_13: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_14
+channel ORA_AUX_SBT_TAPE_14: SID=1986 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_14: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_15
+channel ORA_AUX_SBT_TAPE_15: SID=2048 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_15: Data Protector A.09.00/114
+allocated channel: ORA_AUX_SBT_TAPE_16
+channel ORA_AUX_SBT_TAPE_16: SID=2110 device type=SBT_TAPE
+channel ORA_AUX_SBT_TAPE_16: Data Protector A.09.00/114
+
+channel ORA_AUX_DISK_22: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_24: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_30: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_4: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_5: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_6: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_7: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_8: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_9: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_10: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_11: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_13: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_15: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_16: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_17: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_18: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_19: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_20: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_21: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_23: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_25: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_26: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_27: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_28: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_1: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_2: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_3: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_14: skipped, AUTOBACKUP already found
+channel ORA_AUX_DISK_29: skipped, AUTOBACKUP already found
+RMAN-00571: ===========================================================
+RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
+RMAN-00571: ===========================================================
+RMAN-03002: failure of Duplicate Db command at 07/07/2020 08:56:07
+RMAN-05501: aborting duplication of target database
+RMAN-03015: error occurred in stored script Memory Script
+RMAN-10038: database session for channel ORA_AUX_SBT_TAPE_1 terminated unexpectedly
+
+RMAN> 
+
+Recovery Manager complete.

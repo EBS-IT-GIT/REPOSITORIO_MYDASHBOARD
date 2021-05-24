@@ -1,0 +1,6 @@
+  
+ UPDATE TRISODBP.DESPESAS_PROCESSO set cod_processo = 'OOGVI0012/19' where id_despesa_processo in (440060,440061,440062);
+ UPDATE TRISODBP.is_sp_detalhe  set cod_processo = 'OOGVI0012/19'  where  cod_processo = 'OOGVI0138/17' ;
+ UPDATE TRISODBP.is_sp_cadastro set num_documento = 'OOGVI0012/19' where num_documento = 'OOGVI0138/17';
+
+commit;

@@ -1,0 +1,2202 @@
+
+************* Start of AutoPatch session *************
+AutoPatch version: 12.0.0
+AutoPatch started at: Mon Apr 27 2020 16:42:55
+
+APPL_TOP is set to /u01/hebs/apps/apps_st/appl
+
+Defaults Feature Enabled = YES.
+Num Workers = 1.
+Options = "hotpatch".
+Patch Top = "/u01/hebs/apps/apps_st/appl/patches/CUS_EAM_004_HQS_005".
+Patch Driver File = "u121CUSEAM004_005.drv".
+
+NLS_LANG value from the environment is    : American_America.WE8ISO8859P1 
+NLS_LANG value for this AD utility run is : AMERICAN_AMERICA.WE8ISO8859P1 
+
+You can be notified by email if a failure occurs.
+Do you wish to activate this feature [No] ? No *
+
+Please enter the batchsize [1000] : 1000 *
+
+
+Please enter the name of the Oracle Applications System that this
+APPL_TOP belongs to.
+
+The Applications System name must be unique across all Oracle
+Applications Systems at your site, must be from 1 to 30 characters
+long, may only contain alphanumeric and underscore characters,
+and must start with a letter.
+
+Sample Applications System names are: "prod", "test", "demo" and 
+"Development_2".
+
+Applications System Name [HEBS] : HEBS *
+
+
+NOTE: If you do not currently have certain types of files installed
+in this APPL_TOP, you may not be able to perform certain tasks.
+
+Example 1: If you don't have files used for installing or upgrading
+the database installed in this area, you cannot install or upgrade
+the database from this APPL_TOP.
+
+Example 2: If you don't have forms files installed in this area, you cannot
+generate them or run them from this APPL_TOP.
+
+Example 3: If you don't have concurrent program files installed in this area,
+you cannot relink concurrent programs or generate reports from this APPL_TOP.
+
+
+Do you currently have files used for installing or upgrading the database
+installed in this APPL_TOP [YES] ? YES *
+
+
+Do you currently have Java and HTML files for HTML-based functionality
+installed in this APPL_TOP [YES] ? YES *
+
+
+Do you currently have Oracle Applications forms files installed
+in this APPL_TOP [YES] ? YES *
+
+
+Do you currently have concurrent program files installed
+in this APPL_TOP [YES] ? YES *
+
+
+Please enter the name Oracle Applications will use to identify this APPL_TOP.
+
+The APPL_TOP name you select must be unique within an Oracle Applications
+System, must be from 1 to 30 characters long, may only contain
+alphanumeric and underscore characters, and must start with a letter.
+
+Sample APPL_TOP Names are: "prod_all", "demo3_forms2", and "forms1".
+
+APPL_TOP Name [AT_vm01lhebs] : AT_vm01lhebs *
+
+
+
+You are about to apply a patch to the installation of Oracle Applications
+in your ORACLE database 'HEBS'
+using ORACLE executables in '/u01/hebs/apps/tech_st/10.1.2'.
+
+Is this the correct database [Yes] ? Yes *
+
+AutoPatch needs the password for your 'SYSTEM' ORACLE schema
+in order to determine your installation configuration.
+
+Enter the password for your 'SYSTEM' ORACLE schema: *****
+
+
+Connecting to SYSTEM......Connected successfully.
+
+The ORACLE username specified below for Application Object Library
+uniquely identifies your existing product group: APPLSYS
+
+Enter the ORACLE password of Application Object Library [APPS] : *****
+
+AutoPatch is verifying your username/password.
+Connecting to APPLSYS......Connected successfully.
+
+
+The status of various features in this run of AutoPatch is:
+
+                                           <-Feature version in->
+Feature                          Active?   APPLTOP    Data model    Flags
+------------------------------   -------   --------   -----------   -----------
+CHECKFILE                        Yes       1          1             Y N N Y N Y
+PREREQ                           Yes       6          6             Y N N Y N Y
+CONCURRENT_SESSIONS              No        2          2             Y Y N Y Y N
+PATCH_TIMING                     Yes       2          2             Y N N Y N Y
+PATCH_HIST_IN_DB                 Yes       6          6             Y N N Y N Y
+SCHEMA_SWAP                      Yes       1          1             Y N N Y Y Y
+JAVA_WORKER                      Yes       1          1             Y N N Y N Y
+CODELEVEL                        Yes       1          1             Y N N Y N Y
+
+
+
+Connecting to SYSTEM......Connected successfully.
+
+Connecting to APPLSYS......Connected successfully.
+
+Identifier for the current session is 271788
+
+Reading product information from file...
+
+Reading language and territory information from file...
+
+Reading language information from applUS.txt ...
+
+AutoPatch warning:
+ Product Data File
+ /u01/hebs/apps/apps_st/appl/admin/zfaprod.txt
+ does not exist for product "zfa".
+This product is registered in the database but the
+above file does not exist in APPL_TOP.  The product
+will be ignored without error.
+
+
+AutoPatch warning:
+ Product Data File
+ /u01/hebs/apps/apps_st/appl/admin/zsaprod.txt
+ does not exist for product "zsa".
+This product is registered in the database but the
+above file does not exist in APPL_TOP.  The product
+will be ignored without error.
+
+
+AutoPatch warning:
+ Product Data File
+ /u01/hebs/apps/apps_st/appl/admin/jtsprod.txt
+ does not exist for product "jts".
+This product is registered in the database but the
+above file does not exist in APPL_TOP.  The product
+will be ignored without error.
+
+
+Reading database to see what industry is currently installed.
+
+Reading FND_LANGUAGES to see what is currently installed.
+Currently, the following languages are installed:
+
+Code   Language                                Status
+----   --------------------------------------- ---------
+US     American English                        Base         
+PTB    Brazilian Portuguese                    Install      
+ESA    Latin American Spanish                  Install      
+
+Reading language information from applPTB.txt ...
+
+Reading language information from applESA.txt ...
+
+Your base language will be AMERICAN.
+
+Your other languages to install are: BRAZILIAN PORTUGUESE, LATIN AMERICAN SPANISH
+
+Setting up module information.
+Reading database for information about the modules.
+Saving module information.
+Reading database for information about the products.
+Connecting to SYSTEM......Connected successfully.
+
+Connecting to APPLSYS......Connected successfully.
+
+Connecting to SYSTEM......Connected successfully.
+
+Reading database for information about how products depend on each other.
+Connecting to APPLSYS......Connected successfully.
+
+Reading topfile.txt ...
+
+Saving product information.
+Connecting to SYSTEM......Connected successfully.
+
+Connecting to APPLSYS......Connected successfully.
+
+
+AD code level : [B.8]
+
+
+STRT_TASK: [AutoPatch startup after aimini] [] [Mon Apr 27 2020 16:42:59]
+
+
+Not checking the system maintenance mode.
+
+
+
+STRT_TASK: [Validate schema passwords] [] [Mon Apr 27 2020 16:42:59]
+
+
+Connecting to APPLSYS......Connected successfully.
+
+Connecting to APPS......Connected successfully.
+
+
+STOP_TASK: [Validate schema passwords] [] [Mon Apr 27 2020 16:42:59]
+
+
+
+
+STRT_TASK: [Upload Patch History information from filesystem] [] [Mon Apr 27 2020 16:42:59]
+
+
+Trying to obtain a lock...
+
+
+
+About to attempt instantiating the current-view snapshot: Mon Apr 27 2020 16:43:00
+
+  Attempting to instantiate the current-view snapshot...
+
+  Was already instantiated. So no instantiation done this time.
+
+Done attempting to instantiate the current-view snapshot: Mon Apr 27 2020 16:43:00
+
+
+
+     **************** S T A R T   O F   U P L O A D ****************
+
+Start date: Mon Apr 27 2020 16:43:00
+
+
+
+
+Uploading /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200401211132.txt...
+
+Uploading Java objects to patch history tables...
+Error: An invalid bug_number: SAECUSAP045
+
+AutoPatch error:
+
+Unable to upload Java Classes to DB from file: /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200401211132.txt
+
+
+
+Uploading /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200401214115.txt...
+
+Uploading Java objects to patch history tables...
+Error: An invalid bug_number: SAECUSAP045
+
+AutoPatch error:
+
+Unable to upload Java Classes to DB from file: /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200401214115.txt
+
+
+
+Uploading /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200403171206.txt...
+
+Uploading Java objects to patch history tables...
+Error: An invalid bug_number: SAECUSAP045
+
+AutoPatch error:
+
+Unable to upload Java Classes to DB from file: /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200403171206.txt
+
+
+
+Uploading /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200330225020.txt...
+
+Uploading Java objects to patch history tables...
+Error: An invalid bug_number: SAECUSPOS006
+
+AutoPatch error:
+
+Unable to upload Java Classes to DB from file: /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200330225020.txt
+
+
+
+Uploading /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200407103919.txt...
+
+Uploading Java objects to patch history tables...
+Error: An invalid bug_number: SAECUSPO054
+
+AutoPatch error:
+
+Unable to upload Java Classes to DB from file: /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200407103919.txt
+
+
+0 "left over" javaupdates.txt files uploaded to DB: Mon Apr 27 2020 16:43:00
+
+0 patches uploaded from the ADPSV format patch history files: Mon Apr 27 2020 16:43:00
+
+0 patches uploaded from the ADPSV format preinstall patch history files: Mon Apr 27 2020 16:43:00
+
+
+Uploading information about files copied during the previous runs ...
+
+0 "left over" filescopied_<session_id>.txt files uploaded to DB: Mon Apr 27 2020 16:43:00
+
+     ****************** E N D   O F   U P L O A D ******************
+
+
+
+
+End date: Mon Apr 27 2020 16:43:00
+
+
+
+STOP_TASK: [Upload Patch History information from filesystem] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+
+You have specified /u01/hebs/apps/apps_st/appl/patches/CUS_EAM_004_HQS_005
+as the directory where your Oracle Applications patch has been unloaded.
+
+
+STOP_TASK: [AutoPatch startup after aimini] [] [Mon Apr 27 2020 16:43:00]
+
+
+You have specified u121CUSEAM004_005.drv
+as the name of your patchdriver file.
+
+
+STRT_TASK: [Run a single patch driver file] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Steps before copy portion] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Initial driver processing steps] [] [Mon Apr 27 2020 16:43:00]
+
+Start time for driver file is: Mon Apr 27 2020 16:43:00
+
+
+STOP_TASK: [Initial driver processing steps] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Get Oracle Applications Release and read driver file] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Get Oracle Applications Release] [] [Mon Apr 27 2020 16:43:00]
+
+
+Getting Oracle Applications Release...
+
+Connecting to APPLSYS......Connected successfully.
+
+Current installed release is  12.1.3
+
+Connecting to APPS......Connected successfully.
+
+
+STOP_TASK: [Get Oracle Applications Release] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Process patch driver file] [] [Mon Apr 27 2020 16:43:00]
+
+
+Reading patch driver file...
+
+Connecting to SYSTEM......Connected successfully.
+
+
+STRT_TASK: [Parse and load patch driver file] [] [Mon Apr 27 2020 16:43:00]
+
+
+Connecting to APPS......Connected successfully.
+
+  Parsing and loading patch driver file...
+         46 lines processed.
+
+
+STOP_TASK: [Parse and load patch driver file] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Check patch integrity] [] [Mon Apr 27 2020 16:43:00]
+
+
+  Not checking patch integrity as integrity checking flag is turned off.
+
+
+STOP_TASK: [Check patch integrity] [] [Mon Apr 27 2020 16:43:00]
+
+
+Successfully read patch driver file.
+
+
+STOP_TASK: [Process patch driver file] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Other driver and release-related logic] [] [Mon Apr 27 2020 16:43:00]
+
+
+Determining target release...
+
+Current target    release is  12.1.3
+
+
+STOP_TASK: [Other driver and release-related logic] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STOP_TASK: [Get Oracle Applications Release and read driver file] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Prereq checking logic] [] [Mon Apr 27 2020 16:43:00]
+
+
+Warning: 
+
+The description for the entity 'xbol' in the patch driver 
+does not match with the current description.
+
+The current description is      :'Customizacoes SAE'
+The description in the patch is :'XX Customizaciones'
+
+The current description will not be changed.
+
+For the Current View:
+   l_appl_top_id .............. 195
+   l_eav_patch_release_name ... 12.0.0
+Current View - 999991073004005:US is NOT_APPLIED 
+
+
+STOP_TASK: [Prereq checking logic] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Ask translated patch question] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STOP_TASK: [Ask translated patch question] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Determine bugs to apply] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+Determining which bug fixes to apply...
+
+  Turning off bug fixes for products not installed or shared in the database...
+
+  Resetting bug actions for bug fixes we will not apply...
+
+  Processing files for Oracle Government Applications...
+
+Done determining which bug fixes to apply.
+
+
+Log and Info File sync point:
+  Mon Apr 27 2020 16:43:00
+  
+Turning off actions that reference unrecognized products.
+
+
+Log and Info File sync point:
+  Mon Apr 27 2020 16:43:00
+  
+End of unrecognized products checking.
+
+
+
+STOP_TASK: [Determine bugs to apply] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Process action options] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STOP_TASK: [Process action options] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Modify actions for bootstrap mode] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STOP_TASK: [Modify actions for bootstrap mode] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Ask for number of parallel workers] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STOP_TASK: [Ask for number of parallel workers] [] [Mon Apr 27 2020 16:43:00]
+
+
+AutoPatch will run in serial mode.
+
+
+
+STOP_TASK: [Steps before copy portion] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Copy portion steps] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [apply new applterr.txt] [] [Mon Apr 27 2020 16:43:00]
+
+
+Did not need to apply new applterr.txt.
+
+
+STOP_TASK: [apply new applterr.txt] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [AutoSplice applprod.txt and applUS.txt] [] [Mon Apr 27 2020 16:43:00]
+
+
+Applying new applprod.txt (if any)...
+
+  Did not need to apply new applprod.txt.
+
+
+STOP_TASK: [AutoSplice applprod.txt and applUS.txt] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Version checking for driver files] [] [Mon Apr 27 2020 16:43:00]
+
+
+Performing version checking for driver files...
+
+
+STOP_TASK: [Version checking for driver files] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Copy driver files] [] [Mon Apr 27 2020 16:43:00]
+
+
+Copying driver files into installation area...
+
+  No driver files were selected for copying.
+
+
+STOP_TASK: [Copy driver files] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Forcecopy driver files] [] [Mon Apr 27 2020 16:43:00]
+
+
+Skipping...
+ ForceCopy driver files into installation area for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Forcecopy driver files] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Screen out files not valid for this configuration] [] [Mon Apr 27 2020 16:43:00]
+
+
+Screening out files not valid for this installation...
+
+
+STOP_TASK: [Screen out files not valid for this configuration] [] [Mon Apr 27 2020 16:43:00]
+
+
+
+STRT_TASK: [Read file driver files to get list of valid files] [] [Mon Apr 27 2020 16:43:00]
+
+
+Determining valid on-site files...
+
+Setting JAVA_TOP to '/u01/hebs/apps/apps_st/comn/java/classes'
+
+STOP_TASK: [Read file driver files to get list of valid files] [] [Mon Apr 27 2020 16:43:01]
+
+
+
+STRT_TASK: [Perform libout actions] [] [Mon Apr 27 2020 16:43:01]
+
+
+Skipping...
+ Extract object modules from libraries for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Perform libout actions] [] [Mon Apr 27 2020 16:43:01]
+
+
+
+STRT_TASK: [Perform version checking] [] [Mon Apr 27 2020 16:43:01]
+
+
+Performing version checking...
+Wrong version in patch file: found v120.1, expected v120.2 in
+/u01/hebs/apps/apps_st/appl/patches/CUS_EAM_004_HQS_005/xbol/sql/CUSEAM004_005.sql
+
+Error occurred in version checking.
+See above error messages or AutoPatch log file for details.
+Exiting AutoPatch...
+Freeing fixes hash table 
+ Freeing basedons hash table 
+Freeing entities hash table 
+
+You should check the file
+/u01/hebs/apps/apps_st/appl/admin/HEBS/log/u121CUSEAM004_005.drv.log
+
+for errors.
+
+
+************* Start of AutoPatch session *************
+AutoPatch version: 12.0.0
+AutoPatch started at: Tue Apr 28 2020 15:35:11
+
+APPL_TOP is set to /u01/hebs/apps/apps_st/appl
+
+Defaults Feature Enabled = YES.
+Num Workers = 1.
+Options = "hotpatch".
+Patch Top = "/u01/hebs/apps/apps_st/appl/patches/CUS_EAM_004_HQS_005".
+Patch Driver File = "u121CUSEAM004_005.drv".
+
+NLS_LANG value from the environment is    : American_America.WE8ISO8859P1 
+NLS_LANG value for this AD utility run is : AMERICAN_AMERICA.WE8ISO8859P1 
+
+
+Backing up restart files, if any......Done.
+
+
+Your previous AutoPatch session did not run to completion.
+Do you wish to continue with your previous AutoPatch session [Yes] ? No
+
+You chose to disregard your previous AutoPatch session
+and to restart AutoPatch from the beginning.
+
+------------------------------------------------------------------------
+If you have partially applied a patch, you must continue with your
+previous AutoPatch session until it completes successfuly.
+
+If you try to re-apply a patch that you have only applied partially,
+AutoPatch may apply the patch incorrectly.
+------------------------------------------------------------------------
+
+Enter Yes to confirm that you wish to overwrite your previous
+AutoPatch session and begin a new AutoPatch session.
+
+Enter No to continue with your previous AutoPatch session. [No] : es
+
+
+Please enter either Yes or No.
+
+Enter No to continue with your previous AutoPatch session. [No] : Yes
+
+You can be notified by email if a failure occurs.
+Do you wish to activate this feature [No] ? No *
+
+Please enter the batchsize [1000] : 1000 *
+
+
+Please enter the name of the Oracle Applications System that this
+APPL_TOP belongs to.
+
+The Applications System name must be unique across all Oracle
+Applications Systems at your site, must be from 1 to 30 characters
+long, may only contain alphanumeric and underscore characters,
+and must start with a letter.
+
+Sample Applications System names are: "prod", "test", "demo" and 
+"Development_2".
+
+Applications System Name [HEBS] : HEBS *
+
+
+NOTE: If you do not currently have certain types of files installed
+in this APPL_TOP, you may not be able to perform certain tasks.
+
+Example 1: If you don't have files used for installing or upgrading
+the database installed in this area, you cannot install or upgrade
+the database from this APPL_TOP.
+
+Example 2: If you don't have forms files installed in this area, you cannot
+generate them or run them from this APPL_TOP.
+
+Example 3: If you don't have concurrent program files installed in this area,
+you cannot relink concurrent programs or generate reports from this APPL_TOP.
+
+
+Do you currently have files used for installing or upgrading the database
+installed in this APPL_TOP [YES] ? YES *
+
+
+Do you currently have Java and HTML files for HTML-based functionality
+installed in this APPL_TOP [YES] ? YES *
+
+
+Do you currently have Oracle Applications forms files installed
+in this APPL_TOP [YES] ? YES *
+
+
+Do you currently have concurrent program files installed
+in this APPL_TOP [YES] ? YES *
+
+
+Please enter the name Oracle Applications will use to identify this APPL_TOP.
+
+The APPL_TOP name you select must be unique within an Oracle Applications
+System, must be from 1 to 30 characters long, may only contain
+alphanumeric and underscore characters, and must start with a letter.
+
+Sample APPL_TOP Names are: "prod_all", "demo3_forms2", and "forms1".
+
+APPL_TOP Name [AT_vm01lhebs] : AT_vm01lhebs *
+
+
+
+You are about to apply a patch to the installation of Oracle Applications
+in your ORACLE database 'HEBS'
+using ORACLE executables in '/u01/hebs/apps/tech_st/10.1.2'.
+
+Is this the correct database [Yes] ? Yes *
+
+AutoPatch needs the password for your 'SYSTEM' ORACLE schema
+in order to determine your installation configuration.
+
+Enter the password for your 'SYSTEM' ORACLE schema: *****
+
+
+Connecting to SYSTEM......Connected successfully.
+
+The ORACLE username specified below for Application Object Library
+uniquely identifies your existing product group: APPLSYS
+
+Enter the ORACLE password of Application Object Library [APPS] : *****
+
+AutoPatch is verifying your username/password.
+Connecting to APPLSYS......Connected successfully.
+
+
+The status of various features in this run of AutoPatch is:
+
+                                           <-Feature version in->
+Feature                          Active?   APPLTOP    Data model    Flags
+------------------------------   -------   --------   -----------   -----------
+CHECKFILE                        Yes       1          1             Y N N Y N Y
+PREREQ                           Yes       6          6             Y N N Y N Y
+CONCURRENT_SESSIONS              No        2          2             Y Y N Y Y N
+PATCH_TIMING                     Yes       2          2             Y N N Y N Y
+PATCH_HIST_IN_DB                 Yes       6          6             Y N N Y N Y
+SCHEMA_SWAP                      Yes       1          1             Y N N Y Y Y
+JAVA_WORKER                      Yes       1          1             Y N N Y N Y
+CODELEVEL                        Yes       1          1             Y N N Y N Y
+
+
+
+Connecting to SYSTEM......Connected successfully.
+
+Connecting to APPLSYS......Connected successfully.
+
+Identifier for the current session is 272786
+
+Reading product information from file...
+
+Reading language and territory information from file...
+
+Reading language information from applUS.txt ...
+
+AutoPatch warning:
+ Product Data File
+ /u01/hebs/apps/apps_st/appl/admin/zfaprod.txt
+ does not exist for product "zfa".
+This product is registered in the database but the
+above file does not exist in APPL_TOP.  The product
+will be ignored without error.
+
+
+AutoPatch warning:
+ Product Data File
+ /u01/hebs/apps/apps_st/appl/admin/zsaprod.txt
+ does not exist for product "zsa".
+This product is registered in the database but the
+above file does not exist in APPL_TOP.  The product
+will be ignored without error.
+
+
+AutoPatch warning:
+ Product Data File
+ /u01/hebs/apps/apps_st/appl/admin/jtsprod.txt
+ does not exist for product "jts".
+This product is registered in the database but the
+above file does not exist in APPL_TOP.  The product
+will be ignored without error.
+
+
+Reading database to see what industry is currently installed.
+
+Reading FND_LANGUAGES to see what is currently installed.
+Currently, the following languages are installed:
+
+Code   Language                                Status
+----   --------------------------------------- ---------
+US     American English                        Base         
+PTB    Brazilian Portuguese                    Install      
+ESA    Latin American Spanish                  Install      
+
+Reading language information from applPTB.txt ...
+
+Reading language information from applESA.txt ...
+
+Your base language will be AMERICAN.
+
+Your other languages to install are: BRAZILIAN PORTUGUESE, LATIN AMERICAN SPANISH
+
+Setting up module information.
+Reading database for information about the modules.
+Saving module information.
+Reading database for information about the products.
+Connecting to SYSTEM......Connected successfully.
+
+Connecting to APPLSYS......Connected successfully.
+
+Connecting to SYSTEM......Connected successfully.
+
+Reading database for information about how products depend on each other.
+Connecting to APPLSYS......Connected successfully.
+
+Reading topfile.txt ...
+
+Saving product information.
+Connecting to SYSTEM......Connected successfully.
+
+Connecting to APPLSYS......Connected successfully.
+
+
+AD code level : [B.8]
+
+You chose to abandon your previous AutoPatch session
+and to continue as a new session.
+
+Beginning database cleanup for previous session ...
+
+Completed database cleanup for previous session.
+
+
+STRT_TASK: [AutoPatch startup after aimini] [] [Tue Apr 28 2020 15:35:24]
+
+
+Not checking the system maintenance mode.
+
+
+
+STRT_TASK: [Validate schema passwords] [] [Tue Apr 28 2020 15:35:24]
+
+
+Connecting to APPLSYS......Connected successfully.
+
+Connecting to APPS......Connected successfully.
+
+
+STOP_TASK: [Validate schema passwords] [] [Tue Apr 28 2020 15:35:24]
+
+
+
+
+STRT_TASK: [Upload Patch History information from filesystem] [] [Tue Apr 28 2020 15:35:24]
+
+
+Trying to obtain a lock...
+
+
+
+About to attempt instantiating the current-view snapshot: Tue Apr 28 2020 15:35:25
+
+  Attempting to instantiate the current-view snapshot...
+
+  Was already instantiated. So no instantiation done this time.
+
+Done attempting to instantiate the current-view snapshot: Tue Apr 28 2020 15:35:25
+
+
+
+     **************** S T A R T   O F   U P L O A D ****************
+
+Start date: Tue Apr 28 2020 15:35:25
+
+
+
+
+Uploading /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200401211132.txt...
+
+Uploading Java objects to patch history tables...
+Error: An invalid bug_number: SAECUSAP045
+
+AutoPatch error:
+
+Unable to upload Java Classes to DB from file: /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200401211132.txt
+
+
+
+Uploading /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200401214115.txt...
+
+Uploading Java objects to patch history tables...
+Error: An invalid bug_number: SAECUSAP045
+
+AutoPatch error:
+
+Unable to upload Java Classes to DB from file: /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200401214115.txt
+
+
+
+Uploading /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200403171206.txt...
+
+Uploading Java objects to patch history tables...
+Error: An invalid bug_number: SAECUSAP045
+
+AutoPatch error:
+
+Unable to upload Java Classes to DB from file: /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200403171206.txt
+
+
+
+Uploading /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200330225020.txt...
+
+Uploading Java objects to patch history tables...
+Error: An invalid bug_number: SAECUSPOS006
+
+AutoPatch error:
+
+Unable to upload Java Classes to DB from file: /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200330225020.txt
+
+
+
+Uploading /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200407103919.txt...
+
+Uploading Java objects to patch history tables...
+Error: An invalid bug_number: SAECUSPO054
+
+AutoPatch error:
+
+Unable to upload Java Classes to DB from file: /u01/hebs/apps/apps_st/appl/admin/HEBS/javaupdates20200407103919.txt
+
+
+0 "left over" javaupdates.txt files uploaded to DB: Tue Apr 28 2020 15:35:25
+
+0 patches uploaded from the ADPSV format patch history files: Tue Apr 28 2020 15:35:25
+
+0 patches uploaded from the ADPSV format preinstall patch history files: Tue Apr 28 2020 15:35:25
+
+
+Uploading information about files copied during the previous runs ...
+
+0 "left over" filescopied_<session_id>.txt files uploaded to DB: Tue Apr 28 2020 15:35:25
+
+     ****************** E N D   O F   U P L O A D ******************
+
+
+
+
+End date: Tue Apr 28 2020 15:35:25
+
+
+
+STOP_TASK: [Upload Patch History information from filesystem] [] [Tue Apr 28 2020 15:35:25]
+
+
+
+
+You have specified /u01/hebs/apps/apps_st/appl/patches/CUS_EAM_004_HQS_005
+as the directory where your Oracle Applications patch has been unloaded.
+
+
+STOP_TASK: [AutoPatch startup after aimini] [] [Tue Apr 28 2020 15:35:25]
+
+
+You have specified u121CUSEAM004_005.drv
+as the name of your patchdriver file.
+
+
+STRT_TASK: [Run a single patch driver file] [] [Tue Apr 28 2020 15:35:25]
+
+
+
+STRT_TASK: [Steps before copy portion] [] [Tue Apr 28 2020 15:35:25]
+
+
+
+STRT_TASK: [Initial driver processing steps] [] [Tue Apr 28 2020 15:35:25]
+
+Start time for driver file is: Tue Apr 28 2020 15:35:25
+
+
+STOP_TASK: [Initial driver processing steps] [] [Tue Apr 28 2020 15:35:25]
+
+
+
+STRT_TASK: [Get Oracle Applications Release and read driver file] [] [Tue Apr 28 2020 15:35:25]
+
+
+
+STRT_TASK: [Get Oracle Applications Release] [] [Tue Apr 28 2020 15:35:26]
+
+
+Getting Oracle Applications Release...
+
+Connecting to APPLSYS......Connected successfully.
+
+Current installed release is  12.1.3
+
+Connecting to APPS......Connected successfully.
+
+
+STOP_TASK: [Get Oracle Applications Release] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [Process patch driver file] [] [Tue Apr 28 2020 15:35:26]
+
+
+Reading patch driver file...
+
+Connecting to SYSTEM......Connected successfully.
+
+
+STRT_TASK: [Parse and load patch driver file] [] [Tue Apr 28 2020 15:35:26]
+
+
+Connecting to APPS......Connected successfully.
+
+  Parsing and loading patch driver file...
+         46 lines processed.
+
+
+STOP_TASK: [Parse and load patch driver file] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [Check patch integrity] [] [Tue Apr 28 2020 15:35:26]
+
+
+  Not checking patch integrity as integrity checking flag is turned off.
+
+
+STOP_TASK: [Check patch integrity] [] [Tue Apr 28 2020 15:35:26]
+
+
+Successfully read patch driver file.
+
+
+STOP_TASK: [Process patch driver file] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [Other driver and release-related logic] [] [Tue Apr 28 2020 15:35:26]
+
+
+Determining target release...
+
+Current target    release is  12.1.3
+
+
+STOP_TASK: [Other driver and release-related logic] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STOP_TASK: [Get Oracle Applications Release and read driver file] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [Prereq checking logic] [] [Tue Apr 28 2020 15:35:26]
+
+
+Warning: 
+
+The description for the entity 'xbol' in the patch driver 
+does not match with the current description.
+
+The current description is      :'Customizacoes SAE'
+The description in the patch is :'XX Customizaciones'
+
+The current description will not be changed.
+
+For the Current View:
+   l_appl_top_id .............. 195
+   l_eav_patch_release_name ... 12.0.0
+Current View - 999991073004005:US is NOT_APPLIED 
+
+
+STOP_TASK: [Prereq checking logic] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [Ask translated patch question] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STOP_TASK: [Ask translated patch question] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [Determine bugs to apply] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+Determining which bug fixes to apply...
+
+  Turning off bug fixes for products not installed or shared in the database...
+
+  Resetting bug actions for bug fixes we will not apply...
+
+  Processing files for Oracle Government Applications...
+
+Done determining which bug fixes to apply.
+
+
+Log and Info File sync point:
+  Tue Apr 28 2020 15:35:26
+  
+Turning off actions that reference unrecognized products.
+
+
+Log and Info File sync point:
+  Tue Apr 28 2020 15:35:26
+  
+End of unrecognized products checking.
+
+
+
+STOP_TASK: [Determine bugs to apply] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [Process action options] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STOP_TASK: [Process action options] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [Modify actions for bootstrap mode] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STOP_TASK: [Modify actions for bootstrap mode] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [Ask for number of parallel workers] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STOP_TASK: [Ask for number of parallel workers] [] [Tue Apr 28 2020 15:35:26]
+
+
+AutoPatch will run in serial mode.
+
+
+
+STOP_TASK: [Steps before copy portion] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [Copy portion steps] [] [Tue Apr 28 2020 15:35:26]
+
+
+
+STRT_TASK: [apply new applterr.txt] [] [Tue Apr 28 2020 15:35:26]
+
+
+Did not need to apply new applterr.txt.
+
+
+STOP_TASK: [apply new applterr.txt] [] [Tue Apr 28 2020 15:35:27]
+
+
+
+STRT_TASK: [AutoSplice applprod.txt and applUS.txt] [] [Tue Apr 28 2020 15:35:27]
+
+
+Applying new applprod.txt (if any)...
+
+  Did not need to apply new applprod.txt.
+
+
+STOP_TASK: [AutoSplice applprod.txt and applUS.txt] [] [Tue Apr 28 2020 15:35:27]
+
+
+
+STRT_TASK: [Version checking for driver files] [] [Tue Apr 28 2020 15:35:27]
+
+
+Performing version checking for driver files...
+
+
+STOP_TASK: [Version checking for driver files] [] [Tue Apr 28 2020 15:35:27]
+
+
+
+STRT_TASK: [Copy driver files] [] [Tue Apr 28 2020 15:35:27]
+
+
+Copying driver files into installation area...
+
+  No driver files were selected for copying.
+
+
+STOP_TASK: [Copy driver files] [] [Tue Apr 28 2020 15:35:27]
+
+
+
+STRT_TASK: [Forcecopy driver files] [] [Tue Apr 28 2020 15:35:27]
+
+
+Skipping...
+ ForceCopy driver files into installation area for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Forcecopy driver files] [] [Tue Apr 28 2020 15:35:27]
+
+
+
+STRT_TASK: [Screen out files not valid for this configuration] [] [Tue Apr 28 2020 15:35:27]
+
+
+Screening out files not valid for this installation...
+
+
+STOP_TASK: [Screen out files not valid for this configuration] [] [Tue Apr 28 2020 15:35:27]
+
+
+
+STRT_TASK: [Read file driver files to get list of valid files] [] [Tue Apr 28 2020 15:35:27]
+
+
+Determining valid on-site files...
+
+Setting JAVA_TOP to '/u01/hebs/apps/apps_st/comn/java/classes'
+
+STOP_TASK: [Read file driver files to get list of valid files] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Perform libout actions] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ Extract object modules from libraries for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Perform libout actions] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Perform version checking] [] [Tue Apr 28 2020 15:35:42]
+
+
+Performing version checking...
+
+
+STOP_TASK: [Perform version checking] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Determine directories to create] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ Determine directories to create for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Determine directories to create] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Determine executables to link] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ Determine executables to link for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Determine executables to link] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Determine forms executable files to generate] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ Determine forms to generate for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Determine forms executable files to generate] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Determine Reports PL/SQL library files to generate] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ Determine Oracle Reports libraries to generate for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Determine Reports PL/SQL library files to generate] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Determine Reports files to generate] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ Determine reports to generate for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Determine Reports files to generate] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Determine message files to generate] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ Determine if need to generate message files for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Determine message files to generate] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Find bugs with no active actions] [] [Tue Apr 28 2020 15:35:42]
+
+
+Looking for active bug fixes with no active actions...
+
+
+About to turn off duplicate actions: Tue Apr 28 2020 15:35:42
+
+
+  Start of adptod(): Tue Apr 28 2020 15:35:42
+
+    Actions scanned: 7
+    Duplicate actions: 0
+
+
+  End of adptod(): Tue Apr 28 2020 15:35:42
+
+
+Done turning off duplicate actions: Tue Apr 28 2020 15:35:42
+
+
+About to turn off bugs with no active actions: Tue Apr 28 2020 15:35:42
+
+
+  Start of adpunb(): Tue Apr 28 2020 15:35:42
+
+    Active bugs at start: 1
+    Bugs turned off: 0
+    Outer loop iterations: 1
+    Actions scanned: 1
+
+
+  End of adpunb(): Tue Apr 28 2020 15:35:42
+
+
+Done turning off bugs with no active actions: Tue Apr 28 2020 15:35:42
+
+
+About to save release list to filesystem: Tue Apr 28 2020 15:35:42
+
+
+Done saving release list to filesystem: Tue Apr 28 2020 15:35:42
+
+
+STOP_TASK: [Find bugs with no active actions] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Display customized files] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+Reading customized files list (if any)...
+
+Did not find customized files registration file 
+"/u01/hebs/apps/apps_st/appl/admin/applcust.txt"
+The file may have been uploaded to the database.
+
+
+This patch replaces the following customized files:
+
+  No customized files are replaced by this patch.
+
+
+
+STOP_TASK: [Display customized files] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Copy files] [] [Tue Apr 28 2020 15:35:42]
+
+
+Copying files into installation area...
+
+**********************************************************
+You are running admvcode
+
+Header information is:
+  $Header: aiopatch.lc 120.7.12010000.2 2014/02/06 11:42:55 mkumandu ship $
+
+Start of admvcode session
+Date/Time is Tue Apr 28 2020 15:35:42
+
+Filelist file is: /u01/hebs/apps/apps_st/appl/admin/HEBS/out/copymast.txt
+Patch   Character Set is: we8iso8859p1
+On-site Character Set is: WE8ISO8859P1
+
+
+
+Log and Info File sync point:
+  Tue Apr 28 2020 15:35:42
+  
+Information about files copied to the APPL_TOP would be written to the
+informational message file.
+
+No character set conversion is required.
+
+
+Copying files to APPL_TOP...
+
+   0 directories created.
+   3 files copied without         character set conversion.
+   0 files copied with successful character set conversion.
+
+   3 files copied successfully.
+   0 files had fatal errors.
+
+admvcode is exiting with status 0
+
+End of admvcode session
+Date/time is Tue Apr 28 2020 15:35:42
+**********************************************************
+
+Done copying files into installation area.
+
+
+STOP_TASK: [Copy files] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Forcecopy files] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ ForceCopy files into installation area for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Forcecopy files] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Perform libin actions] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ Archive object modules into product libraries for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Perform libin actions] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Create directories] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ Create Directories for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Create directories] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Relink executables] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping...
+ Relink for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Relink executables] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Copy files in patch to destinations] [] [Tue Apr 28 2020 15:35:42]
+
+
+Performing second half of mirrored copies...
+
+  No mirrored copies were executed in this patch.
+
+
+STOP_TASK: [Copy files in patch to destinations] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Maintain Oracle Applications Java files] [] [Tue Apr 28 2020 15:35:42]
+
+
+Updating Oracle Applications Java files if necessary...
+
+  No Oracle Applications Java files required updates.
+
+  Checking to see if any files possibly included in the product JAR files
+  were copied by this patch...
+
+    No files possibly included in the product JAR files
+    were copied by this patch.
+
+
+
+
+
+STRT_TASK: [Run AutoConfig to instantiate special templates] [] [Tue Apr 28 2020 15:35:42]
+
+
+Skipping ...
+  Running AutoConfig to instantiate templates which affect
+  the generation of JAR files since none of these templates
+  were patched during this run of adpatch.
+
+
+
+STOP_TASK: [Run AutoConfig to instantiate special templates] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+
+   No product JAR files need to be re-generated. 
+
+
+
+STRT_TASK: [Generate appsborg.zip] [] [Tue Apr 28 2020 15:35:42]
+
+
+  Checking to see if adjborg.txt or any files included in
+  adjborg.txt were copied by this patch...
+
+   Neither adjborg.txt nor any file included in
+   adjborg.txt was copied by this patch.
+
+
+STOP_TASK: [Generate appsborg.zip] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Generate appsborg2.zip] [] [Tue Apr 28 2020 15:35:42]
+
+
+  Checking to see if adjborg2.txt or any files included in
+  adjborg2.txt were copied by this patch...
+
+   Neither adjborg2.txt nor any file included in
+   adjborg2.txt was copied by this patch.
+
+
+STOP_TASK: [Generate appsborg2.zip] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+About to turn off bugs with no active actions: Tue Apr 28 2020 15:35:42
+
+
+  Start of adpunb(): Tue Apr 28 2020 15:35:42
+
+    Active bugs at start: 1
+    Bugs turned off: 0
+    Outer loop iterations: 1
+    Actions scanned: 1
+
+
+  End of adpunb(): Tue Apr 28 2020 15:35:42
+
+
+Done turning off bugs with no active actions: Tue Apr 28 2020 15:35:42
+
+
+About to save release list to filesystem: Tue Apr 28 2020 15:35:42
+
+
+Done saving release list to filesystem: Tue Apr 28 2020 15:35:42
+
+
+STOP_TASK: [Maintain Oracle Applications Java files] [] [Tue Apr 28 2020 15:35:42]
+
+
+
+STRT_TASK: [Compile JSP files] [] [Tue Apr 28 2020 15:35:42]
+
+
+Compiling JSP files...
+
+  Not compiling JSPs: no JSPs in patch.
+
+  No JSP files were compiled.
+
+
+STOP_TASK: [Compile JSP files] [] [Tue Apr 28 2020 15:35:43]
+
+
+
+STOP_TASK: [Copy portion steps] [] [Tue Apr 28 2020 15:35:43]
+
+
+
+STRT_TASK: [Database portion steps] [] [Tue Apr 28 2020 15:35:43]
+
+
+
+STRT_TASK: [Get initial list of invalid objects in DB] [] [Tue Apr 28 2020 15:35:43]
+
+
+Number of invalid objects: 11
+
+Getting list of invalid objects in APPS schema.
+
+Invalid object reports are recorded in
+/u01/hebs/apps/apps_st/appl/admin/HEBS/log/272786_preenv.*
+
+
+STOP_TASK: [Get initial list of invalid objects in DB] [] [Tue Apr 28 2020 15:35:45]
+
+
+
+STRT_TASK: [Run SQL scripts and EXEC commands] [] [Tue Apr 28 2020 15:35:45]
+
+
+Running SQL scripts and EXEC commands...
+
+
+STRT_TASK: [Determine which SQL and EXEC commands to run] [] [Tue Apr 28 2020 15:35:45]
+
+
+Determining which SQL and EXEC commands to run...
+
+Connecting to SYSTEM......Connected successfully.
+
+Loading Package Revision Information from Database...
+
+
+Starting to load Package Revision Information
+: Tue Apr 28 2020 15:35:45
+
+
+Done loading     Package Revision Information
+: Tue Apr 28 2020 15:35:45
+
+
+Validating PL/SQL direct execute exceptions file ...
+
+Initializing PL/SQL direct execute exceptions hash table ...
+
+Done initializing PL/SQL direct execute exceptions hash table.
+
+Uploading PL/SQL direct execute exceptions from file ...
+
+Done uploading PL/SQL direct execute exceptions from file.
+
+Done validating PL/SQL direct execute exceptions file.
+
+Done determining which SQL and EXEC commands to run.
+
+Connecting to APPS......Connected successfully.
+
+
+STOP_TASK: [Determine which SQL and EXEC commands to run] [] [Tue Apr 28 2020 15:35:45]
+
+
+
+STRT_TASK: [Running database update commands] [] [Tue Apr 28 2020 15:35:45]
+
+
+Connecting to APPLSYS......Connected successfully.
+
+CREATE TABLE AD_TABLE_INDEX_INFO(OWNER      VARCHAR2(30) NOT NULL,
+ INDEX_NAME VARCHAR2(30) NOT NULL, ATTRIBUTES VARCHAR2(256)) TABLESPACE
+ APPS_TS_TX_DATA initrans 100  storage(initial 4K next 4K)
+
+CREATE UNIQUE INDEX AD_TABLE_INDEX_INFO_U1 on AD_TABLE_INDEX_INFO
+ (OWNER,INDEX_NAME) TABLESPACE APPS_TS_TX_IDX storage(initial 4K next 4K)
+
+GRANT ALL ON AD_TABLE_INDEX_INFO TO  APPS WITH GRANT OPTION
+
+Connecting to APPS......Connected successfully.
+
+
+STRT_TASK: [Running SQL and EXEC commands in serial] [] [Tue Apr 28 2020 15:35:45]
+
+
+
+Running SQL and EXEC commands in serial...
+
+
+
+STRT_TASK: [Running serial SQL and EXEC commands] [] [Tue Apr 28 2020 15:35:45]
+
+
+Connecting to APPLSYS......Connected successfully.
+
+
+Starting phase 0 (A0): os+1
+
+
+Start time for file is: Tue Apr 28 2020 15:35:45
+
+Converting file for Invoker's Rights.
+  Source file: /u01/hebs/apps/apps_st/appl/xbol/12.0.0/admin/sql/SAE_EAM_WIP_REQUESTS_PKS.pls
+  Dest   file: /u01/hebs/apps/apps_st/appl/admin/HEBS/out/p000invok.sql
+
+
+sqlplus -s APPS/***** @/u01/hebs/apps/apps_st/appl/admin/HEBS/out/p000invok.sql &un_xbol &pw_xbol
+Connected.
+Connected.
+
+Package created.
+
+
+Commit complete.
+
+
+
+Starting phase 1 (A1): os+2
+
+
+Start time for file is: Tue Apr 28 2020 15:35:47
+
+Not converting file for Invoker's Rights because it appears to
+be a package body creation script (based on the filename).
+  File is: /u01/hebs/apps/apps_st/appl/xbol/12.0.0/admin/sql/SAE_EAM_WIP_REQUESTS_PKB.pls
+
+
+sqlplus -s APPS/***** @/u01/hebs/apps/apps_st/appl/xbol/12.0.0/admin/sql/SAE_EAM_WIP_REQUESTS_PKB.pls &un_xbol &pw_xbol
+Connected.
+Connected.
+
+Package body created.
+
+
+Commit complete.
+
+
+
+Starting phase 2 (A2): last
+
+
+Start time for file is: Tue Apr 28 2020 15:35:48
+
+sqlplus -s APPS/***** @/u01/hebs/apps/apps_st/appl/ad/12.0.0/sql/adutlrcmp.sql APPLSYS &pw_apps APPS &pw_apps &systempwd 1 0 NONE FALSE
+Connected.
+
+Arguments are:
+
+AOL_schema = APPLSYS, AOL_password = *****,
+Schema_to_compile = APPS, Schema_to_compile_pw = *****,
+SYSTEM_password = *****, Total_workers = 1, Logical_worker_num = 0
+Object_type_to_not_compile = NONE
+Use_stored_dependencies = FALSE
+
+Connected.
+
+Running utl_recomp.recomp_parallel(1), if it exists
+
+
+OWNER
+------------------------------------------------------------------------------
+NUM_INVALID
+-----------
+ADM_TIVIT
+	  1
+
+OLAPSYS
+	  5
+
+XXISV
+	  3
+
+APPS
+	 11
+
+ENDECA
+	  3
+
+
+Elapsed: 00:00:00.23
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.03
+
+STATUS_MESSAGE
+------------------------------------------------------------------------------
+Running UTL_RECOMP.RECOMP_PARALLEL...
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:16.76
+
+STATUS_MESSAGE
+------------------------------------------------------------------------------
+Successfully ran UTL_RECOMP.RECOMP_PARALLEL
+
+
+OWNER
+------------------------------------------------------------------------------
+NUM_INVALID
+-----------
+ADM_TIVIT
+	  1
+
+OLAPSYS
+	  5
+
+XXISV
+	  3
+
+APPS
+	  8
+
+ENDECA
+	  3
+
+
+Elapsed: 00:00:00.12
+
+Done running utl_recomp.recomp_parallel
+
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+
+Connecting to APPS......Connected successfully.
+
+
+Done running SQL and EXEC commands in serial.
+
+
+
+STOP_TASK: [Running serial SQL and EXEC commands] [] [Tue Apr 28 2020 15:36:06]
+
+
+
+STRT_TASK: [Running serial Invoker Rights processing] [] [Tue Apr 28 2020 15:36:06]
+
+
+Running Invoker's Rights Maintenance...
+
+
+sqlplus -s APPS/***** @/u01/hebs/apps/apps_st/appl/ad/12.0.0/admin/sql/adinvser.pls ***** TRUE
+Connected.
+Connected.
+
+Running Invoker's Rights maintenance in serial mode (Incremental = TRUE)...
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.44
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+
+
+STOP_TASK: [Running serial Invoker Rights processing] [] [Tue Apr 28 2020 15:36:06]
+
+
+
+STOP_TASK: [Running SQL and EXEC commands in serial] [] [Tue Apr 28 2020 15:36:06]
+
+
+  Updating the checkfile repository if necessary...
+
+  Did not update the checkfile repository...
+
+
+Dropping AD_TABLE_INDEX_INFO table...
+
+Connecting to APPLSYS......Connected successfully.
+
+DROP TABLE AD_TABLE_INDEX_INFO PURGE
+
+
+AD_TABLE_INDEX_INFO table dropped.
+
+Connecting to APPS......Connected successfully.
+
+
+STOP_TASK: [Running database update commands] [] [Tue Apr 28 2020 15:36:07]
+
+
+
+About to turn off bugs with no active actions: Tue Apr 28 2020 15:36:07
+
+
+  Start of adpunb(): Tue Apr 28 2020 15:36:07
+
+    Active bugs at start: 1
+    Bugs turned off: 0
+    Outer loop iterations: 1
+    Actions scanned: 1
+
+
+  End of adpunb(): Tue Apr 28 2020 15:36:07
+
+
+Done turning off bugs with no active actions: Tue Apr 28 2020 15:36:07
+
+Done running SQL scripts and EXEC commands.
+
+
+STOP_TASK: [Run SQL scripts and EXEC commands] [] [Tue Apr 28 2020 15:36:07]
+
+
+
+STRT_TASK: [Compile invalid objects in DB] [] [Tue Apr 28 2020 15:36:07]
+
+
+Compiling invalid objects...
+
+  Not compiling invalid objects: feature disabled (or serial mode)
+
+
+
+STOP_TASK: [Compile invalid objects in DB] [] [Tue Apr 28 2020 15:36:07]
+
+
+
+STRT_TASK: [Get final list of invalid objects in DB] [] [Tue Apr 28 2020 15:36:07]
+
+
+Number of invalid objects: 8
+
+Getting list of invalid objects in APPS schema.
+
+Invalid object reports are recorded in
+/u01/hebs/apps/apps_st/appl/admin/HEBS/log/272786_postenv.*
+
+
+STOP_TASK: [Get final list of invalid objects in DB] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STOP_TASK: [Database portion steps] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Generate portion steps] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Generate forms PL/SQL library files] [] [Tue Apr 28 2020 15:36:08]
+
+
+Skipping...
+ Generate forms library files for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Generate forms PL/SQL library files] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Generate forms menu files] [] [Tue Apr 28 2020 15:36:08]
+
+
+Skipping...
+ Generate forms menu files for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Generate forms menu files] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Generate forms executable files] [] [Tue Apr 28 2020 15:36:08]
+
+
+Skipping...
+ Generate forms for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Generate forms executable files] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Generate reports PL/SQL library files] [] [Tue Apr 28 2020 15:36:08]
+
+
+Skipping...
+ Generate reports libraries for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Generate reports PL/SQL library files] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Generate reports files] [] [Tue Apr 28 2020 15:36:08]
+
+
+Skipping...
+ Generate reports for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Generate reports files] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Generate message files] [] [Tue Apr 28 2020 15:36:08]
+
+
+Skipping...
+ Generate Messages for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Generate message files] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Generate Workflow resource files] [] [Tue Apr 28 2020 15:36:08]
+
+
+Skipping...
+ Generate Workflow resource files for Specified driver
+ since no such action is present for this driver file
+
+
+STOP_TASK: [Generate Workflow resource files] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STOP_TASK: [Generate portion steps] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [AutoConfig steps] [] [Tue Apr 28 2020 15:36:08]
+
+
+Skipping ...
+ Running AutoConfig since none of its templates were
+ patched during this run of adpatch.
+
+
+STOP_TASK: [AutoConfig steps] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Steps after generate portion] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Save Patch History] [] [Tue Apr 28 2020 15:36:08]
+
+
+
+STRT_TASK: [Save Patch History to database] [] [Tue Apr 28 2020 15:36:08]
+
+
+Saving Patch History information to Database...
+
+Trying to obtain a lock...
+
+
+AutoPatch warning:
+AutoPatch will not upload the patch abstract information.
+> Inserted 1 patch history records (total).
+
+Gathering Statistics for AD_PATCH_HIST_TEMP
+
+Done Gathering Statistics for AD_PATCH_HIST_TEMP
+
+>>> Inserted 1 bug history records for this patch (total).
+>>>>> Inserted 0 action history records for this bug (total).
+
+
+
+
+About to update the current-view snapshot: Tue Apr 28 2020 15:36:12
+
+  Updating the current-view snapshot...
+
+
+Done updating the current-view snapshot: Tue Apr 28 2020 15:36:36
+
+
+STOP_TASK: [Save Patch History to database] [] [Tue Apr 28 2020 15:36:36]
+
+
+  Done saving Patch History information.
+
+
+STOP_TASK: [Save Patch History] [] [Tue Apr 28 2020 15:36:36]
+
+
+
+STRT_TASK: [IREP steps] [] [Tue Apr 28 2020 15:36:36]
+
+
+
+About to do IREP processing...
+
+  Attempting to process IREP files ...
+
+  Successfully processed IREP files.
+
+Done IREP processing.
+
+
+
+STOP_TASK: [IREP steps] [] [Tue Apr 28 2020 15:36:36]
+
+Freeing fixes hash table 
+ Freeing basedons hash table 
+Freeing entities hash table 
+
+
+STOP_TASK: [Steps after generate portion] [] [Tue Apr 28 2020 15:36:36]
+
+
+
+STOP_TASK: [Run a single patch driver file] [] [Tue Apr 28 2020 15:36:36]
+
+
+
+STRT_TASK: [AutoPatch post-driver logic] [] [Tue Apr 28 2020 15:36:36]
+
+
+Copying applprod.tmp to applprod.txt (if needed)...
+
+  Did not need to copy applprod.tmp to applprod.txt.
+
+Copying admin/<sid>/applterr.txt to admin/applterr.txt (if needed)...
+
+Did not need to copy admin/HEBS/applterr.txt to admin/applterr.txt.
+
+
+STOP_TASK: [AutoPatch post-driver logic] [] [Tue Apr 28 2020 15:36:36]
+
+
+Log and Info File sync point:
+  Tue Apr 28 2020 15:36:36
+  AutoPatch is exiting successfully.
+
+
+There is no timing information available for the current session.
+
+
+AutoPatch is complete.
+
+AutoPatch may have written informational messages to the file
+/u01/hebs/apps/apps_st/appl/admin/HEBS/log/u121CUSEAM004_005.drv.lgi
+
+Errors and warnings are listed in the log file
+/u01/hebs/apps/apps_st/appl/admin/HEBS/log/u121CUSEAM004_005.drv.log
+
+and in other log files in the same directory.
+

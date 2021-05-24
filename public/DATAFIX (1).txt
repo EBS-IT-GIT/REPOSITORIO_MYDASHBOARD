@@ -1,0 +1,63 @@
+SQL> SET ECHO ON;
+SQL> SET SERVEROUTPUT ON;
+SQL> SET TIMING ON;
+SQL> 
+SQL> SELECT * FROM GLOBAL_NAME;
+
+GLOBAL_NAME                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PADAGI.ADECO.NET.AR
+
+Decorrido: 00:00:00.195
+SQL> ALTER SESSION SET CURRENT_SCHEMA=APPS;
+
+Session alterado.
+
+Decorrido: 00:00:00.164
+SQL> 
+SQL> DECLARE
+  2    l_program_short_name  VARCHAR2 (200);
+  3    l_program_application VARCHAR2 (200);
+  4    l_request_group       VARCHAR2 (200);
+  5    l_group_application   VARCHAR2 (200);
+  6    l_check               VARCHAR2 (2);
+  7    --
+  8  BEGIN
+  9    --
+ 10  
+ 11    l_program_short_name  := 'XXINVMVS';
+ 12    l_program_application := 'Business Online';
+ 13    l_request_group       := 'XX_AUDITORIA';
+ 14    l_group_application   := 'Business Online';
+ 15  
+ 16     apps.fnd_program.add_to_group (program_short_name  => l_program_short_name,
+ 17                                    program_application => l_program_application,
+ 18                                    request_group       => l_request_group,
+ 19                                    group_application   => l_group_application                            
+ 20                                   );  
+ 21  
+ 22  
+ 23    l_program_short_name  := 'XXOPMPLOP12';
+ 24    l_program_application := 'Business Online';
+ 25    l_request_group       := 'XX_AUDITORIA';
+ 26    l_group_application   := 'Business Online';
+ 27  
+ 28     apps.fnd_program.add_to_group (program_short_name  => l_program_short_name,
+ 29                                    program_application => l_program_application,
+ 30                                    request_group       => l_request_group,
+ 31                                    group_application   => l_group_application                            
+ 32                                   );  
+ 33  
+ 34  
+ 35  COMMIT;
+ 36  END;
+ 37  /
+
+Procedimento PL/SQL concluído com sucesso.
+
+Decorrido: 00:00:01.299
+SQL> 
+SQL> 
+SQL>   commit;
+Commit concluído.
+Decorrido: 00:00:00.166

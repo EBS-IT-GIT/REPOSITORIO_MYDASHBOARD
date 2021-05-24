@@ -1,0 +1,4 @@
+update APPS.AP_INVOICES_ALL set  ATTRIBUTE2 = 'OOGVI0012/19' where INVOICE_ID = '28900599';
+
+commit;
+ 

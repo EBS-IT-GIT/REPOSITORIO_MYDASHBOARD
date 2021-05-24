@@ -1,0 +1,17 @@
+PADAGI>
+PADAGI> UPDATE ar.ra_cust_trx_line_gl_dist_all gl
+SET gl_date = decode(to_char(gl_date,'DD-MM-RRRR HH24:MI:SS'),'19-09-2020 10:30:00',to_date('19-09-2020 00:00:00','DD-MM-RRRR HH24:MI:SS'),'21-09-2020 03:30:00',to_date('21-09-2020 00:00:00','DD-MM-RRRR HH24:MI:SS'))
+WHERE amount = 0
+AND customer_trx_id IN (SELECT customer_trx_id
+FROM ar.ra_customer_trx_all
+WHERE trx_number IN ('A-3301-16468826','A-3301-16471964')
+AND batch_source_id = 2707);  2    3    4    5    6    7
+
+2 rows updated.
+
+PADAGI>
+PADAGI> commit ;
+
+Commit complete.
+
+PADAGI>

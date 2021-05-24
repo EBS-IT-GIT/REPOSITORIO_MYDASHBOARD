@@ -1,0 +1,125 @@
+ Volume in drive G is Database GED
+ Volume Serial Number is C01B-7E83
+
+ Directory of g:\backup
+
+03/22/2021  09:25 AM    <DIR>          .
+03/22/2021  09:25 AM    <DIR>          ..
+03/22/2021  09:25 AM                 0 backup.txt
+04/03/2017  09:31 AM    <DIR>          SQL_Server
+               1 File(s)              0 bytes
+
+ Directory of g:\backup\SQL_Server
+
+04/03/2017  09:31 AM    <DIR>          .
+04/03/2017  09:31 AM    <DIR>          ..
+03/15/2021  02:44 PM    <DIR>          Full
+03/15/2021  02:39 PM    <DIR>          TransactionLog
+               0 File(s)              0 bytes
+
+ Directory of g:\backup\SQL_Server\Full
+
+03/15/2021  02:44 PM    <DIR>          .
+03/15/2021  02:44 PM    <DIR>          ..
+03/21/2021  07:00 PM    <DIR>          DB_DMDOCS
+03/21/2021  07:00 PM    <DIR>          DB_DMDOCS-CONTENT
+03/21/2021  07:00 PM    <DIR>          DB_DMDOCS-CONTENT-CDI
+03/21/2021  07:00 PM    <DIR>          master
+03/21/2021  07:00 PM    <DIR>          msdb
+               0 File(s)              0 bytes
+
+ Directory of g:\backup\SQL_Server\Full\DB_DMDOCS
+
+03/21/2021  07:00 PM    <DIR>          .
+03/21/2021  07:00 PM    <DIR>          ..
+03/21/2021  06:00 PM     3,330,342,912 DB_DMDOCS_backup_2021_03_21_180003_1124206.bak
+               1 File(s)  3,330,342,912 bytes
+
+ Directory of g:\backup\SQL_Server\Full\DB_DMDOCS-CONTENT
+
+03/21/2021  07:00 PM    <DIR>          .
+03/21/2021  07:00 PM    <DIR>          ..
+03/21/2021  07:17 PM   359,317,815,296 DB_DMDOCS-CONTENT_backup_2021_03_21_190003_4726969.bak
+               1 File(s) 359,317,815,296 bytes
+
+ Directory of g:\backup\SQL_Server\Full\DB_DMDOCS-CONTENT-CDI
+
+03/21/2021  07:00 PM    <DIR>          .
+03/21/2021  07:00 PM    <DIR>          ..
+03/21/2021  06:00 PM     2,176,126,976 DB_DMDOCS-CONTENT-CDI_backup_2021_03_21_180003_1664215.bak
+               1 File(s)  2,176,126,976 bytes
+
+ Directory of g:\backup\SQL_Server\Full\master
+
+03/21/2021  07:00 PM    <DIR>          .
+03/21/2021  07:00 PM    <DIR>          ..
+03/21/2021  06:00 PM           815,104 master_backup_2021_03_21_180003_1694258.bak
+               1 File(s)        815,104 bytes
+
+ Directory of g:\backup\SQL_Server\Full\msdb
+
+03/21/2021  07:00 PM    <DIR>          .
+03/21/2021  07:00 PM    <DIR>          ..
+03/21/2021  06:00 PM        20,262,912 msdb_backup_2021_03_21_180003_1714210.bak
+               1 File(s)     20,262,912 bytes
+
+ Directory of g:\backup\SQL_Server\TransactionLog
+
+03/15/2021  02:39 PM    <DIR>          .
+03/15/2021  02:39 PM    <DIR>          ..
+03/22/2021  06:00 AM    <DIR>          DB_DMDOCS
+03/22/2021  06:00 AM    <DIR>          DB_DMDOCS-CONTENT
+03/22/2021  06:00 AM    <DIR>          DB_DMDOCS-CONTENT-CDI
+03/15/2021  02:29 PM    <DIR>          master
+03/22/2021  06:00 AM    <DIR>          msdb
+               0 File(s)              0 bytes
+
+ Directory of g:\backup\SQL_Server\TransactionLog\DB_DMDOCS
+
+03/22/2021  06:00 AM    <DIR>          .
+03/22/2021  06:00 AM    <DIR>          ..
+03/21/2021  12:00 PM        11,931,648 DB_DMDOCS_backup_2021_03_21_120002_9052078.trn
+03/21/2021  06:00 PM        12,378,112 DB_DMDOCS_backup_2021_03_21_180003_2014223.trn
+03/22/2021  12:00 AM        87,642,112 DB_DMDOCS_backup_2021_03_22_000003_0820152.trn
+03/22/2021  06:00 AM        12,050,432 DB_DMDOCS_backup_2021_03_22_060003_1934497.trn
+               4 File(s)    124,002,304 bytes
+
+ Directory of g:\backup\SQL_Server\TransactionLog\DB_DMDOCS-CONTENT
+
+03/22/2021  06:00 AM    <DIR>          .
+03/22/2021  06:00 AM    <DIR>          ..
+03/21/2021  12:00 PM            40,960 DB_DMDOCS-CONTENT_backup_2021_03_21_120002_7912057.trn
+03/21/2021  06:00 PM            40,960 DB_DMDOCS-CONTENT_backup_2021_03_21_180003_0924225.trn
+03/22/2021  12:00 AM            69,632 DB_DMDOCS-CONTENT_backup_2021_03_22_000002_9670130.trn
+03/22/2021  06:00 AM            36,864 DB_DMDOCS-CONTENT_backup_2021_03_22_060003_1044484.trn
+               4 File(s)        188,416 bytes
+
+ Directory of g:\backup\SQL_Server\TransactionLog\DB_DMDOCS-CONTENT-CDI
+
+03/22/2021  06:00 AM    <DIR>          .
+03/22/2021  06:00 AM    <DIR>          ..
+03/21/2021  12:00 PM            32,768 DB_DMDOCS-CONTENT-CDI_backup_2021_03_21_120002_9572087.trn
+03/21/2021  06:00 PM            32,768 DB_DMDOCS-CONTENT-CDI_backup_2021_03_21_180003_2554249.trn
+03/22/2021  12:00 AM            32,768 DB_DMDOCS-CONTENT-CDI_backup_2021_03_22_000003_1330163.trn
+03/22/2021  06:00 AM            32,768 DB_DMDOCS-CONTENT-CDI_backup_2021_03_22_060003_2424517.trn
+               4 File(s)        131,072 bytes
+
+ Directory of g:\backup\SQL_Server\TransactionLog\master
+
+03/15/2021  02:29 PM    <DIR>          .
+03/15/2021  02:29 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of g:\backup\SQL_Server\TransactionLog\msdb
+
+03/22/2021  06:00 AM    <DIR>          .
+03/22/2021  06:00 AM    <DIR>          ..
+03/21/2021  12:00 PM           163,840 msdb_backup_2021_03_21_120002_9572087.trn
+03/21/2021  06:00 PM           172,032 msdb_backup_2021_03_21_180003_2554249.trn
+03/22/2021  12:00 AM           184,320 msdb_backup_2021_03_22_000003_1330163.trn
+03/22/2021  06:00 AM           143,360 msdb_backup_2021_03_22_060003_2434519.trn
+               4 File(s)        663,552 bytes
+
+     Total Files Listed:
+              22 File(s) 364,970,348,544 bytes
+              41 Dir(s)  43,775,811,584 bytes free

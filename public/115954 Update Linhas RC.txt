@@ -1,0 +1,34 @@
+UPDATE apps.po_distributions_all
+   SET req_distribution_id = NULL
+ WHERE req_distribution_id IN (
+8770028,
+8770030,
+8770031,
+8770032,
+8770036,
+8770038,
+8770039);
+--
+UPDATE apps.po_distributions_archive_all
+   SET req_distribution_id = NULL
+ WHERE req_distribution_id IN (
+8770028,
+8770030,
+8770031,
+8770032,
+8770036,
+8770038,
+8770039);
+--  
+UPDATE apps.po_line_locations_all
+   SET from_line_id = NULL
+ WHERE from_line_id IN (
+10802470,
+10802472,
+10802473,
+10802474,
+10802478,
+10802480,
+10802481);
+--
+commit;

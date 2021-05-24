@@ -1,0 +1,83 @@
+<?php
+
+namespace App;
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
+//
+class Menu extends Model
+{
+  protected $table = 'menu';
+  public $timestamps = false;
+
+  protected static function listarMenu()
+  {
+      /*
+      * traduzir o menu de acordo com o idioma do navegador
+      */
+      $locale = \Session::get('locale', \Config::get('app.locale'));
+      ($locale=='en') ? $i = '1' : $i = '-1';
+
+      $user = Auth::user();
+      $level = $user->perfil;
+
+      $sql = ' SELECT id, parent_id, SUBSTRING_INDEX(title,"/",'.$i.') title, title name, url, menu_order, status, level, icon, icon_color, description, label_color, menu_type '.
+             ' FROM menu '.
+             ' WHERE status = 1 AND level LIKE "%'.$level.'%" '.
+             ' ORDER BY menu_order ';
+      $menu = DB::select($sql);
+      return $menu;
+  }
+  /*
+    ** Função que Lista os Projetos do Usuário
+    */
+  protected static function submenuProjects(){
+    
+        $conn = HomeController::connectApi();
+        $json_str = '{"projetos":'.'[';
+        $myprojects = array();
+        $i = 0;
+        //projetos em que estou associado
+        $projects = $conn->user->getCurrentUser()['user']['memberships'];
+        foreach($projects as $p){
+          $result = count($projects);
+          $i = $i + 1;
+
+          if($i==$result){
+            $json_str .= '{"name":"'.$p['project']['name'].'", "id":"'.$p['project']['id'].'"}';
+          }
+          else{
+            $json_str .= '{"name":"'.$p['project']['name'].'", "id":"'.$p['project']['id'].'"},'.'';
+          }
+        }
+        $html = '<ul class="list-group" id="buscar" style="font-size:12px;white-space:normal;overflow-y:scroll;max-height:200px;">
+        ';
+        $json_str .= ']}';
+        
+        $jsonObj = json_decode($json_str);
+
+        if($jsonObj){
+        $projetos = $jsonObj->projetos;
+        sort($projetos);
+        foreach($projetos as $pj){
+          if($pj->id != 18 && $pj->id != 24 && $pj->id != 73 && $pj->id != 74 && $pj->id != 85){
+             $html .= '
+             <li class="submenu" data-timeid="'.$pj->id.'"><a  class="submenu"href=" ' . \URL::to('/projects') . '/' .$pj->name .  '/' .$pj->id.'"><i class="fa fa-share"></i> <span>'.$pj->name.'</span></a></li>';
+          }
+
+        }
+        $html.='</ul>';
+        return $html;
+      }
+    }
+//     public static function adms(){
+// //se faz parte do grupo
+//       $sql = 'SELECT user_id FROM redmine.groups_users where group_id = 898';
+//       $adm = \DB::connection('mysql_redmine')->select($sql);
+
+//       return $adm;
+//     }
+}
+

@@ -1,0 +1,59 @@
+UPDATE apps.po_distributions_all
+   SET req_distribution_id = NULL
+ WHERE req_distribution_id IN ( 8923968
+                               ,9049924
+                               ,9103167
+                               ,9103189
+                               ,9103206
+                               ,9103241
+                               ,9103363
+                               ,9103422
+                               ,9103913
+                               ,9104329
+                               ,9104423
+                               ,9104437
+                               ,9104441
+                               ,9104443
+                               ,9109040
+                               ,9140922);
+--
+UPDATE apps.po_distributions_archive_all
+   SET req_distribution_id = NULL
+ WHERE req_distribution_id IN ( 8923968
+                               ,9049924
+                               ,9103167
+                               ,9103189
+                               ,9103206
+                               ,9103241
+                               ,9103363
+                               ,9103422
+                               ,9103913
+                               ,9104329
+                               ,9104423
+                               ,9104437
+                               ,9104441
+                               ,9104443
+                               ,9109040
+                               ,9140922);
+--  
+UPDATE apps.po_line_locations_all
+   SET from_line_id = NULL
+ WHERE from_line_id IN        ( 10722465
+                               ,11065409
+                               ,11238354
+                               ,11282603
+                               ,11282625
+                               ,11282642
+                               ,11282677
+                               ,11282797
+                               ,11282856
+                               ,11283354
+                               ,11283770
+                               ,11283864
+                               ,11283878
+                               ,11283882
+                               ,11283884
+                               ,11288411
+                               ,11318364);
+--                       
+COMMIT;

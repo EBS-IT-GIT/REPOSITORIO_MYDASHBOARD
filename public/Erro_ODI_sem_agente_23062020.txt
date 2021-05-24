@@ -1,0 +1,37 @@
+
+-- Quando executo manual (sem o agente) gera a msg abaixo, para qualquer processo de integração com sql server
+
+
+java.lang.RuntimeException: java.lang.IllegalArgumentException: Could not load JDBC driver class [com.microsoft.sqlserver.jdbc.SQLServerDriver]
+	at oracle.odi.core.datasource.provider.AbstractDataSourceProvider.configure(AbstractDataSourceProvider.java:106)
+	at oracle.odi.core.DataSourceManager$LoginTimeoutDataSourceProviderProxy.configure(DataSourceManager.java:303)
+	at oracle.odi.core.DataSourceManager.createAndConfigureDataSourceProvider(DataSourceManager.java:229)
+	at oracle.odi.core.DataSourceManager.access$0(DataSourceManager.java:203)
+	at oracle.odi.core.DataSourceManager$1.create(DataSourceManager.java:77)
+	at org.springframework.util.CachingMapDecorator.get(CachingMapDecorator.java:152)
+	at java.util.Collections$SynchronizedMap.get(Collections.java:2584)
+	at oracle.odi.core.DataSourceManager.getDataSource(DataSourceManager.java:152)
+	at oracle.odi.core.OdiInstance.lookupDataSource(OdiInstance.java:986)
+	at oracle.odi.core.datasource.dwgobject.support.DwgConnectConnectionCreatorImpl.createDwgConnectConnection(DwgConnectConnectionCreatorImpl.java:82)
+	at com.sunopsis.dwg.dbobj.SnpSession.createDwgConnectConnection(SnpSession.java:3996)
+	at com.sunopsis.dwg.dbobj.SnpSessTask.getDefaultDwgConnectConnection(SnpSessTask.java:513)
+	at com.sunopsis.dwg.dbobj.SnpSessTaskSql.getExecutor(SnpSessTaskSql.java:2972)
+	at com.sunopsis.dwg.dbobj.SnpSessTaskSql.processTask(SnpSessTaskSql.java:2913)
+	at com.sunopsis.dwg.dbobj.SnpSessTaskSql.treatTask(SnpSessTaskSql.java:2637)
+	at com.sunopsis.dwg.dbobj.SnpSessStep.treatAttachedTasks(SnpSessStep.java:577)
+	at com.sunopsis.dwg.dbobj.SnpSessStep.treatSessStep(SnpSessStep.java:468)
+	at com.sunopsis.dwg.dbobj.SnpSession.treatSession(SnpSession.java:2093)
+	at com.sunopsis.dwg.dbobj.SnpSession.treatSession(SnpSession.java:1898)
+	at oracle.odi.runtime.agent.processor.impl.StartScenRequestProcessor$2.doAction(StartScenRequestProcessor.java:583)
+	at oracle.odi.core.persistence.dwgobject.DwgObjectTemplate.execute(DwgObjectTemplate.java:216)
+	at oracle.odi.runtime.agent.processor.impl.StartScenRequestProcessor.doProcessStartScenTask(StartScenRequestProcessor.java:514)
+	at oracle.odi.runtime.agent.processor.impl.StartScenRequestProcessor$StartScenTask.doExecute(StartScenRequestProcessor.java:1074)
+	at oracle.odi.runtime.agent.processor.task.AgentTask.execute(AgentTask.java:133)
+	at oracle.odi.runtime.agent.support.DefaultAgentTaskExecutor$2.run(DefaultAgentTaskExecutor.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: Could not load JDBC driver class [com.microsoft.sqlserver.jdbc.SQLServerDriver]
+	at oracle.odi.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:176)
+	at oracle.odi.jdbc.datasource.DriverManagerDataSource.<init>(DriverManagerDataSource.java:108)
+	at oracle.odi.core.datasource.provider.DriverManagerDataSourceProvider.doCreateDataSource(DriverManagerDataSourceProvider.java:36)
+	at oracle.odi.core.datasource.provider.AbstractDataSourceProvider.configure(AbstractDataSourceProvider.java:97)
+	... 25 more

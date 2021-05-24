@@ -1,0 +1,5 @@
+update apps.gmf_xla_extract_lines
+set transaction_account_id = 11212
+where event_id in (76119575,76120116);
+--
+commit;

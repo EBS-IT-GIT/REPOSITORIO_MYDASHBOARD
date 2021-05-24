@@ -1,0 +1,4 @@
+select username,account_status,profile,last_login 
+from dba_users
+where profile =  ' XXSTN_PROFILE'
+order by 1;

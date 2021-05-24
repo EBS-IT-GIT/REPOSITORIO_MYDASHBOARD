@@ -1,0 +1,52 @@
+[aqebsoog@oogpa030li tmp]$ chmod 777 aplicar_patch.sh
+[aqebsoog@oogpa030li tmp]$ ./aplicar_patch.sh
+Inicio instalacao
+Importacao SETUP
+Fim da execucao
+NecessÃ¡rio execuÃ§Ã£o de Bounce no OACore - Ver README.txt
+
+
+
+[aqebsoog@oogpa030li tmp]$ sh $INST_TOP/admin/scripts/adoacorectl.sh stop
+
+You are running adoacorectl.sh version 120.13
+
+Stopping OPMN managed OACORE OC4J instance ...
+
+adoacorectl.sh: exiting with status 206
+
+adoacorectl.sh: check the logfile /app_l/oracle/inst/apps/QEBSOOG_oogpa030li/logs/appl/admin/log/adoacorectl.txt for more information ...
+
+[aqebsoog@oogpa030li tmp]$ sh $INST_TOP/admin/scripts/adoacorectl.sh start
+
+You are running adoacorectl.sh version 120.13
+
+Starting OPMN managed OACORE OC4J instance  ...
+
+adoacorectl.sh: exiting with status 0
+
+adoacorectl.sh: check the logfile /app_l/oracle/inst/apps/QEBSOOG_oogpa030li/logs/appl/admin/log/adoacorectl.txt for more information ...
+
+
+
+[aqebsoog@oogpa031li ~]$ sh $INST_TOP/admin/scripts/adoacorectl.sh stop
+
+You are running adoacorectl.sh version 120.13
+
+Stopping OPMN managed OACORE OC4J instance ...
+
+adoacorectl.sh: exiting with status 0
+
+adoacorectl.sh: check the logfile /app_l/oracle/inst/apps/QEBSOOG_oogpa031li/logs/appl/admin/log/adoacorectl.txt for more information ...
+
+[aqebsoog@oogpa031li ~]$ sh $INST_TOP/admin/scripts/adoacorectl.sh start
+
+You are running adoacorectl.sh version 120.13
+
+Starting OPMN managed OACORE OC4J instance  ...
+
+adoacorectl.sh: exiting with status 0
+
+adoacorectl.sh: check the logfile /app_l/oracle/inst/apps/QEBSOOG_oogpa031li/logs/appl/admin/log/adoacorectl.txt for more information ...
+
+[aqebsoog@oogpa031li ~]$

@@ -1,0 +1,108 @@
+Path: /desa12/svn/XXADECUSTOMS
+Working Copy Root Path: /desa12/svn/XXADECUSTOMS
+URL: https://ad-ar-dat-or-01.adeco.net.ar:8443/svn/XXADECUSTOMS
+Repository Root: https://ad-ar-dat-or-01.adeco.net.ar:8443/svn/XXADECUSTOMS
+Repository UUID: 4a015035-0a93-5c48-9a58-f2e00ef8f5c2
+Revision: 9316
+Node Kind: directory
+Schedule: normal
+Last Changed Author: ADECO_DEV
+Last Changed Rev: 9316
+Last Changed Date: 2020-01-13 17:22:15 -0300 (Mon, 13 Jan 2020)
+
++---------------------------------------------------------------------------+
+ Comenzando con el proceso de resguardo
+
++---------------------------------------------------------------------------+
+ Resguardando la solucion realizada en CR2350
+
+ Cantidad de objetos tipo XX_ADE_CUSTOM_HEADER => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 07-FEB-2020 14:24:36
+
++---------------------------------------------------------------------------+
+
+Downloading XX_ADE_CUSTOM_HEADER to the data file CR2350_9366.ldt
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 07-FEB-2020 14:24:36
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto SQL-PKG XX_PORTAL_REPRE_PKG 
+
+DECLARE
+*
+ERROR at line 1:
+ORA-29283: invalid file operation
+ORA-06512: at "SYS.UTL_FILE", line 633
+ORA-29283: invalid file operation
+ORA-06512: at "APPS.XX_ADE_CUSTOM_PKG", line 90
+ORA-06512: at line 3
+
+
++---------------------------------------------------------------------------+
+ Fin del proceso de resguardo
+
++---------------------------------------------------------------------------+
+ Comenzando con el proceso de actualizacion 
+
+
++---------------------------------------------------------------------------+
++---------------------------------------------------------------------------+
+ Actualizando el objeto SQL-PKG XX_PORTAL_REPRE_PKG 
+
+
+Pacote criado.
+
+
+Corpo de Pacote criado.
+
++---------------------------------------------------------------------------+
+ Actualizando la solucion realizada en CR2350
+
+ Cantidad de objetos tipo XX_ADE_CUSTOM_HEADER => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 07-FEB-2020 14:24:39
+
++---------------------------------------------------------------------------+
+
+Uploading from the data file /ua1001/fs_ne/ADECO/patch/CR2350/CR2350_20200207/CR2350/INSTALL/xbol/12.0.0/FNDLOAD/CUSTOM/CR2350_9366.ldt
+Altering database NLS_LANGUAGE environment to AMERICAN
+Dump from LCT/LDT files (/ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxadecustom.lct(11.5.2), /ua1001/fs_ne/ADECO/patch/CR2350/CR2350_20200207/CR2350/INSTALL/xbol/12.0.0/FNDLOAD/CUSTOM/CR2350_9366.ldt) to stage tables
+Dump LCT file /ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxadecustom.lct(11.5.2) into FND_SEED_STAGE_CONFIG
+Dump LDT file /ua1001/fs_ne/ADECO/patch/CR2350/CR2350_20200207/CR2350/INSTALL/xbol/12.0.0/FNDLOAD/CUSTOM/CR2350_9366.ldt into FND_SEED_STAGE_ENTITY
+Dumped the batch (XX_ADE_CUSTOM_HEADER 9366 , XX_ADE_CUSTOM_LINES 9366 ) into FND_SEED_STAGE_ENTITY
+Upload from stage tables
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 07-FEB-2020 14:24:42
+
++---------------------------------------------------------------------------+
+
+Compilando objectos invalidos...
+
+PL/SQL procedure successfully completed.
+
+Fin de compilando objectos invalidos
+
++---------------------------------------------------------------------------+
+ Fin del proceso de actualizacion
+

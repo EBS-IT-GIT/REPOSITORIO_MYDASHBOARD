@@ -1,0 +1,6 @@
+
+update is_sp_cadastro
+   set STATUS = 'CO'   
+ where id_sp = 34265;
+
+commit;

@@ -1,0 +1,2046 @@
++---------------------------------------------------------------------------+
+BTU Custom Product: Version : 12.1
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+XXBTU_PROCESSA_RETORNO_BANCO: XXBTU - AP - Processa Retorno Bancario
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 01-MAR-2021 21:10:23
+
++---------------------------------------------------------------------------+
+
+[01-MAR-2021 21:10:23]: **Starts**
+[01-MAR-2021 22:58:27]: **Ends**
++---------------------------------------------------------------------------+
+Início das mensagens de log do FND_FILE
++---------------------------------------------------------------------------+
+*** ************************** ***
+*** Inicio Processando Arquivo ***
+*** ************************** ***
+*** Recuperou diretorio ***
+*** Executou funcao Java ***
+*** Carregou v_file_sort ***
+*** Arquivo COB0101.58.RET ***
+*** Arquivo COB0501.59.RET ***
+*** Arquivo COB0601.60.RET ***
+*** Arquivo COB0701.61.RET ***
+*** Arquivo COB0801.62.RET ***
+*** Arquivo COB0812.41.RET ***
+*** Arquivo COB0912.42.RET ***
+*** Arquivo COB1012.43.RET ***
+*** Arquivo COB1112.44.RET ***
+*** Arquivo COB1212.45.RET ***
+*** Arquivo COB1512.46.RET ***
+*** Arquivo COB1612.47.RET ***
+*** Arquivo COB1712.48.RET ***
+*** Arquivo COB1812.49.RET ***
+*** Arquivo COB1912.50.RET ***
+*** Arquivo COB2212.51.RET ***
+*** Arquivo COB2312.52.RET ***
+*** Arquivo COB2412.53.RET ***
+*** Arquivo COB2412.54.RET ***
+*** Arquivo COB2912.55.RET ***
+*** Arquivo COB3012.56.RET ***
+*** Arquivo COB3112.57.RET ***
+*** Arquivo Ebs_Remessa_OLD ***
+*** Arquivo Nova ***
+*** Arquivo PG040101.RET ***
+-----------------------------------------
+Nome do Arquivo: PG040101.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG040101.RET...
+   l_request_id: 67328445
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG040101.RET
+Removendo arquivo: PG040101.RET
+Arquivo PG040101.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG040102.RET ***
+-----------------------------------------
+Nome do Arquivo: PG040102.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG040102.RET...
+   l_request_id: 67328447
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG040102.RET
+Removendo arquivo: PG040102.RET
+Arquivo PG040102.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG040103.RET ***
+-----------------------------------------
+Nome do Arquivo: PG040103.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG040103.RET...
+   l_request_id: 67328451
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG040103.RET
+Removendo arquivo: PG040103.RET
+Arquivo PG040103.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG040104.RET ***
+-----------------------------------------
+Nome do Arquivo: PG040104.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG040104.RET...
+   l_request_id: 67328453
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG040104.RET
+Removendo arquivo: PG040104.RET
+Arquivo PG040104.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG040105.RET ***
+-----------------------------------------
+Nome do Arquivo: PG040105.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG040105.RET...
+   l_request_id: 67328456
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG040105.RET
+Removendo arquivo: PG040105.RET
+Arquivo PG040105.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG040106.RET ***
+-----------------------------------------
+Nome do Arquivo: PG040106.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG040106.RET...
+   l_request_id: 67328458
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG040106.RET
+Removendo arquivo: PG040106.RET
+Arquivo PG040106.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG040107.RET ***
+-----------------------------------------
+Nome do Arquivo: PG040107.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG040107.RET...
+   l_request_id: 67328460
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG040107.RET
+Removendo arquivo: PG040107.RET
+Arquivo PG040107.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG040108.RET ***
+-----------------------------------------
+Nome do Arquivo: PG040108.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG040108.RET...
+   l_request_id: 67328462
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG040108.RET
+Removendo arquivo: PG040108.RET
+Arquivo PG040108.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG040109.RET ***
+-----------------------------------------
+Nome do Arquivo: PG040109.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG040109.RET...
+   l_request_id: 67328464
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG040109.RET
+Removendo arquivo: PG040109.RET
+Arquivo PG040109.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG040110.RET ***
+-----------------------------------------
+Nome do Arquivo: PG040110.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG040110.RET...
+   l_request_id: 67328467
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG040110.RET
+Removendo arquivo: PG040110.RET
+Arquivo PG040110.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG041205.RET ***
+-----------------------------------------
+Nome do Arquivo: PG041205.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG041205.RET...
+   l_request_id: 67328469
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG041205.RET
+Removendo arquivo: PG041205.RET
+Arquivo PG041205.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG041206.RET ***
+-----------------------------------------
+Nome do Arquivo: PG041206.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG041206.RET...
+   l_request_id: 67328471
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG041206.RET
+Removendo arquivo: PG041206.RET
+Arquivo PG041206.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG060101.RET ***
+-----------------------------------------
+Nome do Arquivo: PG060101.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG060101.RET...
+   l_request_id: 67328475
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG060101.RET
+Removendo arquivo: PG060101.RET
+Arquivo PG060101.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG060102.RET ***
+-----------------------------------------
+Nome do Arquivo: PG060102.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG060102.RET...
+   l_request_id: 67328477
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG060102.RET
+Removendo arquivo: PG060102.RET
+Arquivo PG060102.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG060103.RET ***
+-----------------------------------------
+Nome do Arquivo: PG060103.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG060103.RET...
+   l_request_id: 67328480
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG060103.RET
+Removendo arquivo: PG060103.RET
+Arquivo PG060103.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG060104.RET ***
+-----------------------------------------
+Nome do Arquivo: PG060104.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG060104.RET...
+   l_request_id: 67328482
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG060104.RET
+Removendo arquivo: PG060104.RET
+Arquivo PG060104.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG060105.RET ***
+-----------------------------------------
+Nome do Arquivo: PG060105.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG060105.RET...
+   l_request_id: 67328484
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG060105.RET
+Removendo arquivo: PG060105.RET
+Arquivo PG060105.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG060106.RET ***
+-----------------------------------------
+Nome do Arquivo: PG060106.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG060106.RET...
+   l_request_id: 67328486
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG060106.RET
+Removendo arquivo: PG060106.RET
+Arquivo PG060106.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG060107.RET ***
+-----------------------------------------
+Nome do Arquivo: PG060107.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG060107.RET...
+   l_request_id: 67328488
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG060107.RET
+Removendo arquivo: PG060107.RET
+Arquivo PG060107.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG060108.RET ***
+-----------------------------------------
+Nome do Arquivo: PG060108.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG060108.RET...
+   l_request_id: 67328492
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG060108.RET
+Removendo arquivo: PG060108.RET
+Arquivo PG060108.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070101.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070101.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070101.RET...
+   l_request_id: 67328494
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070101.RET
+Removendo arquivo: PG070101.RET
+Arquivo PG070101.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070102.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070102.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070102.RET...
+   l_request_id: 67328498
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070102.RET
+Removendo arquivo: PG070102.RET
+Arquivo PG070102.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070103.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070103.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070103.RET...
+   l_request_id: 67328500
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070103.RET
+Removendo arquivo: PG070103.RET
+Arquivo PG070103.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070104.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070104.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070104.RET...
+   l_request_id: 67328502
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070104.RET
+Removendo arquivo: PG070104.RET
+Arquivo PG070104.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070105.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070105.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070105.RET...
+   l_request_id: 67328505
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070105.RET
+Removendo arquivo: PG070105.RET
+Arquivo PG070105.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070106.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070106.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070106.RET...
+   l_request_id: 67328507
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070106.RET
+Removendo arquivo: PG070106.RET
+Arquivo PG070106.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070107.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070107.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070107.RET...
+   l_request_id: 67328509
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070107.RET
+Removendo arquivo: PG070107.RET
+Arquivo PG070107.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070108.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070108.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070108.RET...
+   l_request_id: 67328511
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070108.RET
+Removendo arquivo: PG070108.RET
+Arquivo PG070108.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070109.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070109.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070109.RET...
+   l_request_id: 67328513
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070109.RET
+Removendo arquivo: PG070109.RET
+Arquivo PG070109.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070110.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070110.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070110.RET...
+   l_request_id: 67328516
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070110.RET
+Removendo arquivo: PG070110.RET
+Arquivo PG070110.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG070111.RET ***
+-----------------------------------------
+Nome do Arquivo: PG070111.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG070111.RET...
+   l_request_id: 67328518
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG070111.RET
+Removendo arquivo: PG070111.RET
+Arquivo PG070111.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG080101.RET ***
+-----------------------------------------
+Nome do Arquivo: PG080101.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG080101.RET...
+   l_request_id: 67328522
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG080101.RET
+Removendo arquivo: PG080101.RET
+Arquivo PG080101.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG080102.RET ***
+-----------------------------------------
+Nome do Arquivo: PG080102.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG080102.RET...
+   l_request_id: 67328524
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG080102.RET
+Removendo arquivo: PG080102.RET
+Arquivo PG080102.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG080103.RET ***
+-----------------------------------------
+Nome do Arquivo: PG080103.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG080103.RET...
+   l_request_id: 67328526
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG080103.RET
+Removendo arquivo: PG080103.RET
+Arquivo PG080103.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG080104.RET ***
+-----------------------------------------
+Nome do Arquivo: PG080104.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG080104.RET...
+   l_request_id: 67328529
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG080104.RET
+Removendo arquivo: PG080104.RET
+Arquivo PG080104.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG091201.RET ***
+-----------------------------------------
+Nome do Arquivo: PG091201.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG091201.RET...
+   l_request_id: 67328531
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG091201.RET
+Removendo arquivo: PG091201.RET
+Arquivo PG091201.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG091202.RET ***
+-----------------------------------------
+Nome do Arquivo: PG091202.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG091202.RET...
+   l_request_id: 67328533
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG091202.RET
+Removendo arquivo: PG091202.RET
+Arquivo PG091202.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG091203.RET ***
+-----------------------------------------
+Nome do Arquivo: PG091203.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG091203.RET...
+   l_request_id: 67328535
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG091203.RET
+Removendo arquivo: PG091203.RET
+Arquivo PG091203.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG091204.RET ***
+-----------------------------------------
+Nome do Arquivo: PG091204.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG091204.RET...
+   l_request_id: 67328537
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG091204.RET
+Removendo arquivo: PG091204.RET
+Arquivo PG091204.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG091205.RET ***
+-----------------------------------------
+Nome do Arquivo: PG091205.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG091205.RET...
+   l_request_id: 67328540
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG091205.RET
+Removendo arquivo: PG091205.RET
+Arquivo PG091205.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG091206.RET ***
+-----------------------------------------
+Nome do Arquivo: PG091206.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG091206.RET...
+   l_request_id: 67328542
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG091206.RET
+Removendo arquivo: PG091206.RET
+Arquivo PG091206.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG091207.RET ***
+-----------------------------------------
+Nome do Arquivo: PG091207.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG091207.RET...
+   l_request_id: 67328546
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG091207.RET
+Removendo arquivo: PG091207.RET
+Arquivo PG091207.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG091208.RET ***
+-----------------------------------------
+Nome do Arquivo: PG091208.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG091208.RET...
+   l_request_id: 67328548
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG091208.RET
+Removendo arquivo: PG091208.RET
+Arquivo PG091208.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG091209.RET ***
+-----------------------------------------
+Nome do Arquivo: PG091209.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG091209.RET...
+   l_request_id: 67328551
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG091209.RET
+Removendo arquivo: PG091209.RET
+Arquivo PG091209.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG091210.RET ***
+-----------------------------------------
+Nome do Arquivo: PG091210.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG091210.RET...
+   l_request_id: 67328553
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG091210.RET
+Removendo arquivo: PG091210.RET
+Arquivo PG091210.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG101201.RET ***
+-----------------------------------------
+Nome do Arquivo: PG101201.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG101201.RET...
+   l_request_id: 67328555
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG101201.RET
+Removendo arquivo: PG101201.RET
+Arquivo PG101201.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG101202.RET ***
+-----------------------------------------
+Nome do Arquivo: PG101202.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG101202.RET...
+   l_request_id: 67328557
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG101202.RET
+Removendo arquivo: PG101202.RET
+Arquivo PG101202.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG101203.RET ***
+-----------------------------------------
+Nome do Arquivo: PG101203.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG101203.RET...
+   l_request_id: 67328559
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG101203.RET
+Removendo arquivo: PG101203.RET
+Arquivo PG101203.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG101204.RET ***
+-----------------------------------------
+Nome do Arquivo: PG101204.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG101204.RET...
+   l_request_id: 67328562
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG101204.RET
+Removendo arquivo: PG101204.RET
+Arquivo PG101204.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG101205.RET ***
+-----------------------------------------
+Nome do Arquivo: PG101205.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG101205.RET...
+   l_request_id: 67328565
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG101205.RET
+Removendo arquivo: PG101205.RET
+Arquivo PG101205.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG101206.RET ***
+-----------------------------------------
+Nome do Arquivo: PG101206.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG101206.RET...
+   l_request_id: 67328567
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG101206.RET
+Removendo arquivo: PG101206.RET
+Arquivo PG101206.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG101207.RET ***
+-----------------------------------------
+Nome do Arquivo: PG101207.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG101207.RET...
+   l_request_id: 67328571
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG101207.RET
+Removendo arquivo: PG101207.RET
+Arquivo PG101207.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG111201.RET ***
+-----------------------------------------
+Nome do Arquivo: PG111201.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG111201.RET...
+   l_request_id: 67328573
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG111201.RET
+Removendo arquivo: PG111201.RET
+Arquivo PG111201.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG111202.RET ***
+-----------------------------------------
+Nome do Arquivo: PG111202.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG111202.RET...
+   l_request_id: 67328576
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG111202.RET
+Removendo arquivo: PG111202.RET
+Arquivo PG111202.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG111203.RET ***
+-----------------------------------------
+Nome do Arquivo: PG111203.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG111203.RET...
+   l_request_id: 67328578
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG111203.RET
+Removendo arquivo: PG111203.RET
+Arquivo PG111203.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG111204.RET ***
+-----------------------------------------
+Nome do Arquivo: PG111204.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG111204.RET...
+   l_request_id: 67328580
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG111204.RET
+Removendo arquivo: PG111204.RET
+Arquivo PG111204.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG111205.RET ***
+-----------------------------------------
+Nome do Arquivo: PG111205.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG111205.RET...
+   l_request_id: 67328582
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG111205.RET
+Removendo arquivo: PG111205.RET
+Arquivo PG111205.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG111206.RET ***
+-----------------------------------------
+Nome do Arquivo: PG111206.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG111206.RET...
+   l_request_id: 67328584
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG111206.RET
+Removendo arquivo: PG111206.RET
+Arquivo PG111206.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG161201.RET ***
+-----------------------------------------
+Nome do Arquivo: PG161201.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG161201.RET...
+   l_request_id: 67328586
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG161201.RET
+Removendo arquivo: PG161201.RET
+Arquivo PG161201.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG161202.RET ***
+-----------------------------------------
+Nome do Arquivo: PG161202.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG161202.RET...
+   l_request_id: 67328589
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG161202.RET
+Removendo arquivo: PG161202.RET
+Arquivo PG161202.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG161203.RET ***
+-----------------------------------------
+Nome do Arquivo: PG161203.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG161203.RET...
+   l_request_id: 67328591
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG161203.RET
+Removendo arquivo: PG161203.RET
+Arquivo PG161203.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG161204.RET ***
+-----------------------------------------
+Nome do Arquivo: PG161204.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG161204.RET...
+   l_request_id: 67328595
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG161204.RET
+Removendo arquivo: PG161204.RET
+Arquivo PG161204.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG161205.RET ***
+-----------------------------------------
+Nome do Arquivo: PG161205.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG161205.RET...
+   l_request_id: 67328597
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG161205.RET
+Removendo arquivo: PG161205.RET
+Arquivo PG161205.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG161206.RET ***
+-----------------------------------------
+Nome do Arquivo: PG161206.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG161206.RET...
+   l_request_id: 67328599
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG161206.RET
+Removendo arquivo: PG161206.RET
+Arquivo PG161206.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG161207.RET ***
+-----------------------------------------
+Nome do Arquivo: PG161207.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG161207.RET...
+   l_request_id: 67328602
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG161207.RET
+Removendo arquivo: PG161207.RET
+Arquivo PG161207.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG161208.RET ***
+-----------------------------------------
+Nome do Arquivo: PG161208.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG161208.RET...
+   l_request_id: 67328604
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG161208.RET
+Removendo arquivo: PG161208.RET
+Arquivo PG161208.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG161209.RET ***
+-----------------------------------------
+Nome do Arquivo: PG161209.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG161209.RET...
+   l_request_id: 67328606
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG161209.RET
+Removendo arquivo: PG161209.RET
+Arquivo PG161209.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG161210.RET ***
+-----------------------------------------
+Nome do Arquivo: PG161210.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG161210.RET...
+   l_request_id: 67328608
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG161210.RET
+Removendo arquivo: PG161210.RET
+Arquivo PG161210.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG171201.RET ***
+-----------------------------------------
+Nome do Arquivo: PG171201.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG171201.RET...
+   l_request_id: 67328610
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG171201.RET
+Removendo arquivo: PG171201.RET
+Arquivo PG171201.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG171202.RET ***
+-----------------------------------------
+Nome do Arquivo: PG171202.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG171202.RET...
+   l_request_id: 67328613
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG171202.RET
+Removendo arquivo: PG171202.RET
+Arquivo PG171202.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG171203.RET ***
+-----------------------------------------
+Nome do Arquivo: PG171203.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG171203.RET...
+   l_request_id: 67328615
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG171203.RET
+Removendo arquivo: PG171203.RET
+Arquivo PG171203.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG171204.RET ***
+-----------------------------------------
+Nome do Arquivo: PG171204.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG171204.RET...
+   l_request_id: 67328619
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG171204.RET
+Removendo arquivo: PG171204.RET
+Arquivo PG171204.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG171205.RET ***
+-----------------------------------------
+Nome do Arquivo: PG171205.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG171205.RET...
+   l_request_id: 67328621
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG171205.RET
+Removendo arquivo: PG171205.RET
+Arquivo PG171205.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG171206.RET ***
+-----------------------------------------
+Nome do Arquivo: PG171206.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG171206.RET...
+   l_request_id: 67328623
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG171206.RET
+Removendo arquivo: PG171206.RET
+Arquivo PG171206.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG171207.RET ***
+-----------------------------------------
+Nome do Arquivo: PG171207.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG171207.RET...
+   l_request_id: 67328626
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG171207.RET
+Removendo arquivo: PG171207.RET
+Arquivo PG171207.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG181201.RET ***
+-----------------------------------------
+Nome do Arquivo: PG181201.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG181201.RET...
+   l_request_id: 67328628
+   lv_req_phase: Em Execução
+   lv_req_status:   Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG181201.RET
+Removendo arquivo: PG181201.RET
+Arquivo PG181201.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG181202.RET ***
+-----------------------------------------
+Nome do Arquivo: PG181202.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG181202.RET...
+   l_request_id: 67328630
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG181202.RET
+Removendo arquivo: PG181202.RET
+Arquivo PG181202.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG181203.RET ***
+-----------------------------------------
+Nome do Arquivo: PG181203.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG181203.RET...
+   l_request_id: 67328632
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG181203.RET
+Removendo arquivo: PG181203.RET
+Arquivo PG181203.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG181204.RET ***
+-----------------------------------------
+Nome do Arquivo: PG181204.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG181204.RET...
+   l_request_id: 67328634
+   lv_req_phase: Em Execução
+   lv_req_status:   Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG181204.RET
+Removendo arquivo: PG181204.RET
+Arquivo PG181204.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG181205.RET ***
+-----------------------------------------
+Nome do Arquivo: PG181205.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG181205.RET...
+   l_request_id: 67328638
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG181205.RET
+Removendo arquivo: PG181205.RET
+Arquivo PG181205.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG181206.RET ***
+-----------------------------------------
+Nome do Arquivo: PG181206.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG181206.RET...
+   l_request_id: 67328640
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG181206.RET
+Removendo arquivo: PG181206.RET
+Arquivo PG181206.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG181207.RET ***
+-----------------------------------------
+Nome do Arquivo: PG181207.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG181207.RET...
+   l_request_id: 67328644
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG181207.RET
+Removendo arquivo: PG181207.RET
+Arquivo PG181207.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG181208.RET ***
+-----------------------------------------
+Nome do Arquivo: PG181208.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG181208.RET...
+   l_request_id: 67328646
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG181208.RET
+Removendo arquivo: PG181208.RET
+Arquivo PG181208.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG181209.RET ***
+-----------------------------------------
+Nome do Arquivo: PG181209.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG181209.RET...
+   l_request_id: 67328648
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG181209.RET
+Removendo arquivo: PG181209.RET
+Arquivo PG181209.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231201.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231201.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231201.RET...
+   l_request_id: 67328651
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231201.RET
+Removendo arquivo: PG231201.RET
+Arquivo PG231201.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231202.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231202.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231202.RET...
+   l_request_id: 67328653
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231202.RET
+Removendo arquivo: PG231202.RET
+Arquivo PG231202.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231203.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231203.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231203.RET...
+   l_request_id: 67328655
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231203.RET
+Removendo arquivo: PG231203.RET
+Arquivo PG231203.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231204.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231204.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231204.RET...
+   l_request_id: 67328657
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231204.RET
+Removendo arquivo: PG231204.RET
+Arquivo PG231204.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231205.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231205.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231205.RET...
+   l_request_id: 67328660
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231205.RET
+Removendo arquivo: PG231205.RET
+Arquivo PG231205.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231206.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231206.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231206.RET...
+   l_request_id: 67328662
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231206.RET
+Removendo arquivo: PG231206.RET
+Arquivo PG231206.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231207.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231207.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231207.RET...
+   l_request_id: 67328666
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231207.RET
+Removendo arquivo: PG231207.RET
+Arquivo PG231207.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231208.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231208.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231208.RET...
+   l_request_id: 67328668
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231208.RET
+Removendo arquivo: PG231208.RET
+Arquivo PG231208.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231209.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231209.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231209.RET...
+   l_request_id: 67328670
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231209.RET
+Removendo arquivo: PG231209.RET
+Arquivo PG231209.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231210.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231210.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231210.RET...
+   l_request_id: 67328673
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231210.RET
+Removendo arquivo: PG231210.RET
+Arquivo PG231210.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG231211.RET ***
+-----------------------------------------
+Nome do Arquivo: PG231211.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG231211.RET...
+   l_request_id: 67328675
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG231211.RET
+Removendo arquivo: PG231211.RET
+Arquivo PG231211.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG241201.RET ***
+-----------------------------------------
+Nome do Arquivo: PG241201.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG241201.RET...
+   l_request_id: 67328677
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG241201.RET
+Removendo arquivo: PG241201.RET
+Arquivo PG241201.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG241202.RET ***
+-----------------------------------------
+Nome do Arquivo: PG241202.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG241202.RET...
+   l_request_id: 67328679
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG241202.RET
+Removendo arquivo: PG241202.RET
+Arquivo PG241202.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG241203.RET ***
+-----------------------------------------
+Nome do Arquivo: PG241203.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG241203.RET...
+   l_request_id: 67328681
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG241203.RET
+Removendo arquivo: PG241203.RET
+Arquivo PG241203.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG241204.RET ***
+-----------------------------------------
+Nome do Arquivo: PG241204.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG241204.RET...
+   l_request_id: 67328684
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG241204.RET
+Removendo arquivo: PG241204.RET
+Arquivo PG241204.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG251201.RET ***
+-----------------------------------------
+Nome do Arquivo: PG251201.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG251201.RET...
+   l_request_id: 67328686
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG251201.RET
+Removendo arquivo: PG251201.RET
+Arquivo PG251201.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG270104.RET ***
+-----------------------------------------
+Nome do Arquivo: PG270104.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG270104.RET...
+   l_request_id: 67328690
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG270104.RET
+Removendo arquivo: PG270104.RET
+Arquivo PG270104.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG301201.RET ***
+-----------------------------------------
+Nome do Arquivo: PG301201.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG301201.RET...
+   l_request_id: 67328692
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG301201.RET
+Removendo arquivo: PG301201.RET
+Arquivo PG301201.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG301202.RET ***
+-----------------------------------------
+Nome do Arquivo: PG301202.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG301202.RET...
+   l_request_id: 67328694
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG301202.RET
+Removendo arquivo: PG301202.RET
+Arquivo PG301202.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG301203.RET ***
+-----------------------------------------
+Nome do Arquivo: PG301203.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG301203.RET...
+   l_request_id: 67328697
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG301203.RET
+Removendo arquivo: PG301203.RET
+Arquivo PG301203.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG301204.RET ***
+-----------------------------------------
+Nome do Arquivo: PG301204.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG301204.RET...
+   l_request_id: 67328699
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG301204.RET
+Removendo arquivo: PG301204.RET
+Arquivo PG301204.RET processado e movido para RETORNO_PRC
+
+*** Arquivo PG301205.RET ***
+-----------------------------------------
+Nome do Arquivo: PG301205.RET
+Executando concorrente XXBTU_F033_LOAD_BANK_RETURN. Arquivo: PG301205.RET...
+   l_request_id: 67328701
+   lv_req_phase: Pendente
+   lv_req_status:  Normal 
+   lv_req_phase: Concluído
+   lv_req_status: Normal
+Concurrent executado com sucesso XXBTU_F033_LOAD_BANK_RETURN.
+ 
+*** ************************** ***
+*** Anulação de Pagamentos     ***
+*** ************************** ***
+Executando concorrente XXBTU_AP_ANULA_PGTOS_PRC.
+Concurrent XXBTU_AP_ANULA_PGTOS_PRC executado com sucesso
+Copiando arquivo: PG301205.RET
+Removendo arquivo: PG301205.RET
+Arquivo PG301205.RET processado e movido para RETORNO_PRC
+
+*** Arquivo bororoska ***
+*** Arquivo processado ***
+*** Arquivo teste.txt ***
++---------------------------------------------------------------------------+
+Fim das mensagens de log do FND_FILE
++---------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+Nenhuma opção de término foi solicitada.
+
+Output file size: 
+0
+Deleting empty output file.
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 01-MAR-2021 22:58:27
+
++---------------------------------------------------------------------------+
+

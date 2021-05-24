@@ -1,0 +1,301 @@
+**** SCRIPT STARTED Session: APPS@STONE_QAEBS(6) 02-Apr-2019 18:59:40 ****
+CREATE OR REPLACE PACKAGE BODY cll_f189_holds_custom_pkg as
+/* $Header: CLLVRJLB.pls 120.0 2007/08/22 18:48:01 afavero noship $ */
+FUNCTION func_holds_custom
+(p_operation_id       IN  NUMBER,
+ p_organization_id    IN  NUMBER) RETURN NUMBER IS
+/*=======================================================================*/
+/* Variables declaration                                                 */
+/*=======================================================================*/
+  v_return1     NUMBER := 0;
+  v_return2     NUMBER := 0;
+  v_terms_id    NUMBER := 0;
+  v_nf_dup      NUMBER := 0;
+  v_invoice_num NUMBER := 0;
+  v_entity_id   NUMBER := 0;
+  v_location_id NUMBER := 0;
+  --
+  /********************************************************/
+  /*  Prenchimento Automatico do CST ICMS, PIS e COFINS   */
+  /*  Autor: Vitor Santos                                 */
+  /*  Data de Criacao: 23/08/2018                         */
+  /*  Data de Alteracao: 23/08/2018                       */
+  /*  CURSOR                                              */
+  /********************************************************/
+  --
+  Cursor c_linhas Is
+        --
+        Select cfi.invoice_id
+          ,cfi.organization_id
+          ,cfil.invoice_line_id
+          ,cfil.pis_tributary_code
+          ,cfil.cofins_tributary_code
+          ,cfil.tributary_status_code
+          ,cfil.utilization_id
+          ,cfiu.recover_pis_flag_cnpj
+          ,cfiu.recover_cofins_flag_cnpj
+          ,cfit.pis_flag
+          ,cfit.cofins_flag
+                  ,cfiu.attribute5
+      From apps.cll_f189_entry_operations cffo
+              ,apps.cll_f189_invoices cfi
+              ,apps.cll_f189_invoice_lines cfil
+          ,apps.cll_f189_item_utilizations cfiu
+          ,apps.cll_f189_invoice_types cfit
+         Where 1 = 1
+       And cfi.organization_id   = cffo.organization_id
+       And cfi.operation_id      = cffo.operation_id
+       And cfil.invoice_id       = cfi.invoice_id
+       And cfil.organization_id  = cfi.organization_id
+       And cfil.utilization_id   = cfiu.utilization_id
+       And cfit.invoice_type_id  = cfi.invoice_type_id
+       And cfit.organization_id  = cfi.organization_id
+       And cffo.organization_id  = p_organization_id
+       And cffo.operation_id     = p_operation_id;
+    --
+        v_linhas c_linhas%rowtype;
+        l_series cll_f189_invoices.series%type; --fpavao 02/04/2018
+    --
+BEGIN
+  --
+  /********************************************************/
+  /*  Validacao das NFs duplicadas                        */
+  /*  Autor: Vitor Santos                                 */
+  /*  Data de Criacao: 23/08/2018                         */
+  /*  Data de Alteracao: 23/08/2018                       */
+  /*  INICIO                                              */
+  /********************************************************/
+  --
+  Begin
+  /********************************************************/
+  /*  Validacao das NFs duplicadas                        */
+  /*  Autor: Fernando Pavao                               */
+  /*  Data de Alteracao: 02/04/2019                       */
+  /*   Inclusao da coluna SERIE para compor a validacao   */
+  /*  INICIO                                              */
+  /********************************************************/
+  
+  
+        --
+        Select invoice_num
+              ,entity_id
+                  ,location_id
+                  ,series --fpavao 02/04/2018
+      Into v_invoice_num
+              ,v_entity_id
+                  ,v_location_id
+            ,l_series --fpavao 02/04/2018
+      From apps.cll_f189_invoices cfi
+     Where 1 = 1
+       And cfi.operation_id    = p_operation_id
+       And cfi.organization_id = p_organization_id;
+        --
+        Select Count(1)
+      Into v_nf_dup
+      From apps.cll_f189_invoices cfi
+     Where 1 = 1
+       And cfi.invoice_num     = v_invoice_num
+       And cfi.entity_id       = v_entity_id
+           And cfi.location_id     = v_location_id
+           and series = l_series --fpavao 02/04/2018
+       And cfi.organization_id = p_organization_id;
+       
+       /********************************************************/
+       /*  Validacao das NFs duplicadas                        */
+       /*  Autor: Fernando Pavao                               */
+       /*  Data de Alteracao: 02/04/2019                       */
+       /*   Inclusao da coluna SERIE para compor a validacao   */
+       /*  FIM                                                 */
+       /********************************************************/              
+       
+        --
+        IF (v_nf_dup > 1) Then
+      --
+          cll_f189_check_holds_pkg.incluir_erro_hold
+                                      (p_operation_id,
+                                       p_organization_id,
+                                       v_location_id,
+                                       'DUPLICATED INVOICE',
+                                       NULL,
+                                       NULL
+                                      );
+          --
+
+
+        --
+        /*IF (v_pis_cst_iface > 0) THEN
+                   cll_f189_check_holds_pkg.incluir_erro
+                                            (v_interface_invoice_id,
+                                             p_operation_id,
+                                             'BMR_BR_CST_PIS',
+                                             0
+                                           );*/
+      --
+    END IF;
+    --
+  Exception
+    --
+    When Others Then
+          --
+          fnd_file.put_line (fnd_file.log, 'PKG cll_f189_holds_custom_pkg.func_holds_custom'||'Validacao NF Duplicadas');
+          --
+  End;
+  --
+  /********************************************************/
+  /*  Validacao das NFs duplicadas                        */
+  /*  Autor: Vitor Santos                                 */
+  /*  Data de Criacao: 23/08/2018                         */
+  /*  Data de Alteracao: 23/08/2018                       */
+  /*  FIM                                                 */
+  /********************************************************/
+  --
+  /********************************************************/
+  /*  RECUPERAR A CONDICAO DE PGTO DO PO                  */
+  /*  Autor: Vitor Santos                                 */
+  /*  Data de Criacao: 23/08/2018                         */
+  /*  Data de Alteracao: 23/08/2018                       */
+  /*  INICIO                                              */
+  /********************************************************/
+  --
+  Begin
+    --
+    Select pha.terms_id
+          Into v_terms_id
+      From apps.cll_f189_entry_operations cffo
+              ,apps.cll_f189_invoices cfi
+              ,apps.cll_f189_invoice_lines cfil
+              ,apps.po_headers_all pha
+              ,apps.po_lines_all pla
+              ,apps.po_line_locations_all plla
+     Where 1 = 1
+       And cfi.organization_id   = cffo.organization_id
+       And cfi.operation_id      = cffo.operation_id
+       And cfil.invoice_id       = cfi.invoice_id
+       And cfil.organization_id  = cfi.organization_id
+       And pla.po_header_id      = pha.po_header_id
+       And plla.po_header_id     = pla.po_header_id
+       And plla.po_line_id       = pla.po_line_id
+       And cfil.line_location_id = plla.line_location_id
+       And cffo.organization_id  = p_organization_id
+       And cffo.operation_id     = p_operation_id
+       And Rownum = 1;
+    --
+  Exception
+        --
+        When no_data_found Then
+          --
+          v_terms_id := 0;
+          --
+  End;
+  --
+  If Nvl(v_terms_id, 0) <>  0 Then
+    --
+        Begin
+          --
+          Update cll_f189_invoices
+             Set terms_id = v_terms_id
+           Where operation_id = p_operation_id
+             And organization_id = p_organization_id;
+          --
+          Commit;
+          --
+        Exception
+      --
+          When Others Then
+            --
+            Null;
+        --
+        End;
+        --
+  End If;
+  --
+  /********************************************************/
+  /*  RECUPERAR A CONDICAO DE PGTO DO PO                  */
+  /*  Autor: Vitor Santos                                 */
+  /*  Data de Criacao: 23/08/2018                         */
+  /*  Data de Alteracao: 23/08/2018                       */
+  /*  FIM                                                 */
+  /********************************************************/
+  --
+  /********************************************************/
+  /*  Prenchimento Automatico do CST ICMS, PIS e COFINS   */
+  /*  Autor: Vitor Santos                                 */
+  /*  Data de Criacao: 23/08/2018                         */
+  /*  Data de Alteracao: 23/08/2018                       */
+  /*  INICIO                                              */
+  /********************************************************/
+  --
+  Begin
+    --
+        For v_linhas In c_linhas Loop
+      --
+          /*Tratar o CST ICMS, PIS e COFINS, Natureza da Receita do PIS e COFINS*/
+          --
+          If  v_linhas.recover_pis_flag_cnpj = 'Y' And v_linhas.pis_flag = 'Y'
+          And v_linhas.recover_cofins_flag_cnpj = 'Y' And v_linhas.cofins_flag = 'Y' Then
+            --
+                Update apps.cll_f189_invoice_lines
+                   Set pis_tributary_code = '50'
+                      ,cofins_tributary_code = '50'
+                          ,tributary_status_code = '041'
+                          ,attribute3 = v_linhas.attribute5 -- Cd da Natureza da Receita do PIS & COFINS
+                 Where invoice_line_id = v_linhas.invoice_line_id;
+                --
+          Else
+        --
+                Update apps.cll_f189_invoice_lines
+                   Set pis_tributary_code = '70'
+                      ,cofins_tributary_code = '70'
+                          ,tributary_status_code = '041'
+                          ,attribute3 = v_linhas.attribute5 -- Cd da Natureza da Receita do PIS & COFINS
+                 Where invoice_line_id = v_linhas.invoice_line_id;
+        --
+          End If;
+          --
+          Commit;
+          --
+        End Loop;
+        --
+  Exception
+    --
+    When Others Then
+          --
+          fnd_file.put_line (fnd_file.log, 'PKG cll_f189_holds_custom_pkg.func_holds_custom'||'Atualizacao CST ICMS, PIS ');
+    --
+  End;
+  /********************************************************/
+  /*  Prenchimento Automatico do CST ICMS, PIS e COFINS   */
+  /*  Autor: Vitor Santos                                 */
+  /*  Data de Criacao: 23/08/2018                         */
+  /*  Data de Alteracao: 23/08/2018                       */
+  /*  FIM                                                 */
+  /********************************************************/
+        --
+        v_return1 :=
+    XXSTN_POREQ_AUTO_PK.VALIDA_COD_SERV(
+             p_operation_id       => p_operation_id,
+             p_organization_id    => p_organization_id
+        );
+    v_return2 :=
+    XXSTN_POREQ_AUTO_PK.STN_HOLD_CUSTOM_ISS(
+             p_operation_id       => p_operation_id,
+             p_organization_id    => p_organization_id
+        );
+  RETURN(v_return1 + v_return2);
+--
+END func_holds_custom;
+--
+END cll_f189_holds_custom_pkg;
+==>
+SQL statement executed
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+show errors package body apps.cll_f189_holds_custom_pkg
+==>
+SQL*Plus statement ignored
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+EXIT
+==>
+SQL*Plus statement executed
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+**** SCRIPT ENDED 02-Apr-2019 18:59:40 ****
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

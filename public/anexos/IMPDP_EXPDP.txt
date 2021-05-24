@@ -1,0 +1,970 @@
+---------------------------------------------------------------------------
+------ N4 - Produção
+---------------------------------------------------------------------------
+user oracle
+---
+export ORACLE_UNQNAME=EMBRANP
+export ORACLE_SID=EMBRANP2
+---
+cd p02/expdp
+---
+
+/* COMPLETO */
+expdp system parallel=5 DUMPFILE=EMBRANP20181212%U.dmp LOGFILE=EMBRANP20181212.log directory=MNT schemas=SPARCSN4 exclude=statistics flashback_time=systimestamp
+
+
+expdp system parallel=5 DUMPFILE=EMBRANP20180627%U.dmp LOGFILE=EMBRANP20180627.log directory=teste schemas=SPARCSN4 exclude=statistics flashback_time=systimestamp
+
+expdp system parallel=5 DUMPFILE=EMBRANP20181212%U.dmp LOGFILE=EMBRANP20181212.log directory=EXPDP schemas=SPARCSN4 exclude=statistics exclude=table:"in('CONFIG_SETTINGS'\,'EDI_SEGMENT'\,'XPS_ECEVENT'\,'EDI_TRANSACTION_KEYWORD'\,'EDI_ERROR'\,'EDI_TRANSACTION'\,'EDI_BATCH'\,'EDI_INTERCHANGE'\,'EDI_BATCH_PROCESS'\,'EDI_ERROR')" flashback_time=systimestamp
+
+expdp system parallel=5 DUMPFILE=EMBRANP20181212%U.dmp LOGFILE=EMBRANP20181212.log directory=WELL schemas=SPARCSN4 exclude=statistics exclude=table:"in('CONFIG_SETTINGS'\,'EDI_SEGMENT'\,'XPS_ECEVENT'\,'EDI_TRANSACTION_KEYWORD'\,'EDI_ERROR'\,'EDI_TRANSACTION'\,'EDI_BATCH'\,'EDI_INTERCHANGE'\,'EDI_BATCH_PROCESS'\,'EDI_ERROR')" flashback_time=systimestamp
+
+expdp system DUMPFILE=EMBRANP20181212.dmp LOGFILE=EMBRANP20181212.log directory=EXPDP schemas=SPARCSN4 exclude=statistics exclude=table:"in('CONFIG_SETTINGS'\,'EDI_SEGMENT'\,'XPS_ECEVENT'\,'EDI_TRANSACTION_KEYWORD'\,'EDI_ERROR'\,'EDI_TRANSACTION'\,'EDI_BATCH'\,'EDI_INTERCHANGE'\,'EDI_BATCH_PROCESS'\,'EDI_ERROR')" flashback_time=systimestamp
+
+expdp system parallel=5 DUMPFILE=EMBRANP20181212%U.dmp LOGFILE=EMBRANP20181212.log directory=EXPDP schemas=SPARCSN4 exclude=statistics exclude=table:"in('EDI_SEGMENT'\,'XPS_ECEVENT'\,'EDI_TRANSACTION_KEYWORD'\,'EDI_ERROR'\,'EDI_TRANSACTION'\,'EDI_BATCH'\,'EDI_INTERCHANGE'\,'EDI_BATCH_PROCESS'\,'EDI_ERROR')" flashback_time=systimestamp
+
+/* CONFIG */
+
+--expdp system parallel=5 DUMPFILE=EMBRANP20181212%U.dmp LOGFILE=EMBRANP20181212.log directory=EXPDP schemas=SPARCSN4 exclude=statistics exclude=table:"in('CONFIG_SETTINGS')" flashback_time=systimestamp
+
+
+expdp system parallel=3 DUMPFILE=EMBRANP20181212%U.dmp LOGFILE=EMBRANP20181212.log directory=EXPDP schemas=SPARCSN4 exclude=statistics exclude=table:"in('CONFIG_SETTINGS'\,'EDI_SEGMENT'\,'XPS_ECEVENT'\,'EDI_TRANSACTION_KEYWORD'\,'EDI_ERROR'\,'EDI_TRANSACTION'\,'EDI_BATCH'\,'EDI_INTERCHANGE'\,'EDI_BATCH_PROCESS'\,'EDI_ERROR')" flashback_time=systimestamp
+
+
+---
+gzip EMBRANP20181212.dmp 
+scp EMBRANP20181212.dmp.gz oracle@10.151.32.248:/tmp
+
+---------------------------------------------------------------------------
+------ N4 - HOMOLOGAÇÃO
+---------------------------------------------------------------------------
+user oracle
+---
+export ORACLE_UNQNAME=EMBRANQ
+export ORACLE_SID=EMBRANQ
+---
+cd /tmp
+---
+expdp system DUMPFILE=EMBRANQ20181212.dmp LOGFILE=EMBRANQ20181212.log directory=tmp schemas=SPARCSN4 exclude=statistics flashback_time=systimestamp exclude=table:"in\('EDI_TRANSACTION'\)"
+
+gzip EMBRANQ20181212.dmp
+---
+
+DROP SEQUENCE SPARCSN4.HIBERNATE_SEQUENCE;
+
+impdp system parallel=5 DUMPFILE=EMBRANP20181212.dmp LOGFILE=EMBRANP20181212.log DIRECTORY=tmp SCHEMAS=SPARCSN4 TABLE_EXISTS_ACTION=REPLACE 
+impdp system parallel=5 DUMPFILE=EMBRANP20181212%U.dmp LOGFILE=EMBRANP20181212.log DIRECTORY=expdp SCHEMAS=SPARCSN4 TABLE_EXISTS_ACTION=REPLACE 
+
+--------- FAZER DELETE DAS TABELAS QUE NÃO TEM CHAVE ESTRANGEIRA.
+
+--- VOLTAR A USER ROLE
+
+impdp system DUMPFILE=EMBRANQ20181212.dmp LOGFILE=EMBRANQ20181212_USERROLE.log DIRECTORY=tmp TABLES=SPARCSN4.SEC_USER_ROLE_MAP, SPARCSN4.XPS_USER, SPARCSN4.BASE_USER, SPARCSN4.USER_OPTION TABLE_EXISTS_ACTION=REPLACE 
+
+---
+CREATE SEQUENCE SPARCSN4.HIBERNATE_SEQUENCE
+ START WITH     72283861
+ INCREMENT BY   1
+ maxvalue 9999999999999999999999999999
+ CACHE 20
+ NOCYCLE;
+ 
+ 
+ 
+delete from SPARCSN4.FRM_NODE_CONFIG WHERE NODECFG_NODE_NAME IN ('Node1',
+'Node3',
+'Node2',
+'NodeEDI',
+'CenterNode',
+'StandByCenterNode')
+
+
+---------------------------------------------------------------------------
+------ N4 - DESENVOLVIMENTO
+---------------------------------------------------------------------------
+user oracle
+---
+export ORACLE_UNQNAME=EMBRANT
+export ORACLE_SID=EMBRANT
+---
+cd /tmp
+---
+expdp system DUMPFILE=EMBRANT20181212.dmp LOGFILE=EMBRANT20181212.log directory=expdp schemas=SPARCSN4 exclude=statistics flashback_time=systimestamp
+---
+
+DROP SEQUENCE SPARCSN4.HIBERNATE_SEQUENCE;
+
+
+impdp system parallel=3 DUMPFILE=EMBRANP20181212%U.dmp LOGFILE=EMBRANP20181212_TESTE.log DIRECTORY=expdp SCHEMAS=SPARCSN4 TABLE_EXISTS_ACTION=REPLACE 
+
+impdp system DUMPFILE=EMBRANP2018121201.dmp, EMBRANP2018121203.dmp, EMBRANP2018121205.dmp, EMBRANP2018121202.dmp, EMBRANP2018121204.dmp  LOGFILE=EMBRANP20181212_TESTE.log DIRECTORY=expdp SCHEMAS=SPARCSN4 TABLE_EXISTS_ACTION=REPLACE
+
+--------- FAZER DELETE DAS TABELAS QUE NÃO TEM CHAVE ESTRANGEIRA.
+
+--- VOLTAR A USER ROLE
+
+impdp system DUMPFILE=EMBRANT20181212.dmp LOGFILE=EMBRANQ20181212_USERROLE.log DIRECTORY=tmp TABLES=SPARCSN4.SEC_USER_ROLE_MAP, SPARCSN4.XPS_USER, SPARCSN4.BASE_USER, SPARCSN4.USER_OPTION TABLE_EXISTS_ACTION=REPLACE 
+
+
+
+CREATE SEQUENCE SPARCSN4.HIBERNATE_SEQUENCE
+ START WITH     98966341
+ INCREMENT BY   1
+ maxvalue 9999999999999999999999999999
+ CACHE 20
+ NOCYCLE;
+
+
+delete from SPARCSN4.FRM_NODE_CONFIG WHERE NODECFG_NODE_NAME IN ('Node1',
+'Node3',
+'Node2',
+'NodeEDI',
+'CenterNode',
+'StandByCenterNode')
+
+
+---------------------------------------------------------------------------
+------ N4 - NEWVERSION
+---------------------------------------------------------------------------
+
+scp EMBRANP2018121201.dmp oracle@dpws1sva001:/u01/app/oracle/admin/DPWSNDEV/dpdump
+scp EMBRANP2018121202.dmp oracle@dpws1sva001:/u01/app/oracle/admin/DPWSNDEV/dpdump
+scp EMBRANP2018121203.dmp oracle@dpws1sva001:/u01/app/oracle/admin/DPWSNDEV/dpdump
+scp EMBRANP2018121204.dmp oracle@dpws1sva001:/u01/app/oracle/admin/DPWSNDEV/dpdump
+scp EMBRANP2018121205.dmp oracle@dpws1sva001:/u01/app/oracle/admin/DPWSNDEV/dpdump
+
+
+export ORACLE_UNQNAME=DPWSNDEV
+export ORACLE_SID=DPWSNDEV
+
+impdp system parallel=5 DUMPFILE=EMBRANP20181212%U.dmp LOGFILE=EMBRANP20180103_TESTE.log DIRECTORY=DATA_PUMP_DIR SCHEMAS=SPARCSN4 TABLE_EXISTS_ACTION=REPLACE 
+
+
+
+---------------------------------------------------------------------------
+------ BILLING - NEWVERSION
+---------------------------------------------------------------------------
+
+export ORACLE_UNQNAME=DPWSBDEV
+export ORACLE_SID=DPWSBDEV
+
+impdp system DUMPFILE=EMBRABP20181212.dmp LOGFILE=EMBRANP20180103_TESTE.log DIRECTORY=DATA_PUMP_DIR SCHEMAS=SPARCSBI TABLE_EXISTS_ACTION=REPLACE 
+
+
+
+---------------------------------------------------------------------------
+------ EOL - NEWVERSION
+---------------------------------------------------------------------------
+
+export ORACLE_UNQNAME=DPWSEDEV
+export ORACLE_SID=DPWSEDEV
+
+ scp EMBRAOP20181212.dmp oracle@10.151.46.103:/u01/app/oracle/admin/DPWSEDEV/dpdump
+
+impdp system DUMPFILE=EMBRAOP20181212.dmp LOGFILE=EMBRAOP20181212_TESTE.log DIRECTORY=DATA_PUMP_DIR SCHEMAS=AGE,AUTOMATE,BDCC,CORE,DASOARES,LPEREIRA,WTULER,DESENV,ICON,IDTE,MAURICIOPEREZ,MARCIOROBERTO,N4E,OEMEMBRAPORT,POS,PRC,SISC,TEV,TFC,TIS,TMS,TQB,TSA,CRS,PLANNER,ITV,RPS,SRV,ADM,GED,CRM,TCC,KPI exclude=statistics  TABLE_EXISTS_ACTION=REPLACE 
+
+---------------------------------------------------------------------------
+------- DELETES PÓS CÓPIA N4
+---------------------------------------------------------------------------
+
+-----------------------
+
+DELETE FROM "SPARCSN4"."ROAD_TRANSACTION_PLACARDS" WHERE TRAN_GKEY IN
+(SELECT TRAN_GKEY FROM "SPARCSN4"."ROAD_TRANSACTION_PLACARDS"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."ROAD_TRUCK_TRANSACTIONS" );
+
+DELETE FROM "SPARCSN4"."SEC_USER_ROLE_MAP"  WHERE USRROLM_ROLE_GKEY IN
+(SELECT USRROLM_ROLE_GKEY FROM "SPARCSN4"."SEC_USER_ROLE_MAP" 
+MINUS 
+SELECT ROLE_GKEY FROM  "SPARCSN4"."SEC_ROLE");
+
+DELETE FROM "SPARCSN4"."ROAD_TRUCK_VISIT_STATS" WHERE TV_GKEY IN
+(SELECT TV_GKEY FROM "SPARCSN4"."ROAD_TRUCK_VISIT_STATS"
+MINUS
+SELECT TVDTLS_GKEY FROM "SPARCSN4"."ROAD_TRUCK_VISIT_DETAILS" );
+
+DELETE FROM "SPARCSN4"."ROAD_TRANSACTION_PLACARDS" WHERE TRAN_GKEY IN
+(SELECT TRAN_GKEY FROM "SPARCSN4"."ROAD_TRANSACTION_PLACARDS"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."ROAD_TRUCK_TRANSACTIONS" );
+
+DELETE FROM "SPARCSN4"."INV_UNIT_EQUIP" WHERE UNIT_GKEY IN 
+(SELECT UNIT_GKEY FROM  "SPARCSN4"."INV_UNIT_EQUIP" 
+MINUS 
+SELECT GKEY FROM  "SPARCSN4"."INV_UNIT");
+
+DELETE FROM "SPARCSN4"."ROAD_GATE_APPOINTMENT" WHERE UNIT_GKEY IN
+(select UNIT_GKEY from "SPARCSN4"."ROAD_GATE_APPOINTMENT"
+MINUS 
+SELECT GKEY FROM "SPARCSN4"."INV_UNIT");
+
+DELETE FROM "SPARCSN4"."EDI_TRANSACTION_KEYWORD"  WHERE EDITRAN_GKEY IN
+(SELECT EDITRAN_GKEY FROM  "SPARCSN4"."EDI_TRANSACTION_KEYWORD"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."EDI_TRANSACTION");
+
+DELETE FROM "SPARCSN4"."ROAD_DOCUMENT_MESSAGES" WHERE DOC_GKEY IN
+(SELECT DOC_GKEY FROM "SPARCSN4"."ROAD_DOCUMENT_MESSAGES"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."ROAD_DOCUMENTS");
+
+DELETE FROM "SPARCSN4"."EDI_EVENT" WHERE EDIEVENT_GKEY
+IN (
+SELECT EDIEVENT_GKEY FROM "SPARCSN4"."EDI_EVENT"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."SRV_EVENT");
+
+DELETE FROM "SPARCSN4"."INV_EQ_STATE" WHERE EQ_GKEY
+in
+(SELECT EQ_GKEY FROM "SPARCSN4"."INV_EQ_STATE"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."REF_EQUIPMENT");
+
+DELETE FROM "SPARCSN4"."SRV_FLAGS" WHERE ASSOCIATED_EVENT_GKEY IN
+(SELECT ASSOCIATED_EVENT_GKEY FROM "SPARCSN4"."SRV_FLAGS"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."SRV_EVENT");
+
+DELETE FROM "SPARCSN4"."EDI_ERROR" WHERE EDITRAN_GKEY IN
+(SELECT EDITRAN_GKEY FROM "SPARCSN4"."EDI_ERROR"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."EDI_TRANSACTION");
+
+DELETE FROM "SPARCSN4"."EDI_ERROR" WHERE EDIPROC_GKEY IN
+(SELECT EDIPROC_GKEY FROM "SPARCSN4"."EDI_ERROR"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."EDI_BATCH_PROCESS");
+
+DELETE FROM "SPARCSN4"."INV_UNIT_YRD_VISIT" WHERE UFV_GKEY IN 
+(SELECT UFV_GKEY FROM "SPARCSN4"."INV_UNIT_YRD_VISIT"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."INV_UNIT_FCY_VISIT");
+
+DELETE FROM "SPARCSN4"."INV_MOVE_EVENT" WHERE MVE_GKEY IN
+(SELECT MVE_GKEY FROM "SPARCSN4"."INV_MOVE_EVENT"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."SRV_EVENT");
+
+DELETE FROM "SPARCSN4"."SAVED_QUERY" WHERE QUERY_BUSER_GKEY IN
+(SELECT QUERY_BUSER_GKEY FROM "SPARCSN4"."SAVED_QUERY"
+MINUS 
+SELECT BUSER_GKEY FROM "SPARCSN4"."BASE_USER");
+
+DELETE FROM "SPARCSN4"."SEC_AUTHENTICATION_HISTORY" WHERE AUTHHIST_USER IN
+(SELECT AUTHHIST_USER FROM "SPARCSN4"."SEC_AUTHENTICATION_HISTORY"
+MINUS 
+SELECT BUSER_GKEY FROM "SPARCSN4"."BASE_USER");
+
+DELETE FROM "SPARCSN4"."SEC_USER_AUTH_PROFILE" WHERE USRAUTH_GKEY IN
+(SELECT USRAUTH_GKEY FROM "SPARCSN4"."SEC_USER_AUTH_PROFILE"
+MINUS 
+SELECT BUSER_GKEY FROM "SPARCSN4"."BASE_USER");
+
+DELETE FROM "SPARCSN4"."USER_OPTION_FORM_FILTER_PREFS" WHERE USRFILT_USER_GKEY IN
+(SELECT USRFILT_USER_GKEY FROM "SPARCSN4"."USER_OPTION_FORM_FILTER_PREFS"
+MINUS 
+SELECT BUSER_GKEY FROM "SPARCSN4"."BASE_USER");
+
+
+DELETE FROM "SPARCSN4"."SRV_EVENT_FIELD_CHANGES"  WHERE EVENT_GKEY IN
+(SELECT EVENT_GKEY FROM  "SPARCSN4"."SRV_EVENT_FIELD_CHANGES" 
+MINUS
+SELECT GKEY FROM "SPARCSN4"."SRV_EVENT");
+
+
+DELETE FROM "SPARCSN4"."SEC_AUTHENTICATION_HISTORY" WHERE AUTHHIST_USER IN
+(SELECT AUTHHIST_USER FROM "SPARCSN4"."SEC_AUTHENTICATION_HISTORY" 
+MINUS 
+SELECT BUSER_GKEY FROM "SPARCSN4"."BASE_USER");
+
+DELETE FROM "SPARCSN4"."SEC_USER_AUTH_PROFILE" WHERE USRAUTH_GKEY IN
+(SELECT USRAUTH_GKEY FROM "SPARCSN4"."SEC_USER_AUTH_PROFILE"
+minus 
+SELECT BUSER_GKEY FROM "SPARCSN4"."BASE_USER");
+
+
+DELETE FROM "SPARCSN4"."EDI_TRANSACTION_KEYWORD" WHERE EDITRAN_GKEY IN
+(SELECT EDITRAN_GKEY FROM  "SPARCSN4"."EDI_TRANSACTION_KEYWORD"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."EDI_TRANSACTION");
+
+DELETE FROM "SPARCSN4"."ROAD_DOCUMENT_MESSAGES" WHERE DOC_GKEY  IN
+(SELECT DOC_GKEY FROM "SPARCSN4"."ROAD_DOCUMENT_MESSAGES"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."ROAD_DOCUMENTS");
+
+DELETE FROM "SPARCSN4"."ROAD_TRUCK_VISIT_STATS" WHERE TV_GKEY IN
+(SELECT TV_GKEY from "SPARCSN4"."ROAD_TRUCK_VISIT_STATS"
+MINUS 
+SELECT TVDTLS_GKEY FROM SPARCSN4.ROAD_TRUCK_VISIT_DETAILS);
+
+DELETE FROM "SPARCSN4"."ROAD_TRUCK_TRANSACTION_STAGES" WHERE TRAN_GKEY IN
+(SELECT TRAN_GKEY from "SPARCSN4"."ROAD_TRUCK_TRANSACTION_STAGES"
+MINUS 
+SELECT GKEY FROM SPARCSN4.ROAD_TRUCK_TRANSACTIONS);
+
+DELETE FROM "SPARCSN4"."SRV_FLAGS" WHERE ASSOCIATED_EVENT_GKEY IN(
+SELECT ASSOCIATED_EVENT_GKEY FROM "SPARCSN4"."SRV_FLAGS"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."SRV_EVENT");
+
+DELETE FROM "SPARCSN4"."SRV_FLAGS" WHERE ASSOCIATED_EVENT_GKEY  IN
+(SELECT ASSOCIATED_EVENT_GKEY FROM "SPARCSN4"."SRV_FLAGS"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."SRV_EVENT");
+
+DELETE FROM "SPARCSN4"."EDI_SEGMENT" WHERE EDIBATCH_GKEY IN
+(SELECT EDIBATCH_GKEY FROM "SPARCSN4"."EDI_SEGMENT"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."EDI_BATCH" );
+
+DELETE FROM "SPARCSN4"."EDI_ERROR" WHERE EDITRAN_GKEY IN
+(SELECT EDITRAN_GKEY FROM "SPARCSN4"."EDI_ERROR"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."EDI_TRANSACTION");
+
+DELETE FROM "SPARCSN4"."INV_MOVE_EVENT" WHERE MVE_GKEY IN
+(SELECT MVE_GKEY FROM "SPARCSN4"."INV_MOVE_EVENT"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."SRV_EVENT");
+
+DELETE FROM "SPARCSN4"."INV_UNIT" WHERE ACTIVE_UFV IN
+(SELECT ACTIVE_UFV FROM "SPARCSN4"."INV_UNIT" 
+MINUS 
+SELECT GKEY FROM "SPARCSN4"."INV_UNIT_FCY_VISIT");
+
+DELETE FROM "SPARCSN4"."EDI_TRANSACTION" WHERE EDIBAT_GKEY IN
+(SELECT EDIBAT_GKEY FROM "SPARCSN4"."EDI_TRANSACTION" 
+MINUS 
+SELECT GKEY FROM "SPARCSN4"."EDI_BATCH");
+
+DELETE FROM SPARCSN4.SAVED_QUERY WHERE query_buser_gkey IN
+(SELECT query_buser_gkey FROM SPARCSN4.SAVED_QUERY 
+MINUS
+SELECT buser_gkey FROM SPARCSN4.base_user);
+
+DELETE FROM SPARCSN4.sec_authentication_history WHERE authhist_user IN
+(SELECT authhist_user FROM SPARCSN4.sec_authentication_history
+MINUS
+SELECT buser_gkey FROM SPARCSN4.base_user);
+
+DELETE FROM SPARCSN4.sec_user_auth_profile WHERE usrauth_gkey IN
+(SELECT usrauth_gkey FROM SPARCSN4.sec_user_auth_profile 
+MINUS
+SELECT  BUSER_GKEY FROM SPARCSN4.base_user);
+
+DELETE FROM SPARCSN4.user_option_form_filter_prefs WHERE usrfilt_user_gkey IN
+(
+SELECT usrfilt_user_gkey FROM SPARCSN4.user_option_form_filter_prefs
+MINUS
+SELECT  BUSER_GKEY FROM SPARCSN4.base_user);
+
+DELETE FROM SPARCSN4.user_option_open_nodes WHERE open_node_gkey IN
+(SELECT open_node_gkey FROM SPARCSN4.user_option_open_nodes 
+MINUS
+SELECT USEROPT_GKEY FROM SPARCSN4.user_option);
+
+DELETE FROM "SPARCSN4"."REF_SHIPPER" WHERE SHPPR_ID IN
+(SELECT SHPPR_ID FROM "SPARCSN4"."REF_SHIPPER"
+MINUS
+SELECT GKEY FROM "SPARCSN4"."REF_BIZUNIT_SCOPED" 
+);
+
+---------------------------------------------------------------------------
+------ Billing - Produção
+---------------------------------------------------------------------------
+user oracle
+---
+export ORACLE_UNQNAME=EMBRABP
+export ORACLE_SID=EMBRABP2
+---
+cd /tmp
+---
+ 
+/* COMPLETA */
+expdp system DUMPFILE=EMBRABP20181212.dmp LOGFILE=EMBRABP20181212.log directory=tmp schemas=SPARCSBI exclude=statistics exclude=table:"in('CONFIG_SETTINGS'\,'SEC_ROLE'\,'SEC_ROLE_PRIV_MAP'\,'SEC_USER_ROLE_MAP'\,'BASE_USER'\,'EDI_BATCH'\,'EDI_BATCH_PROCESS'\,'EDI_ERROR'\,'EDI_EVENT'\,'EDI_FILTER'\,'EDI_FILTER_ENTRY'\,'EDI_INTERCHANGE'\,'EDI_JOB_DEFINITION'\,'EDI_JOB_SCHEDULE'\,'EDI_MAILBOX'\,'EDI_MESSAGE_MAP'\,'EDI_MESSAGE_TYPE'\,'EDI_POSTING_RULES'\,'EDI_QUEUED_INTERCHANGE'\,'EDI_RELEASE_MAPS'\,'EDI_SAMPLE'\,'EDI_SEGMENT'\,'EDI_SESSION_FILTER'\,'EDI_SESSION_MAILBOX'\,'EDI_SETTING'\,'EDI_TRADING_PARTNERS'\,'EDI_TRANSACTION'\,'EDI_TRANSACTION_KEYWORD')"
+---
+/* SETTINGS APENAS */
+expdp system DUMPFILE=EMBRABP20181212.dmp LOGFILE=EMBRABP20181212.log directory=expdp schemas=SPARCSBI exclude=statistics exclude=table:"in('CONFIG_SETTINGS')" flashback_time=systimestamp
+
+---
+gzip EMBRABP20181212.dmp
+scp EMBRABP20181212.dmp oracle@10.151.32.248:/tmp
+
+
+
+---------------------------------------------------------------------------
+------ Billing - Homologação
+---------------------------------------------------------------------------
+user oracle
+---
+export ORACLE_UNQNAME=EMBRABQ
+export ORACLE_SID=EMBRABQ
+---
+cd /tmp
+---
+expdp system DUMPFILE=EMBRABQ20181212.dmp LOGFILE=EMBRABQ20181212.log directory=expdp schemas=SPARCSBI exclude=statistics 
+---
+
+DROP SEQUENCE SPARCSBI.HIBERNATE_SEQUENCE;
+
+---
+
+impdp system DUMPFILE=EMBRABP20181212.dmp LOGFILE=EMBRABP20181212.log DIRECTORY=expdp SCHEMAS=SPARCSBI TABLE_EXISTS_ACTION=REPLACE 
+
+--- VOLTAR A USER ROLE
+
+impdp system DUMPFILE=EMBRABQ20181212.dmp LOGFILE=EMBRANQ20181212_USERROLE.log DIRECTORY=tmp TABLES=SPARCSBI.SEC_USER_ROLE_MAP, SPARCSBI.XPS_USER, SPARCSBI.BASE_USER, SPARCSBI.USER_OPTION TABLE_EXISTS_ACTION=REPLACE 
+
+
+CREATE SEQUENCE SPARCSBI.HIBERNATE_SEQUENCE
+ START WITH     28155761
+ INCREMENT BY   1
+ maxvalue 9999999999999999999999999999
+ CACHE 20
+ NOCYCLE;
+
+---------------------------------------------------------------------------
+------ Billing - TESTE
+---------------------------------------------------------------------------
+user oracle
+---
+export ORACLE_UNQNAME=EMBRABT
+export ORACLE_SID=EMBRABT
+---
+cd /tmp
+---
+expdp system DUMPFILE=EMBRABT20181212.dmp LOGFILE=EMBRABT20181212.log directory=tmp schemas=SPARCSBI exclude=statistics 
+---
+DROP SEQUENCE SPARCSBI.HIBERNATE_SEQUENCE;
+---
+
+impdp system DUMPFILE=EMBRABP20181212.dmp LOGFILE=EMBRABP20181212_TESTE.log DIRECTORY=expdp SCHEMAS=SPARCSBI TABLE_EXISTS_ACTION=REPLACE 
+---
+
+--- VOLTAR A USER ROLE
+
+impdp system DUMPFILE=EMBRABP20181212.dmp LOGFILE=EMBRANQ20181212_USERROLE.log DIRECTORY=expdp TABLES=SPARCSBI.SEC_USER_ROLE_MAP, SPARCSBI.XPS_USER, SPARCSBI.BASE_USER, SPARCSBI.USER_OPTION TABLE_EXISTS_ACTION=REPLACE 
+
+
+CREATE SEQUENCE SPARCSBI.HIBERNATE_SEQUENCE
+ START WITH     28098581
+ INCREMENT BY   1
+ maxvalue 9999999999999999999999999999
+ CACHE 20
+ NOCYCLE;
+
+---------------------------------------------------------------------------
+------ EOL - Produção
+---------------------------------------------------------------------------
+user oracle
+---
+export ORACLE_UNQNAME=EMBRAOP
+export ORACLE_SID=EMBRAOP2
+---
+cd /tmp
+---
+expdp system DUMPFILE=EMBRAOP20181212.dmp LOGFILE=EMBRAOP20181212.log DIRECTORY=EXPDPP02 SCHEMAS=AGE,AUTOMATE,BDCC,CORE,DASOARES,LPEREIRA,WTULER,DESENV,ICON,IDTE,MAURICIOPEREZ,MARCIOROBERTO,N4E,OEMEMBRAPORT,POS,PRC,SISC,TEV,TFC,TIS,TMS,TQB,TSA,CRS,PLANNER,ITV,RPS,SRV,ADM,GED,CRM,TCC,KPI,TDR,DPWI,WSI,EDI exclude=statistics exclude=table:"in('COFTP'\,'COSETTINGS'\,'TMSCONFIGURACAOS'\,'TISPARTICIPANTES'\,'TISSERVICOS'\,'RECINTOS'\,'TFCRECINTOS'\,'TISFILAEMPROCESSAMENTOS'\,'TISFILARETORNOS'\,'TISHFILASERVICOS'\,'TISFILASERVICOS'\,'PRESENCACARGAMTS'\,'TMSFILAMENSAGEMS'\,'TMSHFILAMENSAGEMS'\,'TSAAUDITORIARECURSOS'\,'TSASESSIONS'\,'COLOGS'\,'COAUDITINGS'\,'TFCGATETIPOMOVSETTINGS'\,'TSAGRSETTINGS'\,'COJOBPARAMETERS'\,'COJOBS'\,'TMSTIPODESTINATARIO'\,'TMSTEMPLATE'\,'TSASERVICOEXTERNO'\,'TSASERVICO'\,'TSAMENU'\,'COCLEAN'\,'TEVTIPOEVENTO')" flashback_time=systimestamp
+
+expdp system DUMPFILE=TABELAS.dmp LOGFILE=TABELAS.log DIRECTORY=expdp TABLES=CORE.COSETTINGS,TMS.TMSCONFIGURACAOS,TIS.TISPARTICIPANTES,TIS.TISSERVICOS,IDTE.RECINTOS,TFC.TFCRECINTOS, TIS.TISFILAEMPROCESSAMENTOS, TIS.TISFILARETORNOS,TIS.TISHFILASERVICOS,TIS.TISFILASERVICOS,TMS.PRESENCACARGAMTS,TMS.TMSFILAMENSAGEMS,TMS.TMSHFILAMENSAGEMS,TSA.TSAAUDITORIARECURSOS,TSA.TSASESSIONS,CORE.COLOGS,CORE.COAUDITINGS,TFC.TFCGATETIPOMOVSETTINGS,TSA.TSAGRSETTINGS,CORE.COJOBPARAMETERS,CORE.COJOBS flashback_time=systimestamp
+
+expdp system DUMPFILE=EMBRAOP20181212.dmp LOGFILE=EMBRAOP20181212.log DIRECTORY=EXPDPP02 SCHEMAS=AGE,AUTOMATE,BDCC,CORE,DASOARES,LPEREIRA,WTULER,DESENV,ICON,IDTE,MAURICIOPEREZ,MARCIOROBERTO,N4E,OEMEMBRAPORT,POS,PRC,SISC,TEV,TFC,TIS,TMS,TQB,TSA,CRS,PLANNER,ITV,RPS,SRV,ADM,GED,CRM,TCC,KPI,TDR,DPWI,WSI,EDI exclude=statistics flashback_time=systimestamp
+
+---
+scp EMBRAOP20181212.dmp oracle@10.151.32.252:/tmp
+
+
+expdp lpereira DUMPFILE=EMBRAPOP_MIGR_QA_%U.dmp LOGFILE=EMBRAPOP_MIGR_QA.log DIRECTORY=expdp_migration parallel=5 SCHEMAS=AGE,AUTOMATE,BDCC,CORE,DASOARES,DESENV,ICON,IDTE,MAURICIOPEREZ,MARCIOROBERTO,N4E,OEMEMBRAPORT,POS,PRC,SISC,TEV,TFC,TIS,TMS,TQB,TSA,CRS,PLANNER,ITV,RPS,SRV,ADM,GED,CRM,TDR,DPWI,WSI,EDI exclude=statistics  flashback_time=systimestamp
+
+
+---------------------------------------------------------------------------
+------ EOL - Homologação
+---------------------------------------------------------------------------
+user oracle
+---
+export ORACLE_UNQNAME=EMBRAOQ
+export ORACLE_SID=EMBRAOQ
+---
+cd /tmp
+---
+expdp system DUMPFILE=EMBRAOQ20181212.dmp LOGFILE=EMBRAOQ20181212.log DIRECTORY=tmp SCHEMAS=AGE,AUTOMATE,BDCC,CORE,DASOARES,LPEREIRA,WTULER,DESENV,ICON,IDTE,MAURICIOPEREZ,MARCIOROBERTO,N4E,OEMEMBRAPORT,POS,PRC,SISC,TEV,TFC,TIS,TMS,TQB,TSA,CRS,JIRA,ITV,RPS,SRV,CRM,GED,ADM,TCC,KPI,TDR,DPWI,WSI,EDI exclude=statistics flashback_time=systimestamp 
+
+--
+-- PARTE GENÉRICA
+--
+
+impdp system DUMPFILE=EMBRAOP20181212.dmp LOGFILE=EMBRAOP20181212_QA.log DIRECTORY=tmp SCHEMAS=AGE,AUTOMATE,BDCC,CORE,DASOARES,DESENV,ICON,IDTE,MAURICIOPEREZ,MARCIOROBERTO,N4E,OEMEMBRAPORT,POS,PRC,SISC,TEV,TFC,TIS,TMS,TQB,TSA,CRS,RPS,ITV,SRV,CRM,GED,ADM,TCC,KPI,TDR,DPWI,WSI,EDI TABLE_EXISTS_ACTION=REPLACE  
+
+----impdp system dumpfile=WELLINGTON.dmp logfile=WELLINGTON.log directory=tmp schemas=TIS, TMS query='TISFILASERVICOS:"where rownum = 0"' query='TISHFILASERVICOS:"where rownum=0"' query='TISFILARETORNOS:"where rownum=0"' query='TISFILAEMPROCESSAMENTOS:"where rownum=0"' 
+
+---- VOLTANDO AS TABELAS.
+impdp system DUMPFILE=EMBRAOQ20181212.dmp LOGFILE=EMBRAOQ20181212_TABLES.log DIRECTORY=tmp TABLES=CORE.COSETTINGS,TMS.TMSCONFIGURACAOS,TIS.TISPARTICIPANTES,TIS.TISSERVICOS,IDTE.RECINTOS,TFC.TFCRECINTOS,TIS.TISFILAEMPROCESSAMENTOS,TIS.TISFILARETORNOS,TIS.TISHFILASERVICOS,TIS.TISFILASERVICOS,PRC.PRESENCACARGAMTS,TMS.TMSFILAMENSAGEMS,TMS.TMSHFILAMENSAGEMS,TSA.TSAAUDITORIARECURSOS,TSA.TSASESSIONS,CORE.COLOGS,CORE.COAUDITINGS,TFC.TFCGATETIPOMOVSETTINGS,TSA.TSAGRSETTINGS,CORE.COJOBPARAMETERS, CORE.COJOBS TABLE_EXISTS_ACTION=REPLACE  query='TIS.TISFILASERVICOS:"where rownum = 0"' query='TIS.TISFILARETORNOS:"where rownum=0"' query='TIS.TISHFILASERVICOS:"where rownum=0"' query='TIS.TISFILAEMPROCESSAMENTOS:"where rownum=0"' query='TEV.TEVEVENTOS:"where rownum=0"' query='TEV.TEVHEVENTOS:"where rownum=0"' query='TEV.tevheventoerros:"where rownum=0"' query='TEV.teveventoerros:"where rownum=0"' query='TEV.teveventoprocerros:"where rownum=0"' query='TEV.teveventoexecucaos:"where rownum=0"'
+
+---- Recompilando objetos inválidos 
+select 'alter public synonym '||object_name||' compile;' from dba_objects where status='INVALID' and object_type='SYNONYM';
+select 'alter Procedure '||OWNER||'.'||object_name||' compile;' from dba_objects where status='INVALID' and object_type='PROCEDURE';
+
+---- Recriando sequences problematicas
+
+DROP SEQUENCE IDTE.EVENTOPUBLICACAO_SEQ;
+SELECT 'CREATE SEQUENCE  IDTE.EVENTOPUBLICACAO_SEQ  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH ' || MAX(EVENTOPUBLICACAOID) ||' CACHE 20 NOORDER  NOCYCLE;' FROM IDTE.eventopublicacaos
+DROP SEQUENCE IDTE.EVENTOREGISTRO_SEQ;
+SELECT 'CREATE SEQUENCE IDTE.EVENTOREGISTRO_SEQ MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH '|| (MAX(EVENTOREGISTROID)   + 1) ||' CACHE 20 NOORDER  NOCYCLE ;' FROM IDTE.eventoregistros
+
+
+---------------------------------------------------------------------------
+------ EOL - DESENVOLVIMENTO
+---------------------------------------------------------------------------
+user oracle
+---
+export ORACLE_UNQNAME=EMBRAOT
+export ORACLE_SID=EMBRAOT
+---
+cd /tmp
+---
+expdp system DUMPFILE=EMBRAOT20181212.dmp LOGFILE=EMBRAOT20181212.log DIRECTORY=tmp SCHEMAS=AGE,AUTOMATE,BDCC,CORE,DASOARES,DESENV,ICON,IDTE,MAURICIOPEREZ,MARCIOROBERTO,N4E,OEMEMBRAPORT,POS,PRC,SISC,TEV,TFC,TIS,TMS,TQB,TSA,JIRA,CRS,ITV,RPS,SRV,CRM,GED,ADM,PLANNER,TCC,MIDDLEWARE,ADU,KPI,TDR,DPWI,WSI,EDI exclude=statistics flashback_time=systimestamp
+---
+
+--
+-- PARTE GENÉRICA
+--
+
+impdp system DUMPFILE=EMBRAOP20181212.dmp LOGFILE=EMBRAOP20181212_DESENV.log DIRECTORY=tmp SCHEMAS=AGE,AUTOMATE,BDCC,CORE,DASOARES,DESENV,ICON,IDTE,MAURICIOPEREZ,MARCIOROBERTO,N4E,OEMEMBRAPORT,POS,PRC,SISC,TEV,TFC,TIS,TMS,TQB,TSA,CRS,ITV,RPS,SRV,CRM,ADM,GED,TCC,TDR,DPWI,WSI,EDI TABLE_EXISTS_ACTION=REPLACE  
+
+---- VOLTANDO AS TABELAS.
+impdp system DUMPFILE=EMBRAOT20181212.dmp LOGFILE=EMBRAOT20181212_TABLES.log DIRECTORY=tmp TABLES=CORE.COSETTINGS,TMS.TMSCONFIGURACAOS,TIS.TISPARTICIPANTES,TIS.TISSERVICOS,IDTE.RECINTOS,TFC.TFCRECINTOS,TIS.TISFILAEMPROCESSAMENTOS,TIS.TISFILARETORNOS,TIS.TISHFILASERVICOS,TIS.TISFILASERVICOS,PRC.PRESENCACARGAMTS,TMS.TMSFILAMENSAGEMS,TMS.TMSHFILAMENSAGEMS,TSA.TSAAUDITORIARECURSOS,TSA.TSASESSIONS,CORE.COLOGS,CORE.COAUDITINGS,TFC.TFCGATETIPOMOVSETTINGS,TSA.TSAGRSETTINGS,CORE.COJOBPARAMETERS, CORE.COJOBS TABLE_EXISTS_ACTION=REPLACE query='TIS.TISFILASERVICOS:"where rownum = 0"' query='TIS.TISFILARETORNOS:"where rownum=0"' query='TIS.TISHFILASERVICOS:"where rownum=0"' query='TIS.TISFILAEMPROCESSAMENTOS:"where rownum=0"' query='TEV.TEVEVENTOS:"where rownum=0"' query='TEV.TEVHEVENTOS:"where rownum=0"' query='TEV.tevheventoerros:"where rownum=0"' query='TEV.teveventoerros:"where rownum=0"' query='TEV.teveventoprocerros:"where rownum=0"' query='TEV.teveventoexecucaos:"where rownum=0"'
+
+---- Recompilando objetos inválidos 
+select 'alter public synonym '||object_name||' compile;' from dba_objects where status='INVALID' and object_type='SYNONYM';
+select 'alter Procedure '||OWNER||'.'||object_name||' compile;' from dba_objects where status='INVALID' and object_type='PROCEDURE';
+
+---- Recriando sequences problematicas
+
+DROP SEQUENCE IDTE.EVENTOPUBLICACAO_SEQ;
+SELECT 'CREATE SEQUENCE  IDTE.EVENTOPUBLICACAO_SEQ  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH ' || MAX(EVENTOPUBLICACAOID) ||' CACHE 20 NOORDER  NOCYCLE;' FROM IDTE.eventopublicacaos
+DROP SEQUENCE IDTE.EVENTOREGISTRO_SEQ;
+SELECT 'CREATE SEQUENCE IDTE.EVENTOREGISTRO_SEQ MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH '|| (MAX(EVENTOREGISTROID)   + 1) ||' CACHE 20 NOORDER  NOCYCLE ;' FROM IDTE.eventoregistros
+
+
+---------------------------------------------------------------------------
+---- PARTE GENÉRICA e  Deletando registros que impedem FK - EOL
+---------------------------------------------------------------------------
+
+revoke connect from AGE;
+revoke connect from AUTOMATE;
+revoke connect from BDCC;
+revoke connect from CORE;
+revoke connect from DASOARES;
+revoke connect from DESENV;
+revoke connect from ICON; 
+revoke connect from IDTE;
+revoke connect from MAURICIOPEREZ;
+revoke connect from MARCIOROBERTO;
+revoke connect from N4E; 
+revoke connect from OEMEMBRAPORT;
+revoke connect from POS;
+revoke connect from PRC;
+revoke connect from SISC;
+revoke connect from TEV;
+revoke connect from TFC;
+revoke connect from TIS;
+revoke connect from TMS;
+revoke connect from TQB;
+revoke connect from TSA; 
+revoke connect from CRS;
+revoke connect from RPS;
+revoke connect from ITV;
+revoke connect from SRV;
+revoke connect from CRM;
+revoke connect from GED;
+revoke connect from ADM;
+revoke connect from TCC;
+revoke connect from TDR;
+revoke connect from DPWI;
+revoke connect from WSI;
+revoke connect from EDI;
+
+DROP USER AGE CASCADE;
+DROP USER AUTOMATE CASCADE;
+DROP USER BBARRETO CASCADE;
+DROP USER BDCC CASCADE;
+DROP USER CORE CASCADE;
+DROP USER DASOARES CASCADE;
+DROP USER DESENV CASCADE;
+DROP USER ICON CASCADE; 
+DROP USER IDTE CASCADE;
+DROP USER MAURICIOPEREZ CASCADE;
+DROP USER MARCIOROBERTO CASCADE;
+DROP USER N4E CASCADE; 
+DROP USER OEMEMBRAPORT CASCADE;
+DROP USER POS CASCADE;
+DROP USER PRC CASCADE;
+DROP USER SISC CASCADE;
+DROP USER TEV CASCADE;
+DROP USER TFC CASCADE;
+DROP USER TIS CASCADE;
+DROP USER TMS CASCADE;
+DROP USER TQB CASCADE;
+DROP USER TSA CASCADE; 
+DROP USER CRS CASCADE;
+DROP USER RPS CASCADE;
+DROP USER ITV CASCADE;
+DROP USER SRV CASCADE;
+DROP USER CRM CASCADE;
+DROP USER GED CASCADE;
+DROP USER ADM CASCADE;
+DROP USER TCC CASCADE;
+DROP USER TDR CASCADE;
+DROP USER DPWI CASCADE;
+DROP USER WSI CASCADE;
+DROP USER EDI CASCADE;
+
+grant connect to AGE;
+grant connect to AUTOMATE;
+grant connect to BDCC;
+grant connect to CORE;
+grant connect to DASOARES;
+grant connect to DESENV;
+grant connect to ICON; 
+grant connect to IDTE;
+grant connect to MAURICIOPEREZ;
+grant connect to MARCIOROBERTO;
+grant connect to N4E; 
+grant connect to OEMEMBRAPORT; 
+grant connect to POS;
+grant connect to PRC;
+grant connect to SISC;
+grant connect to TEV;
+grant connect to TFC;
+grant connect to TIS;
+grant connect to TMS;
+grant connect to TQB;
+grant connect to TSA; 
+grant connect to CRS;
+grant connect to RPS;
+grant connect to SRV;
+grant connect to CRM;
+grant connect to GED;
+grant connect to ADM;
+grant connect to TCC;
+grant connect to TDR;
+grant connect to DPWI;
+grant connect to WSI;
+grant connect to EDI;
+
+SELECT 'ALTER SYSTEM KILL SESSION '''|| SID ||','||SERIAL#||''';' FROM V$SESSION WHERE USERNAME = ''
+
+SELECT USERNAME FROM DBA_USERS WHERE ACCOUNT_STATUS='OPEN' AND USERNAME <> 'JIRA';
+
+SELECT 'ALTER SYSTEM KILL SESSION '''||SID||','||SERIAL#||''';' FROM V$SESSION WHERE USERNAME = 'TFC'
+
+
+DELETE FROM "TEV"."TEVEVENTOS" WHERE TEVHEVENTOID IN
+(Select TEVHEVENTOID from "TEV"."TEVEVENTOS"
+MINUS 
+SELECT TEVHEVENTOID FROM  "TEV"."TEVHEVENTOS");
+
+DELETE FROM "TFC"."TFCCARGASOLTAS" WHERE TFCMERCADORIAID
+IN
+(SELECT TFCMERCADORIAID FROM "TFC"."TFCCARGASOLTAS"
+MINUS
+SELECT TFCMERCADORIAID FROM "TFC"."TFCMERCADORIAS" 
+);
+
+DELETE FROM "CORE"."CONOTIFICATIONUSERS" WHERE CONOTIFICOTIONID IN
+(SELECT CONOTIFICOTIONID FROM  "CORE"."CONOTIFICATIONUSERS"
+MINUS 
+SELECT CONOTIFICOTIONID FROM "CORE"."CONOTIFICOTIONS");
+
+DELETE  FROM "IDTE"."FORMULARIOS" WHERE RECINTOID IN 
+(SELECT RECINTOID FROM "IDTE"."FORMULARIOS"
+MINUS
+SELECT TFCORGANIZACAOOPERACIONALID FROM "IDTE"."RECINTOS");
+
+delete from "TSA"."TSAGRSETTINGS" where COSETTINGID in
+(
+select COSETTINGID from "TSA"."TSAGRSETTINGS"
+minus 
+select COSETTINGID from "CORE"."COSETTINGS" 
+);
+
+DELETE FROM "TFC"."TFCGMIMPORTACAOS" where TFCRECINTOID
+in (
+select TFCRECINTOID from "TFC"."TFCGMIMPORTACAOS"
+minus 
+select TFCORGANIZACAOOPERACIONALID from "TFC"."TFCRECINTOS"
+);
+
+DELETE FROM "TFC"."TFCGMIMPORTACAOS" where TFCGRUPOMERCADORIAID
+in (
+select TFCGRUPOMERCADORIAID from "TFC"."TFCGMIMPORTACAOS"
+minus 
+select TFCGRUPOMERCADORIAID from "TFC"."TFCGRUPOMERCADORIAS"
+);
+
+DELETE FROM "IDTE"."EVENTOSINALS" WHERE EVENTOPUBLICACAOID IN
+(
+SELECT EVENTOPUBLICACAOID FROM IDTE.EVENTOSINALS
+MINUS
+SELECT EVENTOPUBLICACAOID FROM "IDTE"."EVENTOPUBLICACAOS"
+);
+
+DELETE FROM "TFC"."TFCMERCADORIAS" WHERE TFCRECINTOID IN
+(SELECT TFCRECINTOID FROM "TFC"."TFCMERCADORIAS"
+MINUS
+SELECT TFCORGANIZACAOOPERACIONALID FROM "TFC"."TFCRECINTOS"
+);
+
+
+DELETE FROM "TFC"."TFCPESAGEMCONTEINEROPERACAOS" WHERE TFCPESAGEMID IN
+(
+SELECT TFCPESAGEMID FROM "TFC"."TFCPESAGEMCONTEINEROPERACAOS"
+MINUS
+SELECT TFCPESAGEMID FROM "TFC"."TFCPESAGEMS" 
+);
+
+DELETE FROM "IDTE"."DTS" WHERE RECINTOID 
+IN(
+SELECT RECINTOID FROM "IDTE"."DTS" 
+MINUS
+SELECT TFCORGANIZACAOOPERACIONALID FROM "IDTE"."RECINTOS"
+);
+
+DELETE FROM "TFC"."TFCGMMS" WHERE TFCMERCADORIAID
+IN(
+SELECT TFCMERCADORIAID FROM "TFC"."TFCGMMS"
+MINUS
+SELECT TFCMERCADORIAID FROM "TFC"."TFCMERCADORIAS"
+);
+
+DELETE FROM "TFC"."TFCOPERACAORECINTOS" WHERE TFCRECINTOID IN 
+(
+SELECT TFCRECINTOID FROM "TFC"."TFCOPERACAORECINTOS"
+MINUS 
+SELECT TFCORGANIZACAOOPERACIONALID FROM "TFC"."TFCRECINTOS"
+);
+
+
+DELETE FROM  "AGE"."TRANSPORTADORALTCS" WHERE GRUPOLTCID
+IN(
+SELECT GRUPOLTCID FROM "AGE"."TRANSPORTADORALTCS"
+MINUS
+SELECT GRUPOLTCID FROM "AGE"."GRUPOLTCS" 
+);
+
+
+DELETE FROM TIS.tisfilaservicos;
+DELETE FROM TIS.tisfilaretornos;
+DELETE FROM TIS.tishfilaservicos;
+DELETE FROM TIS.tisfilaemprocessamentos;
+
+DELETE FROM TEV.teveventos;
+DELETE FROM TEV.tevheventos;
+DELETE FROM TEV.tevheventoerros;
+DELETE FROM TEV.teveventoerros;
+DELETE FROM TEV.teveventoprocerros;
+DELETE FROM TEV.teveventoexecucaos;
+
+
+---------------------------------------------------------------------------
+------ MAXIMO - PRODUCAO
+---------------------------------------------------------------------------
+user oracle
+---
+export ORACLE_UNQNAME=ctginst1
+export ORACLE_SID=ctginst1
+---
+cd /tmp
+---
+/*OBSERVAR O USO DO VERSION!!!*/
+expdp system DUMPFILE=MAXIMO20181212.dmp LOGFILE=MAXIMO20181212.log DIRECTORY=tmp SCHEMAS=MAXIMO exclude=statistics version=11.2.0.1.0 exclude=table:"in('MAXPROPVALUE'\,'MAXENDPOINTDTL')"  flashback_time=systimestamp
+
+---------------------------------------------------------------------------
+------ MAXIMO - DEV ou QA.
+---------------------------------------------------------------------------
+expdp system DUMPFILE=MAXIMO20181212_DEV.dmp LOGFILE=MAXIMO20181212_DEV.log DIRECTORY=tmp SCHEMAS=MAXIMO exclude=statistics 
+DROP USER MAXIMO CASCADE;
+
+http://pic.dhe.ibm.com/infocenter/tivihelp/v49r1/topic/com.ibm.mam.inswas.doc/install/t_manconfigdboracle11.html
+http://www-01.ibm.com/support/docview.wss?uid=swg21307288
+
+create user maximo identified by maximo default tablespace maxdata temporary tablespace maxtemp;
+grant connect to maximo;
+grant create job to maximo;
+grant create trigger to maximo;
+grant create session to maximo;
+grant create sequence to maximo;
+grant create synonym to maximo;
+grant create table to maximo;
+grant create view to maximo;
+grant create procedure to maximo;
+grant alter session to maximo;
+grant execute on ctxsys.ctx_ddl to maximo;
+alter user maximo quota unlimited on maxdata;
+
+conn maximo/maximo;
+
+call ctx_ddl.drop_preference('global_lexer');                           
+call ctx_ddl.drop_preference('default_lexer');                          
+call ctx_ddl.drop_preference('english_lexer');                          
+call ctx_ddl.drop_preference('chinese_lexer');                          
+call ctx_ddl.drop_preference('japanese_lexer');                         
+call ctx_ddl.drop_preference('korean_lexer');                           
+call ctx_ddl.drop_preference('german_lexer');                           
+call ctx_ddl.drop_preference('dutch_lexer');                            
+call ctx_ddl.drop_preference('swedish_lexer');                          
+call ctx_ddl.drop_preference('french_lexer');                           
+call ctx_ddl.drop_preference('italian_lexer');                          
+call ctx_ddl.drop_preference('spanish_lexer');                          
+call ctx_ddl.drop_preference('portu_lexer');                            
+call ctx_ddl.create_preference('default_lexer','basic_lexer');          
+call ctx_ddl.create_preference('english_lexer','basic_lexer');          
+call ctx_ddl.create_preference('chinese_lexer','chinese_lexer');        
+call ctx_ddl.create_preference('japanese_lexer','japanese_lexer');      
+call ctx_ddl.create_preference('korean_lexer','korean_morph_lexer');    
+call ctx_ddl.create_preference('german_lexer','basic_lexer');           
+call ctx_ddl.create_preference('dutch_lexer','basic_lexer');            
+call ctx_ddl.create_preference('swedish_lexer','basic_lexer');          
+call ctx_ddl.create_preference('french_lexer','basic_lexer');           
+call ctx_ddl.create_preference('italian_lexer','basic_lexer');          
+call ctx_ddl.create_preference('spanish_lexer','basic_lexer');          
+call ctx_ddl.create_preference('portu_lexer','basic_lexer');            
+call ctx_ddl.create_preference('global_lexer', 'multi_lexer');          
+call ctx_ddl.add_sub_lexer('global_lexer','default','default_lexer');   
+call ctx_ddl.add_sub_lexer('global_lexer','english','english_lexer','en');                                                                     
+call ctx_ddl.add_sub_lexer('global_lexer','simplified chinese','chinese_lexer','zh');       
+call ctx_ddl.add_sub_lexer('global_lexer','japanese','japanese_lexer',null);                                                                   
+call ctx_ddl.add_sub_lexer('global_lexer','korean','korean_lexer',null);
+call ctx_ddl.add_sub_lexer('global_lexer','german','german_lexer','de');
+call ctx_ddl.add_sub_lexer('global_lexer','dutch','dutch_lexer',null);  
+call ctx_ddl.add_sub_lexer('global_lexer','swedish','swedish_lexer','sv');                                                               
+call ctx_ddl.add_sub_lexer('global_lexer','french','french_lexer','fr');
+call ctx_ddl.add_sub_lexer('global_lexer','italian','italian_lexer','it');                                                                      
+call ctx_ddl.add_sub_lexer('global_lexer','spanish','spanish_lexer','es');                                                                     
+call ctx_ddl.add_sub_lexer('global_lexer','portuguese','portu_lexer',null); 
+commit;                                                                   
+
+ 
+impdp system DUMPFILE=MAXIMO20181212.dmp LOGFILE=MAXIMO20181212.log SCHEMAS=MAXIMO TABLE_EXISTS_ACTION=REPLACE DIRECTORY=tmp
+
+-- VOLTANDO AS TABELAS
+
+impdp system DUMPFILE=MAXIMO20181212_DEV.dmp LOGFILE=MAXIMO20181212_DEV_TABLES.log DIRECTORY=tmp TABLES=MAXIMO.MAXPROPVALUE,MAXIMO.MAXENDPOINTDTL
+
+
+
+---------------------------------------------------------------------------
+------ APDATA - PROD
+---------------------------------------------------------------------------
+
+user oracle
+---
+export ORACLE_UNQNAME=EMBRAAT
+export ORACLE_SID=EMBRAAT
+---
+cd /tmp
+---
+
+expdp system DUMPFILE=APDATATE20181212.dmp logfile=APDATATE20181212.log directory=tmp schemas=APDATAGA exclude=statistics flashback_time=systimestamp
+expdp system DUMPFILE=TELEMATICAPR20181212.dmp logfile=TELEMATICAPR20181212.log directory=tmp schemas=TELE01,TELE03,TELE02,TELE04,TELE05,USUTCP03,CAUSU,USUTCP01,USUTCP04,USUTCP02,USUTCP05,TELEMAT exclude=statistics flashback_time=systimestamp
+
+--DROP USER APDATAGA CASCADE
+--CREATE USER apdataga identified by apdataga default tablespace tbs_app_apdata;
+grant connect to apdataga;
+grant resource to apdataga;
+grant create view to apdataga;
+grant unlimited tablespace to apdataga;
+grant dba to apdataga;
+
+impdp system DUMPFILE=Embraport_26082014.dmp LOGFILE=Embraport_26082014.log directory=tmp schemas=APEMBRAPORT remap_schema=apembraport:apdataga remap_tablespace=embraport_data:TBS_APP_APDATA remap_tablespace=embraport_index:TBS_IDX_APDATA TABLE_EXISTS_ACTION=REPLACE 
+
+
+---------------------------------------------------------------------------
+------ APDATA - QA 
+---------------------------------------------------------------------------
+
+user oracle
+---
+export ORACLE_UNQNAME=EMBRAAQ
+export ORACLE_SID=EMBRAAQ
+---
+cd /tmp
+---
+
+expdp system DUMPFILE=APDATAQA20181212.dmp logfile=APDATAQA20181212.log directory=tmp schemas=APDATAGA exclude=statistics flashback_time=systimestamp
+
+expdp system DUMPFILE=TELEMATICAQA20181212.dmp logfile=TELEMATICAQA20181212.log directory=tmp schemas=TELE01,TELE03,TELE02,TELE04,TELE05,USUTCP03,CAUSU,USUTCP01,USUTCP04,USUTCP02,USUTCP05,TELEMAT exclude=statistics flashback_time=systimestamp
+
+
+DROP USER APDATAGA CASCADE;
+CREATE USER apdataga identified by apdataga default tablespace tbs_app_apdata;
+grant connect to apdataga;
+grant resource to apdataga;
+grant create view to apdataga;
+grant unlimited tablespace to apdataga;
+grant dba to apdataga;
+
+impdp system DUMPFILE=APDATATE20181212.dmp LOGFILE=APDATATE20181212_QA.log directory=tmp schemas=APEMBRAPORT remap_schema=apembraport:apdataga remap_tablespace=embraport_data:TBS_APP_APDATA remap_tablespace=embraport_index:TBS_IDX_APDATA TABLE_EXISTS_ACTION=REPLACE 
+
+impdp system DUMPFILE=TELEMATICAQA20181212.dmp logfile=TELEMATICA20181212QA.log directory=tmp schemas=TELE01,TELE03,TELE02,TELE04,TELE05,USUTCP03,CAUSU,USUTCP01,USUTCP04,USUTCP02,USUTCP05,TELEMAT TABLE_EXISTS_ACTION=REPLACE 
+
+impdp system DUMPFILE=APDATATE20181212.dmp LOGFILE=APDATATE20181212_QA.log directory=tmp schemas=APDATAGA TABLE_EXISTS_ACTION=REPLACE 
+
+
+---------------------------------------------------------------------------
+------ PROJURIS - DEV
+---------------------------------------------------------------------------
+-----------
+export ORACLE_SID=EMBRAJD
+export ORACLE_UNQNAME=EMBRAJD
+-----------
+----------- Usando versão inicial
+impdp system DUMPFILE=expdp_BDMODELO_1217.dmp LOGFILE=expdp_BDMODELO_1217.log remap_schema=BDMODELO_1217:projuris5 directory=tmp TABLE_EXISTS_ACTION=REPLACE 
+
+----------- Copiando o arquivo de produção
+drop user projuris5 cascade;
+impdp system DUMPFILE=PROJURISP20181212.dmp logfile=PROJURISP20181212_qa.log directory=tmp TABLE_EXISTS_ACTION=REPLACE
+
+----------- Export
+expdp system DUMPFILE=PROJURIST20181212.dmp logfile=PROJURIST20181212.log directory=tmp schemas=PROJURIS5 exclude=statistics flashback_time=systimestamp statistics=NONE
+
+
+---------------------------------------------------------------------------
+------ PROJURIS - PROD
+---------------------------------------------------------------------------
+
+-----------
+export ORACLE_SID=EMBRAJP
+export ORACLE_UNQNAME=EMBRAJP
+-----------
+----------- Export
+expdp system DUMPFILE=PROJURISP20181212.dmp logfile=PROJURISP20181212.log directory=tmp schemas=PROJURIS5 exclude=statistics flashback_time=systimestamp
+
+----------- Import
+impdp system DUMPFILE=PROJURIST20181212.dmp logfile=PROJURIST20181212_copy.log directory=tmp schemas=PROJURIS5 TABLE_EXISTS_ACTION=REPLACE 
+
+
+
+
+
+
+-------------------------------------
+MIGRACAO JIRA
+-------------------------------------
+export ORACLE_SID=EMBRAOQ
+
+expdp system DUMPFILE=JIRA.dmp LOGFILE=JIRA.log DIRECTORY=tmp SCHEMAS=JIRA exclude=statistics flashback_time=systimestamp
+scp JIRA.dmp oracle@emb1sf006:/tmp 
+
+
+export ORACLE_SID=EMBRAOP1
+impdp system DUMPFILE=JIRA.dmp log=JIRA.log DIRECTORY=tmp TABLE_EXISTS_ACTION=REPLACE
+
+
+
+
+------------------------------------
+expdp system DUMPFILE=tabelas.dmp LOGFILE=tabelas.log directory=DATA_PUMP_DIR  flashback_time=systimestamp TABLES=CRM.CRMINADIMPLENTE,CRM.CRMINADIMPLENTEVENDEDOR,CRM.CRMTEMPINADIMPLENTE,CRM.CRMTEMPINADIMPLENTEVENDEDOR
+
+impdp system DUMPFILE=tabelas.dmp LOGFILE=tabelas.log DIRECTORY=tmp TABLES=CRM.CRMINADIMPLENTE,CRM.CRMINADIMPLENTEVENDEDOR,CRM.CRMTEMPINADIMPLENTE,CRM.CRMTEMPINADIMPLENTEVENDEDOR TABLE_EXISTS_ACTION=REPLACE 

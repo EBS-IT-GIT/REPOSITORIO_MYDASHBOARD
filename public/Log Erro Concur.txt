@@ -1,0 +1,34 @@
++---------------------------------------------------------------------------+
+Localizações de Consultoria - LAD: Version : 12.1
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+CLLRICPT: Cópia do Setup da Organização de Inventário - Tipo de Notas
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 11-NOV-2020 09:52:51
+
++---------------------------------------------------------------------------+
+
+**Starts**11-NOV-2020 09:52:51
+**SQL error and free**11-NOV-2020 09:52:51
+Erro ORACLE 20100 em FDPSTP
+
+Causa: Ocorreu um erro em FDPSTP, porque ORA-20100: ORA-20100: A criação do arquivo temporário para FND_FILE falhou.
+O diretório &FILE_DIR é inválido, entre em contato com o administrador do sistema.
+
+Ação: Verifique se o dire11-NOV-2020 09:52:51
+
+
++---------------------------------------------------------------------------+
+Nenhuma opção de término foi solicitada.
+
+Output file size: 
+0
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada
+A hora atual do sistema é 11-NOV-2020 09:52:51
+
++---------------------------------------------------------------------------+
+

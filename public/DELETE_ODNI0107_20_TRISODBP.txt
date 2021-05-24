@@ -1,0 +1,19 @@
+BEGIN
+
+ DELETE FROM  trisodbp.is_sp_detalhe
+        WHERE id_sp in (51260,
+                        51261,
+                        51262,
+                        51263,
+                        51264);
+
+DELETE FROM  trisodbp.IS_SP_CADASTRO
+       WHERE id_sp in (51260,
+                       51261,
+  		       51262,
+		       51263,
+                       51264);
+
+ COMMIT;
+
+END;

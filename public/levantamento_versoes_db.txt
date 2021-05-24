@@ -1,0 +1,53 @@
+esbr-dbd01  +ASM                 18.8.0.0.191015
+esbr-dbd01  SAUDEV               11.2.0.4.0			
+esbr-dbd01  ESBRDSV              11.2.0.4.3 + patches adicionais
+esbr-dbd01  GERALDEV             11.2.0.4.8
+esbr-dbd02 +ASM			         18.8.0.0.191015		 
+esbr-dbd02 RCUDEV                18.7.0.0.190716
+esbr-dbd02 RCUHML                18.7.0.0.190716
+esbr-dbd02 MSFHML12              18.7.0.0.190716
+esbr-dbh01 +ASM                  18.8.0.0.191015
+esbr-dbh01 ESBRHML               11.2.0.4.3 + patches adicionais
+esbr-dbh02 +ASM                  18.8.0.0.191015   
+esbr-dbh02 GERALHML              11.2.0.4.0
+esbr-dbh02 SAUHML                11.2.0.4.0
+esbr-dbh02 MAXHML                11.2.0.4.8
+esbr-dbh02 RHHML                 11.2.0.4.0
+esbr-dbh02 GEDHML                11.2.0.4.0
+esbr-dbp01 +ASM                  11.2.0.4.8
+esbr-dbp01 ESBRLEG               10.2.0.4.0
+esbr-dbp01 ESBRPRD               11.2.0.4.3 + patches adicionais
+esbr-dbp02 +ASM                  11.2.0.4.8  
+esbr-dbp02 GERALLEG              11.2.0.4.8
+esbr-dbp02 RHPRD                 11.2.0.4.8
+esbr-dbp02 GEDPRD                11.2.0.4.8
+esbr-dbp02 GERALPRD              11.2.0.4.8
+esbr-dbp03 +ASM                  18.8.0.0.191015   
+esbr-dbp03 RMANPRD               12.1.0.2.200414
+esbr-dbp03 MSFPRD12              12.1.0.2.0
+esbr-dbp04/esbr-dbp05  +ASM1     19.7.0.0.200414
+esbr-dbp04/esbr-dbp05  SAUPRD1   11.2.0.4.0
+esbr-dbp04/esbr-dbp05  PIMPRD1   11.2.0.4.0
+esbr-dbp04/esbr-dbp05  RCUPRD1   18.7.0.0.190716
+esbr-dbp04/esbr-dbp05  MAXPRD1   11.2.0.4.0
+ESBRUHEDB  PIMPRD				 11.2.0.4.0
+ESBRUHEDB  GERALPRD			     11.2.0.4.0
+
+
+Patches adicionais EBS - 31718723
+Patch  19233888     : applied on Sat Oct 18 18:15:45 BRT 2014 - 11.2.0.4.3
+Patch  18685209     : applied on Sat Oct 18 18:14:40 BRT 2014 - 11.2.0.4.0
+Patch  18665660     : applied on Sat Oct 18 18:13:47 BRT 2014 - 11.2.0.4.180717
+Patch  18614015     : applied on Sat Oct 18 18:12:49 BRT 2014 - 11.2.0.4.0
+Patch  18419770     : applied on Sat Oct 18 18:08:42 BRT 2014 - 11.2.0.4.0
+Patch  17944018     : applied on Sat Oct 18 18:07:47 BRT 2014 - 11.2.0.4.0
+Patch  17912217     : applied on Sat Oct 18 18:06:00 BRT 2014 - 11.2.0.4.4
+Patch  17629476     : applied on Sat Oct 18 18:04:53 BRT 2014 - 11.2.0.4.0
+Patch  17501296     : applied on Sat Oct 18 18:03:38 BRT 2014 - 11.2.0.4.0
+Patch  17429475     : applied on Sat Oct 18 18:02:15 BRT 2014 - 11.2.0.4.0
+Patch  18118982     : applied on Sat Oct 18 18:01:28 BRT 2014 - 11.2.0.1.4
+Patch  17402822     : applied on Sat Oct 18 17:59:11 BRT 2014 - 11.2.0.4.0
+Patch  16989137     : applied on Sat Oct 18 17:57:56 BRT 2014 - 11.2.0.4.0
+Patch  4247037      : applied on Sat Oct 18 17:55:29 BRT 2014 - 11.2.0.4.0
+Patch  4189542      : applied on Sat Oct 18 17:51:42 BRT 2014 - 11.2.0.4.181116Exa
+

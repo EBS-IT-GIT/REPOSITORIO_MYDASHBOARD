@@ -1,0 +1,47 @@
+update apps.jl_br_ar_occurrence_docs_all
+   set document_id = document_id * -1, org_id = org_id * -1
+ where 1 = 1
+   and org_id = 110
+   and document_id in
+       (select document_id
+          from (select MAX(b.occurrence_id) occurrence_id,
+                       b.document_id document_id
+                  from apps.jl_br_ar_occurrence_docs_all b
+                 where org_id = '110'
+                      --and creation_date > '01/01/2020'
+                   and b.document_id in
+                       (select distinct bb.document_id
+                          from apps.jl_br_ar_bank_returns_all    aa,
+                               apps.jl_br_ar_occurrence_docs_all bb
+                         where 1 = 1
+                              --and b.document_id in (516993,516995)
+                           and aa.document_id = bb.document_id
+                           and aa.org_id = bb.org_id
+                           and bb.bank_occurrence_code = 1
+                           and aa.file_control in ('F34114-FEV-200829521')
+                           and bb.bank_occurrence_type =
+                               'REMITTANCE_OCCURRENCE' having
+                         count(*) > 1
+                         Group by bb.document_id)
+                --and b.document_id in (516993,516995)
+                 GROUP BY b.document_id))
+   and occurrence_id in
+       (select occurrence_id
+          from (select MAX(b.occurrence_id) occurrence_id,
+                       b.document_id document_id
+                  from apps.jl_br_ar_occurrence_docs_all b
+                 where org_id = '110'
+                   and b.document_id in
+                       (select distinct bb.document_id
+                          from apps.jl_br_ar_bank_returns_all    aa,
+                               apps.jl_br_ar_occurrence_docs_all bb
+                         where 1 = 1
+                           and aa.document_id = bb.document_id
+                           and aa.org_id = bb.org_id
+                           and bb.bank_occurrence_code = 1
+                           and aa.file_control in ('F34114-FEV-200829521')
+                           and bb.bank_occurrence_type =
+                               'REMITTANCE_OCCURRENCE' having
+                         count(*) > 1
+                         Group by bb.document_id)
+                 GROUP BY b.document_id))

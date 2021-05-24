@@ -1,0 +1,184 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<dataTemplate name="XXOPMRGI" defaultPackage="" version="1.0">
+   <properties>
+      <property name="xml_tag_case" value="upper"/>
+   </properties>
+   <parameters>
+      <parameter name="P_ORGANIZATION_ID"   dataType="number"/>
+      <parameter name="P_LEGAL_ENTITY_ID"   dataType="number"/>
+      <parameter name="P_PERIOD_ID"         dataType="number"/>
+   </parameters> 
+   <dataQuery>   
+      <sqlStatement name="Q_PARAM">
+         <![CDATA[
+           SELECT :P_ORGANIZATION_ID organization_id
+                , :P_LEGAL_ENTITY_ID legal_entity_id
+                , :P_PERIOD_ID       period_id
+             FROM DUAL
+           ]]>
+      </sqlStatement>
+      <sqlStatement name="Q_REC_ORG">
+         <![CDATA[
+           SELECT legal_entity_name
+                , period_code
+                , organization_code
+                , period_gl_code
+                , ledger_id
+                , calendar_code
+                , cost_mthd_code
+                , resources
+                , sum_prod_usage
+                , sum_gl_amount
+                , ROUND(resource_cost,9) resource_cost
+                , request_id
+                , TO_CHAR(creation_date,'DD/MM/YYYY') creation_date
+                , (SELECT orden 
+                     FROM xx_opm_conf_gi_columnas_hdr xx_conf_col_hdr
+                    WHERE xx_conf_col_hdr.legal_entity_id = a.legal_entity_id
+                      AND xx_conf_col_hdr.organization_id = a.organization_id
+                      AND rownum = 1) orden
+             FROM xx_opm_asig_gi_prod_res_org a
+            WHERE legal_entity_id = :P_LEGAL_ENTITY_ID
+              AND period_id       = :P_PERIOD_ID
+            ORDER BY organization_code, orden, resources
+           ]]>
+      </sqlStatement>
+      <sqlStatement name="Q_PROD_REC">
+         <![CDATA[
+           SELECT legal_entity_name
+                , period_code
+                , organization_code
+                , item_code
+                , description
+                , calendar_code
+                , cost_mthd_code
+                , resources
+                , burden_usage
+                , burden_uom
+                , item_uom
+                , cost
+                , produc
+                , calc_prod_usage
+                , request_id
+                , TO_CHAR(creation_date,'DD/MM/YYYY') creation_date
+                , (SELECT orden 
+                     FROM xx_opm_conf_gi_columnas_hdr xx_conf_col_hdr
+                    WHERE xx_conf_col_hdr.legal_entity_id = a.legal_entity_id
+                      AND xx_conf_col_hdr.organization_id = a.organization_id
+                      AND rownum = 1) orden
+             FROM xx_opm_asig_gi_resource_org a
+            WHERE legal_entity_id = :P_LEGAL_ENTITY_ID
+              AND period_id       = :P_PERIOD_ID
+            ORDER BY organization_code, orden, item_code, resources
+           ]]>
+      </sqlStatement>
+      <sqlStatement name="Q_GL_DETAIL">
+         <![CDATA[
+           SELECT xx_sumgl.legal_entity_name
+                , xx_sumgl.period_gl_code
+                , xx_sumgl.ledger_id
+                , xx_sumgl.organization_code
+                , xx_sumgl.resources
+                , xx_sumgl.sum_gl_amount
+                , xx_sumgl.config_ociosidad
+                , xx_sumgl.config_ajuste
+                , xx_sumgl.config_orden orden
+                , gcc.segment1
+                , gcc.segment2
+                , gcc.segment3 unidad_negocio
+                , gcc.segment4 producto
+                , gcc.segment5 unidad_prod
+                , gcc.segment6 centro_costo
+                , gcc.segment7 proyecto
+                , gcc.segment8 intercompany
+                , xx_sumgl.concatenated_segments
+                , xx_sumgl.code_combination_id
+                , xx_sumgl.sum_accounted_dr
+                , xx_sumgl.sum_accounted_cr
+                , (xx_sumgl.sum_accounted_dr - xx_sumgl.sum_accounted_cr) balance
+                , xx_sumgl.request_id
+                , TO_CHAR(xx_sumgl.creation_date,'DD/MM/YYYY') creation_date
+                , formula_class     
+                , formula_class_desc
+             FROM xx_opm_asig_gi_sumgl_res_org xx_sumgl
+                , gl_code_combinations_kfv gcc
+            WHERE xx_sumgl.legal_entity_id = :P_LEGAL_ENTITY_ID
+              AND xx_sumgl.period_id       = :P_PERIOD_ID
+              AND xx_sumgl.code_combination_id = gcc.code_combination_id
+            ORDER BY config_orden
+                   , organization_code
+                   , xx_sumgl.concatenated_segments
+           ]]>
+      </sqlStatement>
+   </dataQuery>  
+   <dataStructure>
+      <group name="G_PARAM" source="Q_PARAM">
+         <element name="ORGANIZATION_ID"  dataType="varchar2" value="ORGANIZATION_ID"/>
+         <element name="LEGAL_ENTITY_ID"  dataType="varchar2" value="LEGAL_ENTITY_ID"/>
+         <element name="PERIOD_ID"        dataType="varchar2" value="PERIOD_ID"/>
+      </group>
+      <group name="G_REC_ORG" source="Q_REC_ORG">     
+         <element name="LEGAL_ENTITY_NAME"  dataType="varchar2" value="LEGAL_ENTITY_NAME"/>
+         <element name="PERIOD_CODE"        dataType="varchar2" value="PERIOD_CODE"/>      
+         <element name="PERIOD_GL_CODE"     dataType="varchar2" value="PERIOD_GL_CODE"/>   
+         <element name="ORGANIZATION_CODE"  dataType="varchar2" value="ORGANIZATION_CODE"/>
+         <element name="LEDGER_ID"          dataType="varchar2" value="LEDGER_ID"/>        
+         <element name="CALENDAR_CODE"      dataType="varchar2" value="CALENDAR_CODE"/>    
+         <element name="COST_MTHD_CODE"     dataType="varchar2" value="COST_MTHD_CODE"/>   
+         <element name="RESOURCES"          dataType="varchar2" value="RESOURCES"/>        
+         <element name="SUM_PROD_USAGE"     dataType="varchar2" value="SUM_PROD_USAGE"/>   
+         <element name="SUM_GL_AMOUNT"      dataType="varchar2" value="SUM_GL_AMOUNT"/>    
+         <element name="RESOURCE_COST"      dataType="varchar2" value="RESOURCE_COST"/>    
+         <element name="REQUEST_ID"         dataType="varchar2" value="REQUEST_ID"/>       
+         <element name="CREATION_DATE"      dataType="varchar2" value="CREATION_DATE"/>    
+         <element name="ORDEN"              dataType="varchar2" value="ORDEN"/>    
+      </group>
+      <group name="G_PROD_REC" source="Q_PROD_REC">     
+         <element name="LEGAL_ENTITY_NAME"  dataType="varchar2" value="LEGAL_ENTITY_NAME"/>
+         <element name="PERIOD_CODE"        dataType="varchar2" value="PERIOD_CODE"/>
+         <element name="ORGANIZATION_CODE"  dataType="varchar2" value="ORGANIZATION_CODE"/>
+         <element name="ITEM_CODE"          dataType="varchar2" value="ITEM_CODE"/>
+         <element name="DESCRIPTION"        dataType="varchar2" value="DESCRIPTION"/>      
+         <element name="CALENDAR_CODE"      dataType="varchar2" value="CALENDAR_CODE"/>    
+         <element name="COST_MTHD_CODE"     dataType="varchar2" value="COST_MTHD_CODE"/>   
+         <element name="RESOURCES"          dataType="varchar2" value="RESOURCES"/>   
+         <element name="BURDEN_USAGE"       dataType="varchar2" value="BURDEN_USAGE"/>     
+         <element name="BURDEN_UOM"         dataType="varchar2" value="BURDEN_UOM"/>     
+         <element name="ITEM_UOM"           dataType="varchar2" value="ITEM_UOM"/>       
+         <element name="COST"               dataType="varchar2" value="COST"/>         
+         <element name="PRODUC"             dataType="varchar2" value="PRODUC"/>           
+         <element name="CALC_PROD_USAGE"    dataType="varchar2" value="CALC_PROD_USAGE"/>  
+         <element name="REQUEST_ID"         dataType="varchar2" value="REQUEST_ID"/>  
+         <element name="CREATION_DATE"      dataType="varchar2" value="CREATION_DATE"/>
+         <element name="ORDEN"              dataType="varchar2" value="ORDEN"/>    
+      </group>
+      <group name="G_GL_DETAIL" source="Q_GL_DETAIL">     
+         <element name="LEGAL_ENTITY_NAME"      dataType="varchar2" value="LEGAL_ENTITY_NAME"/>
+         <element name="PERIOD_GL_CODE"         dataType="varchar2" value="PERIOD_GL_CODE"/>    
+         <element name="LEDGER_ID"              dataType="varchar2" value="LEDGER_ID"/>       
+         <element name="ORGANIZATION_CODE"      dataType="varchar2" value="ORGANIZATION_CODE"/>
+         <element name="RESOURCES"              dataType="varchar2" value="RESOURCES"/>
+         <element name="SUM_GL_AMOUNT"          dataType="varchar2" value="SUM_GL_AMOUNT"/>
+         <element name="CONFIG_OCIOSIDAD"       dataType="varchar2" value="CONFIG_OCIOSIDAD"/>
+         <element name="CONFIG_AJUSTE"          dataType="varchar2" value="CONFIG_AJUSTE"/>
+         <element name="SEGMENT1"               dataType="varchar2" value="SEGMENT1"/>
+         <element name="SEGMENT2"               dataType="varchar2" value="SEGMENT2"/>
+         <element name="UNIDAD_NEGOCIO"         dataType="varchar2" value="UNIDAD_NEGOCIO"/>
+         <element name="PRODUCTO"               dataType="varchar2" value="PRODUCTO"/>
+         <element name="UNIDAD_PROD"            dataType="varchar2" value="UNIDAD_PROD"/>
+         <element name="CENTRO_COSTO"           dataType="varchar2" value="CENTRO_COSTO"/>
+         <element name="PROYECTO"               dataType="varchar2" value="PROYECTO"/>
+         <element name="INTERCOMPANY"           dataType="varchar2" value="INTERCOMPANY"/>
+         <element name="CONCATENATED_SEGMENTS"  dataType="varchar2" value="CONCATENATED_SEGMENTS"/>
+         <element name="CODE_COMBINATION_ID"    dataType="varchar2" value="CODE_COMBINATION_ID"/>
+         <element name="SUM_ACCOUNTED_DR"       dataType="varchar2" value="SUM_ACCOUNTED_DR"/>
+         <element name="SUM_ACCOUNTED_CR"       dataType="varchar2" value="SUM_ACCOUNTED_CR"/>
+         <element name="BALANCE"                dataType="varchar2" value="BALANCE"/>
+         <element name="REQUEST_ID"             dataType="varchar2" value="REQUEST_ID"/>
+         <element name="CREATION_DATE"          dataType="varchar2" value="CREATION_DATE"/>
+         <element name="ORDEN"                  dataType="varchar2" value="ORDEN"/>
+         <element name="FORMULA_CLASS"          dataType="varchar2" value="FORMULA_CLASS"/>
+         <element name="FORMULA_CLASS_DESC"     dataType="varchar2" value="FORMULA_CLASS_DESC"/>
+      </group>
+   </dataStructure>
+</dataTemplate>

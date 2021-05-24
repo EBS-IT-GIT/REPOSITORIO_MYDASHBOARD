@@ -1,0 +1,9 @@
+
+update apps.cll_f189_entry_operations
+   set status = 'IN PROCESS'
+      ,gl_date = trunc(sysdate)
+      ,receive_date = trunc(sysdate)
+where organization_id = 91
+and operation_id in (705,5178,34170,44549,47523);
+
+COMMIT; --4 LINHAS

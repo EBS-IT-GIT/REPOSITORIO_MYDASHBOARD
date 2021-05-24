@@ -1,0 +1,17 @@
+Hora
+	
+Severidade
+Hora da recuperação	Status	Informação	
+Host
+Incidente
+Duração	Reconhecido	Ações	Etiquetas
+00:03:48		        Desastre	02:45:49	RESOLVIDO		ATVS--DBO-PRD-producao_bra-dc2-s251	DESA - TNSPING e Login DBO - Timeout/Erro ao executar Erro ao executar comando SQL (-2)	2h 42m 1s
+04:02:48		        Desastre	04:41:48	RESOLVIDO		ATVS--DBO-PRD-PRD1_bra-dc2-s251	DESA - TNSPING e Login DBO - Timeout/Erro ao executar Erro ao executar comando SQL (-2)	39m	Não		(ORbraDis: SIM
+03:03:55		        Desastre	03:18:55	RESOLVIDO		ATVS--DBO-PRD-PADB_bra-dc2-s251	DESA - TNSPING e Login DBO - Timeout/Erro ao executar Erro ao executar comando SQL (-2)	15m	Não		(ORbraDis: SIM
+07-02-2021 04:02:48		Desastre	07-02-2021 04:44:48	RESOLVIDO		ATVS--DBO-PRD-PRD1_bra-dc2-s251	DESA - TNSPING e Login DBO - Timeout/Erro ao executar Erro ao executar comando SQL (-2)	42m	Não		(ORbraDis: SIM
+07-02-2021 03:03:55		Desastre	07-02-2021 03:15:55	RESOLVIDO		ATVS--DBO-PRD-PADB_bra-dc2-s251	DESA - TNSPING e Login DBO - Timeout/Erro ao executar Erro ao executar comando SQL (-2)	12m	Não		(ORbraDis: SIM
+07-02-2021 02:04:08		Desastre	07-02-2021 02:13:08	RESOLVIDO		ATVS--DBO-PRD-PROJURIS_bra-dc2-s251	DESA - TNSPING e Login DBO - Timeout/Erro ao executar Erro ao executar comando SQL (-2)	9m	Não		(ORbraDis: SIM
+07-02-2021 01:03:43		Desastre	07-02-2021 01:33:43	RESOLVIDO		ATVS--DBO-PRD-LEGADO_bra-dc2-s251	DESA - TNSPING e Login DBO - Timeout/Erro ao executar Erro ao executar comando SQL (-2)	30m	Não		(ORbraDis: SIM
+05-02-2021 09:02:30		Desastre	06-02-2021 18:30:08	RESOLVIDO		ATVS--DBO-PRD-XRTPRD_bra-dc2-s251	DESA - TNSPING e Login DBO - Timeout/Erro ao executar Sem conexao via TNSPING (-1)	1d 9h 27m	Sim	1 mensagem2 actions	(ORbraDis: SIM
+05-02-2021 08:20:54		Desastre	06-02-2021 18:27:43	RESOLVIDO		ATVS--DBO-PRD-LEGADO_bra-dc2-s251	DESA - TNSPING e Login DBO - Timeout/Erro ao executar Sem conexao via TNSPING (-1)	1d 10h 6m	Sim	1 mensagem2 actions	(ORbraDis: SIM
+05-02-2021 08:04:20		Desastre	06-02-2021 18:17:38	RESOLVIDO		ATVS--DBO-PRD-PRD1_bra-dc2-s251	DESA - TNSPING e Login DBO - Timeout/Erro ao executar Sem conexao via TNSPING (-1)	1d 10h 13m	Sim	1 mensagem2 actions	(ORbraDis: SIM

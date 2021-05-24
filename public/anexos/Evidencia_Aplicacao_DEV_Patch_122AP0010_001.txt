@@ -1,0 +1,54 @@
+[adebs@ebs-v-oaf-1d01 tmp]$ cd /app/DEVEBS/fs_ne/EBSapps/patch
+[adebs@ebs-v-oaf-1d01 patch]$ adop phase=apply abandon=yes workers=1 hotpatch=yes options=forceapply patches=122AP0010_001:u122AP0010_001.drv
+
+Enter the APPS password:
+Enter the SYSTEM password:
+Enter the WLSADMIN password:
+
+Validating credentials.
+
+Initializing.
+    Run Edition context  : /app/DEVEBS/fs1/inst/apps/DEVEBS_ebs-v-oaf-1d01/appl/admin/DEVEBS_ebs-v-oaf-1d01.xml
+    Patch edition context: /app/DEVEBS/fs2/inst/apps/DEVEBS_ebs-v-oaf-1d01/appl/admin/DEVEBS_ebs-v-oaf-1d01.xml
+    Patch file system free space: 84.88 GB
+
+Validating system setup.
+    Node registry is valid.
+
+Checking for existing adop sessions.
+        Session Id            :   19
+        Prepare phase status  :   NOT APPLICABLE
+        Apply phase status    :   ATLEAST ONE PATCH IS ALREADY APPLIED
+        Cutover  phase status :   NOT APPLICABLE
+        Abort phase status    :   NOT APPLICABLE
+        Session status        :   FAILED
+    Continuing with existing session [Session ID: 19].
+
+===========================================================================
+ADOP (C.Delta.10)
+Session ID: 19
+Node: ebs-v-oaf-1d01
+Phase: apply
+Log: /app/DEVEBS/fs_ne/EBSapps/log/adop/19/20190412_092942/adop.log
+===========================================================================
+
+Applying patch 122AP0010_001:u122AP0010_001.drv.
+    Log: /app/DEVEBS/fs_ne/EBSapps/log/adop/19/20190412_092942/apply/ebs-v-oaf-1d01/122AP0010_001/log/u122AP0010_001.log
+
+Running finalize actions for the patches being applied.
+    Log: @ADZDSHOWLOG.sql "2019/04/12 09:31:24"
+
+Running cutover actions for the patches being applied.
+    Creating workers to process cutover DDL in parallel
+    Log: /app/DEVEBS/fs_ne/EBSapps/log/adop/19/20190412_092942/apply/ebs-v-oaf-1d01/log/cutover.log
+    Performing database cutover in Quick mode
+
+Generating post apply reports.
+
+Generating log report.
+    Output: /app/DEVEBS/fs_ne/EBSapps/log/adop/19/20190412_092942/apply/ebs-v-oaf-1d01/adzdshowlog.out
+
+The apply phase completed successfully.
+
+
+adop exiting with status = 0 (Success)

@@ -1,0 +1,22 @@
+**** SCRIPT STARTED Session: APPS@STONE_QAEBS(6) 02-Apr-2019 18:59:36 ****
+CREATE OR REPLACE PACKAGE cll_f189_holds_custom_pkg AUTHID CURRENT_USER as
+/* $Header: CLLVRJLS.pls 120.0 2007/08/22 18:48:10 afavero noship $ */
+
+FUNCTION func_holds_custom
+(p_operation_id       IN  NUMBER,
+ p_organization_id    IN  NUMBER) RETURN NUMBER;
+
+END cll_f189_holds_custom_pkg;
+==>
+SQL statement executed
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+show errors package apps.cll_f189_holds_custom_pkg
+==>
+SQL*Plus statement ignored
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+EXIT
+==>
+SQL*Plus statement executed
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+**** SCRIPT ENDED 02-Apr-2019 18:59:36 ****
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

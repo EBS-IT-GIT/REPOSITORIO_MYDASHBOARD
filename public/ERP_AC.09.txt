@@ -1,0 +1,30 @@
+Select Distinct A.User_Name             Usuario
+               /*,A.User_Id               Id_Usuario
+               ,D.Employee_Number Cpf
+               ,A.End_Date*
+               ,D.Full_Name             Nome_Completo_Hr
+               ,D.Email_Address         E_Mail_Hr    */  
+               ,B.Responsibility_Name   Responsabilidade
+               ,E.application_name      Aplicação
+               ,C.Description           Descricao
+               ,C.Start_Date            Data_De_Associado
+               ,C.End_Date              Data_Ate_Associado
+
+From Apps.Fnd_User                    A
+    ,Apps.Fnd_Responsibility_Tl       B ----- language
+    ,Apps.Fnd_User_Resp_Groups_Direct C
+    ,Apps.Per_All_People_F            D  
+    ,apps.FND_APPLICATION_TL          E ---- lANGUAGE
+Where A.User_Id              = C.User_Id
+And   D.Person_Id(+)         = A.Employee_Id
+And   B.Responsibility_Id    = C.Responsibility_Id
+and   b.application_id       = e.application_id
+And  (A.End_Date Is Null Or A.End_Date > Sysdate)
+And  (C.End_Date Is Null Or C.End_Date > Sysdate)
+and  e.language = userenv('lang')
+and  b.language  = userenv('lang')
+
+and  (A.User_Name like '%EXT' 
+      or A.User_Name like '%9CON'
+      or A.User_Name like '%AUDIT'
+      or A.User_Name like '%EBS';

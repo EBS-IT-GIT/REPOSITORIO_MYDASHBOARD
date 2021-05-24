@@ -1,0 +1,380 @@
+-- Dados do Cargo - Valor da Remuneração
+
+UPDATE SYSADM.PS_JOB A
+   SET COMPRATE = 1
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.EMPL_RCD = A.EMPL_RCD
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+UPDATE SYSADM.PS_COMPENSATION A
+   SET COMPRATE = 1
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.EMPL_RCD = A.EMPL_RCD
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Contas Bancárias - Conta e Dígito
+UPDATE SYSADM.PS_PYE_BANKACCT A
+   SET A.ACCOUNT_NAME = 'CONTA DO INTEGRANTE'
+     , A.ACCOUNT_EC_ID = '12345'
+     , A.CHECK_DIGIT = '6'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Informações de Dependentes - Nomes
+
+UPDATE SYSADM.PS_DEP_BEN_NAME A
+   SET A.NAME = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.NAME_DISPLAY = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.NAME_FORMAL = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.FIRST_NAME = 'DARCI',
+       A.FIRST_NAME_SRCH = 'DARCI',
+       A.PREF_FIRST_NAME = 'DARCI',
+       A.LAST_NAME = 'ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.LAST_NAME_SRCH = 'ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.MIDDLE_NAME = ' '
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+
+UPDATE SYSADM.PS_DEP_BEN_NAMELNG A
+   SET A.NAME = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.NAME_DISPLAY = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.NAME_FORMAL = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.FIRST_NAME = 'DARCI',
+       A.FIRST_NAME_SRCH = 'DARCI',
+       A.PREF_FIRST_NAME = 'DARCI',
+       A.LAST_NAME = 'ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.LAST_NAME_SRCH = 'ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.MIDDLE_NAME = ' '
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Informações de Dependentes - Nome da Mãe
+
+UPDATE SYSADM.PS_DEP_BENEF_BRA A
+   SET A.MOTHER_NAME_BRA = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ')
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Informações de Dependentes - Endereço
+
+UPDATE SYSADM.PS_DEP_BEN_ADDR A
+   SET A.ADDRESS1 = 'RUA LEMOS MONTEIRO, 120',
+       A.ADDRESS4 = 'BUTANTA',
+       A.CITY = 'SAO PAULO',
+       A.NUM1 = 0,
+       A.STATE = 'SP',
+       A.POSTAL = '05501-050'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Informações de Dependentes - Telefones
+
+UPDATE SYSADM.PS_DEPENDENT_PHONE A
+   SET A.PHONE = '011 77007700'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Param. Favorecido (Dados de Desligamento) - Dados de Estabilidade
+
+UPDATE SYSADM.PS_GPBR_PYEST_PARM A
+   SET A.GPBR_PREGNT_DATE = NULL
+     , A.GPBR_UNIONIZED_EMP = '0'
+     , A.GPBR_CIPA_TITLE = '0'
+     , A.GPBR_COOP_MANGR = '0'
+     , A.GPBR_MEMBER_FGTS = '0'
+     , A.GPBR_CNPS_MEMBER = '0'
+     , A.GPBR_PREV_SET_COM = '0'
+     , A.GPBR_FGTS_DONE = '0'
+     , A.ACTIVEFLAG = '0'
+     , A.GPBR_FGTS_CD = '0'
+     , A.GPBR_TERM_INFO = NULL
+     , A.ODB_GRP_COVID19 = '0'
+     , A.ODB_SUSP_MP936 = '0'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.EMPL_RCD = A.EMPL_RCD
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Nomes / Nomes Adicionais
+
+UPDATE SYSADM.PS_NAMES A
+   SET A.NAME = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.NAME_DISPLAY = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.NAME_FORMAL = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.NAME_DISPLAY_SRCH = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.FIRST_NAME = 'DARCI',
+       A.FIRST_NAME_SRCH = 'DARCI',
+       A.PREF_FIRST_NAME = 'DARCI',
+       A.LAST_NAME = 'ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.LAST_NAME_SRCH = 'ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.MIDDLE_NAME = ' '
+WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Endereço
+
+UPDATE SYSADM.PS_ADDRESSES A
+   SET A.ADDRESS1 = 'RUA LEMOS MONTEIRO, 120',
+       A.ADDRESS2 = ' ',
+       A.ADDRESS3 = ' ',
+       A.ADDRESS4 = 'BUTANTA',
+       A.CITY = 'SAO PAULO',
+       A.NUM1 = 0,
+       A.STATE = 'SP',
+       A.POSTAL = '05501-050'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- E-Mails
+
+UPDATE SYSADM.PS_EMAIL_ADDRESSES A
+   SET A.EMAIL_ADDR = 'peoplesoftx@ocyan.com'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+UPDATE SYSADM.PSOPRDEFN A
+   SET A.EMAILID = 'peoplesoftx@ocyan.com'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+UPDATE SYSADM.PSUSEREMAIL A
+   SET A.EMAILID = 'peoplesoftx@ocyan.com'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PSOPRDEFN B
+                        , PS_JOB X
+                    WHERE B.OPRID = A.OPRID
+                      AND X.EMPLID = B.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'))
+
+COMMIT;
+
+UPDATE SYSADM.PS_ROLEXLATOPR A
+   SET A.EMAILID = 'peoplesoftx@ocyan.com'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PSOPRDEFN B
+                        , PS_JOB X
+                    WHERE B.OPRID = A.ROLEUSER
+                      AND X.EMPLID = B.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Telefones
+
+UPDATE SYSADM.PS_PERSONAL_PHONE A
+   SET A.PHONE = '011 77007700'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Dados Pessoais (PERSONAL_DATA)
+
+UPDATE SYSADM.PS_PERSONAL_DATA A
+   SET A.NAME = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.NAME_DISPLAY = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.NAME_FORMAL = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.FIRST_NAME = 'DARCI',
+       A.FIRST_NAME_SRCH = 'DARCI',
+       A.PREF_FIRST_NAME = 'DARCI',
+       A.LAST_NAME = 'ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.LAST_NAME_SRCH = 'ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.MIDDLE_NAME = ' ',
+       A.ADDRESS1 = 'RUA LEMOS MONTEIRO, 120',
+       A.ADDRESS4 = 'BUTANTA',
+       A.CITY = 'SAO PAULO',
+       A.NUM1 = 0,
+       A.STATE = 'SP',
+       A.POSTAL = '05501-050',
+       A.PHONE = '011 77007700'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Dados Pessoais (EMPLOYEES)
+
+UPDATE SYSADM.PS_EMPLOYEES A
+   SET A.NAME = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.FIRST_NAME = 'DARCI',
+       A.FIRST_NAME_SRCH = 'DARCI',
+       A.PREF_FIRST_NAME = 'DARCI',
+       A.LAST_NAME = 'ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.LAST_NAME_SRCH = 'ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.MIDDLE_NAME = ' ',
+       A.ADDRESS1 = 'RUA LEMOS MONTEIRO, 120',
+       A.ADDRESS4 = 'BUTANTA',
+       A.CITY = 'SAO PAULO',
+       A.NUM1 = 0,
+       A.STATE = 'SP',
+       A.POSTAL = '05501-050',
+       A.HOME_PHONE = '011 77007700'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Nomes (Tabela de WorkList)
+
+UPDATE SYSADM.PS_EMPLMT_WL A
+   SET A.NAME = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ')
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Pré-Admissão - Nomes
+
+UPDATE SYSADM.PS_ODB_PRE_ADM_TBL A
+   SET A.NAME = 'DARCI IDPRE' || TRANSLATE (A.ODB_PRE_ADM_ID, '0123456789', 'ABCDEFGHIJ')
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_ODB_ESTB_GRPNEG X
+                    WHERE X.ESTABID = A.ESTABID
+                      AND X.EFFDT = (SELECT MAX(X1.EFFDT)
+                                       FROM PS_ODB_ESTB_GRPNEG X1
+                                      WHERE X1.ESTABID = X.ESTABID
+                                        AND X1.EFFDT <= SYSDATE)
+                      AND X.ODB_GRP_NEGOCIO = 'OCYAN');
+
+COMMIT;
+
+
+-- Dados de Demonstrativo de Pagamento
+
+UPDATE SYSADM.PS_ODB_HOL_DATA A
+   SET A.NAME = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ')
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.EMPL_RCD = A.EMPL_RCD
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Dados de Pagamento
+
+UPDATE SYSADM.PS_GPBR_PAYMENT A
+   SET A.NAME = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ'),
+       A.ACCOUNT_NAME = 'CONTA DO INTEGRANTE'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.EMPL_RCD = A.EMPL_RCD
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+-- Aviso e Recibo de Férias
+
+UPDATE SYSADM.PS_ODB_AVF_FERIAS A
+   SET A.NAME_DISPLAY = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ')
+     , A.EMAILID = 'peoplesoftx@ocyan.com'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.EMPL_RCD = A.EMPL_RCD
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+UPDATE SYSADM.PS_ODB_AVREC_DATA A
+   SET A.NAME_DISPLAY = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ')
+     , A.EMAILID = 'peoplesoftx@ocyan.com'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.EMPL_RCD = A.EMPL_RCD
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+UPDATE SYSADM.PS_ODB_AVREC_RECB A
+   SET A.NAME_DISPLAY = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ')
+     , A.EMAILID = 'peoplesoftx@ocyan.com'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.EMPL_RCD = A.EMPL_RCD
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+UPDATE SYSADM.PS_ODB_RECB_FERIAS A
+   SET A.NAME_DISPLAY = 'DARCI ID' || TRANSLATE (A.EMPLID, '0123456789', 'ABCDEFGHIJ')
+     , A.EMAILID = 'peoplesoftx@ocyan.com'
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.EMPL_RCD = A.EMPL_RCD
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;
+
+
+-- Foto dos Funcionários
+
+DELETE FROM PS_EMPL_PHOTO A
+ WHERE NOT EXISTS (SELECT 1
+                     FROM PS_JOB X
+                    WHERE X.EMPLID = A.EMPLID
+                      AND X.BUSINESS_UNIT IN ('OOGBR','TKPBR','OSLCY','OOGAU'));
+
+COMMIT;

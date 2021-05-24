@@ -1,0 +1,61 @@
+[root@ad-ar-dat-ap-12 ADECO]# zip -r agronomo_20200720.zip agronomo/
+updating: agronomo/ (stored 0%)
+  adding: agronomo/Agronomo_bkp20200604.tar.gz (stored 0%)
+  adding: agronomo/AGRONOMO_BKP_20200309.tar.gz (deflated 7%)
+  adding: agronomo/agronomoeam.zip (stored 0%)
+  adding: agronomo/AgronomoInterfaceEAMOCI.class (deflated 58%)
+  adding: agronomo/AgronomoInterfaceEAM.class (deflated 65%)
+  adding: agronomo/agronomooc.zip (stored 0%)
+  adding: agronomo/agronomo_bkp_20200313.tgz (stored 0%)
+  adding: agronomo/agronomo.properties (deflated 16%)
+  adding: agronomo/Agronomo_BKP20200506.tar (deflated 82%)
+  adding: agronomo/Agronomo_20200514.tar.gz (stored 0%)
+  adding: agronomo/AgronomoInterfaceOC.java (deflated 84%)
+  adding: agronomo/AgronomoInterfaceOC.class.bkp (deflated 64%)
+  adding: agronomo/AgronomoInterfaceEAMOCI.java (deflated 82%)
+  adding: agronomo/AgronomoInterfaceOC.java.bkp (stored 0%)
+  adding: agronomo/agronomo_20200313.zip (stored 0%)
+  adding: agronomo/agronomo.zip (stored 0%)
+  adding: agronomo/AgronomoInterface.java (deflated 82%)
+  adding: agronomo/ojdbc14.jar (deflated 5%)
+  adding: agronomo/AgronomoInterface.class (deflated 62%)
+  adding: agronomo/mysql-connector-java-5.1.48.jar (deflated 5%)
+  adding: agronomo/AgronomoInterfaceEAM.java (deflated 86%)
+  adding: agronomo/AgronomoInterface.java.20191205 (deflated 82%)
+  adding: agronomo/AgronomoInterfaceOC.class (deflated 64%)
+[root@ad-ar-dat-ap-12 ADECO]# mv agronomo_20200720.zip agronomo/
+[root@ad-ar-dat-ap-12 ADECO]# cd agronomo/
+[root@ad-ar-dat-ap-12 agronomo]#  cp /tmp/agronomo.zip /ua1001/fs_ne/ADECO/agronomo
+cp: overwrite ‘/ua1001/fs_ne/ADECO/agronomo/agronomo.zip’? y
+[root@ad-ar-dat-ap-12 agronomo]# clear
+[root@ad-ar-dat-ap-12 agronomo]# ls -lrt
+total 5348
+-rw-r--r-- 1 appadagi dbpadagi 1569316 Jun  2  2019 ojdbc14.jar
+-rw-r--r-- 1 appadagi dbpadagi 1006956 Jul 11  2019 mysql-connector-java-5.1.48.jar
+-rw-r--r-- 1 appadagi dbpadagi     216 Dec  4  2019 agronomo.properties
+-rw-r--r-- 1 appadagi dbpadagi   17959 Dec 16  2019 AgronomoInterface.java.20191205
+-rw-r--r-- 1 appadagi dbpadagi     332 Mar  9 12:53 AGRONOMO_BKP_20200309.tar.gz
+-rw-r--r-- 1 root     root        7047 Mar 13 12:07 agronomo_bkp_20200313.tgz
+-rw-r--r-- 1 appadagi dbpadagi   19364 Mar 13 15:59 AgronomoInterface.java
+-rw-r--r-- 1 appadagi dbpadagi   12022 Mar 13 15:59 AgronomoInterface.class
+-rw-r--r-- 1 appadagi dbpadagi    8336 Mar 13 17:42 agronomo_20200313.zip
+-rw-r--r-- 1 appadagi dbpadagi   40960 May  6 15:58 Agronomo_BKP20200506.tar
+-rwxr-xr-x 1 appadagi dbpadagi   14089 May 14 10:15 AgronomoInterfaceOC.class.bkp
+-rw-r--r-- 1 appadagi dbpadagi    7745 May 14 12:46 Agronomo_20200514.tar.gz
+-rw-r--r-- 1 appadagi dbpadagi   26934 May 14 18:25 AgronomoInterfaceEAM.java
+-rw-r--r-- 1 appadagi dbpadagi   15336 May 14 18:26 AgronomoInterfaceEAM.class
+-rw-r--r-- 1 appadagi dbpadagi   15370 May 18 14:49 AgronomoInterfaceEAMOCI.java
+-rw-r--r-- 1 appadagi dbpadagi    9752 May 18 14:49 AgronomoInterfaceEAMOCI.class
+-rw-r--r-- 1 appadagi dbpadagi   24544 Jun  1 18:34 AgronomoInterfaceOC.java
+-rw-r--r-- 1 appadagi dbpadagi   14322 Jun  1 18:34 AgronomoInterfaceOC.class
+-rw-r--r-- 1 root     root       16660 Jun  2 17:32 agronomoeam.zip
+-rw-r--r-- 1 appadagi dbpadagi      26 Jun  4 10:31 Agronomo_bkp20200604.tar.gz
+-rwxr-xr-x 1 appadagi dbpadagi    5263 Jun  4 10:31 AgronomoInterfaceOC.java.bkp
+-rw-r--r-- 1 root     root        9429 Jun  4 10:33 agronomooc.zip
+-rw-r--r-- 1 root     root     2560295 Jul 20 16:59 agronomo_20200720.zip
+-rw-r--r-- 1 root     root        9691 Jul 20 17:00 agronomo.zip
+[root@ad-ar-dat-ap-12 agronomo]# unzip agronomo.zip
+Archive:  agronomo.zip
+  inflating: agronomo/AgronomoInterfaceOC.class
+  inflating: agronomo/AgronomoInterfaceOC.java
+[root@ad-ar-dat-ap-12 agronomo]#

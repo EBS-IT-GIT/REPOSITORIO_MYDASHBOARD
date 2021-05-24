@@ -1,0 +1,27 @@
+PADAGI> set echo on;
+PADAGI> set serveroutput on;
+PADAGI> alter session set current_schema=APPS;
+
+Sesión modificada.
+
+PADAGI> alter session set nls_language='LATIN AMERICAN SPANISH';
+
+Sesión modificada.
+
+PADAGI> select name from v$database;
+
+NAME
+---------
+PADAGI
+
+PADAGI> update AP_invoices_all
+SET PAYMENT_STATUS_FLAG = 'Y'
+and invoice_id = 1194744
+  2    3    4  ;
+and invoice_id = 1194744
+*
+ERROR en línea 3:
+ORA-00933: comando SQL no terminado correctamente
+
+
+PADAGI>

@@ -1,0 +1,27 @@
+{
+  "name": "listsearch",
+  "version": "0.4.1",
+  "title": "jQuery List Search",
+  "author": {
+    "name": "Ushio Shugo",
+    "url": "http://ushio.me"
+  },
+  "licenses": [
+    {
+      "type": "GPL",
+      "url": "http://www.gnu.org/licenses/gpl.html"
+    },
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": "https://github.com/ushios/jQuery.ListSearch/issues",
+  "docs": "https://github.com/ushios/jQuery.ListSearch/blob/master/README.md",
+  "homepage": "https://github.com/ushios/jQuery.ListSearch",
+  "description": "Incremental search for table, ul and ol tags.",
+  "keywords": ["incremental", "search", "list", "table", "ul", "li", "ol"],
+  "dependencies": {
+    "jquery": ">=1.7.0"
+  }
+}

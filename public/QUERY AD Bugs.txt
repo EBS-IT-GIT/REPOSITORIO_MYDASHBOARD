@@ -1,0 +1,9 @@
+"SELECT
+    *
+FROM
+    apps.ad_bugs
+WHERE
+    1 = 1
+    AND creation_date BETWEEN '01/JAN/2020' AND '30/JUN/2020'
+ORDER BY
+    creation_date"

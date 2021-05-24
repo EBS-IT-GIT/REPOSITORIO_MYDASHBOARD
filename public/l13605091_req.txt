@@ -1,0 +1,58 @@
++---------------------------------------------------------------------------+
+XXSN - Solucoes Ninecon: Version : 12.1
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+NFEERELINCONSISTENCIA: NFEE - Sefaz [Relatorio Status Manifesto do Destinatario]
++---------------------------------------------------------------------------+
+
+Current system time is 18-OCT-2019 09:55:49
+
++---------------------------------------------------------------------------+
+
+XDO Data Engine Version No: 5.6.3
+Resp: 51391
+Org ID : 82
+Request ID: 13605091
+All Parameters: P_ORGANIZATION_CODE=:P_USER_NAME=:P_RECEIVE_DATE_DE="2019/10/01 00:00:00":P_RECEIVE_DATE_ATE="2019/10/31 00:00:00":P_VENDOR_ID=:P_STATUS_SEFAZ=:P_REVERSION_FLAG=
+Data Template Code: NFEERELINCONSISTENCIA
+Data Template Application Short Name: XXSN
+Debug Flag: N
+{P_USER_NAME=, P_ORGANIZATION_CODE=, P_VENDOR_ID=, P_RECEIVE_DATE_DE=2019/10/01 00:00:00, P_STATUS_SEFAZ=, P_RECEIVE_DATE_ATE=2019/10/31 00:00:00, P_REVERSION_FLAG=}
+Calling XDO Data Engine...
++---------------------------------------------------------------------------+
+Início das mensagens de log do FND_FILE
++---------------------------------------------------------------------------+
++---------------------------------------------------------------------------+
+Fim das mensagens de log do FND_FILE
++---------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+Executando opções de término da solicitação...
+
+Output file size: 
+1224343
+
++--------- 1) POST-PROCESSING  ---------+
+Iniciando pós-processamento da solicitação 13605091 no nó VM02L-PAEBS à(s) 18-OUT-2019 09:55:53.
+-- Publishing output
+
+ 
+Ocorreu uma falha no pós-processamento da solicitação 13605091 à(s) 18-OUT-2019 09:55:53 com a mensagem de erro:
+One or more post-processing actions failed. Consult the OPP service log for details.
+ 
+CONC-POST-PROCESSING RESULTS
+
+-- PUBLISH: 
+oracle.apps.fnd.cp.opp.PostProcessorException: oracle.apps.fnd.cp.opp.PostProcessorException: oracle.apps.xdo.XDOException: No corresponding LOB data found :SELECT L.FILE_DATA FILE_DATA,DBMS_LOB.GETLENGTH(L.FILE_DATA) FILE_LENGTH, L.LANGUAGE LANGUAGE, L.TERRITORY TERRITORY, B.DEFAULT_LANGUAGE DEFAULT_LANGUAGE, B.DEFAULT_TERRITORY DEFAULT_TERRITORY,B.TEMPLATE_TYPE_CODE TEMPLATE_TYPE_CODE, B.USE_ALIAS_TABLE USE_ALIAS_TABLE, B.START_DATE START_DATE, B.END_DATE END_DATE, B.TEMPLATE_STATUS TEMPLATE_STATUS, B.USE_ALIAS_TABLE USE_ALIAS_TABLE, B.DS_APP_SHORT_NAME DS_APP_SHORT_NAME, B.DATA_SOURCE_CODE DATA_SOURCE_CODE, L.LOB_TYPE LOB_TYPE FROM XDO_LOBS L, XDO_TEMPLATES_B B WHERE L.APPLICATION_SHORT_NAME= :1 AND L.LOB_CODE = :2 AND L.APPLICATION_SHORT_NAME = B.APPLICATION_SHORT_NAME AND L.LOB_CODE = B.TEMPLATE_CODE AND (L.LOB_TYPE = 'TEMPLATE' OR L.LOB_TYPE = 'MLS_TEMPLATE') AND  ( (L.LANGUAGE = :3 AND L.TERRITORY = :4) OR  (L.LANGUAGE= B.DEFAULT_LANGUAGE AND L.TERRITORY= B.DEFAULT_TERRITORY ))
++---------------------------------------+
+
+
+A execução das opções de término da solicitação foi concluída.
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada
+A hora atual do sistema é 18-OUT-2019 09:55:53
+
++---------------------------------------------------------------------------+

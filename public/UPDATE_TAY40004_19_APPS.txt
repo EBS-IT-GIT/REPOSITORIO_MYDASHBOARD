@@ -1,0 +1,3 @@
+update APPS.AP_INVOICES_ALL set  ATTRIBUTE2 = 'TAY40004/19' where INVOICE_ID = '28809591';
+
+commit;

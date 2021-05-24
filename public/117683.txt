@@ -1,0 +1,21 @@
+update apps.mtl_material_transactions
+set reason_id = 2325
+where transaction_id in
+(101593860,101593863,101593914,101632455);
+--
+update apps.mtl_material_transactions
+set reason_id = 2219
+where transaction_id in
+(102513780,102977977);
+--
+update apps.gmf_xla_extract_headers
+set reason_id = 2325
+where transaction_id in
+(101593860,101593863,101593914,101632455);
+--
+update apps.gmf_xla_extract_headers
+set reason_id = 2219
+where transaction_id in
+(102513780,102977977);
+--
+commit;

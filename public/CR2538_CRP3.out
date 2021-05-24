@@ -1,0 +1,110 @@
+Path: /desa12/svn/XXADECUSTOMS
+Working Copy Root Path: /desa12/svn/XXADECUSTOMS
+URL: https://ad-ar-dat-or-01.adeco.net.ar:8443/svn/XXADECUSTOMS
+Repository Root: https://ad-ar-dat-or-01.adeco.net.ar:8443/svn/XXADECUSTOMS
+Repository UUID: 4a015035-0a93-5c48-9a58-f2e00ef8f5c2
+Revision: 9316
+Node Kind: directory
+Schedule: normal
+Last Changed Author: ADECO_DEV
+Last Changed Rev: 9316
+Last Changed Date: 2020-01-13 17:22:15 -0300 (Mon, 13 Jan 2020)
+
++---------------------------------------------------------------------------+
+ Comenzando con el proceso de resguardo
+
++---------------------------------------------------------------------------+
+ Resguardando la solucion realizada en CR2538
+
+ Cantidad de objetos tipo XX_ADE_CUSTOM_HEADER => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 23-JUN-2020 17:35:21
+
++---------------------------------------------------------------------------+
+
+Downloading XX_ADE_CUSTOM_HEADER to the data file CR2538_13986.ldt
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 23-JUN-2020 17:35:21
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto SQL-PKG XXCLK_INV_INTERFACE_PKG 
+
+
+PL/SQL procedure successfully completed.
+
++---------------------------------------------------------------------------+
+ Fin del proceso de resguardo
+
++---------------------------------------------------------------------------+
+ Comenzando con el proceso de actualizacion 
+
+
++---------------------------------------------------------------------------+
++---------------------------------------------------------------------------+
+ Actualizando el objeto SQL-PKG XXCLK_INV_INTERFACE_PKG 
+
+
+Pacote criado.
+
+
+Corpo de Pacote criado.
+
+
+Concessão bem-sucedida.
+
+
+Concessão bem-sucedida.
+
+Sending        desa12/svn/XXADECUSTOMS/xbol/12.0.0/sql/PKG/XXCLK_INV_INTERFACE_PKG.sql
+Transmitting file data .
+Committed revision 10344.
++---------------------------------------------------------------------------+
+ Actualizando la solucion realizada en CR2538
+
+ Cantidad de objetos tipo XX_ADE_CUSTOM_HEADER => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 23-JUN-2020 17:35:29
+
++---------------------------------------------------------------------------+
+
+Uploading from the data file /ua1001/fs_ne/ADECO/patch/CR2538/CR2538_20200623/CR2538/INSTALL/xbol/12.0.0/FNDLOAD/CUSTOM/CR2538_13986.ldt
+Altering database NLS_LANGUAGE environment to AMERICAN
+Dump from LCT/LDT files (/ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxadecustom.lct(11.5.2), /ua1001/fs_ne/ADECO/patch/CR2538/CR2538_20200623/CR2538/INSTALL/xbol/12.0.0/FNDLOAD/CUSTOM/CR2538_13986.ldt) to stage tables
+Dump LCT file /ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxadecustom.lct(11.5.2) into FND_SEED_STAGE_CONFIG
+Dump LDT file /ua1001/fs_ne/ADECO/patch/CR2538/CR2538_20200623/CR2538/INSTALL/xbol/12.0.0/FNDLOAD/CUSTOM/CR2538_13986.ldt into FND_SEED_STAGE_ENTITY
+Dumped the batch (XX_ADE_CUSTOM_HEADER 13986 , XX_ADE_CUSTOM_LINES 13986 ) into FND_SEED_STAGE_ENTITY
+Upload from stage tables
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 23-JUN-2020 17:35:32
+
++---------------------------------------------------------------------------+
+
+Compilando objectos invalidos...
+
+PL/SQL procedure successfully completed.
+
+Fin de compilando objectos invalidos
+
++---------------------------------------------------------------------------+
+ Fin del proceso de actualizacion
+

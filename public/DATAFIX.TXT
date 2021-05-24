@@ -1,0 +1,79 @@
+PADAGI> @amb
+PADAGI> set echo on;
+PADAGI> set serveroutput on;
+PADAGI> alter session set current_schema=APPS;
+
+Sesión modificada.
+
+PADAGI> alter session set nls_language='LATIN AMERICAN SPANISH';
+
+Sesión modificada.
+
+PADAGI> select name from v$database;
+
+NAME
+---------
+PADAGI
+
+PADAGI> CREATE TABLE xx_tcg_iibb_saldo_ini_JUN20
+    AS SELECT * FROM xx_tcg_iibb_saldo_ini;
+  2
+
+Tabla creada.
+
+PADAGI> PADAGI>
+PADAGI> CREATE TABLE xx_tcg_iibb_origen_JUN20
+    AS SELECT * FROM xx_tcg_iibb_origen;
+  2
+
+Tabla creada.
+
+PADAGI> PADAGI>
+PADAGI> DECLARE
+  l_error_msg   VARCHAR2(2000);
+  l_periodo     VARCHAR2(50) := 'JUN-20';
+  eError        EXCEPTION;
+BEGIN
+
+  DBMS_OUTPUT.PUT_LINE('Inicio ');
+
+  XX_AR_IIBB_PROCESO_CEREAL_PK.Actualiza_Saldo ( p_periodo   => l_periodo
+                                               , p_status    => 'PRELIMINAR'
+                                               , x_error_msg => l_error_msg
+                                               );
+
+  IF l_error_msg IS NOT NULL THEN
+    DBMS_OUTPUT.PUT_LINE('Error actualizando Saldo '||l_error_msg);
+    RAISE eError;
+  END IF;
+
+  XX_AR_IIBB_PROCESO_CEREAL_PK.Procesa_CPS_Origen_IIBB ( p_periodo   => l_periodo
+                                                       , x_error_msg => l_error_msg
+                                                       );
+
+  IF l_error_msg IS NOT NULL THEN
+    DBMS_OUTPUT.PUT_LINE('Error procesando origen IIBB '||l_error_msg);
+    RAISE eError;
+  END IF;
+
+
+  IF l_error_msg IS NULL THEN
+    DBMS_OUTPUT.PUT_LINE('Proceso ejecutado correctamente para el periodo '||l_periodo);
+  END IF;
+
+  DBMS_OUTPUT.PUT_LINE('Fin');
+
+EXCEPTION
+  WHEN eError THEN
+    NULL;
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Error general... '||SQLERRM);
+END;
+/  2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39   40   41
+Inicio
+Error actualizando Saldo Error generando saldo para el periodo JUN-20.
+ORA-01427: la subconsulta de una sola fila devuelve más de una fila
+
+Procedimiento PL/SQL terminado correctamente.
+
+PADAGI>

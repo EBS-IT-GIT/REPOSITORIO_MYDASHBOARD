@@ -1,0 +1,44 @@
+SQL> select * from global_name;
+
+GLOBAL_NAME
+--------------------------------------------------------------------------------
+DBHMG
+
+SQL> create tablespace CAFEFORTE_DATA datafile '+DG_DATA2' size 25000m
+  2  autoextend on
+  3  next 100m;
+
+Tablespace criado.
+
+SQL> create tablespace CAFEFORTE_INDEX datafile '+DG_DATA2' size 1024m
+  2  autoextend on
+  3  next 100m
+  4  maxsize 2048m;
+
+Tablespace criado.
+
+SQL> create user CAFEFORTE_HOMLOG identified by CAFEFORTE_HOMLOG default tablespace CAFEFORTE_DATA;
+
+Usuario criado.
+
+SQL> grant connect, resource to CAFEFORTE_HOMLOG;
+
+Concess?o bem-sucedida.
+
+SQL> grant create session to CAFEFORTE_HOMLOG;
+
+Concess?o bem-sucedida.
+
+SQL> grant create session to CAFEFORTE_HOMLOG;
+
+Concess?o bem-sucedida.
+
+SQL> grant unlimited tablespace to CAFEFORTE_HOMLOG;
+
+Concess?o bem-sucedida.
+
+SQL> grant select any table to SAPIENS_HOMOLOG;
+
+Concess?o bem-sucedida.
+
+SQL>

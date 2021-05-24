@@ -1,0 +1,107 @@
+SQL> set serveroutput on;
+SQL> 
+SQL> select * from global_name;
+
+GLOBAL_NAME                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PADAGI.ADECO.NET.AR
+
+SQL> alter session set current_schema=APPS;
+
+Session alterado.
+
+SQL> --*****************************************************
+SQL> -- Modificaciones a tabla XX_OPM_CONF_GI_COLUMNAS_HDR
+SQL> --*****************************************************
+SQL> -- 1. Agregar nueva columna formula_class
+SQL> -- 2. Recrear logica R12
+SQL> -- 3- Eliminar unique index actual solo x organizacion
+SQL> -- 4- Update todos los registros con formula_class = 'GEN'
+SQL> -- 5- Crear nuevo unique agregando formula_class
+SQL> 
+SQL> -- 1. Agregar nueva columna formula_class
+SQL> ALTER TABLE BOLINF.XX_OPM_CONF_GI_COLUMNAS_HDR
+  2  ADD (FORMULA_CLASS VARCHAR2(8 BYTE));
+
+Table BOLINF.XX_OPM_CONF_GI_COLUMNAS_HDR alterado.
+
+SQL> -- 2. Recrear logica R12
+SQL> exec AD_ZD_TABLE.Upgrade('BOLINF', 'XX_OPM_CONF_GI_COLUMNAS_HDR');
+
+Procedimento PL/SQL concluído com sucesso.
+
+SQL> -- 3- Eliminar unique index actual solo x organizacion
+SQL> DROP INDEX BOLINF.XX_OPM_CONF_GI_COLUMNAS_HDR_N1;
+
+Index BOLINF.XX_OPM_CONF_GI_COLUMNAS_HDR_N1 eliminado.
+
+SQL> -- 5- Crear nuevo unique agregando formula_class
+SQL> CREATE UNIQUE INDEX BOLINF.XX_OPM_CONF_GI_COLUMNAS_HDR_N1 ON BOLINF.XX_OPM_CONF_GI_COLUMNAS_HDR
+  2  (LEGAL_ENTITY_ID, ORGANIZATION_ID, FORMULA_CLASS);
+
+INDEX BOLINF.XX_OPM_CONF_GI_COLUMNAS_HDR_N1 criado.
+
+SQL> --*****************************************************
+SQL> -- Modificaciones a tabla XX_OPM_CONF_GI_LINEAS_DET
+SQL> --*****************************************************
+SQL> -- 1. Agregar nueva columna GI_COLUMNA_ID
+SQL> -- 2. Recrear logica R12
+SQL> -- 3- Update todos los registros con GI_COLUMNA_ID correspondiente
+SQL> -- 4- Eliminar unique index actual solo x organizacion
+SQL> -- 5- Crear nuevo unique agregando GI_COLUMNA_ID
+SQL> 
+SQL> -- 1. Agregar nueva columna GI_COLUMNA_ID
+SQL> ALTER TABLE BOLINF.XX_OPM_CONF_GI_LINEAS_DET
+  2  ADD (GI_COLUMNA_ID NUMBER);
+
+Table BOLINF.XX_OPM_CONF_GI_LINEAS_DET alterado.
+
+SQL> -- 2. Recrear logica R12
+SQL> exec AD_ZD_TABLE.Upgrade('BOLINF', 'XX_OPM_CONF_GI_LINEAS_DET');
+
+Procedimento PL/SQL concluído com sucesso.
+
+SQL> -- 3- Update todos los registros con GI_COLUMNA_ID correspondiente
+SQL> BEGIN
+  2    UPDATE XX_OPM_CONF_GI_LINEAS_DET xx_conf_lin_det
+  3       SET GI_COLUMNA_ID = (SELECT GI_COLUMNA_ID
+  4                              FROM XX_OPM_CONF_GI_COLUMNAS_HDR xx_conf_col_hdr
+  5                             WHERE xx_conf_col_hdr.legal_entity_id = xx_conf_lin_det.legal_entity_id
+  6                               AND xx_conf_col_hdr.organization_id = xx_conf_lin_det.organization_id
+  7                           )
+  8     WHERE GI_COLUMNA_ID IS NULL;
+  9  END;
+ 10  /
+
+Procedimento PL/SQL concluído com sucesso.
+
+SQL> -- 4- Eliminar unique index actual solo x organizacion
+SQL> DROP INDEX BOLINF.XX_OPM_CONF_GI_LINEAS_DET_U1;
+
+Index BOLINF.XX_OPM_CONF_GI_LINEAS_DET_U1 eliminado.
+
+SQL> -- 5- Crear nuevo unique agregando GI_COLUMNA_ID
+SQL> CREATE UNIQUE INDEX BOLINF.XX_OPM_CONF_GI_LINEAS_DET_U1 ON BOLINF.XX_OPM_CONF_GI_LINEAS_DET
+  2  (GI_LINEA_ID, GI_COLUMNA_ID, ORGANIZATION_ID, SEGMENT2);
+
+INDEX BOLINF.XX_OPM_CONF_GI_LINEAS_DET_U1 criado.
+
+SQL> --*****************************************************
+SQL> -- Modificaciones a tabla XX_OPM_ASIG_GI_SUMGL_RES_ORG
+SQL> --*****************************************************
+SQL> -- 1. Agregar nuevas columnas formula_class
+SQL> -- 2. Recrear logica R12
+SQL> 
+SQL> -- 1. Agregar nuevas columnas formula_class
+SQL> ALTER TABLE BOLINF.XX_OPM_ASIG_GI_SUMGL_RES_ORG
+  2  ADD ( FORMULA_CLASS      VARCHAR2(8 BYTE)
+  3      , FORMULA_CLASS_DESC VARCHAR2(40 BYTE)
+  4      );
+
+Table BOLINF.XX_OPM_ASIG_GI_SUMGL_RES_ORG alterado.
+
+SQL> -- 2. Recrear logica R12
+SQL> exec AD_ZD_TABLE.Upgrade('BOLINF', 'XX_OPM_ASIG_GI_SUMGL_RES_ORG');
+
+Procedimento PL/SQL concluído com sucesso.
+

@@ -1,0 +1,13 @@
+update apps.wsh_delivery_details
+set requested_quantity2 = 8,
+shipped_quantity2 = 8,
+picked_quantity2 = 8
+where delivery_detail_id = 86311906;
+--
+update apps.wsh_delivery_details
+set picked_quantity2 = '0.03',
+requested_quantity2 = '0.03',
+shipped_quantity2 = '0.03'
+where delivery_detail_id = 86311921;
+--
+commit;

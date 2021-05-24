@@ -1,0 +1,1299 @@
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_ACCOUNTING_BOOK AS
+  2  --LIVROS CONTABEIS (SET_OF_BOOKS)
+  3      SELECT
+  4  --IDENTIFICATION        
+  5          ldg.ledger_id                      AS accounting_book_id,
+  6  --CHARTS RELATIONS        
+  7          ldg.chart_of_accounts_id,
+  8  --SEGMENT PROPERTIES        
+  9          ldg.bal_seg_value_set_id           AS segment_id,
+ 10          ldg.bal_seg_column_name            AS segment_column,
+ 11          ldg.ret_earn_code_combination_id   AS retained_account_reference_id,
+ 12  --DESCRIPTION          
+ 13          ldg.name                           AS book_name,
+ 14          ldg.short_name                     AS book_short_name,
+ 15          ldg.description                    AS book_description,
+ 16  --MAIN PROPERTIES        
+ 17          ldg.currency_code,
+ 18          ldg.ledger_category_code           AS book_category_code,
+ 19  --BOOK ATTRIBUTES
+ 20          ldg.ledger_attributes              AS book_attributes,
+ 21          ldg.object_type_code               AS book_type_code,
+ 22          ldg.le_ledger_type_code            AS book_legal_type_code,
+ 23  --PERIOD PROPERTIES        
+ 24          ldg.period_set_name,
+ 25          ldg.accounted_period_type,
+ 26          ldg.first_ledger_period_name,
+ 27          ldg.latest_opened_period_name,
+ 28          ldg.latest_encumbrance_year,
+ 29          ldg.future_enterable_periods_limit,
+ 30  --SECURITY        
+ 31          ldg.implicit_access_set_id,
+ 32  --LINEAGE          
+ 33          cast(ldg.last_update_date as timestamp) AS last_update_date,
+ 34          ldg.last_updated_by,
+ 35          cast(ldg.creation_date as timestamp) AS creation_date,
+ 36          ldg.created_by,
+ 37          ldg.last_update_login
+ 38      FROM
+ 39          gl.gl_ledgers ldg
+ 40      ;
+
+View XXSTN.XXSTN_DTL_ACCOUNTING_BOOK created.
+
+SQL> 
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_ACCOUNTING_CALENDAR AS
+  2      SELECT 
+  3  --IDENTIFIER
+  4          ps.period_set_id     AS calendar_id,
+  5          ps.period_set_name   AS calendar_name,    
+  6  --DESCRIPTION
+  7          ps.description       AS calendar_description,
+  8  --SECURITY    
+  9          ps.security_flag     AS is_secure,
+ 10  --LINEAGE 
+ 11          cast(ps.last_update_date as timestamp) AS last_update_date,
+ 12          ps.last_updated_by,
+ 13          cast(ps.creation_date as timestamp) AS creation_date,
+ 14          ps.created_by,
+ 15          ps.last_update_login
+ 16      FROM
+ 17          gl.gl_period_sets ps
+ 18      ;
+
+View XXSTN.XXSTN_DTL_ACCOUNTING_CALENDAR created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_ACCOUNTING_PERIOD AS
+  2  --FIRST PERIOD 31-JAN-10
+  3  --LAST PEDIOD 31-DEC-25
+  4      SELECT 
+  5  --IDENTIFICATION   
+  6          gps.ledger_id                AS accounting_book_id,
+  7          gps.application_id,
+  8          gps.period_name,   
+  9  --DESCRIPTION     
+ 10          gps.start_date,
+ 11          gps.end_date,
+ 12          gps.effective_period_num,
+ 13          gps.closing_status,
+ 14  --MAIN PROPERTIES              
+ 15          gps.period_num,
+ 16          gps.period_type,
+ 17          gps.period_year,
+ 18          gps.year_start_date,
+ 19          gps.quarter_num,
+ 20          gps.quarter_start_date,  
+ 21  --PROPERTIES            
+ 22          gps.adjustment_period_flag   AS is_adjustment_period,
+ 23          gps.elimination_confirmed_flag AS is_elimination_confirmed,
+ 24          gps.migration_status_code,
+ 25  --LINEAGE          
+ 26          cast(gps.last_update_date as timestamp) AS last_update_date,
+ 27          gps.last_updated_by,
+ 28          cast(gps.creation_date as timestamp) AS creation_date,
+ 29          gps.created_by,
+ 30          gps.last_update_login
+ 31      FROM
+ 32          gl.gl_period_statuses gps        
+ 33      ;
+
+View XXSTN.XXSTN_DTL_ACCOUNTING_PERIOD created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_ACCOUNTING_REFERENCE AS
+  2  --CODE COMBINATION
+  3      SELECT
+  4  --IDENTIFICATION 
+  5          c.code_combination_id            As accounting_reference_id,
+  6  --RELATIONSHIP      
+  7          c.chart_of_accounts_id,
+  8  --DESCRIPTION    
+  9          c.padded_concatenated_segments   AS accounting_reference,
+ 10          c.segment1,
+ 11          c.segment2,
+ 12          c.segment3,
+ 13          c.segment4,
+ 14          c.segment5,
+ 15          c.segment6,
+ 16          c.segment7,
+ 17          c.segment8,
+ 18  --VALIDITY         
+ 19          c.enabled_flag                   AS is_enabled,
+ 20          c.start_date_active,
+ 21          c.end_date_active,
+ 22  --PROPERTIES
+ 23          c.summary_flag                   AS is_summary,
+ 24          c.gl_account_type                AS account_type,
+ 25          c.gl_control_account             AS is_control_account,
+ 26          c.reconciliation_flag            AS is_reconciliation,
+ 27          c.detail_budgeting_allowed       AS is_budgeting_allowed,
+ 28          c.detail_posting_allowed         AS is_posting_allowed,
+ 29          c.igi_balanced_budget_flag       AS is_budget_enforced,
+ 30  --LINEAGE 
+ 31          cast(c.last_update_date as timestamp) AS last_update_date,
+ 32          c.last_updated_by
+ 33      FROM
+ 34          apps.gl_code_combinations_kfv c        
+ 35          ;
+
+View XXSTN.XXSTN_DTL_ACCOUNTING_REFERENCE created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_ACCOUNTING_SEGMENT AS
+  2  --SEGMENTOS CONTABEIS
+  3      SELECT 
+  4  --IDENTIFICATION          
+  5          fsg.flex_value_set_id         AS segment_id,
+  6  --RELATIONSHIP
+  7          fsg.id_flex_num               AS chart_of_accounts_id,      
+  8  --DESCRIPTION          
+  9          fsg.segment_num,
+ 10          fsg.application_column_name   AS segment_column,
+ 11          fsg.segment_name,
+ 12  --VALIDITY         
+ 13          fsg.enabled_flag              AS is_enabled,
+ 14  --PROPERTIES           
+ 15          fsg.required_flag             AS is_required,
+ 16          fsg.security_enabled_flag     AS is_secure,
+ 17          fsg.display_flag              AS is_displayed,
+ 18          fsg.display_size,
+ 19  --LINEAGE     
+ 20          cast(fsg.last_update_date as timestamp) AS last_update_date,
+ 21          fsg.last_updated_by,
+ 22          cast(fsg.creation_date as timestamp) AS creation_date,
+ 23          fsg.created_by,
+ 24          fsg.last_update_login
+ 25      FROM
+ 26          applsys.fnd_id_flex_segments fsg
+ 27      WHERE
+ 28          fsg.application_id = 101 --GL Application
+ 29          AND fsg.id_flex_code = 'GL#' --GL Module     
+ 30          ;
+
+View XXSTN.XXSTN_DTL_ACCOUNTING_SEGMENT created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_ACCOUNT_BALANCE AS
+  2      SELECT 
+  3  --IDENTIFICATION 
+  4  		b.ledger_id             AS accounting_book_id,
+  5          b.code_combination_id   AS accounting_reference_id,
+  6  --RELATIONSHIP		
+  7          b.currency_code,
+  8          b.period_name,
+  9  --DESCRIPTION 
+ 10          b.period_type,
+ 11          b.period_year,
+ 12          b.period_num,
+ 13  --PROPERTIES
+ 14          b.actual_flag           AS balance_type,
+ 15          b.translated_flag       AS is_translated, 
+ 16  --BALANCE VALUES
+ 17          b.period_net_dr,
+ 18          b.period_net_cr,
+ 19          b.quarter_to_date_dr,
+ 20          b.quarter_to_date_cr,
+ 21          b.project_to_date_dr,
+ 22          b.project_to_date_cr,
+ 23          b.begin_balance_dr,
+ 24          b.begin_balance_cr,
+ 25  --LINEAGE 
+ 26          cast(b.last_update_date as timestamp) AS last_update_date,
+ 27          b.last_updated_by
+ 28      FROM
+ 29          gl.gl_balances b    
+ 30  ;
+
+View XXSTN.XXSTN_DTL_ACCOUNT_BALANCE created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_ACCOUNT_UNIT AS
+  2  --CONTA CONTABIL
+  3      SELECT      
+  4  --IDENTIFICATION         
+  5          fv.flex_value_id           AS account_unit_id,
+  6  --RELATIONSHIP         
+  7          fvs.id_flex_num            AS chart_of_accounts_id,
+  8          fv.flex_value_set_id       AS segment_id,
+  9          fvs.segment_num,
+ 10          fvs.segment_name,
+ 11          fset.flex_value_set_name   AS category_name,
+ 12  --DESCRIPTION        
+ 13          fv.flex_value              AS account_unit,
+ 14          ptb.description            AS account_name_ptb,
+ 15          us.description             AS account_name_us,
+ 16  --VALIDITY         
+ 17          fv.enabled_flag            AS is_enabled,
+ 18          fv.start_date_active,
+ 19          fv.end_date_active,
+ 20  --PROPERTIES          
+ 21          fv.summary_flag            AS is_summary,
+ 22          substr(fv.compiled_value_attributes, 1, 1) AS is_budgeting_allowed,
+ 23          substr(fv.compiled_value_attributes, 3, 1) AS is_posting_allowed,
+ 24          substr(fv.compiled_value_attributes, 5, 1) AS account_type,
+ 25          substr(fv.compiled_value_attributes, 7, 1) AS is_third_party_control,
+ 26          substr(fv.compiled_value_attributes, 9, 1) AS is_reconcile,
+ 27          fv.attribute1,
+ 28  --LINEAGE        
+ 29          cast(greatest(
+ 30                  fv.last_update_date, 
+ 31                  fvs.last_update_date, 
+ 32                  fset.last_update_date, 
+ 33                  ptb.last_update_date,
+ 34                  us.last_update_date) as timestamp) AS last_update_date,
+ 35          fv.last_updated_by,
+ 36          cast(fv.creation_date as timestamp) AS creation_date,
+ 37          fv.created_by,
+ 38          fv.last_update_login
+ 39      FROM
+ 40          apps.fnd_flex_values           fv
+ 41          JOIN applsys.fnd_id_flex_segments   fvs ON fv.flex_value_set_id = fvs.flex_value_set_id
+ 42          JOIN applsys.fnd_flex_values_tl     ptb ON ptb.flex_value_id = fv.flex_value_id
+ 43                                                 AND ptb.language = 'PTB'
+ 44          JOIN applsys.fnd_flex_values_tl     us ON us.flex_value_id = fv.flex_value_id
+ 45                                                AND us.language = 'US'
+ 46          JOIN applsys.fnd_flex_value_sets    fset ON fset.flex_value_set_id = fvs.flex_value_set_id
+ 47      WHERE
+ 48          fvs.application_id = 101 --GL Application
+ 49          AND fvs.id_flex_code = 'GL#' --GL Module                
+ 50          AND ( ( fvs.segment_num = 4
+ 51                  AND fvs.id_flex_num <> 50408 ) --(NOT COSIF)
+ 52                OR ( fvs.segment_num = 3
+ 53                     AND fvs.id_flex_num = 50408 ) ) --(COSIF-IFRS)            
+ 54                     ;
+
+View XXSTN.XXSTN_DTL_ACCOUNT_UNIT created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_APPLICATION AS
+  2      SELECT
+  3  --IDENTIFICATION      
+  4          app.application_id,
+  5  --DESCRIPTION      
+  6          app.application_short_name,        
+  7          app.product_code,
+  8          ptb.application_name   AS application_name_ptb,
+  9          us.application_name    AS application_name_us,  
+ 10  --LINEAGE 
+ 11          cast(greatest(
+ 12                  app.last_update_date, 
+ 13                  ptb.last_update_date,
+ 14                  us.last_update_date) as timestamp) AS last_update_date,                
+ 15          app.last_updated_by,
+ 16          cast(app.creation_date as timestamp) AS creation_date,        
+ 17          app.created_by,
+ 18          app.last_update_login
+ 19      FROM
+ 20          applsys.fnd_application      app
+ 21          JOIN applsys.fnd_application_tl   ptb ON app.application_id = ptb.application_id
+ 22                                                 AND ptb.source_lang = 'PTB'
+ 23          JOIN applsys.fnd_application_tl   us ON app.application_id = us.application_id
+ 24                                                AND us.source_lang = 'US'
+ 25      WHERE
+ 26          app.application_id IN (
+ 27              SELECT DISTINCT
+ 28                  application_id
+ 29              FROM
+ 30                  gl.gl_period_statuses
+ 31          );
+
+View XXSTN.XXSTN_DTL_APPLICATION created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_APPLICATION_USERS AS
+  2      SELECT 
+  3  --IDENTIFICATION   
+  4          u.user_id,   
+  5  --DESCRIPTION     
+  6          u.user_name,
+  7          u.description as full_name,
+  8  --VALIDITY
+  9          u.start_date,
+ 10          u.end_date,
+ 11  --RELATIONSHIP
+ 12          u.employee_id,
+ 13          CASE
+ 14              WHEN instr(u.email_address, '@') = 0 THEN
+ 15                  NULL
+ 16              ELSE
+ 17                  replace(u.email_address, 'CLONE.', '')
+ 18          END AS email_address,
+ 19          u.customer_id,
+ 20          u.person_party_id, 
+ 21  --LINEAGE
+ 22          cast(u.last_update_date as timestamp) AS last_update_date,
+ 23          u.last_updated_by,
+ 24          cast(u.creation_date as timestamp) AS creation_date,
+ 25          u.created_by,
+ 26          u.last_update_login
+ 27      FROM
+ 28          applsys.fnd_user u
+ 29      ;
+
+View XXSTN.XXSTN_DTL_APPLICATION_USERS created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_BRAND AS
+  2  --BANDEIRA
+  3      SELECT
+  4  --IDENTIFICATION      
+  5          fv.flex_value_id           AS brand_id,
+  6  --RELATIONSHIP        
+  7          fvs.id_flex_num            AS chart_of_accounts_id,
+  8          fv.flex_value_set_id       AS segment_id,
+  9          fvs.segment_num,
+ 10          fvs.segment_name,
+ 11          fset.flex_value_set_name   AS category_name,
+ 12  --DESCRIPTION            
+ 13          fv.flex_value              AS brand_code,
+ 14          ptb.description            AS brand_name_ptb,
+ 15          us.description             AS brand_name_us,
+ 16  --VALIDITY    
+ 17          fv.enabled_flag            AS is_enabled,
+ 18          fv.start_date_active,
+ 19          fv.end_date_active,
+ 20  --PROPERTIES    
+ 21          fv.summary_flag            AS is_summary,
+ 22          substr(fv.compiled_value_attributes, 1, 1) AS is_budgeting_allowed,
+ 23          substr(fv.compiled_value_attributes, 3, 1) AS is_posting_allowed,
+ 24          fv.attribute1,
+ 25  --LINEAGE 
+ 26          cast(greatest(
+ 27                  fv.last_update_date, 
+ 28                  fvs.last_update_date, 
+ 29                  fset.last_update_date, 
+ 30                  ptb.last_update_date,
+ 31                  us.last_update_date) as timestamp) AS last_update_date,
+ 32          fv.last_updated_by,
+ 33          cast(fv.creation_date as timestamp) AS creation_date,
+ 34          fv.created_by,
+ 35          fv.last_update_login
+ 36      FROM
+ 37          apps.fnd_flex_values_vl        fv
+ 38          JOIN applsys.fnd_id_flex_segments   fvs ON fv.flex_value_set_id = fvs.flex_value_set_id
+ 39          JOIN applsys.fnd_flex_values_tl     ptb ON ptb.flex_value_id = fv.flex_value_id
+ 40                                                 AND ptb.language = 'PTB'
+ 41          JOIN applsys.fnd_flex_values_tl     us ON us.flex_value_id = fv.flex_value_id
+ 42                                                AND us.language = 'US'
+ 43          JOIN applsys.fnd_flex_value_sets    fset ON fset.flex_value_set_id = fvs.flex_value_set_id
+ 44      WHERE
+ 45          fvs.application_id = 101
+ 46          AND fvs.id_flex_code = 'GL#'
+ 47          AND fvs.segment_num = 2
+ 48          AND fvs.id_flex_num <> 50408 --(NOT COSIF)
+ 49          ;
+
+View XXSTN.XXSTN_DTL_BRAND created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_BUSINESS_UNIT AS
+  2  --BUSINESS UNIT
+  3      SELECT
+  4  --IDENTIFICATION      
+  5          fv.flex_value_id           AS business_unit_id,
+  6  --RELATIONSHIP        
+  7          fvs.id_flex_num            AS chart_of_accounts_id,
+  8          fv.flex_value_set_id       AS segment_id,
+  9          fvs.segment_num,
+ 10          fvs.segment_name,
+ 11          fset.flex_value_set_name   AS category_name,
+ 12  --DESCRIPTION            
+ 13          fv.flex_value              AS business_unit,
+ 14          ptb.description            AS business_unit_name_ptb,
+ 15          us.description             AS business_unit_name_us,
+ 16  --VALIDITY    
+ 17          fv.enabled_flag            AS is_enabled,
+ 18          fv.start_date_active,
+ 19          fv.end_date_active,
+ 20  --PROPERTIES    
+ 21          fv.summary_flag            AS is_summary,
+ 22          substr(fv.compiled_value_attributes, 1, 1) AS is_budgeting_allowed,
+ 23          substr(fv.compiled_value_attributes, 3, 1) AS is_posting_allowed,
+ 24          fv.attribute1,
+ 25  --LINEAGE 
+ 26          cast(greatest(
+ 27                  fv.last_update_date, 
+ 28                  fvs.last_update_date, 
+ 29                  fset.last_update_date, 
+ 30                  ptb.last_update_date,
+ 31                  us.last_update_date) as timestamp) AS last_update_date,
+ 32          fv.last_updated_by,
+ 33          cast(fv.creation_date as timestamp) AS creation_date,
+ 34          fv.created_by,
+ 35          fv.last_update_login
+ 36      FROM
+ 37          apps.fnd_flex_values_vl        fv
+ 38          JOIN applsys.fnd_id_flex_segments   fvs ON fv.flex_value_set_id = fvs.flex_value_set_id
+ 39          JOIN applsys.fnd_flex_values_tl     ptb ON ptb.flex_value_id = fv.flex_value_id
+ 40                                                 AND ptb.language = 'PTB'
+ 41          JOIN applsys.fnd_flex_values_tl     us ON us.flex_value_id = fv.flex_value_id
+ 42                                                AND us.language = 'US'
+ 43          JOIN applsys.fnd_flex_value_sets    fset ON fset.flex_value_set_id = fvs.flex_value_set_id
+ 44      WHERE
+ 45          fvs.application_id = 101
+ 46          AND fvs.id_flex_code = 'GL#'
+ 47          AND fvs.segment_num = 7
+ 48          AND fvs.id_flex_num <> 50408 --(NOT COSIF)
+ 49          ;
+
+View XXSTN.XXSTN_DTL_BUSINESS_UNIT created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_CHART_OF_ACCOUNTS AS
+  2  --PLANOS DE CONTAS
+  3      SELECT
+  4      --IDENTIFICATION
+  5          fst.id_flex_num                     AS chart_of_accounts_id,
+  6      --RELATIONSHIPS
+  7          fst.application_id,
+  8          fst.id_flex_code                    AS application_code,
+  9      --DESCRIPTION        
+ 10          fst.structure_view_name             AS chart_of_accounts_name,
+ 11          fst.id_flex_structure_code          AS chart_of_accounts_code,
+ 12      --VALIDITY        
+ 13          fst.enabled_flag                    AS is_enabled,
+ 14      --PROPERTIES        
+ 15          fst.concatenated_segment_delimiter,
+ 16          fst.cross_segment_validation_flag   AS is_cross_segment_validation,
+ 17          fst.dynamic_inserts_allowed_flag    AS is_dynamic_inserts_allowed,
+ 18          fst.freeze_flex_definition_flag     AS is_frozen_flex_definition,
+ 19          fst.freeze_structured_hier_flag     AS is_frozen_structured_hierarchy,
+ 20          fst.shorthand_enabled_flag          AS is_shorthand_enabled,
+ 21          fst.shorthand_length,
+ 22      --LINEAGE        
+ 23          cast(fst.last_update_date as timestamp) AS last_update_date,
+ 24          fst.last_updated_by,
+ 25          cast(fst.creation_date as timestamp) AS creation_date,
+ 26          fst.created_by,
+ 27          fst.last_update_login
+ 28      FROM
+ 29          applsys.fnd_id_flex_structures fst
+ 30      WHERE
+ 31          fst.application_id = 101 --GL Application
+ 32          AND fst.id_flex_code = 'GL#' --GL Module
+ 33          ;
+
+View XXSTN.XXSTN_DTL_CHART_OF_ACCOUNTS created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_COMPANY AS
+  2      SELECT
+  3  --IDENTIFICATION      
+  4          fv.flex_value_id           AS company_id,
+  5  --RELATIONSHIP              
+  6          fvs.id_flex_num            AS chart_of_accounts_id,
+  7          fv.flex_value_set_id       AS segment_id,
+  8          fvs.segment_num,
+  9          fvs.segment_name,
+ 10          fset.flex_value_set_name   AS category_name,
+ 11  --DESCRIPTION            
+ 12          fv.flex_value              AS company_code,
+ 13          ptb.description            AS company_name_ptb,
+ 14          us.description             AS company_name_us,
+ 15  --VALIDITY    
+ 16          fv.enabled_flag            AS is_enabled,
+ 17          fv.start_date_active,
+ 18          fv.end_date_active,
+ 19  --PROPERTIES    
+ 20          fv.summary_flag            AS is_summary,
+ 21          substr(fv.compiled_value_attributes, 1, 1) AS is_budgeting_allowed,
+ 22          substr(fv.compiled_value_attributes, 3, 1) AS is_posting_allowed,
+ 23          fv.attribute1,
+ 24  --LINEAGE 
+ 25          cast(greatest(
+ 26                  fv.last_update_date, 
+ 27                  fvs.last_update_date, 
+ 28                  fset.last_update_date, 
+ 29                  ptb.last_update_date,
+ 30                  us.last_update_date) as timestamp) AS last_update_date,
+ 31          fv.last_updated_by,
+ 32          cast(fv.creation_date as timestamp) AS creation_date,
+ 33          fv.created_by,
+ 34          fv.last_update_login
+ 35      FROM
+ 36          apps.fnd_flex_values_vl        fv
+ 37          JOIN applsys.fnd_id_flex_segments   fvs ON fv.flex_value_set_id = fvs.flex_value_set_id
+ 38          JOIN applsys.fnd_flex_values_tl     ptb ON ptb.flex_value_id = fv.flex_value_id
+ 39                                                 AND ptb.language = 'PTB'
+ 40          JOIN applsys.fnd_flex_values_tl     us ON us.flex_value_id = fv.flex_value_id
+ 41                                                AND us.language = 'US'
+ 42          JOIN applsys.fnd_flex_value_sets    fset ON fset.flex_value_set_id = fvs.flex_value_set_id
+ 43      WHERE
+ 44          fvs.application_id = 101
+ 45          AND fvs.id_flex_code = 'GL#'
+ 46          AND fvs.segment_num = 1;
+
+View XXSTN.XXSTN_DTL_COMPANY created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_COSIF_ACCOUNT AS
+  2  --COSIF
+  3      SELECT
+  4  --IDENTIFICATION      
+  5          fv.flex_value_id           AS cosif_account_id,
+  6  --RELATIONSHIP        
+  7          fvs.id_flex_num            AS chart_of_accounts_id,
+  8          fv.flex_value_set_id       AS segment_id,
+  9          fvs.segment_num,
+ 10          fvs.segment_name,
+ 11          fset.flex_value_set_name   AS category_name,
+ 12  
+ 13  --DESCRIPTION            
+ 14          fv.flex_value              AS cosif_account_unit,
+ 15          ptb.description            AS cosif_account_name_ptb,
+ 16          us.description             AS cosif_account_name_us,
+ 17  --VALIDITY    
+ 18          fv.enabled_flag            AS is_enabled,
+ 19          fv.start_date_active,
+ 20          fv.end_date_active,
+ 21  --PROPERTIES    
+ 22          fv.summary_flag            AS is_summary,
+ 23          substr(fv.compiled_value_attributes, 1, 1) AS is_budgeting_allowed,
+ 24          substr(fv.compiled_value_attributes, 3, 1) AS is_posting_allowed,
+ 25          substr(fv.compiled_value_attributes, 5, 1) AS account_type,
+ 26          substr(fv.compiled_value_attributes, 7, 1) AS is_third_party_control,
+ 27          substr(fv.compiled_value_attributes, 9, 1) AS is_reconcile,
+ 28          fv.attribute1,
+ 29  --LINEAGE 
+ 30          cast(greatest(
+ 31                  fv.last_update_date, 
+ 32                  fvs.last_update_date, 
+ 33                  fset.last_update_date, 
+ 34                  ptb.last_update_date,
+ 35                  us.last_update_date) as timestamp) AS last_update_date,
+ 36          fv.last_updated_by,
+ 37          cast(fv.creation_date as timestamp) AS creation_date,
+ 38          fv.created_by,
+ 39          fv.last_update_login
+ 40      FROM
+ 41          apps.fnd_flex_values_vl        fv
+ 42          JOIN applsys.fnd_id_flex_segments   fvs ON fv.flex_value_set_id = fvs.flex_value_set_id
+ 43          JOIN applsys.fnd_flex_values_tl     ptb ON ptb.flex_value_id = fv.flex_value_id
+ 44                                                 AND ptb.language = 'PTB'
+ 45          JOIN applsys.fnd_flex_values_tl     us ON us.flex_value_id = fv.flex_value_id
+ 46                                                AND us.language = 'US'
+ 47          JOIN applsys.fnd_flex_value_sets    fset ON fset.flex_value_set_id = fvs.flex_value_set_id
+ 48      WHERE
+ 49          fvs.application_id = 101
+ 50          AND fvs.id_flex_code = 'GL#'
+ 51          AND fvs.segment_num = 2
+ 52          AND fvs.id_flex_num = 50408 --(COSIF)
+ 53          ;
+
+View XXSTN.XXSTN_DTL_COSIF_ACCOUNT created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_COST_CENTER AS
+  2  --CENTROS DE CUSTO
+  3      SELECT
+  4  --IDENTIFICATION      
+  5          fv.flex_value_id           AS cost_center_id,
+  6  --RELATIONSHIP        
+  7          fvs.id_flex_num            AS chart_of_accounts_id,
+  8          fv.flex_value_set_id       AS segment_id,
+  9          fvs.segment_num,
+ 10          fvs.segment_name,
+ 11          fset.flex_value_set_name   AS category_name,
+ 12  --DESCRIPTION            
+ 13          fv.flex_value              AS cost_center,
+ 14          ptb.description            AS cost_center_name_ptb,
+ 15          us.description             AS cost_center_name_us,
+ 16  --VALIDITY    
+ 17          fv.enabled_flag            AS is_enabled,
+ 18          fv.start_date_active,
+ 19          fv.end_date_active,
+ 20  --PROPERTIES    
+ 21          fv.summary_flag            AS is_summary,
+ 22          substr(fv.compiled_value_attributes, 1, 1) AS is_budgeting_allowed,
+ 23          substr(fv.compiled_value_attributes, 3, 1) AS is_posting_allowed,
+ 24          fv.attribute1,
+ 25  --LINEAGE 
+ 26          cast(greatest(
+ 27                  fv.last_update_date, 
+ 28                  fvs.last_update_date, 
+ 29                  fset.last_update_date, 
+ 30                  ptb.last_update_date,
+ 31                  us.last_update_date) as timestamp) AS last_update_date,
+ 32          fv.last_updated_by,
+ 33          cast(fv.creation_date as timestamp) AS creation_date,
+ 34          fv.created_by,
+ 35          fv.last_update_login
+ 36      FROM
+ 37          apps.fnd_flex_values           fv
+ 38          JOIN applsys.fnd_id_flex_segments   fvs ON fv.flex_value_set_id = fvs.flex_value_set_id
+ 39          JOIN applsys.fnd_flex_values_tl     ptb ON ptb.flex_value_id = fv.flex_value_id
+ 40                                                 AND ptb.language = 'PTB'
+ 41          JOIN applsys.fnd_flex_values_tl     us ON us.flex_value_id = fv.flex_value_id
+ 42                                                AND us.language = 'US'
+ 43          JOIN applsys.fnd_flex_value_sets    fset ON fset.flex_value_set_id = fvs.flex_value_set_id
+ 44      WHERE
+ 45          fvs.application_id = 101
+ 46          AND fvs.id_flex_code = 'GL#'
+ 47          AND fvs.segment_num = 5
+ 48          AND fvs.id_flex_num <> 50408 --(NOT COSIF)
+ 49          ;
+
+View XXSTN.XXSTN_DTL_COST_CENTER created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_ESTABLISHMENT AS
+  2      SELECT 
+  3  --IDENTIFICATION   
+  4          stb.establishment_id,
+  5  --RELATIONSHIP        
+  6          stb.legal_entity_id, --headquarters
+  7          lep_reg.location_id            AS main_location_id,
+  8          stb_reg.location_id            AS location_id,
+  9          coalesce(stb.etb_information1, lep.le_information4) as ibge_code,
+ 10          coalesce(lep.le_information_context, 
+ 11                   stb.etb_information_context, 
+ 12                   lep_reg.reg_information_context, 
+ 13                   stb_reg.reg_information_context) AS country_code,      
+ 14          lep.le_information2 as currency_code,
+ 15  --VALIDITY
+ 16          p.status                       AS entity_status,        
+ 17  --PROPERTIES
+ 18          glev.flex_segment_value        AS company_code,
+ 19          fed_jur.registration_code_le as federal_tax_document,
+ 20          CASE WHEN coalesce(lep.le_information_context, 
+ 21                   stb.etb_information_context, 
+ 22                   lep_reg.reg_information_context, 
+ 23                   stb_reg.reg_information_context) = 'BR' 
+ 24              THEN
+ 25                   replace(replace(replace(lep_reg.registration_number,'.',''),'-',''),'/','')
+ 26              ELSE 
+ 27                   lep_reg.registration_number
+ 28          END                            AS main_registration_number,
+ 29          CASE WHEN coalesce(lep.le_information_context, 
+ 30                   stb.etb_information_context, 
+ 31                   lep_reg.reg_information_context, 
+ 32                   stb_reg.reg_information_context) = 'BR' 
+ 33              THEN
+ 34                   replace(replace(replace(stb_reg.registration_number,'.',''),'-',''),'/','')
+ 35              ELSE
+ 36                   stb_reg.registration_number   
+ 37          END                            AS registration_number,     
+ 38  
+ 39           state_jur_reg.registration_code_le AS state_tax_document,
+ 40           state_jur_reg.registration_number  AS state_registration,
+ 41           munic_jur_reg.registration_code_le AS municipal_tax_document,
+ 42           munic_jur_reg.registration_number  AS municipal_registration,
+ 43  --HEADQUARTERS / BRANCH OFFICE        
+ 44          stb.main_establishment_flag    AS is_main_establishment,
+ 45          CASE
+ 46              WHEN stb.main_establishment_flag = 'Y' THEN
+ 47                  coalesce(stb.main_effective_from, lep_reg.effective_from)
+ 48              ELSE
+ 49                  stb.main_effective_from
+ 50          END                            AS main_effective_from,
+ 51          CASE
+ 52              WHEN stb.main_establishment_flag = 'Y' THEN
+ 53                  coalesce(stb.main_effective_to, lep_reg.effective_to)
+ 54              ELSE
+ 55                  stb.main_effective_to 
+ 56          END                            AS main_effective_to,
+ 57          stb_reg.effective_from         AS effective_from,--    
+ 58          stb_reg.effective_to           AS effective_to,--           
+ 59  --DESCRIPTION        
+ 60          UPPER(lep_reg.registered_name) AS registered_name,
+ 61          UPPER(stb.name)                AS alternate_name,     
+ 62  --LINEAGE
+ 63          cast(greatest(stb.last_update_date, 
+ 64                    lep.last_update_date, 
+ 65                    stb_reg.last_update_date, 
+ 66                    lep_reg.last_update_date, 
+ 67                    fed_jur.last_update_date,
+ 68                    coalesce(state_jur_reg.last_update_date, stb.last_update_date),
+ 69                    coalesce(munic_jur_reg.last_update_date, stb.last_update_date),
+ 70                    glev.last_update_date,
+ 71                    p.last_update_date) as timestamp) AS last_update_date,
+ 72          stb.last_updated_by,        
+ 73          cast(stb.creation_date as timestamp) AS creation_date,
+ 74          stb.created_by,
+ 75          stb.last_update_login        
+ 76      FROM
+ 77          xle.xle_entity_profiles          lep
+ 78          JOIN xle.xle_etb_profiles        stb     ON lep.legal_entity_id = stb.legal_entity_id
+ 79          JOIN xle.xle_registrations       stb_reg ON stb.establishment_id = stb_reg.source_id
+ 80                                                      AND stb_reg.source_table = 'XLE_ETB_PROFILES'
+ 81                                                      AND stb_reg.identifying_flag = 'Y'
+ 82          JOIN xle.xle_jurisdictions_b fed_jur ON stb_reg.jurisdiction_id = fed_jur.jurisdiction_id
+ 83  
+ 84          JOIN xle.xle_registrations       lep_reg ON lep.legal_entity_id = lep_reg.source_id
+ 85                                                      AND lep_reg.source_table = 'XLE_ENTITY_PROFILES'
+ 86                                                      AND lep_reg.identifying_flag = 'Y'
+ 87  
+ 88          LEFT JOIN (SELECT DISTINCT state_reg.source_id AS establishment_id, 
+ 89                           state_jur.registration_code_le,
+ 90                           state_reg.registration_number,
+ 91                           state_jur.last_update_date
+ 92                  FROM xle.xle_jurisdictions_b state_jur 
+ 93                  JOIN xle.xle_registrations   state_reg ON state_reg.jurisdiction_id = state_jur.jurisdiction_id 
+ 94                                                           AND state_reg.source_table = 'XLE_ETB_PROFILES'
+ 95                                                           AND state_reg.identifying_flag = 'N'
+ 96                                                           AND state_jur.legislative_cat_code = 'INCOME_TAX'
+ 97                  ) state_jur_reg                  ON state_jur_reg.establishment_id = stb.establishment_id
+ 98  
+ 99          LEFT JOIN (SELECT DISTINCT munic_reg.source_id AS establishment_id, 
+100                           munic_jur.registration_code_le,
+101                           munic_reg.registration_number,
+102                           munic_jur.last_update_date
+103                  FROM xle.xle_jurisdictions_b munic_jur 
+104                  JOIN xle.xle_registrations   munic_reg ON munic_reg.jurisdiction_id = munic_jur.jurisdiction_id 
+105                                                           AND munic_reg.source_table = 'XLE_ETB_PROFILES'
+106                                                           AND munic_reg.identifying_flag = 'N'
+107                                                           AND munic_jur.legislative_cat_code = 'COMPANY_LAW'
+108                  ) munic_jur_reg                  ON munic_jur_reg.establishment_id = stb.establishment_id
+109  
+110          JOIN gl.gl_legal_entities_bsvs   glev    ON glev.legal_entity_id = lep.legal_entity_id
+111          JOIN ar.hz_parties             p       ON lep.party_id = p.party_id
+112                                                      AND p.party_type = 'ORGANIZATION'
+113      WHERE
+114          lep.transacting_entity_flag = 'Y'
+115  ;
+
+View XXSTN.XXSTN_DTL_ESTABLISHMENT created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_FUTURE AS
+  2  --FUTURO
+  3      SELECT
+  4  --IDENTIFICATION      
+  5          fv.flex_value_id           AS future_id,
+  6  --RELATIONSHIP        
+  7          fvs.id_flex_num            AS chart_of_accounts_id,
+  8          fv.flex_value_set_id       AS segment_id,
+  9          fvs.segment_num,
+ 10          fvs.segment_name,
+ 11          fset.flex_value_set_name   AS category_name,
+ 12  
+ 13  --DESCRIPTION            
+ 14          fv.flex_value              AS future_code,
+ 15          ptb.description            AS future_name_ptb,
+ 16          us.description             AS future_name_us,
+ 17  --VALIDITY    
+ 18          fv.enabled_flag            AS is_enabled,
+ 19          fv.start_date_active,
+ 20          fv.end_date_active,
+ 21  --PROPERTIES    
+ 22          fv.summary_flag            AS is_summary,
+ 23          substr(fv.compiled_value_attributes, 1, 1) AS is_budgeting_allowed,
+ 24          substr(fv.compiled_value_attributes, 3, 1) AS is_posting_allowed,
+ 25          fv.attribute1,
+ 26  --LINEAGE 
+ 27          cast(greatest(
+ 28                  fv.last_update_date, 
+ 29                  fvs.last_update_date, 
+ 30                  fset.last_update_date, 
+ 31                  ptb.last_update_date,
+ 32                  us.last_update_date) as timestamp) AS last_update_date,
+ 33          fv.last_updated_by,
+ 34          cast(fv.creation_date as timestamp) AS creation_date,
+ 35          fv.created_by,
+ 36          fv.last_update_login
+ 37      FROM
+ 38          apps.fnd_flex_values_vl        fv
+ 39          JOIN applsys.fnd_id_flex_segments   fvs ON fv.flex_value_set_id = fvs.flex_value_set_id
+ 40          JOIN applsys.fnd_flex_values_tl     ptb ON ptb.flex_value_id = fv.flex_value_id
+ 41                                                 AND ptb.language = 'PTB'
+ 42          JOIN applsys.fnd_flex_values_tl     us ON us.flex_value_id = fv.flex_value_id
+ 43                                                AND us.language = 'US'
+ 44          JOIN applsys.fnd_flex_value_sets    fset ON fset.flex_value_set_id = fvs.flex_value_set_id
+ 45      WHERE
+ 46          fvs.application_id = 101
+ 47          AND fvs.id_flex_code = 'GL#'
+ 48          AND fvs.segment_num = 8
+ 49          AND fvs.id_flex_num <> 50408 --(NOT COSIF)
+ 50          ;
+
+View XXSTN.XXSTN_DTL_FUTURE created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_INTERCOMPANY AS
+  2      SELECT 
+  3  --IDENTIFICATION      
+  4          fv.flex_value_id           AS intercompany_id,
+  5  --RELATIONSHIP        
+  6          fvs.id_flex_num            AS chart_of_accounts_id,
+  7          fv.flex_value_set_id       AS segment_id,
+  8          fvs.segment_num,
+  9          fvs.segment_name,
+ 10          fset.flex_value_set_name   AS category_name,
+ 11  
+ 12  --DESCRIPTION            
+ 13          fv.flex_value              AS intercompany_code,
+ 14          ptb.description            AS intercompany_name_ptb,
+ 15          us.description             AS intercompany_name_us,
+ 16  --VALIDITY    
+ 17          fv.enabled_flag            AS is_enabled,
+ 18          fv.start_date_active,
+ 19          fv.end_date_active,
+ 20  --PROPERTIES    
+ 21          fv.summary_flag            AS is_summary,
+ 22          substr(fv.compiled_value_attributes, 1, 1) AS is_budgeting_allowed,
+ 23          substr(fv.compiled_value_attributes, 3, 1) AS is_posting_allowed,
+ 24          fv.attribute1,
+ 25  --LINEAGE 
+ 26          cast(greatest(
+ 27                  fv.last_update_date, 
+ 28                  fvs.last_update_date, 
+ 29                  fset.last_update_date, 
+ 30                  ptb.last_update_date,
+ 31                  us.last_update_date) as timestamp) AS last_update_date,
+ 32          fv.last_updated_by,
+ 33          cast(fv.creation_date as timestamp) AS creation_date,
+ 34          fv.created_by,
+ 35          fv.last_update_login
+ 36      FROM
+ 37          apps.fnd_flex_values_vl        fv
+ 38          JOIN applsys.fnd_id_flex_segments   fvs ON fv.flex_value_set_id = fvs.flex_value_set_id
+ 39          JOIN applsys.fnd_flex_values_tl     ptb ON ptb.flex_value_id = fv.flex_value_id
+ 40                                                 AND ptb.language = 'PTB'
+ 41          JOIN applsys.fnd_flex_values_tl     us ON us.flex_value_id = fv.flex_value_id
+ 42                                                AND us.language = 'US'
+ 43          JOIN applsys.fnd_flex_value_sets    fset ON fset.flex_value_set_id = fvs.flex_value_set_id
+ 44      WHERE
+ 45          fvs.application_id = 101
+ 46          AND fvs.id_flex_code = 'GL#'
+ 47          AND ( ( fvs.segment_num = 6
+ 48                  AND fvs.id_flex_num <> 50408 ) --(NOT COSIF)
+ 49                OR ( fvs.segment_num = 4
+ 50                     AND fvs.id_flex_num = 50408 ) ) --(COSIF)
+ 51                     ;
+
+View XXSTN.XXSTN_DTL_INTERCOMPANY created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_JOURNAL_BATCH AS
+  2      SELECT
+  3  --IDENTIFICATION
+  4          b.je_batch_id            AS batch_id,
+  5  --RELATIONSHIPS    
+  6          b.chart_of_accounts_id,    
+  7  --MAIN PROPERTIES						       
+  8  		b.default_period_name,		
+  9  		cast(b.date_created as timestamp) AS date_created,
+ 10  		cast(b.posted_date as timestamp) AS posted_date,
+ 11          b.default_effective_date, 
+ 12  		cast(b.earliest_postable_date as timestamp) AS earliest_postable_date,		
+ 13  		b.accounted_period_type,		
+ 14  		b.period_set_name        AS period_calendar,        
+ 15  --VALIDITY
+ 16          b.status,
+ 17          b.status_verified,
+ 18          b.actual_flag            AS balance_type,      
+ 19  --DESCRIPTION
+ 20          b.name                   AS batch_name,
+ 21          b.description            AS batch_description,
+ 22  --ADDITIONAL PROPERTIES     
+ 23          b.average_journal_flag   AS is_average_journal,
+ 24          b.budgetary_control_status,
+ 25          b.parent_je_batch_id     AS parent_batch_id,
+ 26  --SECURITY AND APPROVAL    
+ 27          b.approval_status_code,
+ 28          b.posting_run_id,
+ 29          b.request_id,
+ 30          b.org_id,
+ 31          b.posted_by,
+ 32          b.group_id,
+ 33          b.approver_employee_id,
+ 34  --LINEAGE        
+ 35          cast(b.last_update_date as timestamp) AS last_update_date,
+ 36          b.last_updated_by,
+ 37          cast(b.creation_date as timestamp) AS creation_date,
+ 38          b.created_by,        
+ 39          b.last_update_login
+ 40      FROM
+ 41          gl.gl_je_batches b
+ 42      ;
+
+View XXSTN.XXSTN_DTL_JOURNAL_BATCH created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_JOURNAL_HEADER AS
+  2      SELECT 
+  3  --IDENTIFICATION
+  4          h.je_header_id                   AS header_id,
+  5  --RELATIONSHIPS
+  6          h.ledger_id                      AS accounting_book_id,
+  7          h.je_batch_id                    AS batch_id,
+  8          h.period_name,
+  9  --MAIN PROPERTIES
+ 10          h.status,
+ 11          h.currency_code,		
+ 12  		cast(h.date_created as timestamp) AS date_created,
+ 13  		cast(h.posted_date as timestamp) AS posted_date,        
+ 14  		h.default_effective_date,
+ 15          cast(h.earliest_postable_date as timestamp) AS earliest_postable_date,		
+ 16  --DESCRIPTION      
+ 17          h.je_category                    AS category,
+ 18          h.je_source                      AS source,
+ 19          h.name                           AS header_name,
+ 20          h.description                    AS header_description,    
+ 21  --ADDITIONAL PROPERTIES        
+ 22          h.accrual_rev_flag               AS is_accrual_rev,
+ 23          h.multi_bal_seg_flag             AS is_multi_bal_seg,
+ 24          h.actual_flag                    AS balance_type,
+ 25          h.tax_status_code,
+ 26          h.conversion_flag                AS is_conversion,
+ 27          h.balanced_je_flag               AS is_balanced,
+ 28          h.balancing_segment_value        AS balancing_company,
+ 29          h.accrual_rev_period_name,
+ 30          h.accrual_rev_status,
+ 31          h.accrual_rev_je_header_id       AS accrual_rev_header_id,
+ 32          h.accrual_rev_change_sign_flag   AS is_accrual_rev_change_sign,        
+ 33          h.parent_je_header_id            AS parent_header_id,
+ 34          h.reversed_je_header_id          AS reversed_header_id,
+ 35          h.je_from_sla_flag               AS is_from_sla,
+ 36  --LINEAGE     
+ 37          cast(h.last_update_date as timestamp) AS last_update_date,
+ 38          h.last_updated_by,
+ 39          cast(h.creation_date as timestamp) AS creation_date,
+ 40          h.created_by,        
+ 41  		h.last_update_login
+ 42      FROM
+ 43          gl.gl_je_headers h
+ 44          ;
+
+View XXSTN.XXSTN_DTL_JOURNAL_HEADER created.
+
+SQL> 
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_JOURNAL_LINES AS
+  2      SELECT 
+  3  --IDENTIFICATION
+  4          cast(ln.je_header_id || lpad(ln.je_line_num, 6, '0') as number(15,0)) AS line_id,
+  5          ln.je_header_id          AS header_id,
+  6          ln.je_line_num           AS line_num,
+  7  --RELATIONSHIPS    
+  8          ln.ledger_id             AS accounting_book_id,
+  9          ln.code_combination_id   AS accounting_reference_id,
+ 10          ln.period_name,
+ 11  --MAIN PROPERTIES
+ 12          ln.effective_date,
+ 13          ln.status,
+ 14  --ENTRY VALUES
+ 15          ln.entered_dr,
+ 16          ln.entered_cr,
+ 17          ln.accounted_dr,
+ 18          ln.accounted_cr,
+ 19  --DESCRIPTION  
+ 20          ln.description           AS line_description,
+ 21          ln.line_type_code,
+ 22  --ADDITIONAL PROPERTIES
+ 23          ln.reference_1,
+ 24          ln.reference_2,
+ 25          ln.reference_3,
+ 26          ln.reference_4,
+ 27          ln.reference_5,
+ 28          ln.reference_6,
+ 29          ln.reference_7,
+ 30          ln.reference_8,
+ 31          ln.reference_9,
+ 32          ln.reference_10,
+ 33          ln.context2,
+ 34          ln.no1,
+ 35          ln.ignore_rate_flag      AS ignore_rate,
+ 36  --LINEAGE 
+ 37          cast(ln.last_update_date as timestamp) AS last_update_date,
+ 38          ln.last_updated_by,
+ 39          cast(ln.creation_date as timestamp) AS creation_date,
+ 40          ln.created_by,
+ 41          ln.last_update_login
+ 42      FROM
+ 43          gl.gl_je_lines ln    
+ 44      ;
+
+View XXSTN.XXSTN_DTL_JOURNAL_LINES created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_LEGAL_ENTITY AS
+  2      SELECT 
+  3  --IDENTIFICATION         
+  4          lep.legal_entity_id, --headquarters
+  5  --RELATIONSHIP        
+  6          stb.establishment_id          AS main_establishment_id,
+  7          lep_reg.location_id           AS main_location_id,    
+  8          coalesce(lep.le_information4, stb.etb_information1) as ibge_code,        
+  9          coalesce(lep.le_information_context, 
+ 10                   stb.etb_information_context, 
+ 11                   lep_reg.reg_information_context, 
+ 12                   stb_reg.reg_information_context) AS country_code,       
+ 13          lep.le_information2 as currency_code,
+ 14  --VALIDITY
+ 15          p.status                      AS entity_status,
+ 16  --PROPERTIES
+ 17          glev.flex_segment_value       AS company_code,
+ 18          fed_jur.registration_code_le as federal_tax_document,
+ 19          CASE WHEN coalesce(lep.le_information_context, 
+ 20                   stb.etb_information_context, 
+ 21                   lep_reg.reg_information_context, 
+ 22                   stb_reg.reg_information_context) = 'BR' 
+ 23              THEN
+ 24                   replace(replace(replace(lep_reg.registration_number,'.',''),'-',''),'/','')
+ 25              ELSE 
+ 26                   lep_reg.registration_number
+ 27          END                           AS main_registration_number,     
+ 28  --DESCRIPTION
+ 29          UPPER(lep_reg.registered_name) AS registered_name,
+ 30          UPPER(stb.name)                AS alternate_name,   
+ 31  --LINEAGE        
+ 32          cast(greatest(lep.last_update_date,
+ 33                   stb.last_update_date,
+ 34                   stb_reg.last_update_date,
+ 35                   lep_reg.last_update_date,
+ 36                   fed_jur.last_update_date,
+ 37                   glev.last_update_date,
+ 38                   p.last_update_date) as timestamp) AS last_update_date,
+ 39          stb.last_updated_by,        
+ 40          cast(lep.creation_date as timestamp) AS creation_date,
+ 41          stb.created_by,
+ 42          stb.last_update_login
+ 43      FROM
+ 44          xle.xle_entity_profiles          lep
+ 45          JOIN xle.xle_etb_profiles        stb     ON lep.legal_entity_id = stb.legal_entity_id
+ 46          JOIN xle.xle_registrations       stb_reg ON stb.establishment_id = stb_reg.source_id
+ 47                                                      AND stb_reg.source_table = 'XLE_ETB_PROFILES'
+ 48                                                      AND stb_reg.identifying_flag = 'Y'
+ 49          JOIN xle.xle_jurisdictions_b fed_jur ON stb_reg.jurisdiction_id = fed_jur.jurisdiction_id                                                    
+ 50          JOIN xle.xle_registrations       lep_reg ON lep.legal_entity_id = lep_reg.source_id
+ 51                                                      AND lep_reg.source_table = 'XLE_ENTITY_PROFILES'
+ 52                                                      AND lep_reg.identifying_flag = 'Y'
+ 53          JOIN gl.gl_legal_entities_bsvs   glev    ON glev.legal_entity_id = lep.legal_entity_id
+ 54          JOIN ar.hz_parties               p       ON lep.party_id = p.party_id
+ 55                                                      AND p.party_type = 'ORGANIZATION'
+ 56      WHERE
+ 57          lep.transacting_entity_flag = 'Y'        
+ 58          AND stb.main_establishment_flag = 'Y'
+ 59          AND lep_reg.registration_number = stb_reg.registration_number --HEADQUARTERS    
+ 60  ;
+
+View XXSTN.XXSTN_DTL_LEGAL_ENTITY created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_LOCATION AS
+  2      SELECT 
+  3  --IDENTIFICATION      
+  4          loc.location_id,
+  5  --DESCRIPTION
+  6          loc.location_code,
+  7  --PROPERTIES         
+  8          ter.territory_code         AS country_code, --Country or Kingdom. 
+  9          ter.iso_territory_code,
+ 10          ptb.territory_short_name   AS territory_name_ptb,
+ 11          us.territory_short_name    AS territory_name_us,
+ 12          loc.region_2               AS state_region, --State, Region or Province.
+ 13          loc.town_or_city           AS city_town, --City, Town or District name.
+ 14          upper(rtrim(loc.address_line_1, ',')) AS street_address, --Street address, P.O. box, company name, c/o.
+ 15          upper(rtrim(nullif(loc.address_line_2, '0'), ',')) AS street_number, --Street number.
+ 16          upper(rtrim(loc.address_line_3, ','))              AS address_line2, --Apartment, suite, unit, building, floor, etc.
+ 17          upper(rtrim(loc.region_1, ','))                    AS neighborhood, --Neighbourhood, Village or Area.
+ 18          loc.postal_code, --Postal Code
+ 19  --LINEAGE          
+ 20          cast(greatest(loc.last_update_date, 
+ 21                    ter.last_update_date, 
+ 22                    ptb.last_update_date, 
+ 23                    us.last_update_date) as timestamp) AS last_update_date,
+ 24          loc.last_updated_by,        
+ 25          cast(loc.creation_date as timestamp) AS creation_date,
+ 26          loc.created_by,
+ 27          loc.last_update_login
+ 28      FROM
+ 29          hr.hr_locations_all               loc
+ 30          JOIN applsys.fnd_territories      ter ON loc.country = ter.territory_code
+ 31          JOIN applsys.fnd_territories_tl   ptb ON ter.territory_code = ptb.territory_code
+ 32                                                  AND ptb.language = 'PTB'
+ 33          JOIN applsys.fnd_territories_tl   us ON ter.territory_code = us.territory_code
+ 34                                                  AND us.language = 'US'
+ 35      WHERE
+ 36          EXISTS (SELECT * FROM xle.xle_registrations reg
+ 37                  WHERE reg.location_id = loc.location_id
+ 38                      AND reg.source_table IN ('XLE_ETB_PROFILES', 'XLE_ENTITY_PROFILES')
+ 39                      AND reg.identifying_flag = 'Y')
+ 40  ;
+
+View XXSTN.XXSTN_DTL_LOCATION created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_ORGANIZATION_UNIT AS
+  2      SELECT 
+  3  --IDENTIFICATION          
+  4          o.organization_id,  
+  5  --RELATIONSHIP           
+  6          o.location_id,
+  7          o3.org_information3   AS accounting_book_id,
+  8          o3.org_information2   AS legal_entity_id,
+  9          ref.segment1          AS company_code,
+ 10  --DESCRIPTION           
+ 11          ptb.name              AS organization_name_ptb,
+ 12          us.name               AS organization_name_us,
+ 13  --PROPERTIES 
+ 14          o3.org_information5   AS organization_code,
+ 15  --VALIDITY            
+ 16          o.date_from,
+ 17          o.date_to,
+ 18  --LINEAGE         
+ 19          cast(greatest(o.last_update_date, 
+ 20                   o2.last_update_date, 
+ 21                   o3.last_update_date, 
+ 22                   ptb.last_update_date, 
+ 23                   us.last_update_date,
+ 24                   nvl(fin.last_update_date, o.last_update_date), 
+ 25                   nvl(ref.last_update_date, o.last_update_date)) as timestamp) AS last_update_date,
+ 26          o.last_updated_by,        
+ 27          cast(o.creation_date as timestamp) AS creation_date,
+ 28          o.created_by,
+ 29          o.last_update_login
+ 30      FROM
+ 31          hr.hr_all_organization_units        o
+ 32          JOIN hr.hr_all_organization_units_tl        ptb ON o.organization_id = ptb.organization_id
+ 33                                                             AND ptb.language = 'PTB'
+ 34          JOIN hr.hr_all_organization_units_tl        us  ON o.organization_id = us.organization_id
+ 35                                                             AND us.language = 'US'
+ 36          JOIN hr.hr_organization_information         o2  ON o.organization_id = o2.organization_id
+ 37          JOIN hr.hr_organization_information         o3  ON o.organization_id = o3.organization_id
+ 38          LEFT JOIN apps.financials_system_params_all fin ON o.organization_id = fin.org_id
+ 39          LEFT JOIN apps.gl_code_combinations         ref ON ref.code_combination_id = fin.accts_pay_code_combination_id
+ 40      WHERE
+ 41          o2.org_information_context || '' = 'CLASS'        
+ 42          AND o2.org_information1 = 'OPERATING_UNIT'
+ 43          AND o2.org_information2 = 'Y' --Is legal Entity        
+ 44          AND o3.org_information_context = 'Operating Unit Information'
+ 45          ;
+
+View XXSTN.XXSTN_DTL_ORGANIZATION_UNIT created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_PERIOD_TYPE AS
+  2      SELECT 
+  3      --IDENTIFICATION   
+  4          pt.period_type_id,
+  5          pt.period_type,
+  6  --DESCRIPTION               
+  7          pt.user_period_type                           AS period_type_name,
+  8          coalesce(pt.description, pt.user_period_type) AS period_type_description,
+  9  --PROPERTIES
+ 10          pt.number_per_fiscal_year,
+ 11          pt.year_type_in_name,
+ 12  --LINEAGE         
+ 13          cast(pt.last_update_date as timestamp) AS last_update_date,
+ 14          pt.last_updated_by,
+ 15          cast(pt.creation_date as timestamp) AS creation_date,
+ 16          pt.created_by,
+ 17          pt.last_update_login
+ 18      FROM
+ 19          gl.gl_period_types pt
+ 20      ;
+
+View XXSTN.XXSTN_DTL_PERIOD_TYPE created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_PRODUCT AS
+  2      SELECT
+  3  --IDENTIFICATION      
+  4          fv.flex_value_id           AS product_id,
+  5  --RELATIONSHIP  
+  6          fvs.id_flex_num            AS chart_of_accounts_id,
+  7          fv.flex_value_set_id       AS segment_id,
+  8          fvs.segment_num,
+  9          fvs.segment_name,
+ 10          fset.flex_value_set_name   AS category_name,
+ 11  --DESCRIPTION            
+ 12          fv.flex_value              AS product_code,
+ 13          ptb.description            product_name_ptb,
+ 14          us.description             product_name_us,
+ 15  --VALIDITY    
+ 16          fv.enabled_flag            AS is_enabled,
+ 17          fv.start_date_active,
+ 18          fv.end_date_active,
+ 19  --PROPERTIES    
+ 20          fv.summary_flag            AS is_summary,
+ 21          substr(fv.compiled_value_attributes, 1, 1) AS is_budgeting_allowed,
+ 22          substr(fv.compiled_value_attributes, 3, 1) AS is_posting_allowed,
+ 23          fv.attribute1,
+ 24  --LINEAGE 
+ 25          cast(greatest(
+ 26                  fv.last_update_date, 
+ 27                  fvs.last_update_date, 
+ 28                  fset.last_update_date, 
+ 29                  ptb.last_update_date,
+ 30                  us.last_update_date) as timestamp) AS last_update_date,
+ 31          fv.last_updated_by,
+ 32          cast(fv.creation_date as timestamp) AS creation_date,
+ 33          fv.created_by,
+ 34          fv.last_update_login
+ 35      FROM
+ 36          apps.fnd_flex_values_vl        fv
+ 37          JOIN applsys.fnd_id_flex_segments   fvs ON fv.flex_value_set_id = fvs.flex_value_set_id
+ 38          JOIN applsys.fnd_flex_values_tl     ptb ON ptb.flex_value_id = fv.flex_value_id
+ 39                                                 AND ptb.language = 'PTB'
+ 40          JOIN applsys.fnd_flex_values_tl     us ON us.flex_value_id = fv.flex_value_id
+ 41                                                AND us.language = 'US'
+ 42          JOIN applsys.fnd_flex_value_sets    fset ON fset.flex_value_set_id = fvs.flex_value_set_id
+ 43      WHERE
+ 44          fvs.application_id = 101
+ 45          AND fvs.id_flex_code = 'GL#'
+ 46          AND fvs.segment_num = 3
+ 47          AND fvs.id_flex_num <> 50408 --(NOT COSIF)
+ 48          ;
+
+View XXSTN.XXSTN_DTL_PRODUCT created.
+
+SQL> ----------------------------------------------------------------------------------------------------
+SQL> CREATE OR REPLACE VIEW XXSTN.XXSTN_DTL_SEGMENT_CATEGORY AS
+  2  --CATEGORIA CONTABIL
+  3      SELECT        
+  4  --IDENTIFICATION          
+  5          fvs.flex_value_set_id           AS segment_id,
+  6  --DESCRIPTION 
+  7          fvs.flex_value_set_name         AS category_name,
+  8          fvs.description                 AS category_description,
+  9  --PROPERTIES         
+ 10          fvs.protected_flag              AS is_protected,
+ 11          fvs.security_enabled_flag       AS is_security_enabled,
+ 12          fvs.format_type,        
+ 13          fvs.maximum_size,
+ 14          fvs.alphanumeric_allowed_flag   AS is_alphanumeric_allowed,
+ 15          fvs.uppercase_only_flag         AS is_uppercase_only,
+ 16          fvs.numeric_mode_enabled_flag   AS is_numeric_mode_enabled,
+ 17          fvs.minimum_value,
+ 18          fvs.maximum_value,
+ 19          fvs.number_precision,
+ 20  --LINEAGE   
+ 21          cast(fvs.last_update_date as timestamp) AS last_update_date,
+ 22          fvs.last_updated_by,
+ 23          cast(fvs.creation_date as timestamp) AS creation_date,
+ 24          fvs.created_by,
+ 25          fvs.last_update_login
+ 26      FROM
+ 27          applsys.fnd_flex_value_sets fvs
+ 28      WHERE
+ 29          EXISTS (
+ 30              SELECT
+ 31                  *
+ 32              FROM
+ 33                  applsys.fnd_id_flex_segments fsg
+ 34              WHERE
+ 35                  fsg.application_id = 101 --GL Application
+ 36                  AND fsg.id_flex_code = 'GL#' --GL Module
+ 37                  AND fsg.flex_value_set_id = fvs.flex_value_set_id
+ 38          );
+
+View XXSTN.XXSTN_DTL_SEGMENT_CATEGORY created.
+
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------

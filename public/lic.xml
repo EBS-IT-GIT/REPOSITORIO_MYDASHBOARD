@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<licenca data_emissao="30/10/2017">
+    <validador senha="F7CEYW0ZGXMXNU" />
+    <contratante cnpj="09.391.823/0001-60">
+        <empresa cnpj="09.068.805/0001-41" razao_social="MADEIRA ENERGIA S/A - MESA" cod_empresa="141" >
+            <modulo nome="DIPJ"/>
+            <modulo nome="ATIVO PERMANENTE"/>
+            <modulo nome="MEIO MAGNETICO"/>
+            <modulo nome="CONTROLE OBRIG ESTADUAIS"/>
+            <modulo nome="EIRPJ"/>
+            <modulo nome="ISS"/>
+            <modulo nome="CONTROLE MERC REM RET"/>
+            <modulo nome="EFD-REINF"/>
+            <modulo nome="GIM PORTO VELHO"/>
+            <modulo nome="DW"/>
+            <modulo nome="OBRIG TRIBUTOS FEDERAIS"/>
+            <modulo nome="INTEGRADOR ONESOURCE ECF"/>
+            <modulo nome="REPORT FISCAL"/>
+            <modulo nome="SPED PIS COFINS"/>
+            <modulo nome="GIAM RO"/>
+            <modulo nome="GIA SP"/>
+            <modulo nome="SPED FISCAL"/>
+            <modulo nome="DES SP"/>
+            <modulo nome="CONTROLE OBRIG FEDERAIS"/>
+            <modulo nome="OBRIG ACESSORIAS"/>
+            <modulo nome="PORTARIA 63"/>
+            <modulo nome="REGIME ESPECIAL"/>
+            <modulo nome="IPI"/>
+            <modulo nome="FERRAMENTAS"/>
+            <modulo nome="ICMS"/>
+            <modulo nome="PARAMETROS"/>
+            <modulo nome="MUN PORTO VELHO"/>
+            <modulo nome="OBRIG AIDF"/>
+            <modulo nome="JOB SERVIDOR"/>
+            <modulo nome="PARAMETROS MUNICIPAL"/>
+            <modulo nome="SPED CONTABIL"/>
+            <modulo nome="IN86"/>
+            <modulo nome="CONTROLE OBRIG MUNICIPAIS"/>
+            <modulo nome="LANCAMENTOS AUTOM IPI"/>
+        </empresa>
+        <empresa cnpj="09.391.823/0001-60" razao_social="SANTO ANTONIO ENERGIA S.A." cod_empresa="140" >
+            <modulo nome="DIPJ"/>
+            <modulo nome="ATIVO PERMANENTE"/>
+            <modulo nome="MEIO MAGNETICO"/>
+            <modulo nome="CONTROLE OBRIG ESTADUAIS"/>
+            <modulo nome="EIRPJ"/>
+            <modulo nome="ISS"/>
+            <modulo nome="CONTROLE MERC REM RET"/>
+            <modulo nome="EFD-REINF"/>
+            <modulo nome="GIM PORTO VELHO"/>
+            <modulo nome="DW"/>
+            <modulo nome="OBRIG TRIBUTOS FEDERAIS"/>
+            <modulo nome="INTEGRADOR ONESOURCE ECF"/>
+            <modulo nome="REPORT FISCAL"/>
+            <modulo nome="SPED PIS COFINS"/>
+            <modulo nome="GIAM RO"/>
+            <modulo nome="GIA SP"/>
+            <modulo nome="SPED FISCAL"/>
+            <modulo nome="DES SP"/>
+            <modulo nome="CONTROLE OBRIG FEDERAIS"/>
+            <modulo nome="OBRIG ACESSORIAS"/>
+            <modulo nome="PORTARIA 63"/>
+            <modulo nome="REGIME ESPECIAL"/>
+            <modulo nome="IPI"/>
+            <modulo nome="FERRAMENTAS"/>
+            <modulo nome="ICMS"/>
+            <modulo nome="PARAMETROS"/>
+            <modulo nome="MUN PORTO VELHO"/>
+            <modulo nome="OBRIG AIDF"/>
+            <modulo nome="JOB SERVIDOR"/>
+            <modulo nome="PARAMETROS MUNICIPAL"/>
+            <modulo nome="SPED CONTABIL"/>
+            <modulo nome="IN86"/>
+            <modulo nome="CONTROLE OBRIG MUNICIPAIS"/>
+            <modulo nome="LANCAMENTOS AUTOM IPI"/>
+        </empresa>
+    </contratante>
+</licenca>

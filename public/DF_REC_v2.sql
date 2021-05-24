@@ -1,0 +1,7 @@
+update ar_cash_receipts_all
+set receipt_number = '1'||receipt_number
+where cash_receipt_id IN (9374865,9374866,9374867,9374868,9374869,9374870,9374871,9374872,9374873,9374874,9374875,9374876,9374877,9374878,9374879);
+--15 Rows
+/
+
+EXIT

@@ -1,0 +1,50 @@
+##Janela de downtime 09:00 as 11:00 da manhã
+--1 Baixar EBS 
+
+--2 Executar autoconfig
+
+--3 Validar versão do AD se está na C.11 
+
+SQL> select  ABBREVIATION, NAME, codelevel FROM AD_TRACKABLE_ENTITIES where abbreviation in ('txk','ad');
+
+--4 Verificar objetos invalidos
+
+--5 APLICAR com EBS Fora
+
+$ adop phase=apply apply_mode=downtime patches=28213332,28213294 merge=yes wait_on_failed_job=yes workers=16 < senhas.txt
+$ adop phase=apply apply_mode=downtime patches=28213294_ESA:u28213294.drv,28213294_PTB:u28213294.drv,28213332_ESA:u28213332.drv,28213332_PTB:u28213332.drv wait_on_failed_job=yes workers=16 < senhas.txt
+
+#######
+--6 Subir o ambiente
+
+--7 Aplicar o restante dos patches do CLL core em Hotpatch
+
+$ adop phase=apply patches=30463910,30485155,30604347,30604018,30396769,30463904 wait_on_failed_job=yes workers=16  hotpatch=yes < senhas.txt
+$ adop phase=apply patches=30396769_PTB:u30396769.drv,30463904_PTB:u30463904.drv,30604018_PTB:u30604018.drv,30604347_PTB:u30604347.drv,30396769_ESA:u30396769.drv,30463904_ESA:u30463904.drv,30604018_ESA:u30604018.drv,30604347_ESA:u30604347.drv wait_on_failed_job=yes workers=16  hotpatch=yes < senhas.txt
+$ adop phase=apply patches=30604057,30674696,30674696_PTB:u30674696.drv,30674696_ESA:u30674696.drv wait_on_failed_job=yes workers=16  hotpatch=yes < senhas.txt
+$ adop phase=apply patches=28538466,28538466_ESA:u28538466.drv,28538466_PTB:u28538466.drv,17633017,26850511,26850511_ESA:u26850511.drv,26850511_PTB:u26850511.drv wait_on_failed_job=yes workers=16  hotpatch=yes < senhas.txt
+$ adop phase=apply patches=30249576,30249576_PTB:u30249576.drv,30985341,30985341_ESA:u30985341.drv,30985341_PTB:u30985341.drv wait_on_failed_job=yes workers=16  hotpatch=yes < senhas.txt
+
+
+--8 Aplicar os patches Custom em Hotpatch e verificar o Readme pois tem um shell scritp para executar, os docs não precisa 
+
+$ adop phase=apply patches=991201524 wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201524_PTB:u991201524.drv wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201525 wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201525_PTB:u991201525.drv wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201526 wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201526_PTB:u991201526.drv wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201527 wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201527_PTB:u991201527.drv wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201528 wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201528_PTB:u991201528.drv wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201529 wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+$ adop phase=apply patches=991201529_PTB:u991201529.drv wait_on_failed_job=yes workers=16 flags=autoskip hotpatch=yes < senhas.txt
+
+--4 Verificar objetos invalidos
+
+--5 Aplicar patch custom do chamado 118877
+
+--6 Se der tempo aplicar o patch do mobile 
+
+$ adop phase=apply patches=26733910,27678444,28278350,29994519 wait_on_failed_job=yes workers=16 hotpatch=yes < senhas.txt

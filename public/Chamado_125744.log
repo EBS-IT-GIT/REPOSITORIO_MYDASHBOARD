@@ -1,0 +1,37 @@
+SQL> set serveroutput on;
+SQL> alter session set current_schema=JL;
+
+Session alterado.
+
+SQL> alter session set nls_language='LATIN AMERICAN SPANISH';
+
+Session alterado.
+
+SQL> select name from v$database;
+
+NAME     
+---------
+PADAGI
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --DF  en el origen = NOTA DE CREDITO A 0037 CHIVILCOY y que el ultimo usado sea  el numero 366
+SQL> /* desde JL */
+SQL> 
+SQL> RENAME JL_ZZ_TRX_NUM_10452_2235_S  TO  JL_ZZ_TRX_NUM_10452_2235_S_X_2; 
+
+Sequence renomeado.
+
+SQL> 
+SQL> CREATE SEQUENCE  JL_ZZ_TRX_NUM_10452_2235_S
+  2    START WITH 367
+  3    MAXVALUE 99999999999999999999
+  4    MINVALUE 1
+  5    NOCYCLE
+  6    NOCACHE
+  7    NOORDER;
+
+Sequence JL_ZZ_TRX_NUM_10452_2235_S criado.
+
+

@@ -1,0 +1,1 @@
+update apps.hz_parties set status = 'A', last_updated_by = 2070, last_update_date = sysdate where party_id = 11028818;

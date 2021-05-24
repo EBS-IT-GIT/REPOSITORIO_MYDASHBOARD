@@ -1,0 +1,65 @@
+INSERT INTO jl.JL_AR_AP_AWT_CERTIF_ALL (CERTIFICATE_ID,
+                                     CERTIFICATE_NUMBER,
+                                     AWT_TYPE_CODE,
+                                     LOCATION_ID,
+                                     AWT_DATE,
+                                     VENDOR_ID,
+                                     WITHHOLDING_AMOUNT,
+                                     CREDIT_AMOUNT,
+                                     STATUS,
+                                     CREATED_BY,
+                                     CREATION_DATE,
+                                     LAST_UPDATED_BY,
+                                     LAST_UPDATE_DATE,
+                                     CHECKRUN_ID,
+                                     ORG_ID,
+                                     LAST_UPDATE_LOGIN,
+                                     REQUEST_ID,
+                                     PROGRAM_APPLICATION_ID,
+                                     PROGRAM_ID,
+                                     PROGRAM_UPDATE_DATE,
+                                     BANK_ACCOUNT_NUM,
+                                     CHECKRUN_NAME,
+                                     CHECK_NUMBER,
+                                     PAYMENT_DOCUMENT_NAME,
+                                     TAX_NAME,
+                                     TAXABLE_BASE_AMOUNT,
+                                     LEGAL_ENTITY_ID,
+                                     PAYMENT_INSTRUCTION_ID)
+     VALUES (jl_ar_ap_awt_certif_s.nextval,
+             (SELECT jaaac1.certificate_number + 1
+              FROM JL_AR_AP_AWT_CERTIF_ALL jaaac1
+              WHERE jaaac1.awt_type_code = 'RIIBB_BA'
+              AND jaaac1.org_id = 1357
+              AND jaaac1.certificate_number = (SELECT MAX (jaaac2.certificate_number)
+                                               FROM JL_AR_AP_AWT_CERTIF_ALL jaaac2
+                                               WHERE jaaac2.awt_type_code = 'RIIBB_BA'
+                                               AND jaaac2.org_id = 1357)),
+             'RIIBB_BA',
+             142385, --Location_id 
+             TO_DATE ('03/16/2020', 'MM/DD/YYYY'),
+             10314, -- Vendor_id 
+             -6643.09, -- Withholding_amount
+             0, -- Credit_amount
+             'PRINTED', --Status
+             -1,
+             sysdate,
+             -1,
+             sysdate,
+             901546, --checkrun_id
+             1357, -- Org_id
+             -1,
+             -1,
+             -1,
+             -1,
+             TO_DATE ('03/16/2020 17:04:21', 'MM/DD/YYYY HH24:MI:SS'),
+             '000159073411', --Account_number
+             'ipmt.call_app_pay_service_req_code',
+             300000000271, --check_number
+             '300000000271', --payment_document_name
+             'RBA_BYS_1.20', --Tax_Name
+             553590.6, --Taxable_Base_Amount
+             1356, --Legal_Entity_id
+             901546)
+             
+ 1 row inserted

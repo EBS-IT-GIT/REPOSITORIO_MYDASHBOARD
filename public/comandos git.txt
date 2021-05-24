@@ -1,0 +1,24 @@
+git init - inicia o git no diretorio atual
+
+git status - verifica todos os arquivos q ainda não foram salvos/versionados
+
+fit add index.php - indica o arquivo para ser adicionado no proximo commit
+
+git commit -m "adicionado um novo arquivo" - cria um ponto na historia
+
+git log - vai monstrar as informações dos commits ja feitos
+
+touch .gitignore -  todo arquivo q vc colocar dentro ele, ele não rastreia/versiona o arquivo
+
+git checkout 309ffbdbd540ef08b45bc5bccf188fa5a3add447 - volta ao ponto de bkp
+
+git checkout master - volta ao ultimo commit feito
+
+git branch feature/nfe - cria uma ramificação
+
+git branch - mostra os ramos
+
+git merge + nome do ramo - in
+
+git clone + url + pasta destino
+Eb$it@2018@!@

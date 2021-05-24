@@ -1,0 +1,49 @@
+DECLARE
+
+l_fecha_fin DATE := '02-07-2020';
+l_fecha_inicio DATE:= '03-07-2020';
+l_monto NUMBER :=146885;
+l_count NUMBER;
+
+CURSOR actividades IS 
+SELECT *
+FROM   bolinf.xx_ar_fce_actividades
+WHERE  end_date is null;
+
+BEGIN
+     l_count :=0;
+     FOR c_act IN actividades LOOP
+          UPDATE xx_ar_fce_actividades
+          SET    end_date = l_fecha_fin
+                ,last_update_date = sysdate
+                ,last_updated_by = 2070
+          WHERE  fce_activity_id = c_act.fce_activity_id;
+          
+          INSERT INTO xx_ar_fce_actividades (fce_activity_id
+                                            ,activity_code
+                                            ,start_date
+                                            ,amount
+                                            ,creation_date
+                                            ,created_by
+                                            ,last_update_date
+                                            ,last_updated_by) VALUES
+                                            (xx_ar_fce_actividades_s.nextval
+                                            ,c_act.activity_code
+                                            ,l_fecha_inicio
+                                            ,l_monto
+                                            ,sysdate
+                                            ,2070
+                                            ,sysdate
+                                            ,2070);
+                                            
+          l_count := l_count + 1;     
+     END LOOP;
+     
+     COMMIT;
+     dbms_output.put_line('Actualización exitosa. '||l_count||' registros actualizados.');
+
+EXCEPTION    
+     WHEN OTHERS THEN
+          ROLLBACK;
+          dbms_output.put_line('Error:'||sqlerrm);        
+END;

@@ -1,0 +1,65 @@
+INSERT INTO jl.JL_AR_AP_AWT_CERTIF_ALL (CERTIFICATE_ID,
+                                     CERTIFICATE_NUMBER,
+                                     AWT_TYPE_CODE,
+                                     LOCATION_ID,
+                                     AWT_DATE,
+                                     VENDOR_ID,
+                                     WITHHOLDING_AMOUNT,
+                                     CREDIT_AMOUNT,
+                                     STATUS,
+                                     CREATED_BY,
+                                     CREATION_DATE,
+                                     LAST_UPDATED_BY,
+                                     LAST_UPDATE_DATE,
+                                     CHECKRUN_ID,
+                                     ORG_ID,
+                                     LAST_UPDATE_LOGIN,
+                                     REQUEST_ID,
+                                     PROGRAM_APPLICATION_ID,
+                                     PROGRAM_ID,
+                                     PROGRAM_UPDATE_DATE,
+                                     BANK_ACCOUNT_NUM,
+                                     CHECKRUN_NAME,
+                                     CHECK_NUMBER,
+                                     PAYMENT_DOCUMENT_NAME,
+                                     TAX_NAME,
+                                     TAXABLE_BASE_AMOUNT,
+                                     LEGAL_ENTITY_ID,
+                                     PAYMENT_INSTRUCTION_ID)
+     VALUES (jl_ar_ap_awt_certif_s.nextval,
+             (SELECT jaaac1.certificate_number + 1
+              FROM JL_AR_AP_AWT_CERTIF_ALL jaaac1
+              WHERE jaaac1.awt_type_code = 'RGAN'
+              AND jaaac1.org_id = 104
+              AND jaaac1.certificate_number = (SELECT MAX (jaaac2.certificate_number)
+                                               FROM JL_AR_AP_AWT_CERTIF_ALL jaaac2
+                                               WHERE jaaac2.awt_type_code = 'RGAN'
+                                               AND jaaac2.org_id = 104)),
+             'RGAN',
+             143, --Location_id 
+             TO_DATE ('05/21/2020', 'MM/DD/YYYY'),
+             10443666, -- Vendor_id 
+             -14340.01, -- Withholding_amount
+             0, -- Credit_amount
+             'REPRINTED', --Status
+             -1,
+             sysdate,
+             -1,
+             sysdate,
+             917194, --checkrun_id
+             104, -- Org_id
+             -1,
+             -1,
+             -1,
+             -1,
+             TO_DATE ('05/21/2020 10:10:08', 'MM/DD/YYYY HH24:MI:SS'),
+             '0010087156', --Account_number
+             'ipmt.call_app_pay_service_req_code',
+             400000007840, --check_number
+             '400000007840', --payment_document_name
+             'RG830_SER', --Tax_Name
+             717000.61, --Taxable_Base_Amount
+             103, --Legal_Entity_id
+             917194)
+             
+ 1 row inserted

@@ -1,0 +1,204 @@
+odebrecht.com.  IN      NS      ns4.br.odebrecht.com.   ;Criado por David William em 30-04-2014 as 16h33
+odebrecht.com.  IN      NS      ns5.br.odebrecht.com.   ;Criado por David William em 30-04-2014 as 16h33
+odebrecht.com.          IN      MX      10      odebrecht-com.mail.protection.outlook.com.
+ag.odebrecht.com.       IN      A       177.130.115.142 ;Criado por David William em 18-08-2014 as 15h14
+ao-expressway-e.odebrecht.com.  IN      A       197.149.148.3
+approvalbox.odebrecht.com.      IN      CNAME   d3i1nxrluzp90m.cloudfront.net.
+automan.odebrecht.com.  IN      A       200.115.128.44
+av.odebrecht.com.       IN      A       200.229.192.24
+av.odebrecht.com.       IN      A       200.229.192.26
+award.odebrecht.com.    IN      A       200.229.192.37
+capacitacaoconformidade.odebrecht.com.  IN      CNAME   odb-console.lrn.com.opts-statuscode-301.redirect.center.
+capadfsr.odebrecht.com. IN      A       200.90.142.169  ;Criado por Reinaldo em 05/12/2011
+carnaval.odebrecht.com. IN      CNAME   carnaval.azurewebsites.net.     ;Criado por Rogerio Momm em 06/02/2013
+ccdswindchill.odebrecht.com.    IN      A       200.60.53.99
+ccswitch.odebrecht.com. IN      A       177.130.115.169 ;Alterado por David William em 07-02-2014 as 23:02
+ceep.odebrecht.com.     IN      A       177.130.115.163 ;Alterado por David William em 07-02-2014 as 23:02
+citadon.odebrecht.com.  IN      A       200.229.192.35
+citrix-ethylene21.odebrecht.com.        IN      A       189.203.68.90   ;Criado por Reinaldo em 28/02/2012
+claimsweb.odebrecht.com.        86400   IN      CNAME   claimsweb.azurewebsites.net.    ;Criado por David William em 23-09-2013 as 16h33
+cloudadm.odebrecht.com. IN      A       137.135.81.166  ;Criado por David William em 08-01-2014 as 16h58
+cno-ir.odebrecht.com.   IN      CNAME   odb-cno.infoinvest.com.br.      ;Criado por David William em 04-10-2013 Chamado:2009005 as 10h26
+cno-ri.odebrecht.com.   IN      CNAME   odb-cno.infoinvest.com.br.      ;Criado por David William em 04-10-2013 Chamado:2009005 as 10h26
+cnr.odebrecht.com.      IN      A       216.32.90.102   ;Alterado em 2006-06-11 - acosta
+conformidadeocs.odebrecht.com.  IN      CNAME   d260278t6vnqc.cloudfront.net.
+connect.odebrecht.com.  IN      A       208.250.2.100   ;Criado em 2007-05-18 - por anderson
+corridaecaminhada.odebrecht.com.        IN      A       184.173.210.2   ;Criado por Rogerio Momm em 18/03/2013
+dav.discovirtual.odebrecht.com. IN      A       201.72.253.246  ;Criado por David William em 17-07-2014 as 16h19 Chamado:2285996
+destaque.odebrecht.com. IN      CNAME   cluster03l-08l.idc.br.odebrecht.com.    ;Criado por Rogerio Momm em 25/09/2009
+dynamics.odebrecht.com. IN      A       187.94.60.55    ;Criado por Reinaldo em 26/01/2012
+echo.ccswitch.odebrecht.com.    IN      A       177.130.115.171 ;Alterado por David William em 07-02-2014 as 23:02
+elearning.odebrecht.com.        IN      A       200.46.63.4     ;Criado por Rodrigo Chaves em 11/04/2013
+emm.odebrecht.com.      IN      A       177.130.115.143 ;Criado por David William em 18-08-2014 as 15h14
+etilenoxxi-edms.odebrecht.com.  IN      A       189.203.68.90   ;Criado por Rogerio Momm em 26/07/2012
+e-vendor.odebrecht.com. IN      A       200.196.226.35  ;Criado pro David William em 13-03-2014 as 19h58 Chamado:2166859
+externo1.odebrecht.com. IN      CNAME   externo1.idc.br.odebrecht.com.  ;Atualizado em 25-08-2003 - acosta
+externo2.odebrecht.com. IN      A       177.130.115.151
+externo.odebrecht.com.          IN      A       200.229.192.20
+extranet.odebrecht.com. IN      A       200.46.63.18    ;Alterado por David William em 24-10-2013 as 11h58
+faw.odebrecht.com.      IN      A       200.229.192.14
+federation.odebrecht.com.       1H      IN      A       200.229.197.72
+fornecedoresame.odebrecht.com.  IN      CNAME   d23n3mkep85sbd.cloudfront.net.
+fornecedoresdev.odebrecht.com.  IN      A       200.90.142.166  ;Criado por Rogerio Momm em 05/07/2011
+fornecedores.odebrecht.com.     IN      CNAME   d30nj4vm98xvtj.cloudfront.net.
+fornecedoresoog.odebrecht.com.  IN      A       200.196.247.200
+fornecedoresor.odebrecht.com.   IN      CNAME   fornecedoresor.orealizacoes.com.br.
+fornecedoresqa.odebrecht.com.   IN      CNAME   d3n4wwj1y5b6cv.cloudfront.net.
+ftp-ethylene21.odebrecht.com.   IN      A       189.203.68.92   ;Criado por Leandro Rezende em 01/06/2012
+ftp.moz.odebrecht.com.  IN      A       197.249.9.39    ;Criado por H�lio Pinto 24/05/2013
+ftp.oep.odebrecht.com.  IN      A       201.72.253.243  ;Criado por Roberto Pires em 20/03/2013
+icitrix.odebrecht.com.  IN      A       200.229.197.93
+ilearning.odebrecht.com.        IN      A       200.46.211.185  ;Alterado por David William em 22-08-2014 as 18h05
+ims.odebrecht.com.      IN      CNAME   opt01s.idc.br.odebrecht.com.    ;Criado em 2005-07-10 - acosta
+imsva.odebrecht.com.    IN      A       200.229.197.77
+imsva.odebrecht.com.    IN      A       200.46.63.26
+integra.odebrecht.com.  IN      A       200.46.63.18    ;Criado por David William em 30-10-2013 as 17h07
+ir.odebrecht.com.       IN      CNAME   odb-cno.infoinvest.com.br.      ; Alterado por David William em 11-11-2013 as 22h41 Chamado:2048827
+jp.odebrecht.com.       IN      A       201.77.202.20   ;Criado por Leandro Rezende em 14/08/2012
+knox.odebrecht.com.     IN      A       177.130.115.164 ;Alterado por David William em 07-02-2014 as 23:02
+ldap.odebrecht.com.     IN      CNAME   opt01s.idc.br.odebrecht.com.    ;Revisado em 2005-08-04 - acosta
+legacy.odebrecht.com.   IN      A       200.46.63.4     ;Criado por Edson Nunes - 14-10-2013 18h05
+lyncdiscover.odebrecht.com.     IN      A       200.229.192.27
+lync.odebrecht.com.     IN      A       200.229.192.27
+mag.odebrecht.com.      IN      A       200.196.235.172
+mail.odebrecht.com.     IN      A       200.229.197.66
+mai.odebrecht.com.      IN      A       69.195.193.238  ;Criado por Rogerio Momm em 13/09/2011
+mdmodb.odebrecht.com.   IN      A       200.46.211.183  ;Alterado por Leandro Rezende em 11/10/2012
+mdm.odebrecht.com.      IN      A       200.46.63.4     ;Criado por Rogerio Momm em 09/04/2013
+media.odebrecht.com.    IN      CNAME   odbmedia.azurewebsites.net.     ;Criado por Rogerio Momm em 26/03/2013
+meet.odebrecht.com.     IN      A       200.229.192.27
+mfa.odebrecht.com.      IN      CNAME   d1e7bgmqzx8563.cloudfront.net.
+mobileodb.odebrecht.com.                IN     CNAME       d1ev9pj8uazlbe.cloudfront.net.       ;#Criado dia 12/04/2018 Chamado: 3251548
+mobile.odebrecht.com.   IN      A       200.46.211.178  ;Criado por Leandro Rezende em 14/08/2012
+m.odebrecht.com.        IN      A       201.77.202.20   ;Criado por Rogerio Momm em 02/06/2011
+ms.ccswitch.odebrecht.com.      IN      A       177.130.115.170 ;Alterado por David William em 07-02-2014 as 23:02
+myadmin.odebrecht.com.  IN      A       201.77.202.20   ;Criado por Rogerio Momm em 18/03/2010
+mysites.odebrecht.com.  IN      A       137.135.85.151  ;Criado por David William em 08-01-2014 as 16h58
+newboy1.odebrecht.com.  IN      CNAME   newboy1.idc.br.odebrecht.com.   ;Criado por Fabio Nunes em 22/10/2008
+newboy2.odebrecht.com.  IN      CNAME   newboy2.idc.br.odebrecht.com.   ;Criado por Fabio Nunes em 22/10/2008
+newboy.odebrecht.com.   IN      CNAME   newboy.idc.br.odebrecht.com.    ;Criado por Fabio Nunes em 22/10/2008
+noticias.odebrecht.com. IN      CNAME   noticias.idc.br.odebrecht.com.  ;Alterado por Fabio Nunes em 31/07/2009
+ns1.odebrecht.com.      IN      CNAME   ns1.br.odebrecht.com.   ;Criado em 2005-03-01 - acosta
+ns2.odebrecht.com.      IN      CNAME   ns2.br.odebrecht.com.   ;Criado em 2005-03-01 - acosta
+odbbr111li.odebrecht.com.       IN      A       200.229.192.32
+odbbr112li.odebrecht.com.       IN      A       200.229.192.33
+odb-ir.odebrecht.com.   IN      CNAME   odb-osa.infoinvest.com.br.      ;Criado por David William em 17-04-2014 as 14h36
+odb-ri.odebrecht.com.   IN      CNAME   odb-osa.infoinvest.com.br.      ;Criado por David William em 17-04-2014 as 14h36
+odebrecht.com.  IN      A       52.43.31.62     ;Alterado por David William em 05-06-2014 as 22h23
+odebrecht.com.  IN      TXT     "TM_MDM_SERVER={https://mdmodb.odebrecht.com:4343}"     ;Criado por Rogerio Momm em 01/02/2013
+odebrecht.com. IN      TXT      "v=spf1 ip4:200.229.197.64/26 ip4:200.229.192.0/26 include:spf.protection.outlook.com -all"
+odebrechtnoticias.odebrecht.com.        IN      A       177.130.115.165 ;Alterado por David William em 11-02-2014 as 16h54
+ods.odebrecht.com.      IN      A       177.130.115.137
+oecbr293w.odebrecht.com.        IN      A       200.196.238.114 ;Alterado por David William em 07-02-2014 as 23:02
+oec-ir.odebrecht.com.   IN      CNAME   sites-clients-05.mziq.com.
+oec-ri.odebrecht.com.   IN      CNAME   sites-clients-05.mziq.com.
+oep.odebrecht.com.      IN      A       201.72.253.244  ;Alterado por Leandro Rezende em 26/10/2012
+ohno.odebrecht.com.     IN      A       200.229.192.22
+oldboy1.odebrecht.com.  IN      CNAME   oldboy1.idc.br.odebrecht.com.   ;Criado em 2009-07-24 por anderson
+oldboy2.odebrecht.com.  IN      CNAME   oldboy2.idc.br.odebrecht.com.   ;Criado em 2009-07-24 por anderson
+oldboy.odebrecht.com.   IN      CNAME   oldboy.idc.br.odebrecht.com.    ;Criado em 2009-07-24 por anderson
+olexair.odebrecht.com.  IN      A       177.130.115.167 ;Alterado por David William em 07-02-2014 as 23:02
+oma.odebrecht.com.      60M     IN      A       200.229.197.84  ;Alterado por David William em 14-10-2013 as 19h07
+orbrsoa-ext.odebrecht.com.      IN      A       200.196.238.116 ;Alterado por David William em 07-02-2014 as 23:02
+osbdev.odebrecht.com.   IN      A       200.46.63.23
+osbdmz.odebrecht.com.   IN      A       200.46.63.23
+osp-ri.odebrecht.com.   IN      CNAME   odb-osp.infoinvest.com.br.      ;Criado por David William em 04-10-2013 Chamado:2009005 as 10h26
+painel.odebrecht.com.   IN      CNAME   painel.locaweb.com.br.  ;Criado por Fabio Nunes em 30/04/2009
+pop.odebrecht.com.      IN      CNAME   opt01s.idc.br.odebrecht.com.    ;Altualizado em 2004-07-02 - acosta - Migracao de Servidores de Correio
+portalmobile.odebrecht.com.     IN      CNAME     ducetozv7f3vy.cloudfront.net. ; Alterado 03/08/18 A   177.130.115.140
+premio.odebrecht.com.   IN      CNAME   cluster03l-08l.idc.br.odebrecht.com.    ;Alterado por Fabio Nunes em 31/07/2009
+projects.odebrecht.com. IN      A       75.51.4.3       ;Alterado de 69.195.193.206 para 75.51.4.3 chamado:3287624
+prologpme.odebrecht.com.        IN      A       196.28.237.26   ;Criado por Leandro Rezende em 12/11/2012
+prologpmetest.odebrecht.com.    IN      A       196.28.237.28   ;Criado por Rogerio Momm em 12/03/2013
+qafornecedoresor.odebrecht.com. IN      CNAME   qafornecedoresor.orealizacoes.com.br.
+ra2018.odebrecht.com.   IN      CNAME   d2wd06qfx6knkd.cloudfront.net.
+rede.odebrecht.com.     IN      A       177.130.113.51
+redes.odebrecht.com.    IN      CNAME   rede.odebrecht.com.     ;Criado por Edson Nunes - 2014-04-06  11h40
+relatorioanual.odebrecht.com.    IN     CNAME       d2hhkn82c16s5h.cloudfront.net.
+ri.odebrecht.com.       IN      CNAME   odb-cno.infoinvest.com.br.      ;Alterado por David William em 11-11-2013 as 22h41 Chamado:2048827
+rms.odebrecht.com.      IN      A       200.90.142.171  ;Criado por Reinaldo em 05/12/2011
+saneamento.odebrecht.com.       IN      A       187.9.6.30      ;Alterado em 24-10-2008 por anderson Criado por Fabio Nunes em 30/09/2008
+secmail.odebrecht.com.  IN      A       200.229.197.67
+sentry.odebrecht.com.   IN      A       75.51.4.5       ;Criado por Leandro Rezende em 10/07/2012
+sentry.odebrecht.com.      IN      TXT     "hp9zx24fvjkdxbcrc5wwcvrs0hgbc2tz"
+servicosmoden.odebrecht.com.    IN      A       200.229.197.83
+sharepointcloud.odebrecht.com.  IN      A       137.135.87.52   ;Criado por David William em 23-10-2013 as 17h31
+sharepoint.odebrecht.com.       IN      A       137.135.85.151  ;Alterado por David William em 19-12-2013 as 17h12
+sic.odebrecht.com.      IN      CNAME   cluster03l-08l.idc.br.odebrecht.com.    ;Alterado por Fabio Nunes em 31/07/2009
+_sipfederationtls._tcp.odebrecht.com.   IN      SRV     10 2 5061 sip.odebrecht.com.
+_sipfederationtls._tcp.odebrecht.com.   IN      SRV     10 2 5061 sip.odebrecht.com.    ;Criado por Rogerio Momm em 10/06/2010
+sip.odebrecht.com.      IN      A       200.229.192.23
+sip.odebrecht.com.      IN      A       200.229.192.25
+_sip._tls.odebrecht.com.        IN      SRV     10 2 443 sip.odebrecht.com.
+_sip._tls.odebrecht.com.        IN      SRV     10 2 443 sip.odebrecht.com.     ;Alterado por David William em 22-05-2014 as 14h28
+sisengnuvem.odebrecht.com.      IN      CNAME   sisengnuvem.cloudapp.net.       ;Criado por Rogerio Momm em 17/05/2013
+sisflow.odebrecht.com.  IN      A       201.22.98.171   ;Criado por Rogerio Momm em 24/09/2009
+sisrsp.odebrecht.com.   IN      CNAME   oeibr001azw.cloudapp.net.       ;Criado por Rogerio Momm em 28/03/2013
+site.odebrecht.com.     IN      A       177.130.115.155 ;Alterado por David William em 07-02-2014 as 23:02
+snow.odebrecht.com.     IN      CNAME   brasoftwarescs.eastus.cloudapp.azure.com.
+soap.discovirtual.odebrecht.com.        IN      A       201.72.253.246  ;Criado por David William em 17-07-2014 as 16h09 Chamado:2285983
+stscloud.odebrecht.com. IN      A       137.135.81.192  ;Alterado por David William em 31-05-2014 as 12h01
+suporte.odebrecht.com.  IN      CNAME   suporte.idc.br.odebrecht.com.   ;Alterado por Fabio Nunes em 31/07/2009
+suprimentos.odebrecht.com.      IN      CNAME   cluster03l-08l.idc.br.odebrecht.com.    ;Alterado por Fabio Nunes em 31/07/2009
+treinamento.odebrecht.com.      IN      A       200.46.63.27
+vdimx.odebrecht.com.            IN      A       189.204.78.37
+vdi.odebrecht.com.      IN      A       200.229.197.77
+video.odebrecht.com.    IN      CNAME   video.idc.br.odebrecht.com.     ;Alterado por Fabio Nunes em 31/07/2009
+videos.odebrecht.com.   IN      A       200.196.235.166 ;Criado por David William em 25-07-2014 as 12h54 Chamado:2293092
+vpbr.odebrecht.com.     IN      A       177.130.115.254 ;Alterado por David William em 03-02-2014 as 18h09
+vpn.odebrecht.com.      30M     IN      A       200.90.142.163  ;Alterado por David William em 17-09-2013 as 18h26
+vppa.odebrecht.com.     IN      A       200.90.142.162  ;Criado por Edson Nunes - 28-08-2013 11h32
+vsp.odebrecht.com.      IN      A       75.51.4.4       ;Criado por Leandro Rezende em 10/07/2012
+vsp.odebrecht.com.      IN      TXT     "hp9zx24fvjkdxbcrc5wwcvrs0hgbc2tz"
+vsp.odebrecht.com.      IN      TXT     "kv9y1myd2cd5yxwz10sts6106gmcs7xq"
+wac.odebrecht.com.      IN      A       200.229.197.98
+wafconformidadeocs.odebrecht.com.       IN      A       177.130.115.183
+wafmfa.odebrecht.com.   IN      A       177.130.115.183
+wafmobileodb.odebrecht.com.     IN      A       177.130.115.199 ;Criado dia 12/04/2018 Chamado: 3251548
+wafportalmobile.odebrecht.com.  IN      A       177.130.115.183
+wafra2018.odebrecht.com.        IN      A       177.130.115.183
+wafrelatorioanual.odebrecht.com. IN     A       177.130.115.183
+web01.odebrecht.com.    IN      A       137.135.85.151  ;Criado por David William em 09-04-2014 as 18h39
+webapp.odebrecht.com.   IN      A       201.38.37.196   ;Criado por David William em 25-07-2014 as 19h07 Chamado:2293763
+webcal.odebrecht.com.   IN      CNAME   opt01s.idc.br.odebrecht.com.    ;Altualizado em 2004-07-02 - acosta - Migracao de Servidores de Correio
+webconf.odebrecht.com.  IN      A       200.229.197.96
+webconf.odebrecht.com.  IN      A        200.229.197.97
+weblync.odebrecht.com.  IN      A       200.229.192.27
+webmail2.odebrecht.com. IN      A       200.46.211.178  ;Criado por Roberto Pires em 09/04/2013
+webmail3.odebrecht.com. IN      A       200.46.63.4     ;Criado por Edson Nunes - 04-10-2013 18h16
+webmail.odebrecht.com.  120     IN      A       200.229.197.84
+webservice.odebrecht.com.       IN      A       200.229.197.80
+windchilloep.odebrecht.com.     IN      A       200.196.226.35  ;Criado por Leandro Rezende em 02/08/2012
+wtpc.odebrecht.com.     IN      A       190.124.76.99   ;Chamado 3041274
+wtpc.odebrecht.com.     IN      A       190.167.109.30  ;Chamado 3041274
+www2.odebrecht.com.     IN      A       201.77.202.20   ;Criado por Rogerio Momm em 17/03/2010
+www.cnr.odebrecht.com.  IN      A       216.32.90.102   ;Alterado em 2006-06-11 - acosta
+www.discovirtual.odebrecht.com. IN      A       200.196.226.37  ;Criado por David William em 24-06-2014 as 14h57 Chamado:2263985
+www.dv-br-2.odebrecht.com.      IN      A       201.72.253.244
+www.odebrecht.com.     IN      CNAME   d2r6wzo7r6y240.cloudfront.net.
+www.pa.odebrecht.com.   IN      A       177.130.115.137
+sisgeppa.odebrecht.com. IN      A       200.229.192.62
+app.odebrecht.com.      IN      A       200.229.197.93
+treinamentosi.odebrecht.com.    IN      CNAME   treinamentos.elpescador.com.br.
+clique.odebrecht.com.           IN      CNAME   click.elpescador.com.br.
+oec.com.br._report._dmarc.odebrecht.com.  IN    TXT    "v=DMARC1"
+approvalbox.odebrecht.com.      IN      CNAME   d3i1nxrluzp90m.cloudfront.net.
+wafapprovalbox.odebrecht.com.   IN      A       200.229.192.30 ;Criado dia 10/06/19 chamado: 3467576
+wafapprovalbox.odebrecht.com.   IN      A       200.229.192.45 ;Criado dia 10/06/19 chamado: 3467576
+wafgovernanca.odebrecht.com.    IN      A       177.130.115.183
+wafgovernanca-mobilidade.odebrecht.com. IN      A       177.130.115.183
+wafgovernanca-oec.odebrecht.com.        IN      A       177.130.115.183
+wafconformidadeoec.odebrecht.com.       IN      A       177.130.115.183
+wafnossocompromisso.odebrecht.com.      IN      A       177.130.115.183
+wafcomec.odebrecht.com. IN      A       177.130.115.183
+wafodebrechtengenharia.odebrecht.com.   IN      A       177.130.115.183
+waforealizacoes.odebrecht.com.  IN      A       177.130.115.183
+orbrqasoa-ext.odebrecht.com.    IN      A       200.229.192.56
+ra2019.odebrecht.com.   IN      CNAME   dwdwfckrk74iw.cloudfront.net.
+waf-ocbgyw.oce.odebrecht.com.   IN      A       200.229.192.30
+waf-ocbgyw.oce.odebrecht.com.   IN      A       200.229.192.45
+epmtpc.odebrecht.com.           IN      A       190.122.106.19
+indicadores.odebrecht.com       IN      A       13.64.191.37
+_dmarc.odebrecht.com.   IN      TXT     "v=DMARC1; p=none; rua=mailto:rua@odebrecht.com; ruf=mailto:ruf@odebrecht.com"
+oecchatbot.odebrecht.com.       IN      A       200.229.192.11
+new.odebrecht.com.      IN          CNAME    d1zfstk8g9i7tb.cloudfront.net.

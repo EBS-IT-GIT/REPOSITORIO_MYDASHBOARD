@@ -1,0 +1,25 @@
+DECLARE 
+    V_INIPOSITION VARCHAR(20000);
+    V_FINALPOSITION VARCHAR(20000);
+    V_QUERY VARCHAR(20000);
+    V_LEN INTEGER;
+    V_SQL VARCHAR(20000);
+BEGIN
+    FOR V_STATE IN (
+        -- QUERY DE INSERÇÃO: INÍCIO
+		select 'alter system kill session '''|| sid ||','||serial# ||''' immediate;' AS APPL from v$session where sid in (
+			 select SID from V$lock where block > 0 and ctime > 86400 -- segundos
+			 union all
+			 select SID from  v$session where status = 'INACTIVE' and schemaname in ('MAXIMO') and username in ('MAXIMO') and seconds_in_wait > 86400 --segundos
+		) 
+		-- QUERY DE INSERÇÃO: FIM
+    ) LOOP
+        V_INIPOSITION :=1;
+        V_SQL:= V_STATE.APPL;
+        SELECT LENGTH(V_SQL) INTO V_LEN FROM DUAL;
+        SELECT INSTR(V_SQL,';',V_INIPOSITION,1) INTO V_FINALPOSITION FROM DUAL;
+        SELECT SUBSTR (V_SQL,V_INIPOSITION, V_FINALPOSITION-1) INTO V_QUERY FROM DUAL;
+        EXECUTE IMMEDIATE (V_QUERY);
+        EXECUTE IMMEDIATE 'COMMIT';
+    END LOOP;
+END;   

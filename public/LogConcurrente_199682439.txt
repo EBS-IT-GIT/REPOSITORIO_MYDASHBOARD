@@ -1,0 +1,58 @@
++---------------------------------------------------------------------------+
+Compra: Version : 12.1
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+POXPOPDOI: Import Standard Purchase Orders
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 07-DEZ-2020 12:27:07
+
++---------------------------------------------------------------------------+
+
+
++-----------------------------
+| Iniciando a execução do programa concorrente...
++-----------------------------
+
+Argumentos
+------------
+
+APPROVED
+
+999
+
+
+
+
+
+
+
+5000
+
+2
+¿Àu¿ëÅ¿M¸¿þ¿M¿é;úÿÿ¿U¸¿þ¿U¿éwúÿÿ¿M¿9
+U¹
+ü^\GÒwZG
+------------
+A rotina fdpsql não pode ler o arquivo /oraapps/apps/apps_st/appl/po/12.0.0/sql/PO_PDOI_GRP.start_process.
+
+Verifique se o arquivo existe sob o diretório de produto correto.
+
+Verifique se a pessoa que iniciou o Gerenciador Concorrente tem p
+O Gerenciador de Solicitações concorrentes encontrou um erro durante a execução do SQL*Plus para a sua solicitação concorrente 199682439.
+
+Verifique o arquivo de log da sua solicitação concorrente e/ou o arquivo de saída do relatório a fim de obter inform
+
+
++---------------------------------------------------------------------------+
+Nenhuma opção de término foi solicitada.
+
+Output file size: 
+0
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada
+A hora atual do sistema é 07-DEZ-2020 12:27:07
+
++---------------------------------------------------------------------------+

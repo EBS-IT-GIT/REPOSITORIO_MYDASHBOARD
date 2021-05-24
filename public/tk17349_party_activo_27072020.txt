@@ -1,0 +1,6 @@
+UPDATE apps.hz_parties
+SET status = 'A'
+WHERE party_id=11063778
+
+Commit;
+--1row

@@ -1,0 +1,72 @@
+SQL> set echo on;
+SQL> set serveroutput on;
+SQL> alter session set current_schema=APPS;
+
+Session alterado.
+
+SQL> alter session set nls_language='LATIN AMERICAN SPANISH';
+
+Session alterado.
+
+SQL> select name from v$database;
+
+NAME     
+---------
+PADAGI
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> update  apps.csi_item_instances a
+  2  set a.last_vld_organization_id = (select b.current_organization_id
+  3                         from apps.MTL_EAM_ASSET_NUMBERS_ALL_V b
+  4                         where b.maintenance_object_id = a.instance_id
+  5                         and b.instance_number = a.instance_number
+  6  )
+  7  where exists (select 1
+  8                         from apps.MTL_EAM_ASSET_NUMBERS_ALL_V b
+  9                         where 1=1
+ 10                         and b.instance_number = a.instance_number
+ 11                         and b.maintenance_object_id = a.instance_id
+ 12                         and  b.current_organization_id !=  a.last_vld_organization_id )
+ 13  and a.instance_number in (
+ 14    'NEI-010'
+ 15  , 'NEI-011'
+ 16  , 'NEI-012'
+ 17  , 'NEI-013'
+ 18  , 'NEI-014'
+ 19  , 'NEI-015'
+ 20  , 'NEI-016'
+ 21  , 'NEI-030'
+ 22  , 'NEI-077'
+ 23  , 'REP-002'
+ 24  );
+Erro a partir da linha : 11 no comando -
+update  apps.csi_item_instances a
+set a.last_vld_organization_id = (select b.current_organization_id
+                       from apps.MTL_EAM_ASSET_NUMBERS_ALL_V b
+                       where b.maintenance_object_id = a.instance_id
+                       and b.instance_number = a.instance_number
+)
+where exists (select 1
+                       from apps.MTL_EAM_ASSET_NUMBERS_ALL_V b
+                       where 1=1
+                       and b.instance_number = a.instance_number
+                       and b.maintenance_object_id = a.instance_id
+                       and  b.current_organization_id !=  a.last_vld_organization_id )
+and a.instance_number in (
+  'NEI-010'
+, 'NEI-011'
+, 'NEI-012'
+, 'NEI-013'
+, 'NEI-014'
+, 'NEI-015'
+, 'NEI-016'
+, 'NEI-030'
+, 'NEI-077'
+, 'REP-002'
+)
+Relatório de erros -
+ORA-01427: la subconsulta de una sola fila devuelve más de una fila
+

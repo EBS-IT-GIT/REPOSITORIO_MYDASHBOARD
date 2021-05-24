@@ -1,0 +1,370 @@
+Path: /desa12/svn/XXADECUSTOMS
+Working Copy Root Path: /desa12/svn/XXADECUSTOMS
+URL: https://ad-ar-dat-or-01.adeco.net.ar:8443/svn/XXADECUSTOMS
+Repository Root: https://ad-ar-dat-or-01.adeco.net.ar:8443/svn/XXADECUSTOMS
+Repository UUID: 4a015035-0a93-5c48-9a58-f2e00ef8f5c2
+Revision: 9316
+Node Kind: directory
+Schedule: normal
+Last Changed Author: ADECO_DEV
+Last Changed Rev: 9316
+Last Changed Date: 2020-01-13 17:22:15 -0300 (Mon, 13 Jan 2020)
+
++---------------------------------------------------------------------------+
+ Comenzando con el proceso de resguardo
+
++---------------------------------------------------------------------------+
+ Resguardando la solucion realizada en CR2408
+
+ Cantidad de objetos tipo XX_ADE_CUSTOM_HEADER => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 24-MAR-2020 14:30:34
+
++---------------------------------------------------------------------------+
+
+Downloading XX_ADE_CUSTOM_HEADER to the data file CR2408_9451.ldt
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 24-MAR-2020 14:30:35
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-VALSET XX_CENTRO_CUSTO_OS_IND 
+
+ Cantidad de objetos tipo VALUE_SET => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 24-MAR-2020 14:30:35
+
++---------------------------------------------------------------------------+
+
+Downloading VALUE_SET to the data file XX_CENTRO_CUSTO_OS_IND.ldt
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 24-MAR-2020 14:30:35
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-VALSETVAL XX_CENTRO_CUSTO_OS_IND 
+
+ Cantidad de objetos tipo VALUE_SET_VALUE => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 24-MAR-2020 14:30:36
+
++---------------------------------------------------------------------------+
+
+Downloading VALUE_SET_VALUE to the data file XX_CENTRO_CUSTO_OS_IND.ldt
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 24-MAR-2020 14:30:36
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXRQERQ_48 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 24-MAR-2020 14:30:36
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXRQERQ_48.ldt
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 24-MAR-2020 14:30:37
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXRQERQ_49 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 24-MAR-2020 14:30:37
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXRQERQ_49.ldt
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 24-MAR-2020 14:30:37
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Resguardando el objeto FNDLOAD-PERSO PO_POXRQERQ_51 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 24-MAR-2020 14:30:37
+
++---------------------------------------------------------------------------+
+
+Fazendo download de FND_FORM_CUSTOM_RULES para o arquivo de dados PO_POXRQERQ_51.ldt
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 24-MAR-2020 14:30:37
+
++---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+ Fin del proceso de resguardo
+
++---------------------------------------------------------------------------+
+ Comenzando con el proceso de actualizacion 
+
+
++---------------------------------------------------------------------------+
++---------------------------------------------------------------------------+
+ Actualizando el objeto FNDLOAD-VALSET XX_CENTRO_CUSTO_OS_IND 
+
+ Cantidad de objetos tipo VALUE_SET => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 24-MAR-2020 14:30:37
+
++---------------------------------------------------------------------------+
+
+Uploading from the data file /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/VALSET/XX_CENTRO_CUSTO_OS_IND.ldt
+Altering database NLS_LANGUAGE environment to AMERICAN
+Dump from LCT/LDT files (/ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/afffload.lct(120.19.12020000.6), /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/VALSET/XX_CENTRO_CUSTO_OS_IND.ldt) to stage tables
+Dump LCT file /ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/afffload.lct(120.19.12020000.6) into FND_SEED_STAGE_CONFIG
+Dump LDT file /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/VALSET/XX_CENTRO_CUSTO_OS_IND.ldt into FND_SEED_STAGE_ENTITY
+Dumped the batch (VALUE_SET XX_CENTRO_CUSTO_OS_IND , VALUE_SET XX_CENTRO_CUSTO_OS_IND ) into FND_SEED_STAGE_ENTITY
+Upload from stage tables
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 24-MAR-2020 14:30:44
+
++---------------------------------------------------------------------------+
+
+A         /desa12/svn/XXADECUSTOMS/xbol/12.0.0/FNDLOAD/VALSET/XX_CENTRO_CUSTO_OS_IND.ldt
+Adding         desa12/svn/XXADECUSTOMS/xbol/12.0.0/FNDLOAD/VALSET/XX_CENTRO_CUSTO_OS_IND.ldt
+Transmitting file data .
+Committed revision 9687.
++---------------------------------------------------------------------------+
+ Actualizando el objeto FNDLOAD-VALSETVAL XX_CENTRO_CUSTO_OS_IND 
+
+ Cantidad de objetos tipo VALUE_SET_VALUE => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 24-MAR-2020 14:30:45
+
++---------------------------------------------------------------------------+
+
+Uploading from the data file /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/VALSETVAL/XX_CENTRO_CUSTO_OS_IND.ldt
+Altering database NLS_LANGUAGE environment to AMERICAN
+Dump from LCT/LDT files (/ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/afffload.lct(120.19.12020000.6), /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/VALSETVAL/XX_CENTRO_CUSTO_OS_IND.ldt) to stage tables
+Dump LCT file /ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/afffload.lct(120.19.12020000.6) into FND_SEED_STAGE_CONFIG
+Dump LDT file /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/VALSETVAL/XX_CENTRO_CUSTO_OS_IND.ldt into FND_SEED_STAGE_ENTITY
+No data found for upload
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 24-MAR-2020 14:30:45
+
++---------------------------------------------------------------------------+
+
+A         /desa12/svn/XXADECUSTOMS/xbol/12.0.0/FNDLOAD/VALSETVAL/XX_CENTRO_CUSTO_OS_IND.ldt
+Adding         desa12/svn/XXADECUSTOMS/xbol/12.0.0/FNDLOAD/VALSETVAL/XX_CENTRO_CUSTO_OS_IND.ldt
+Transmitting file data .
+Committed revision 9688.
++---------------------------------------------------------------------------+
+ Actualizando el objeto FNDLOAD-PERSO PO_POXRQERQ_48 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 24-MAR-2020 14:30:45
+
++---------------------------------------------------------------------------+
+
+Fazendo upload a partir do arquivo de dados /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_48.ldt
+Alterando o ambiente NLS_LANGUAGE do banco de dados para BRAZILIAN PORTUGUESE
+Saltar dos arquivos LCT/LDT (/ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxaffrmcus.lct(115.4), /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_48.ldt) para as tabelas intermediárias
+Lançar arquivo LCT /ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxaffrmcus.lct(115.4) em FND_SEED_STAGE_CONFIG
+Lançar arquivo LDT /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_48.ldt em FND_SEED_STAGE_ENTITY
+Lançado o lote (FND_FORM_CUSTOM_RULES 5224 , FND_FORM_CUSTOM_SCOPES 5224 20 ) em FND_SEED_STAGE_ENTITY
+Fazer upload das tabelas intermediárias
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 24-MAR-2020 14:30:47
+
++---------------------------------------------------------------------------+
+
+A         /desa12/svn/XXADECUSTOMS/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_48.ldt
+Adding         desa12/svn/XXADECUSTOMS/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_48.ldt
+Transmitting file data .
+Committed revision 9689.
++---------------------------------------------------------------------------+
+ Actualizando el objeto FNDLOAD-PERSO PO_POXRQERQ_49 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 24-MAR-2020 14:30:48
+
++---------------------------------------------------------------------------+
+
+Fazendo upload a partir do arquivo de dados /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_49.ldt
+Alterando o ambiente NLS_LANGUAGE do banco de dados para BRAZILIAN PORTUGUESE
+Saltar dos arquivos LCT/LDT (/ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxaffrmcus.lct(115.4), /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_49.ldt) para as tabelas intermediárias
+Lançar arquivo LCT /ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxaffrmcus.lct(115.4) em FND_SEED_STAGE_CONFIG
+Lançar arquivo LDT /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_49.ldt em FND_SEED_STAGE_ENTITY
+Lançado o lote (FND_FORM_CUSTOM_RULES 5264 , FND_FORM_CUSTOM_SCOPES 5264 20 ) em FND_SEED_STAGE_ENTITY
+Fazer upload das tabelas intermediárias
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 24-MAR-2020 14:30:48
+
++---------------------------------------------------------------------------+
+
+A         /desa12/svn/XXADECUSTOMS/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_49.ldt
+Adding         desa12/svn/XXADECUSTOMS/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_49.ldt
+Transmitting file data .
+Committed revision 9690.
++---------------------------------------------------------------------------+
+ Actualizando el objeto FNDLOAD-PERSO PO_POXRQERQ_51 
+
+ Cantidad de objetos tipo FND_FORM_CUSTOM_RULES => 1
++---------------------------------------------------------------------------+
+Application Object Library (AOL): Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Carregador Genérico
++---------------------------------------------------------------------------+
+
+A hora atual do sistema é 24-MAR-2020 14:30:49
+
++---------------------------------------------------------------------------+
+
+Fazendo upload a partir do arquivo de dados /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_51.ldt
+Alterando o ambiente NLS_LANGUAGE do banco de dados para BRAZILIAN PORTUGUESE
+Saltar dos arquivos LCT/LDT (/ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxaffrmcus.lct(115.4), /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_51.ldt) para as tabelas intermediárias
+Lançar arquivo LCT /ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxaffrmcus.lct(115.4) em FND_SEED_STAGE_CONFIG
+Lançar arquivo LDT /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_51.ldt em FND_SEED_STAGE_ENTITY
+Lançado o lote (FND_FORM_CUSTOM_RULES 5244 , FND_FORM_CUSTOM_SCOPES 5244 20 ) em FND_SEED_STAGE_ENTITY
+Fazer upload das tabelas intermediárias
+
++---------------------------------------------------------------------------+
+Solicitação concorrente completada com sucesso
+A hora atual do sistema é 24-MAR-2020 14:30:49
+
++---------------------------------------------------------------------------+
+
+A         /desa12/svn/XXADECUSTOMS/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_51.ldt
+Adding         desa12/svn/XXADECUSTOMS/xbol/12.0.0/FNDLOAD/PERSO/PO_POXRQERQ_51.ldt
+Transmitting file data .
+Committed revision 9691.
++---------------------------------------------------------------------------+
+ Actualizando la solucion realizada en CR2408
+
+ Cantidad de objetos tipo XX_ADE_CUSTOM_HEADER => 1
++---------------------------------------------------------------------------+
+Application Object Library: Version : 12.2
+
+Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+
+FNDLOAD: Generic Loader
++---------------------------------------------------------------------------+
+
+Current system time is 24-MAR-2020 14:30:50
+
++---------------------------------------------------------------------------+
+
+Uploading from the data file /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/CUSTOM/CR2408_9451.ldt
+Altering database NLS_LANGUAGE environment to AMERICAN
+Dump from LCT/LDT files (/ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxadecustom.lct(11.5.2), /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/CUSTOM/CR2408_9451.ldt) to stage tables
+Dump LCT file /ua1001/fs1/EBSapps/appl/fnd/12.0.0/patch/115/import/xxadecustom.lct(11.5.2) into FND_SEED_STAGE_CONFIG
+Dump LDT file /ua1001/fs_ne/ADECO/patch/CR2408/CR2408_20200323/CR2408/INSTALL/xbol/12.0.0/FNDLOAD/CUSTOM/CR2408_9451.ldt into FND_SEED_STAGE_ENTITY
+Dumped the batch (XX_ADE_CUSTOM_HEADER 9451 , XX_ADE_CUSTOM_LINES 9451 ) into FND_SEED_STAGE_ENTITY
+Upload from stage tables
+
++---------------------------------------------------------------------------+
+Concurrent request completed successfully
+Current system time is 24-MAR-2020 14:30:53
+
++---------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+ Fin del proceso de actualizacion
+

@@ -1,0 +1,41 @@
+begin
+  update CONFIG_OIF_NOTIFICACAO CON
+     set CON.STATUS_SOLIC_PAGTO = 'G'
+   where CON.ENTIDADE_A_NOTIFICAR = 'S'
+     and CON.TIPO_SOLIC_PAGTO = 'PC'
+     and CON.STATUS_SOLIC_PAGTO = 'F';
+  commit;
+end;
+/
+/* Atualizar a PC (PA) para disparar a customização que gera PG */
+begin
+  update IS_SP_CADASTRO ISC
+     set ISC.STATUS = 'L'
+   where ISC.TIPO_SP = 'PC'
+     and ISC.STATUS = 'PA'
+     and ISC.NUM_DOCUMENTO in ('OOG80024/21')
+     and ISC.ID_SP = 53503;
+  commit;	
+end;
+/
+/* Voltar com o status original da PC (PA)*/
+begin
+  update IS_SP_CADASTRO ISC
+     set ISC.STATUS = 'PA'
+   where ISC.TIPO_SP = 'PC'
+     and ISC.NUM_DOCUMENTO in ('OOG80024/21')
+     and ISC.ID_SP = 53503;
+  commit;
+end;
+/
+/* Voltar com a configuração que gera notificação para a interface de SP */
+begin
+  update CONFIG_OIF_NOTIFICACAO CON
+     set CON.STATUS_SOLIC_PAGTO = 'F'
+   where CON.ENTIDADE_A_NOTIFICAR = 'S'
+     and CON.TIPO_SOLIC_PAGTO = 'PC'
+     and CON.STATUS_SOLIC_PAGTO = 'G';
+  commit;
+end;
+/
+

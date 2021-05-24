@@ -1,0 +1,177 @@
+
+
+select	DISTINCT
+	DW_TMP_PESSOA.INT_SK_PESSOA	   C1_INT_SK_PESSOA,
+	NVL(TRIM(UPPER(DW_TMP_PESSOA.VHR_NM_PESSOA)), 'N/D')	   C2_VHR_NM_PESSOA,
+	DW_TMP_PESSOA.DAT_DT_ORIGINALINICIO	   C3_DAT_DT_ORIGINALINICIO,
+	DW_TMP_PESSOA.DAT_DT_ADMISSAO	   C4_DAT_DT_ADMISSAO,
+	DW_TMP_PESSOA.DAT_DT_DEMISSAO	   C5_DAT_DT_DEMISSAO,
+	UPPER(DW_TMP_PESSOA.VHR_DS_EMAIL)	   C6_VHR_DS_EMAIL,
+	DW_TMP_PESSOA.INT_CD_FUNCIONARIO	   C7_INT_CD_FUNCIONARIO,
+	UPPER(DW_TMP_PESSOA.CHR_NM_SEXO)	   C8_CHR_NM_SEXO,
+	DW_TMP_PESSOA.DAT_DT_NASCIMENTO	   C9_DAT_DT_NASCIMENTO,
+	DW_TMP_PESSOA.INT_CD_SUPERVISOR	   C10_INT_CD_SUPERVISOR,
+	NVL(UPPER(TRIM(DW_TMP_PESSOA.VHR_NM_SUPERVISOR)), 'N/D')	   C11_VHR_NM_SUPERVISOR,
+	NVL(UPPER(TRIM(DW_TMP_PESSOA.VHR_NM_CARGO)), 'N/D')	   C12_VHR_NM_CARGO,
+	DW_TMP_PESSOA.INT_CD_CENTROCUSTO	   C13_INT_CD_CENTROCUSTO,
+	UPPER(DW_TMP_PESSOA.VHR_NM_CENTROCUSTO)	   C14_VHR_NM_CENTROCUSTO,
+	UPPER(DW_TMP_PESSOA.VHR_FG_APROVADOR)	   C15_VHR_FG_APROVADOR,
+	UPPER(DW_TMP_PESSOA.VHR_FG_COMPRADOR)	   C16_VHR_FG_COMPRADOR,
+	DW_TMP_PESSOA.DAT_DT_CRIACAO	   C17_DAT_DT_CRIACAO,
+	DW_TMP_PESSOA.DAT_DT_ALTERACAO	   C18_DAT_DT_ALTERACAO,
+	DW_TMP_PESSOA.INT_CD_LOGIN_CRIACAO	   C19_INT_CD_LOGIN_CRIACAO,
+	DW_TMP_PESSOA.INT_CD_LOGIN_ALTERACAO	   C20_INT_CD_LOGIN_ALTERACAO
+from	 (
+select ppf.person_id INT_SK_PESSOA
+     , ppf.last_name VHR_NM_PESSOA
+     , ppf.original_date_of_hire DAT_DT_ORIGINALINICIO
+     , ppf.effective_end_date DAT_DT_DEMISSAO
+     , ppf.effective_start_date DAT_DT_ADMISSAO
+     , ppf.email_address VHR_DS_EMAIL
+     , ppf.employee_number INT_CD_FUNCIONARIO
+     , ppf.sex CHR_NM_SEXO
+     , ppf.date_of_birth DAT_DT_NASCIMENTO
+     , paaf.supervisor_id INT_CD_SUPERVISOR
+     , (select ppf1.full_name
+          from apps.per_people_f ppf1
+         where ppf1.person_id = paaf.supervisor_id
+           and rownum = 1) VHR_NM_SUPERVISOR
+     , pj.job_id
+     , pj.name VHR_NM_CARGO
+     , gcc.segment2 INT_CD_CENTROCUSTO,
+       (SELECT ffv.description
+       FROM apps.FND_ID_FLEX_SEGMENTS fifs
+     , apps.fnd_flex_values_vl ffv
+      Where fifs.application_id = 101
+        And fifs.id_flex_code = 'GL#'
+        And fifs.SECURITY_ENABLED_FLAG = 'Y'
+        And fifs.application_column_name = 'SEGMENT2'
+        And fifs.segment_name = 'CENTRO CUSTO'
+        And ffv.flex_value_set_id = fifs.flex_value_set_id
+        And ffv.flex_value = gcc.segment2 ) VHR_NM_CENTROCUSTO, 
+     , (Select 'Aprovador'
+          from apps.per_people_f ppf2
+         where ppf2.last_name in ('EDUARDO DE MELO PINTO'
+                                 ,'LUIZ PEREIRA DE ARAUJO FILHO'
+                                 ,'CARLOS HUGO ANNES DE ARAUJO'
+                                 ,'ANTONIO DE PADUA BEMFICA GUIMARAES'
+                                 ,'ALEXANDRE AGUIAR DE BRITO'
+                                 ,'GUILHERME ABBAD SILVEIRA'
+                                 ,'RICARDO BARBI COSTA'
+                                 ,'PAULO ROBERTO THOMAZELLI DAMIAO'
+                                 ,'AMAURI ALVAREZ'
+                                 ,'AFONSO JURANDIR DE MORAIS'
+                                 ,'DELFINO LUIZ GOUVEIA GAMBETTI'
+                                 ,'WELSON CORREA PINTO'
+                                 ,'TASSO DA SILVA ROSSI'
+                                 ,'CAROLINA FIORILLO MARIANI'
+                                 ,'ANDRE GOLLEGA MASINA'
+                                 ,'ANA PAULA GALETTI ROMANTINI')
+           AND ppf2.last_name = ppf.last_name
+           and rownum = 1) VHR_FG_APROVADOR
+     , (Select 'Comprador'
+          from apps.per_people_f ppf2
+             , apps.PO_AGENTS  pa
+         where PA.AGENT_ID = PPF.PERSON_ID
+           and PA.AGENT_ID = PPF2.PERSON_ID
+           and rownum = 1)   VHR_FG_COMPRADOR
+     , ppf.CREATION_DATE DAT_DT_CRIACAO
+     , ppf.LAST_UPDATE_DATE DAT_DT_ALTERACAO
+     , ppf.CREATED_BY INT_CD_LOGIN_CRIACAO
+     , ppf.LAST_UPDATED_BY INT_CD_LOGIN_ALTERACAO
+  from apps.per_people_f ppf
+     , (Select person_id, job_id, default_code_comb_id, supervisor_id
+          from hr.per_all_assignments_f paaf1
+         where job_id IS NOT NULL
+         --AND SYSDATE BETWEEN paaf1.effective_start_date AND paaf1.effective_end_date
+           AND paaf1.EFFECTIVE_START_DATE <= Trunc(sysdate)
+           And paaf1.EFFECTIVE_END_DATE   >= Trunc(sysdate)
+       ) paaf
+     , apps.hz_parties hzp
+     , hr.per_jobs pj
+     , apps.gl_code_combinations_kfv gcc
+where ppf.party_id = hzp.party_id(+)
+   AND ppf.person_id = paaf.person_id(+)
+   AND paaf.job_id = pj.job_id(+)
+   AND paaf.default_code_comb_id = gcc.code_combination_id(+)
+--AND SYSDATE BETWEEN ppf.effective_start_date AND ppf.effective_end_date
+   AND ppf.EFFECTIVE_START_DATE <= Trunc(sysdate)
+   And ppf.EFFECTIVE_END_DATE   >= Trunc(sysdate)
+ 
+UNION
+ 
+select ppf.person_id, ppf.last_name, ppf.original_date_of_hire, ppf.effective_end_date, ppf.effective_start_date
+     , ppf.email_address, ppf.employee_number, ppf.sex, ppf.date_of_birth
+     , paaf.supervisor_id
+     , (select ppf1.full_name -- paaf.supervisor_id
+          from apps.per_people_f ppf1
+         where ppf1.person_id = paaf.supervisor_id
+           and rownum = 1) Supervisor
+     , pj.job_id, pj.name/*, paaf.default_code_comb_id, gcc.concatenated_segments*/
+     , gcc.segment2 C_Custo
+     , (Select description
+          from apps.fnd_flex_values_vl
+         where flex_Value = gcc.segment2 ) descr_CC
+     , (Select 'Aprovador'
+          from apps.per_people_f ppf2
+         where ppf2.last_name in ('EDUARDO DE MELO PINTO'
+                                 ,'LUIZ PEREIRA DE ARAUJO FILHO'
+                                 ,'CARLOS HUGO ANNES DE ARAUJO'
+                                 ,'ANTONIO DE PADUA BEMFICA GUIMARAES'
+                                 ,'ALEXANDRE AGUIAR DE BRITO'
+                                 ,'GUILHERME ABBAD SILVEIRA'
+                                 ,'RICARDO BARBI COSTA'
+                                 ,'PAULO ROBERTO THOMAZELLI DAMIAO'
+                                 ,'AMAURI ALVAREZ'
+                                 ,'AFONSO JURANDIR DE MORAIS'
+                                 ,'DELFINO LUIZ GOUVEIA GAMBETTI'
+                                 ,'WELSON CORREA PINTO'
+                                 ,'TASSO DA SILVA ROSSI'
+                                 ,'CAROLINA FIORILLO MARIANI'
+                                 ,'ANDRE GOLLEGA MASINA'
+                                 ,'ANA PAULA GALETTI ROMANTINI')
+           AND ppf2.last_name = ppf.last_name
+           and rownum = 1) Aprovador
+     , (Select 'Comprador'
+          from apps.per_people_f ppf2
+             , apps.PO_AGENTS  pa
+         where PA.AGENT_ID = PPF.PERSON_ID
+           and PA.AGENT_ID = PPF2.PERSON_ID
+           and rownum = 1)   Comprador
+     , ppf.CREATION_DATE DAT_DT_CRIACAO
+     , ppf.LAST_UPDATE_DATE DAT_DT_ALTERACAO
+     , ppf.CREATED_BY INT_CD_LOGIN_CRIACAO
+     , ppf.LAST_UPDATED_BY INT_CD_LOGIN_ALTERACAO
+  from apps.per_people_f ppf
+     , ( Select person_id, job_id, default_code_comb_id, supervisor_id
+           from hr.per_all_assignments_f paaf1
+          where job_id IS NOT NULL
+          --AND SYSDATE BETWEEN paaf1.effective_start_date AND paaf1.effective_end_date
+            AND paaf1.EFFECTIVE_START_DATE <= Trunc(sysdate)
+            And paaf1.EFFECTIVE_END_DATE   >= Trunc(sysdate)
+       ) paaf    
+     , apps.hz_parties hzp
+     , hr.per_jobs pj
+     , apps.gl_code_combinations_kfv gcc
+where ppf.party_id = hzp.party_id(+)
+   AND ppf.person_id = paaf.person_id(+)
+   AND paaf.job_id = pj.job_id(+)
+   AND paaf.default_code_comb_id = gcc.code_combination_id(+)
+   AND ppf.EFFECTIVE_START_DATE <= Trunc(sysdate)
+   And ppf.EFFECTIVE_END_DATE   >= Trunc(sysdate)
+   AND NOT EXISTS ( select '1'
+                      from apps.per_people_f ppf1
+                     where ppf.person_id = ppf1.person_id
+                     --And SYSDATE BETWEEN ppf1.effective_start_date AND ppf1.effective_end_date
+                       AND ppf1.EFFECTIVE_START_DATE <= Trunc(sysdate)
+                       And ppf1.EFFECTIVE_END_DATE   >= Trunc(sysdate)
+                  ) 
+)
+   DW_TMP_PESSOA
+where	(1=1)
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+  
+ UPDATE TRISODBP.DESPESAS_PROCESSO set cod_processo = 'TAY40004/19' where id_despesa_processo in (439922,439924,439923);
+ UPDATE TRISODBP.is_sp_detalhe  set cod_processo = 'TAY40004/19'  where  cod_processo = 'TAY40004/17' ;
+ UPDATE TRISODBP.is_sp_cadastro set num_documento = 'TAY40004/19' where num_documento = 'TAY40004/17';
+
+commit;

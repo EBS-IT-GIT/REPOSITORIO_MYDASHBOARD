@@ -1,0 +1,74 @@
+Using username "aebscrp2".
+
+This is a private commercial server residing on a private commercial network which is operated within the jurisdiction of The United States of America. This server and network are the property of Buy4. Although this server has been hardened and secured against unauthorized access, Users of this server (authorized or unauthorized) have no explicit or implicit expectation of communications privacy. Any and all access to this system and all files on this system are monitored for security purposes and may be intercepted, monitored, recorded, copied, audited and inspected to maintain server and network security. Attempts to breach this system or network security may be disclosed to authorized local, state, and federal law enforcement personnel, and to authorized officials of other government agencies, as required. By using this server, the user consents to such interception, monitoring, recording, copying, auditing, inspection, and disclosure at the discretion of Buy4 or Law Enforcement personnel. Unauthorized or improper use of this system may result in administrative disciplinary action or civil and criminal penalties. By continuing to use this system you indicate your awareness of and consent to these terms and conditions of use. LOG OFF NOW if you do not agree to these conditions of use.
+
+Last login: Wed Nov 28 16:04:39 2018
+
+  E-Business Suite Environment Information
+  ----------------------------------------
+  RUN File System           : /app/EBSCRP2/fs1/EBSapps/appl
+  PATCH File System         : /app/EBSCRP2/fs2/EBSapps/appl
+  Non-Editioned File System : /app/EBSCRP2/fs_ne
+
+
+  DB Host: tpb4devebsdb-01.buy4dev.local  Service/SID: EBSCRP2
+
+
+  Sourcing the RUN File System ...
+
+#########  EBSCRP2  #########
+[aebscrp2@tpb4devebs-01 ~]$ cd $PATCH_TOP
+[aebscrp2@tpb4devebs-01 patch]$ adop phase=apply abandon=yes workers=1 hotpatch=yes  options=forceapply patches=122PORELATPDF_001:u122PORELATPDF_001.drv
+
+Enter the APPS password:
+Enter the SYSTEM password:
+Enter the WLSADMIN password:
+
+Validating credentials.
+
+Initializing.
+    Run Edition context  : /app/EBSCRP2/fs1/inst/apps/EBSCRP2_tpb4devebs-01/appl/admin/EBSCRP2_tpb4devebs-01.xml
+    Patch edition context: /app/EBSCRP2/fs2/inst/apps/EBSCRP2_tpb4devebs-01/appl/admin/EBSCRP2_tpb4devebs-01.xml
+    Patch file system free space: 55.85 GB
+
+Validating system setup.
+    Node registry is valid.
+    [WARNING]   MTCC has not been run. Apply Patch 17537119 and run checkMTpatch.sh.
+
+Checking for existing adop sessions.
+        Session Id            :   20
+        Prepare phase status  :   NOT APPLICABLE
+        Apply phase status    :   ATLEAST ONE PATCH IS ALREADY APPLIED
+        Cutover  phase status :   NOT APPLICABLE
+        Abort phase status    :   NOT APPLICABLE
+        Session status        :   FAILED
+    Continuing with existing session [Session ID: 20].
+
+===========================================================================
+ADOP (C.Delta.10)
+Session ID: 20
+Node: tpb4devebs-01
+Phase: apply
+Log: /app/EBSCRP2/fs_ne/EBSapps/log/adop/20/20181128_161412/adop.log
+===========================================================================
+
+Applying patch 122PORELATPDF_001:u122PORELATPDF_001.drv.
+    Log: /app/EBSCRP2/fs_ne/EBSapps/log/adop/20/20181128_161412/apply/tpb4devebs-01/122PORELATPDF_001/log/u122PORELATPDF_001.log
+
+Running finalize actions for the patches being applied.
+    Log: @ADZDSHOWLOG.sql "2018/11/28 16:16:13"
+
+Running cutover actions for the patches being applied.
+    Creating workers to process cutover DDL in parallel
+    Log: /app/EBSCRP2/fs_ne/EBSapps/log/adop/20/20181128_161412/apply/tpb4devebs-01/log/cutover.log
+    Performing database cutover in Quick mode
+
+Generating post apply reports.
+
+Generating log report.
+    Output: /app/EBSCRP2/fs_ne/EBSapps/log/adop/20/20181128_161412/apply/tpb4devebs-01/adzdshowlog.out
+
+The apply phase completed successfully.
+
+
+adop exiting with status = 0 (Success)

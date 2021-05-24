@@ -1,0 +1,11 @@
+BEGIN
+
+ DELETE FROM  trisodbp.is_sp_detalhe
+        WHERE id_sp  =  52570;
+
+DELETE FROM  trisodbp.IS_SP_CADASTRO
+       WHERE id_sp  =  52570;
+
+ COMMIT;
+
+END;

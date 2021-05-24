@@ -1,0 +1,48 @@
+SQL> SET TIMING ON;
+SQL> SET SERVEROUTPUT ON;
+SQL> select name from v$database;
+
+NAME     
+---------
+PADAGI
+
+Decorrido: 00:00:00.696
+SQL> alter session set nls_language='LATIN AMERICAN SPANISH';
+
+Session alterado.
+
+Decorrido: 00:00:00.267
+SQL> ALTER SESSION SET CURRENT_SCHEMA=APPS;
+
+Session alterado.
+
+Decorrido: 00:00:00.091
+SQL> 
+SQL> --1er datafix para volver atras el codigo de impuesto en el maestro de articulos
+SQL> 
+SQL> UPDATE apps.mtl_system_items
+  2  SET global_attribute2='T-GRAVADO'
+  3  WHERE global_attribute2='T-GRAVADO CF';
+
+12.673 linhas atualizado.
+
+Decorrido: 00:01:32.013
+SQL> --12673 Registros  
+SQL> 
+SQL> 
+SQL> --2do datafix para volver atras el codigo de impuesto en los articulos en las lineas abiertas de pedidos de venta
+SQL> 
+SQL> UPDATE oe_order_lines_all
+  2  SET global_attribute6='T-GRAVADO'
+  3  WHERE global_attribute6='T-GRAVADO CF'
+  4  AND flow_status_code !='CLOSED';
+
+960 linhas atualizado.
+
+Decorrido: 00:11:28.680
+SQL> --988 Registros 	
+
+SQL> Rollback;
+Rollback concluído.
+Decorrido: 00:00:02.744
+			

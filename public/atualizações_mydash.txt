@@ -1,0 +1,5 @@
+home.blade.php 2.1
+page.blade.php 2.3
+taskreport.blade.php 2.1
+reports.blade.php 2.4
+edithours.blade.php 1.9
